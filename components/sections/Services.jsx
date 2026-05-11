@@ -136,7 +136,7 @@ export default function Services() {
         </div>
 
         {/* Services: Minimalist Hover Grid */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-5 border-y-0 md:border-y border-white/5 mb-40">
+        <div className="grid grid-cols-1 gap-10 md:gap-0 md:grid-cols-5 border-y-0 md:border-y border-white/5 mb-40">
           {SERVICES.map((svc, i) => (
             <motion.div
               key={svc.title}
