@@ -63,22 +63,22 @@ export default function FeaturedProperty() {
         className="absolute bottom-10 left-8 md:left-14 z-10"
       >
         {/* Badge */}
-        <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-gold mb-3">
+        {/* <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-gold mb-3">
           Featured Listing
-        </p>
+        </p> */}
 
         {/* Property name */}
         <h3 className="font-serif text-3xl md:text-[2.6rem] text-white font-light leading-tight">
-          La Vue, Bel Air
+          Le Luxe Réinventé
         </h3>
 
         {/* View property CTA */}
-        <a
+        {/* <a
           href="#properties"
           className="inline-block font-sans text-[10px] tracking-[0.25em] uppercase text-white border border-white/35 px-7 py-3 hover:bg-white hover:text-dark transition-all duration-300"
         >
           View Property
-        </a>
+        </a> */}
       </motion.div>
 
     </section>
