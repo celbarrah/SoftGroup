@@ -48,7 +48,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handler)
   }, [])
 
-  const linkClass = "font-sans text-[10px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300"
+  const linkClass = "font-sans text-[13px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300"
 
   return (
     <>
@@ -76,11 +76,11 @@ export default function Header() {
           ].join(" ")}
         >
           {/* SOFTGROUP<span className="font-light"> IMMOBILIER</span> */}
-          <Image src={"/img/softgroupe.png"} height={200} width={200} alt="softgroupe" className="brightness-0 invert screen"/>
+          <Image src={"/img/softgroupe.png"} height={200} width={200} alt="softgroupe" className="brightness-0 invert"/>
         </a>
 
         {/* ── Desktop nav ───────────────────────────── */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 ">
 
           {/* Accueil */}
           <a href="/" className={linkClass}>Accueil</a>
@@ -97,7 +97,7 @@ export default function Header() {
           >
             <button
               onClick={() => setPortfolioOpen((v) => !v)}
-              className="flex items-center gap-1 font-sans text-[10px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300 group"
+              className="flex items-center gap-1 font-sans text-[13px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300 group"
             >
               Portefeuille
               <motion.span

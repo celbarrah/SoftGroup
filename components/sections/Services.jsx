@@ -79,10 +79,10 @@ function InfraAccordion({ tab, isOpen, onToggle, index }) {
             <div className="pb-12 px-4 md:pl-24 grid grid-cols-1 md:grid-cols-3 gap-8">
               {tab.items.map((item) => (
                 <div key={item.title} className="group">
-                  <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-gold mb-3 opacity-70 group-hover:opacity-100 transition-opacity">
+                  <p className="font-sans text-[15px] tracking-[0.2em] uppercase text-gold mb-3 opacity-70 group-hover:opacity-100 transition-opacity">
                     {item.title}
                   </p>
-                  <p className="font-sans text-xs text-muted leading-relaxed max-w-[240px]">
+                  <p className="font-sans text-[14px] text-muted leading-relaxed max-w-[240px]">
                     {item.desc}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function Services() {
             transition={{ duration: 1, delay: 0.2 }}
             className="lg:max-w-4xl pt-4"
           >
-            <p className="font-sans text-sm text-muted leading-loose border-l border-gold/20 pl-8">
+            <p className="font-sans text-[18px] text-muted leading-loose border-l border-gold/20 pl-8">
               Le bail n'est que le début. En tant que propriétaire-gestionnaire, 
               nous garantissons une sérénité totale via une gestion intégrée 
               et proactive de vos actifs stratégiques.

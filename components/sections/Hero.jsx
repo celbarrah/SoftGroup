@@ -83,9 +83,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-sans text-[10px] tracking-[0.4em] uppercase text-gold mb-6"
+          className="font-sans text-[11px] md:text-[13px]  font-extrabold tracking-[0.4em] uppercase text-gold mb-6"
         >
-          L&apos;Immobilier d&apos;Excellence au Maroc
+          L'Immobilier d'Excellence au Maroc
         </motion.p>
 
         {/* Main headline — large serif */}
@@ -105,11 +105,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.95 }}
-          className="font-sans text-sm md:text-base text-white/55 mt-7 max-w-lg leading-7 tracking-wide"
+          className="font-sans text-[16px] md:text-[22px] md:text-base text-white mt-7 max-w-2xl leading-7 tracking-wide"
         >
-          Foncière d&apos;exception, Softgroup est une référence de l&apos;immobilier
+          Foncière d'exception, Softgroup est une référence de l'immobilier
           locatif au Maroc. Nous concevons, gérons et valorisons un portefeuille
-          d&apos;actifs premium logistique, bureaux, résidentiel, commercial et terrains.
+          d'actifs premium logistique, bureaux, résidentiel, commercial et terrains.
         </motion.p>
 
         {/* Dual CTA buttons */}

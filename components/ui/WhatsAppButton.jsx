@@ -36,8 +36,6 @@ export default function WhatsAppButton() {
           whileTap={{ scale: 0.95 }}
           className="fixed bottom-6 right-6 rounded-3xl z-50 w-14 h-14 bg-[#25D366] flex items-center justify-center shadow-xl group"
         >
-          {/* Pulsing ring */}
-          <span className="absolute inset-0 bg-[#25D366] rounded-none animate-ping opacity-20 pointer-events-none" />
 
           {/* WhatsApp SVG icon */}
           <svg

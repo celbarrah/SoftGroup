@@ -94,7 +94,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="mb-14"
         >
-          <p className="text-[9px] tracking-[0.4em] uppercase text-yellow-500 mb-4">
+          <p className="text-[11px] font-extrabold tracking-[0.4em] uppercase text-yellow-500 mb-4">
             Nos Segments
           </p>
 
@@ -102,12 +102,12 @@ export default function Portfolio() {
             Un Portefeuille Diversifié,
             <br />
             <span className="italic">
-              Des Actifs d&apos;Exception
+              Des Actifs d'Exception
             </span>
           </h2>
 
-          <p className="text-sm text-white/50 mt-5 max-w-xl leading-[1.85]">
-            Cinq segments d&apos;activité pour répondre aux exigences les plus
+          <p className="text-[17px] text-white/50 mt-5 max-w-xl leading-[1.85]">
+            Cinq segments d'activité pour répondre aux exigences les plus
             pointues du marché marocain.
           </p>
         </motion.div>
@@ -165,7 +165,7 @@ export default function Portfolio() {
                     {seg.locations.map((loc) => (
                       <span
                         key={loc}
-                        className="text-[8px] tracking-[0.2em] uppercase text-white/50 border border-white/10 px-2.5 py-1"
+                        className="text-[8px] tracking-[0.2em] uppercase text-white border border-white/40 rounded-md px-2.5 py-1"
                       >
                         {loc}
                       </span>
@@ -192,7 +192,7 @@ export default function Portfolio() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-white/50 hover:text-yellow-500 transition-colors duration-300 group"
+            className="inline-flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-white hover:text-yellow-500 transition-colors duration-300 group"
           >
             Voir tous nos actifs
 

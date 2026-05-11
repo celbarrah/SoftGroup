@@ -61,7 +61,7 @@ export default function FooterCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-sans text-sm text-muted leading-[1.9] max-w-xl mx-auto mb-14"
+          className="font-sans text-[16px] text-muted leading-[1.9] max-w-xl mx-auto mb-14"
         >
           Nos équipes sont à votre disposition pour analyser vos besoins et
           vous proposer les actifs les plus adaptés à votre activité,

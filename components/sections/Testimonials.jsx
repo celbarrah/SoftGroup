@@ -42,7 +42,7 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: "-8% 0px" })
 
   return (
-    <section ref={ref} className="bg-white py-24 md:py-20 px-8 md:px-12 lg:px-20" id="confiance" style={{WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)', clipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)'}}>
+    <section ref={ref} className="bg-white py-35 md:py-20 px-8 md:px-12 lg:px-20" id="confiance" style={{WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)', clipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)'}}>
       <div className="max-w-7xl mx-auto">
 
         {/* ── Section header ──────────────────────────── */}
@@ -55,7 +55,7 @@ export default function Testimonials() {
           <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-neutral-900 mb-4">
             Ils Nous Font Confiance
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-neutral-700 font-light leading-[1.1]">
+          <h2 className="font-serif text-3xl md:text-5xl text-neutral-700 font-light leading-[1.1]">
             La Confiance,
             <br />
             <span className="italic">Notre Meilleure Référence</span>
@@ -78,14 +78,14 @@ export default function Testimonials() {
               </span>
 
               {/* Quote */}
-              <p className="font-serif text-lg text-neutral-900/80 font-light leading-[1.7] italic flex-1">
+              <p className="font-serif text-[14px] md:text-lg text-neutral-900 font-bold leading-[1.7] italic flex-1">
                 {t.quote}
               </p>
 
               {/* Divider + company */}
               <div className="flex items-center gap-4 pt-3 border-t border-white/8">
                 <div className="w-8 h-px bg-gold/50" />
-                <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-gold">
+                <span className="font-sans text-[10px] font-bold tracking-[0.25em] uppercase text-gold">
                   {t.company}
                 </span>
               </div>
@@ -99,7 +99,7 @@ export default function Testimonials() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
         >
-          <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-muted/50 mb-8 text-center">
+          <p className="font-sans text-[11px] font-extrabold tracking-[0.3em] uppercase text-muted mb-8 text-center">
             Multinationales & Grands Comptes qui nous font confiance
           </p>
 

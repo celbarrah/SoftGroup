@@ -270,7 +270,7 @@ export default function TerritorialMap() {
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-14"
       >
-        <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold mb-4">
+        <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
           Présence Nationale
         </p>
         <h2 className="font-serif text-4xl md:text-5xl text-cream font-light leading-[1.1]">
@@ -278,7 +278,7 @@ export default function TerritorialMap() {
           <br />
           <span className="italic">Territoriale</span>
         </h2>
-        <p className="font-sans text-sm text-muted mt-5 max-w-lg leading-[1.85]">
+        <p className="font-sans text-[16px] text-muted mt-5 max-w-lg leading-[1.85]">
           Implantés dans les 4 pôles économiques stratégiques du Maroc,
           au plus près de vos besoins.
         </p>

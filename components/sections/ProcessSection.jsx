@@ -38,7 +38,7 @@ export default function ProcessSection() {
   const inView = useInView(ref, { once: true, margin: "-10% 0px" })
 
   return (
-    <section ref={ref} className="bg-white py-24 md:py-36 px-8 md:px-12 lg:px-20 overflow-hidden" style={{ WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)', clipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)' }}>
+    <section ref={ref} className="bg-white py-24 md:py-36 px-8 md:px-12 lg:px-14 overflow-hidden" style={{ WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)', clipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* ── Section header ──────────────────────────── */}
@@ -48,7 +48,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.8 }}
           className="mb-20 pt-30 md:pt-0"
         >
-          <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold mb-4">
+          <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
             Notre Approche
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
@@ -92,7 +92,7 @@ export default function ProcessSection() {
               <h4 className="font-serif text-xl text-neutral-900 font-extrabold font-light leading-snug mb-4">
                 {step.title}
               </h4>
-              <p className="font-sans text-xs text-neutral-900 leading-[1.85]">
+              <p className="font-sans text-[14px] text-neutral-900 leading-[1.85]">
                 {step.description}
               </p>
             </motion.div>

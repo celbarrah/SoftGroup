@@ -102,7 +102,7 @@ export default function IntroImpact() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl mb-20 md:mb-24"
         >
-          <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold mb-5">
+          <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-5">
             Notre Savoir-Faire
           </p>
           <p className="font-serif text-2xl md:text-3xl text-cream font-light leading-[1.5] italic mb-6">
@@ -110,7 +110,7 @@ export default function IntroImpact() {
             projets de référence où l'innovation et la qualité signent
             chaque réalisation.&rdquo;
           </p>
-          <p className="font-sans text-sm text-muted leading-[1.85] max-w-2xl">
+          <p className="font-sans text-[15px] text-muted leading-[1.85] max-w-2xl">
             Aujourd'hui, notre savoir-faire reconnu nous permet de piloter
             l'ensemble de la chaîne de valeur immobilière  de la conception
             et la construction à la gestion, l'exploitation et la valorisation
