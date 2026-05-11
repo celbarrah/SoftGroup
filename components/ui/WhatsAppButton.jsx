@@ -3,13 +3,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-/**
- * WhatsAppButton — Bouton sticky WhatsApp
- * ─────────────────────────────────────────────────────────
- * Positionné en bas à droite, fond or, icône WhatsApp blanc.
- * Apparaît après 2 secondes de navigation.
- * Tooltip "Contactez-nous" au survol.
- */
 
 const WHATSAPP_NUMBER = "212661978104"
 const WHATSAPP_MESSAGE = encodeURIComponent(
