@@ -116,7 +116,7 @@ export default function Services() {
               Expertise Immobilière
             </span>
             <h2 className="font-serif text-5xl md:text-7xl text-cream font-light leading-[1.1]">
-              Gestion <span className="italic text-gold">&</span>
+              Gestion <span className="italic text-gold">& </span>
               Valorisation
             </h2>
           </motion.div>
@@ -136,14 +136,14 @@ export default function Services() {
         </div>
 
         {/* Services: Minimalist Hover Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 border-y border-white/5 mb-40">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-5 border-y-0 md:border-y border-white/5 mb-40">
           {SERVICES.map((svc, i) => (
             <motion.div
               key={svc.title}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: i * 0.1 }}
-              className="group relative p-8 border-r border-white/5 last:border-r-0 hover:bg-white/[0.02] transition-all duration-500"
+              className="group relative p-8 border md:border-0 border-b-0 md:border-b md:border-r border-white/5 rounded-3xl last:border-r-0 hover:bg-white/[0.02] transition-all duration-500"
             >
               <div className="mb-12 relative">
                 <svc.icon size={24} strokeWidth={1} className="text-gold group-hover:scale-110 transition-transform duration-500" />
@@ -152,7 +152,7 @@ export default function Services() {
               <h4 className="font-serif text-xl text-cream mb-4 group-hover:text-gold transition-colors">
                 {svc.title}
               </h4>
-              <p className="font-sans text-[11px] text-muted leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+              <p className="font-sans text-[11px] text-muted leading-relaxed opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                 {svc.description}
               </p>
             </motion.div>
