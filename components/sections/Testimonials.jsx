@@ -1,119 +1,174 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { useRef, useState } from "react"
+import { motion, useInView, AnimatePresence } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 /**
- * Testimonials — Preuves sociales
- * ─────────────────────────────────────────────────────────
- * Deux parties :
- *  1. 4 témoignages clients en grille 2×2
- *  2. Bande de logos partenaires (statique sur desktop)
- *
- * Dark Premium — fond charcoal, cartes verre sombre, accents or.
+ * Testimonials — Carousel premium avec logos entreprises — Light Theme
  */
 
 const TESTIMONIALS = [
   {
     company: "GEODIS",
-    quote:   "Nous considérons SOFTGROUP comme un partenaire, nous travaillons ensemble depuis de nombreuses années. Nous bénéficions de bâtiments aux normes internationales en plus d'entretenir des relations privilégiées qui ont su nous accompagner sur nos différents développements.",
+    domain:  "geodis.com",
+    role:    "Partenaire Logistique International",
+    quote:   "Nous considérons SOFTGROUP comme un partenaire. Nous bénéficions de bâtiments aux normes internationales en plus d'entretenir des relations privilégiées qui ont su nous accompagner sur nos différents développements.",
   },
   {
     company: "Roche",
+    domain:  "roche.com",
+    role:    "Implantation Résidentielle & Bureaux",
     quote:   "J'ai choisi cette résidence pour tous les services qu'elle incluait, les espaces sont confortables et agréables à vivre. De manière générale, on s'y sent très bien.",
   },
   {
     company: "Bolloré",
-    quote:   "C'est un partenariat qui dure depuis plus de 10 ans. On cherchait des industriels qui arrivaient à comprendre nos besoins. Nous sommes très satisfaits de cette excellente prestation de service qui répond aux normes.",
+    domain:  "bollore.com",
+    role:    "Partenaire Industriel — +10 ans",
+    quote:   "C'est un partenariat qui dure depuis plus de 10 ans. On cherchait des industriels qui arrivaient à comprendre nos besoins. Nous sommes très satisfaits de cette excellente prestation de service.",
   },
   {
     company: "KIA",
+    domain:  "kia.com",
+    role:    "Locataire SOFTPARK",
     quote:   "Nous avons choisi les locaux de SOFTPARK pour leur fonctionnalité. La qualité de notre relation avec SOFTGROUP est excellente, la qualité du service est au rendez-vous. Nous sommes ravis du partenariat.",
   },
 ]
 
-const PARTNER_LOGOS = [
-  "GEODIS", "Roche", "Bolloré", "KIA", "Stellantis",
-  "Maersk", "TotalEnergies", "Decathlon", "Orano", "DHL",
-]
+function CompanyLogo({ domain, company }) {
+  const [failed, setFailed] = useState(false)
+  if (failed) {
+    return (
+      <span className="font-serif text-xl italic text-neutral-700">
+        {company}
+      </span>
+    )
+  }
+  return (
+    <img
+      src={"https://logo.clearbit.com/" + domain}
+      alt={company}
+      onError={() => setFailed(true)}
+      className="h-10 w-auto object-contain grayscale opacity-60"
+      loading="lazy"
+    />
+  )
+}
 
 export default function Testimonials() {
-  const ref    = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "-8% 0px" })
+  const ref     = useRef(null)
+  const inView  = useInView(ref, { once: true, margin: "-8% 0px" })
+  const [current,   setCurrent]   = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  const go = (dir) => {
+    setDirection(dir)
+    setCurrent((p) => (p + dir + TESTIMONIALS.length) % TESTIMONIALS.length)
+  }
+
+  const t = TESTIMONIALS[current]
 
   return (
-    <section ref={ref} className="bg-white py-35 md:py-20 px-8 md:px-12 lg:px-20" id="confiance" style={{WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)', clipPath: 'polygon(0 15%, 100% 0, 100% 100%, 0 100%)'}}>
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="bg-[#F5F3EF] py-30 md:py-36 overflow-hidden" id="confiance"
+    style={{WebkitClipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)', clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }} >
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20">
 
-        {/* ── Section header ──────────────────────────── */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-14 pt-60"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16"
         >
-          <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-neutral-900 mb-4">
-            Ils Nous Font Confiance
-          </p>
-          <h2 className="font-serif text-3xl md:text-5xl text-neutral-700 font-light leading-[1.1]">
-            La Confiance,
-            <br />
-            <span className="italic">Notre Meilleure Référence</span>
-          </h2>
+          <div>
+            <p className="font-sans text-[14px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
+              Ils Nous Font Confiance
+            </p>
+            <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
+              La Confiance,
+              <br />
+              <span className="italic text-gold">Notre Meilleure Référence</span>
+            </h2>
+          </div>
+
+          {/* Navigation arrows */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => go(-1)}
+              aria-label="Précédent"
+              className="w-12 h-12 border border-gray-200 flex items-center justify-center text-neutral-400 hover:border-gold hover:text-gold transition-all duration-300"
+            >
+              <ChevronLeft size={18} strokeWidth={1.5} />
+            </button>
+            <span className="font-sans text-[10px] text-neutral-400 tracking-widest tabular-nums">
+              {String(current + 1).padStart(2, "0")} / {String(TESTIMONIALS.length).padStart(2, "0")}
+            </span>
+            <button
+              onClick={() => go(1)}
+              aria-label="Suivant"
+              className="w-12 h-12 border border-gray-200 flex items-center justify-center text-neutral-400 hover:border-gold hover:text-gold transition-all duration-300"
+            >
+              <ChevronRight size={18} strokeWidth={1.5} />
+            </button>
+          </div>
         </motion.div>
 
-        {/* ── Testimonial cards ───────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={t.company}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="bg-white/4 border border-neutral-700/20 rounded-2xl backdrop-blur-sm p-8 md:p-10 flex flex-col gap-5 hover:border-gold/20 transition-colors duration-500"
-            >
-              {/* Opening quote mark */}
-              <span className="font-serif text-6xl text-gold/80 leading-none -mb-3 select-none">
-                &ldquo;
-              </span>
-
-              {/* Quote */}
-              <p className="font-serif text-[14px] md:text-lg text-neutral-900 font-bold leading-[1.7] italic flex-1">
-                {t.quote}
-              </p>
-
-              {/* Divider + company */}
-              <div className="flex items-center gap-4 pt-3 border-t border-white/8">
-                <div className="w-8 h-px bg-gold/50" />
-                <span className="font-sans text-[10px] font-bold tracking-[0.25em] uppercase text-gold">
-                  {t.company}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* ── Partner logo strip ───────────────────────── */}
+        {/* Carousel */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <p className="font-sans text-[11px] font-extrabold tracking-[0.3em] uppercase text-muted mb-8 text-center">
-            Multinationales & Grands Comptes qui nous font confiance
-          </p>
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              initial={{ opacity: 0, x: direction * 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -80 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start bg-white/20 shadow rounded-2xl p-10 md:p-14"
+            >
+              {/* Left: logo + info */}
+              <div className="flex flex-col gap-5">
+                <CompanyLogo domain={t.domain} company={t.company} />
+                <div className="mt-2">
+                  <p className="font-sans text-[10px] font-bold tracking-[0.3em] uppercase text-gold mb-1">
+                    {t.company}
+                  </p>
+                  <p className="font-sans text-[10px] text-neutral-500 tracking-[0.1em] leading-relaxed">
+                    {t.role}
+                  </p>
+                </div>
+                <div className="hidden lg:block w-px h-14 bg-gold/25 mt-2" />
+              </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {PARTNER_LOGOS.map((name, i) => (
-              <motion.span
-                key={name}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: 0.7 + i * 0.05 }}
-                className="font-serif text-base text-neutral-800/50 italic tracking-wide hover:text-gold/60 transition-colors duration-300 cursor-default select-none"
-              >
-                {name}
-              </motion.span>
+              {/* Right: quote */}
+              <div>
+                <span className="font-serif text-7xl text-gold/20 leading-none select-none block -mb-4">
+                  &ldquo;
+                </span>
+                <p className="font-serif text-xl md:text-2xl lg:text-[1.7rem] text-neutral-700 font-light leading-[1.7] italic mb-8">
+                  {t.quote}
+                </p>
+                <div className="w-12 h-px bg-gold/40" />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Progress dots */}
+          <div className="flex items-center justify-center gap-2.5 mt-8">
+            {TESTIMONIALS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
+                aria-label={"Témoignage " + (i + 1)}
+                className={"transition-all duration-300 rounded-full " + (
+                  i === current
+                    ? "w-8 h-1 bg-gold"
+                    : "w-1.5 h-1.5 bg-neutral-300 hover:bg-gold/40"
+                )}
+              />
             ))}
           </div>
         </motion.div>

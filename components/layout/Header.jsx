@@ -7,22 +7,22 @@ import SideNav from "./SideNav"
 import Image from "next/image"
 
 /**
- * Header — Barre de navigation fixe — Dark Premium
+ * Header — Barre de navigation fixe — Light Premium
  * ─────────────────────────────────────────────────────────
  * Comportement :
  *  - Transparent + blanc sur le hero (scrollY < 60px)
- *  - Fond noir/95 + accents or après scroll
+ *  - Fond blanc/95 + accents or après scroll
  *  - "Portefeuille" → dropdown avec les 5 segments
  *  - "Planifier une visite" CTA apparaît après scroll
  *  - Hamburger asymétrique → ouvre SideNav
  */
 
 const PORTFOLIO_LINKS = [
-  { label: "Logistique & Industriel",      href: "#logistique-industriel"      },
-  { label: "Bureaux & Centres d'Affaires", href: "#bureaux-centres-d-affaires" },
-  { label: "Résidentiel de Prestige",      href: "#residentiel-de-prestige"    },
-  { label: "Retail & Commerce",            href: "#retail-commerce"            },
-  { label: "Terrains & Développements",    href: "#terrains-developpements"    },
+  { label: "Logistique & Industriel",      href: "/portefeuille#logistique-industriel"      },
+  { label: "Bureaux & Centres d'Affaires", href: "/portefeuille#bureaux-centres-d-affaires" },
+  { label: "Résidentiel de Prestige",      href: "/portefeuille#residentiel-de-prestige"    },
+  { label: "Retail & Commerce",            href: "/portefeuille#retail-commerce"            },
+  { label: "Terrains & Développements",    href: "/portefeuille#terrains-developpements"    },
 ]
 
 export default function Header() {
@@ -48,7 +48,10 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handler)
   }, [])
 
-  const linkClass = "font-sans text-[13px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300"
+  /* Link classes adapt to scroll state */
+  const linkClass = scrolled
+    ? "font-sans text-[13px] tracking-[0.15em] uppercase text-neutral-600 hover:text-gold transition-colors duration-300"
+    : "font-sans text-[13px] tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-300"
 
   return (
     <>
@@ -62,7 +65,7 @@ export default function Header() {
           "px-8 md:px-12 lg:px-16",
           "transition-all duration-500",
           scrolled
-            ? "bg-noir/95 backdrop-blur-md border-b border-white/5 py-4"
+            ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm py-4"
             : "bg-transparent py-7",
         ].join(" ")}
       >
@@ -70,23 +73,24 @@ export default function Header() {
         <a
           href="/"
           aria-label="Softgroup Immobilier — Accueil"
-          className={[
-            "font-serif text-base tracking-[0.25em] uppercase select-none transition-colors duration-500",
-            scrolled ? "text-gold" : "text-white",
-          ].join(" ")}
         >
-          {/* SOFTGROUP<span className="font-light"> IMMOBILIER</span> */}
-          <Image src={"/img/softgroupe.png"} height={200} width={200} alt="softgroupe" className="brightness-0 invert"/>
+          <Image
+            src={"/img/softgroupe.png"}
+            height={200}
+            width={200}
+            alt="softgroupe"
+            className={scrolled ? "" : "brightness-0 invert"}
+          />
         </a>
 
         {/* ── Desktop nav ───────────────────────────── */}
-        <nav className="hidden lg:flex items-center gap-8 ">
+        <nav className="hidden lg:flex items-center gap-8">
 
           {/* Accueil */}
           <a href="/" className={linkClass}>Accueil</a>
 
           {/* Le Groupe */}
-          <a href="#groupe" className={linkClass}>Le Groupe</a>
+          <a href="/le-groupe" className={linkClass}>Le Groupe</a>
 
           {/* Portefeuille — avec dropdown */}
           <div
@@ -97,7 +101,10 @@ export default function Header() {
           >
             <button
               onClick={() => setPortfolioOpen((v) => !v)}
-              className="flex items-center gap-1 font-sans text-[13px] tracking-[0.15em] uppercase text-white/50 hover:text-gold transition-colors duration-300 group"
+              className={[
+                "flex items-center gap-1 group",
+                linkClass,
+              ].join(" ")}
             >
               Portefeuille
               <motion.span
@@ -117,13 +124,13 @@ export default function Header() {
                   transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50"
                 >
-                  <div className="bg-[#0A0A0A]/98 backdrop-blur-xl border border-white/8 min-w-[240px] py-2 shadow-2xl">
+                  <div className="bg-white shadow-xl border border-gray-100 min-w-[240px] py-2">
                     {PORTFOLIO_LINKS.map(({ label, href }) => (
                       <a
                         key={label}
                         href={href}
                         onClick={() => setPortfolioOpen(false)}
-                        className="block px-5 py-2.5 font-sans text-[9px] tracking-[0.15em] uppercase text-cream/50 hover:text-gold hover:bg-white/4 transition-all duration-200"
+                        className="block px-5 py-2.5 font-sans text-[11px] tracking-[0.12em] uppercase text-neutral-600 hover:text-gold hover:bg-gray-50 transition-all duration-200"
                       >
                         {label}
                       </a>
@@ -135,7 +142,7 @@ export default function Header() {
           </div>
 
           {/* Gestion */}
-          <a href="#gestion" className={linkClass}>Gestion</a>
+          <a href="/gestion-valorisation" className={linkClass}>Gestion</a>
 
           {/* Actualités */}
           <a href="#actualites" className={linkClass}>Actualités</a>
@@ -148,7 +155,7 @@ export default function Header() {
             animate={{ opacity: scrolled ? 1 : 0 }}
             transition={{ duration: 0.3 }}
             style={{ pointerEvents: scrolled ? "auto" : "none" }}
-            className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-gold border border-gold/40 px-5 py-2 hover:bg-gold hover:text-noir transition-all duration-300 whitespace-nowrap"
+            className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-gold border border-gold/40 px-5 py-2 hover:bg-gold hover:text-white transition-all duration-300 whitespace-nowrap"
           >
             Planifier une visite
           </motion.a>
@@ -158,8 +165,14 @@ export default function Header() {
             aria-label="Ouvrir le menu de navigation"
             className="flex flex-col justify-center gap-[7px] p-2 -mr-2 group"
           >
-            <span className="block h-px bg-white/70 transition-all duration-300 w-8 group-hover:w-5" />
-            <span className="block h-px bg-white/70 transition-all duration-300 w-5 group-hover:w-8" />
+            <span className={[
+              "block h-px transition-all duration-300 w-8 group-hover:w-5",
+              scrolled ? "bg-neutral-700" : "bg-white/80",
+            ].join(" ")} />
+            <span className={[
+              "block h-px transition-all duration-300 w-5 group-hover:w-8",
+              scrolled ? "bg-neutral-700" : "bg-white/80",
+            ].join(" ")} />
           </button>
         </div>
       </motion.header>

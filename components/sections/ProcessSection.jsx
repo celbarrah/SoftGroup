@@ -79,13 +79,13 @@ export default function ProcessSection() {
             >
               {/* Step number bubble */}
               <div className="flex items-center gap-4 mb-7">
-                <div className="w-11 h-11 border border-gold/30 flex items-center justify-center flex-none bg-gris/90 backdrop-blur">
-                  <span className="font-sans text-[9px] tracking-[0.15em] text-white font-bold">
+                <div className="w-11 h-11 border border-gold/30 flex items-center justify-center flex-none bg-white">
+                  <span className="font-sans text-[9px] tracking-[0.15em] text-gold font-bold">
                     {step.num}
                   </span>
                 </div>
                 {/* Short connector (mobile) */}
-                <div className="flex-1 h-px bg-white/8 lg:hidden" />
+                <div className="flex-1 h-px bg-gray-200 lg:hidden" />
               </div>
 
               {/* Step content */}

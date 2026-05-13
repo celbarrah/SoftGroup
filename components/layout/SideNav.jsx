@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 
 /**
- * SideNav — Tiroir de navigation pleine hauteur — Dark Premium
+ * SideNav — Tiroir de navigation pleine hauteur — Light Premium
  * ─────────────────────────────────────────────────────────
- * Fond noir profond, liens en serif, accents or.
+ * Fond blanc, liens en serif, accents or.
  * Fermeture : bouton X, clic backdrop, touche Escape.
  */
 
@@ -17,17 +17,17 @@ const NAV_ITEMS = [
     label: "NOTRE PORTEFEUILLE D'ACTIFS",
     href: "#portefeuille",
     children: [
-      { label: "Logistique & Industriel",      href: "#logistique-industriel"      },
-      { label: "Bureaux & Centres d'Affaires", href: "#bureaux-centres-d-affaires" },
-      { label: "Résidentiel de Prestige",      href: "#residentiel-de-prestige"    },
-      { label: "Retail & Commerce",            href: "#retail-commerce"            },
-      { label: "Terrains & Développements",    href: "#terrains-developpements"    },
+      { label: "Logistique & Industriel",      href: "/portefeuille#logistique-industriel"      },
+      { label: "Bureaux & Centres d'Affaires", href: "/portefeuille#bureaux-centres-d-affaires" },
+      { label: "Résidentiel de Prestige",      href: "/portefeuille#residentiel-de-prestige"    },
+      { label: "Retail & Commerce",            href: "/portefeuille#retail-commerce"            },
+      { label: "Terrains & Développements",    href: "/portefeuille#terrains-developpements"    },
     ],
   },
-  { label: "Le Groupe",              href: "#groupe"    },
-  { label: "Gestion & Valorisation", href: "#gestion"   },
-  { label: "Actualités",             href: "#actualites"},
-  { label: "Nous Contacter",         href: "#contact"   },
+  { label: "Le Groupe",              href: "/le-groupe"              },
+  { label: "Gestion & Valorisation", href: "/gestion-valorisation"  },
+  { label: "Actualités",             href: "#actualites"             },
+  { label: "Nous Contacter",         href: "#contact"                },
 ]
 
 /* ── Variants d'animation ─────────────────────────────── */
@@ -75,7 +75,7 @@ export default function SideNav({ isOpen, onClose }) {
             variants={backdropVariants}
             initial="hidden" animate="visible" exit="exit"
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-[2px]"
+            className="fixed inset-0 z-50 bg-black/30 backdrop-blur-[2px]"
             aria-hidden="true"
           />
 
@@ -87,17 +87,17 @@ export default function SideNav({ isOpen, onClose }) {
             aria-label="Navigation principale"
             variants={panelVariants}
             initial="hidden" animate="visible" exit="exit"
-            className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[360px] md:max-w-[420px] bg-[#0A0A0A] border-l border-white/6 flex flex-col"
+            className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[360px] md:max-w-[420px] bg-white border-l border-gray-100 flex flex-col shadow-2xl"
           >
             {/* En-tête panneau */}
-            <div className="flex items-center justify-between px-10 pt-9 pb-7 border-b border-white/8">
+            <div className="flex items-center justify-between px-10 pt-9 pb-7 border-b border-gray-100">
               <span className="font-serif text-base tracking-[0.35em] uppercase text-gold">
-                SOFTGROUP<span className="font-light text-cream/60"> IMMOBILIER</span>
+                SOFTGROUP<span className="font-light text-neutral-500"> IMMOBILIER</span>
               </span>
               <button
                 onClick={onClose}
                 aria-label="Fermer la navigation"
-                className="text-cream/40 hover:text-gold transition-colors duration-200 p-1 -mr-1"
+                className="text-neutral-400 hover:text-gold transition-colors duration-200 p-1 -mr-1"
               >
                 <X size={18} strokeWidth={1.5} />
               </button>
@@ -114,16 +114,16 @@ export default function SideNav({ isOpen, onClose }) {
                   {item.children ? (
                     <div className="mb-5">
                       {/* Catégorie — non cliquable */}
-                      <span className="block font-sans text-[9px] tracking-[0.38em] uppercase text-cream/28 mb-3">
+                      <span className="block font-sans text-[9px] tracking-[0.38em] uppercase text-neutral-400 mb-3">
                         {item.label}
                       </span>
-                      {/* Sous-liens avec href spécifiques */}
+                      {/* Sous-liens */}
                       {item.children.map((child) => (
                         <a
                           key={child.label}
                           href={child.href}
                           onClick={onClose}
-                          className="block font-serif text-[1.4rem] leading-snug text-cream/70 hover:text-gold transition-colors duration-200 py-0.5"
+                          className="block font-serif text-[1.4rem] leading-snug text-neutral-600 hover:text-gold transition-colors duration-200 py-0.5"
                         >
                           {child.label}
                         </a>
@@ -133,7 +133,7 @@ export default function SideNav({ isOpen, onClose }) {
                     <a
                       href={item.href}
                       onClick={onClose}
-                      className="block font-serif text-[1.75rem] leading-snug text-cream/80 hover:text-gold transition-colors duration-200 py-0.5 mb-1"
+                      className="block font-serif text-[1.75rem] leading-snug text-neutral-800 hover:text-gold transition-colors duration-200 py-0.5 mb-1"
                     >
                       {item.label}
                     </a>
@@ -143,17 +143,17 @@ export default function SideNav({ isOpen, onClose }) {
             </motion.div>
 
             {/* Pied du panneau — CTA */}
-            <div className="px-10 py-7 border-t border-white/8 space-y-4">
+            <div className="px-10 py-7 border-t border-gray-100 space-y-4">
               <a
                 href="#contact"
                 onClick={onClose}
-                className="block text-center font-sans text-[10px] tracking-[0.25em] uppercase text-noir bg-gold px-6 py-3 hover:bg-gold-light transition-colors duration-300"
+                className="block text-center font-sans text-[10px] tracking-[0.25em] uppercase text-white bg-gold px-6 py-3 hover:bg-gold/90 transition-colors duration-300"
               >
                 Planifier une visite
               </a>
               <a
                 href="tel:+212661978104"
-                className="block font-sans text-xs tracking-[0.2em] text-cream/35 hover:text-gold transition-colors duration-200 text-center"
+                className="block font-sans text-xs tracking-[0.2em] text-neutral-400 hover:text-gold transition-colors duration-200 text-center"
               >
                 +212 661 978 104
               </a>

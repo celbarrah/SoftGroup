@@ -76,26 +76,26 @@ export default function Hero() {
       {/* ── Parallax text block ───────────────────────── */}
       <motion.div
         style={{ y: textY }}
-        className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 md:px-12"
+        className="relative z-10 flex-1 flex flex-col items-start justify-end pb-24 px-6 md:px-12"
       >
         {/* Eyebrow — small caps label */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55 }}
           className="font-sans text-[11px] md:text-[13px]  font-extrabold tracking-[0.4em] uppercase text-gold mb-6"
         >
           L'Immobilier d'Excellence au Maroc
-        </motion.p>
+        </motion.p> */}
 
         {/* Main headline — large serif */}
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-4xl"
+          className="font-serif text-4xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-4xl"
         >
-          Louer&nbsp;? C&apos;est penser
+          Louer ? C'est penser
           <br />
           <span className="italic text-gold">SOFTGROUP.</span>
         </motion.h1>
@@ -117,7 +117,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.15 }}
-          className="mt-10 flex flex-wrap gap-4 justify-center"
+          className="mt-10 flex flex-wrap gap-4 justify-start md:justify-center"
         >
           <a
             href="#portefeuille"

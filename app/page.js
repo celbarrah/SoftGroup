@@ -1,54 +1,50 @@
 
-import Hero           from "@/components/sections/Hero"
-import IntroImpact    from "@/components/sections/IntroImpact"
-import ClientsBand    from "@/components/sections/ClientsBand"
-import Portfolio      from "@/components/sections/Portfolio"
-import Services       from "@/components/sections/Services"
-import ProcessSection from "@/components/sections/ProcessSection"
-import FeaturedProperty from "@/components/sections/FeaturedProperty"
-import TerritorialMap from "@/components/sections/TerritorialMap"
-import Testimonials   from "@/components/sections/Testimonials"
-import News           from "@/components/sections/News"
-import FooterCTA      from "@/components/sections/FooterCTA"
-import Footer         from "@/components/layout/Footer"
+import Hero               from "@/components/sections/Hero"
+import PropertyShowcase   from "@/components/sections/PropertyShowcase"
+import IntroImpact        from "@/components/sections/IntroImpact"
+import ClientsBand        from "@/components/sections/ClientsBand"
+import Portfolio          from "@/components/sections/Portfolio"
+import ProcessSection     from "@/components/sections/ProcessSection"
+import PropertyManagement from "@/components/sections/PropertyManagement"
+import TerritorialMap     from "@/components/sections/TerritorialMap"
+import Testimonials       from "@/components/sections/Testimonials"
+import FooterCTA          from "@/components/sections/FooterCTA"
+import Footer             from "@/components/layout/Footer"
 
 export default function Page() {
   return (
     <main>
-      {/* 1. Hero plein écran avec vidéo + parallaxe */}
+      {/* 1. Hero plein écran — vidéo + parallaxe */}
       <Hero />
 
-      {/* 2. Chiffres clés / Impact */}
+      {/* 2. Bannière propriété résidentielle (héro secondaire) — masqué temporairement */}
+      {false && <PropertyShowcase />}
+
+      {/* 3. Chiffres clés — fond noir premium */}
       <IntroImpact />
 
-      {/* 3. Bande de logos partenaires (marquee) */}
+      {/* 4. Logos partenaires défilants */}
       <ClientsBand />
 
-      {/* 4. Portefeuille — 5 segments immobiliers */}
+      {/* 5. Portefeuille — 5 segments immobiliers */}
       <Portfolio />
-      
-      {/* 6. Notre Processus — 4 étapes */}
-      <ProcessSection />
 
-      {/* 5. Services & Gestion — HVA cards + accordéon infra */}
-      <Services />
+      {/* 6. Notre Processus — 4 étapes — masqué temporairement */}
+      {false && <ProcessSection />}
 
-      {/* 7. Propriété en vedette */}
-      <FeaturedProperty />
+      {/* 7. Property & Facility Management */}
+      <PropertyManagement />
 
       {/* 8. Carte interactive du Maroc */}
       <TerritorialMap />
 
-      {/* 9. Témoignages clients */}
+      {/* 9. Témoignages clients — carousel avec logos */}
       <Testimonials />
 
-      {/* 10. Actualités — 3 articles */}
-      <News />
-
-      {/* 11. Bannière CTA avant footer */}
+      {/* 10. Bannière CTA avant footer */}
       <FooterCTA />
 
-      {/* 12. Pied de page */}
+      {/* 11. Pied de page */}
       <Footer />
     </main>
   )

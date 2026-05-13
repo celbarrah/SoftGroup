@@ -167,7 +167,7 @@ function PulseMarker({ city, isActive, onClick, inView }) {
       {/* Label ville */}
       <text
         x={city.x + 11} y={city.y + 4}
-        fill={isActive ? "rgba(240,237,230,0.95)" : "rgba(240,237,230,0.45)"}
+        fill={isActive ? "rgba(30,30,30,0.9)" : "rgba(80,80,80,0.55)"}
         fontSize="8.5"
         fontFamily="sans-serif"
         letterSpacing="1.8"
@@ -191,21 +191,21 @@ function CityInfoPanel({ city }) {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <p className="font-sans text-[8px] tracking-[0.4em] uppercase text-gold mb-3">
+        <p className="font-sans text-[11px] tracking-[0.4em] uppercase text-gold mb-3">
           {city.subtitle}
         </p>
-        <h3 className="font-serif text-3xl md:text-4xl text-cream font-light mb-5 leading-tight">
+        <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light mb-5 leading-tight">
           {city.name}
         </h3>
         <div className="w-8 h-px bg-gold mb-6" />
 
         <div className="mb-5">
-          <p className="font-sans text-[8px] tracking-[0.25em] uppercase text-cream/35 mb-3">
+          <p className="font-sans text-[8px] tracking-[0.25em] uppercase text-neutral-400 mb-3">
             Segments
           </p>
           <div className="flex flex-wrap gap-2">
             {city.segments.map((s) => (
-              <span key={s} className="font-sans text-[9px] tracking-[0.1em] text-cream/70 bg-white/8 border border-white/10 px-3 py-1.5">
+              <span key={s} className="font-sans text-[11px] tracking-[0.1em] text-neutral-600 bg-gray-100 border border-gray-200 px-3 py-1.5">
                 {s}
               </span>
             ))}
@@ -213,21 +213,21 @@ function CityInfoPanel({ city }) {
         </div>
 
         <div className="mb-5">
-          <p className="font-sans text-[8px] tracking-[0.25em] uppercase text-cream/35 mb-2">
+          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Connexions
           </p>
           {city.access.map((a) => (
-            <p key={a} className="font-sans text-xs text-cream/55 leading-relaxed">
+            <p key={a} className="font-sans text-xs text-neutral-500 leading-relaxed">
               ← {a}
             </p>
           ))}
         </div>
 
         <div>
-          <p className="font-sans text-[8px] tracking-[0.25em] uppercase text-cream/35 mb-2">
+          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Zones
           </p>
-          <p className="font-sans text-[10px] text-cream/45 leading-relaxed">
+          <p className="font-sans text-[13px] text-neutral-500 leading-relaxed">
             {city.zones.join(" · ")}
           </p>
         </div>
@@ -235,7 +235,7 @@ function CityInfoPanel({ city }) {
 
       <a
         href="#contact"
-        className="inline-block mt-8 font-sans text-[9px] tracking-[0.25em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-noir transition-all duration-300 w-fit"
+        className="inline-block mt-8 font-sans text-[11px] tracking-[0.25em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 w-fit"
       >
         Découvrir les actifs →
       </a>
@@ -261,7 +261,7 @@ export default function TerritorialMap() {
   const coords     = (id) => CITIES.find((c) => c.id === id)
 
   return (
-    <section ref={ref} className="bg-noir py-24 md:py-32 overflow-hidden" id="empreinte">
+    <section ref={ref} className="bg-white py-24 md:py-32 overflow-hidden" id="empreinte">
 
       {/* ── En-tête de section ──────────────────────────── */}
       <motion.div
@@ -270,15 +270,15 @@ export default function TerritorialMap() {
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-14"
       >
-        <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
+        <p className="font-sans text-[14px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
           Présence Nationale
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl text-cream font-light leading-[1.1]">
+        <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
           Notre Empreinte
           <br />
           <span className="italic">Territoriale</span>
         </h2>
-        <p className="font-sans text-[16px] text-muted mt-5 max-w-lg leading-[1.85]">
+        <p className="font-sans text-[16px] text-neutral-500 mt-5 max-w-lg leading-[1.85]">
           Implantés dans les 4 pôles économiques stratégiques du Maroc,
           au plus près de vos besoins.
         </p>
@@ -302,10 +302,10 @@ export default function TerritorialMap() {
                   key={city.id}
                   onClick={() => setActive(city.id)}
                   className={[
-                    "font-sans text-[9px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
+                    "font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
                     active === city.id
-                      ? "bg-gold text-noir border-gold"
-                      : "bg-transparent text-cream/45 border-white/10 hover:border-gold/50 hover:text-cream/80",
+                      ? "bg-gold text-white border-gold"
+                      : "bg-transparent text-neutral-400 border-neutral-200 hover:border-gold/50 hover:text-neutral-700",
                   ].join(" ")}
                 >
                   {city.name}
@@ -314,25 +314,18 @@ export default function TerritorialMap() {
             </div>
 
             {/* Carte info */}
-            <div className="flex-1 bg-white/4 border border-white/8 p-8 backdrop-blur-sm">
+            <div className="flex-1 bg-gray-50 border border-gray-100 p-8">
               <AnimatePresence mode="wait">
                 {activeCity && <CityInfoPanel key={active} city={activeCity} />}
               </AnimatePresence>
             </div>
           </motion.div>
 
-          {/* ── Droite : carte SVG Maroc ────────────────────── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.1, delay: 0.2 }}
-            className="relative"
-          >
+          <div >
             <svg
               viewBox="0 0 500 560"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full max-w-sm mx-auto drop-shadow-2xl"
-              aria-label="Carte interactive du Maroc — Softgroup Immobilier"
+              aria-hidden="true"
             >
               <defs>
                 <radialGradient id="mapGlow" cx="45%" cy="40%" r="55%">
@@ -354,109 +347,23 @@ export default function TerritorialMap() {
                   </feMerge>
                 </filter>
               </defs>
-
-              {/* Halo ambiant derrière la carte */}
               <circle cx="250" cy="280" r="260" fill="url(#mapGlow)" />
-
-              {/* ── Contour Maroc + Sahara Occidental ────── */}
-              <motion.path
-                d={MOROCCO_PATH}
-                fill="rgba(255,255,255,0.035)"
-                stroke="rgba(196,165,90,0.40)"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={inView ? { pathLength: 1, opacity: 1 } : {}}
-                transition={{ duration: 3.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              />
-
-              {/* ── Highlight côte Atlantique ─────────────── */}
-              <motion.path
-                d={ATLANTIC_COAST}
-                fill="none"
-                stroke="rgba(196,165,90,0.18)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                animate={inView ? { pathLength: 1 } : {}}
-                transition={{ duration: 2.8, delay: 1.0 }}
-              />
-
-              {/* ── Lignes autoroutières ─────────────────── */}
-              {drawn && HIGHWAYS.map((route, i) => {
+              <path d={MOROCCO_PATH} fill="rgba(196,165,90,0.06)" stroke="rgba(196,165,90,0.50)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+              <path d={ATLANTIC_COAST} fill="none" stroke="rgba(196,165,90,0.18)" strokeWidth="2.5" strokeLinecap="round" />
+              {HIGHWAYS.map((route, i) => {
                 const from = coords(route.from)
                 const to   = coords(route.to)
                 if (!from || !to) return null
-                return (
-                  <motion.line
-                    key={i}
-                    x1={from.x} y1={from.y}
-                    x2={to.x}   y2={to.y}
-                    stroke="rgba(196,165,90,0.60)"
-                    strokeWidth="1.5"
-                    filter="url(#routeGlow)"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: 0.7, delay: i * 0.3 }}
-                  />
-                )
+                return <line key={i} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="rgba(196,165,90,0.60)" strokeWidth="1.5" />
               })}
-
-              {/* ── Connexions maritimes / aériennes ────────── */}
-              {drawn && CONNECTIONS.map((conn, i) => (
-                <motion.g key={i}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.9 + i * 0.2 }}
-                >
-                  <line
-                    x1={conn.x1} y1={conn.y1}
-                    x2={conn.x2} y2={conn.y2}
-                    stroke={conn.type === "maritime" ? "rgba(120,180,255,0.45)" : "rgba(196,165,90,0.30)"}
-                    strokeWidth="1"
-                    strokeDasharray="4 3"
-                  />
-                  {conn.type === "maritime" && (
-                    <text
-                      x={conn.x2 + 5} y={conn.y2 - 3}
-                      fill="rgba(120,180,255,0.65)"
-                      fontSize="7"
-                      fontFamily="sans-serif"
-                      letterSpacing="1.2"
-                    >
-                      {conn.label}
-                    </text>
-                  )}
-                </motion.g>
-              ))}
-
-              {/* ── Marqueurs villes ─────────────────────── */}
               {CITIES.map((city) => (
-                <PulseMarker
-                  key={city.id}
-                  city={city}
-                  isActive={active === city.id}
-                  onClick={setActive}
-                  inView={inView}
-                />
+                <g key={city.id}>
+                  <circle cx={city.x} cy={city.y} r={3.5} fill="rgba(196,165,90,0.75)" />
+                  <text x={city.x + 11} y={city.y + 4} fill="rgba(80,80,80,0.55)" fontSize="8.5" fontFamily="sans-serif" letterSpacing="1.8">{city.name.toUpperCase()}</text>
+                </g>
               ))}
-
-              {/* ── Légende ──────────────────────────────── */}
-              {drawn && (
-                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}>
-                  <line x1="15" y1="542" x2="36" y2="542" stroke="rgba(196,165,90,0.60)" strokeWidth="1.5" />
-                  <text x="42" y="546" fill="rgba(240,237,230,0.38)" fontSize="7" fontFamily="sans-serif" letterSpacing="1.2">
-                    AUTOROUTE
-                  </text>
-                  <line x1="130" y1="542" x2="151" y2="542" stroke="rgba(120,180,255,0.45)" strokeWidth="1" strokeDasharray="4 3" />
-                  <text x="157" y="546" fill="rgba(240,237,230,0.38)" fontSize="7" fontFamily="sans-serif" letterSpacing="1.2">
-                    MARITIME / AÉRIEN
-                  </text>
-                </motion.g>
-              )}
             </svg>
-          </motion.div>
+          </div>
 
         </div>
       </div>

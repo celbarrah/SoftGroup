@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import MapSection from "./MapSection"
 
 /**
  * FooterCTA — Bannière CTA pleine largeur avant le footer
@@ -19,7 +20,7 @@ export default function FooterCTA() {
   return (
     <section
       ref={ref}
-      className="bg-white py-28 md:py-40 px-8 md:px-12 lg:px-20 overflow-hidden relative"
+      className="bg-white py-50 md:py-40 px-8 md:px-12 lg:px-20 overflow-hidden relative"
       style={{WebkitClipPath: 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)',
   clipPath: 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)'}}
       id="contact"
@@ -39,7 +40,7 @@ export default function FooterCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-sans text-[12px] tracking-[0.5em] uppercase text-gold font-bold mb-7"
+          className="font-sans text-[13px] tracking-[0.5em] uppercase text-gold font-bold mb-7"
         >
           Parlons de votre projet
         </motion.p>
@@ -51,9 +52,9 @@ export default function FooterCTA() {
           transition={{ duration: 0.85, delay: 0.1 }}
           className="font-serif text-4xl md:text-6xl lg:text-7xl text-neutral-800 font-light leading-[1.05] mb-7"
         >
-          Vous avez un projet
+          Vous avez un besoin
           <br />
-          <span className="italic text-gold">immobilier&nbsp;?</span>
+          <span className="italic text-gold">en location&nbsp;?</span>
         </motion.h2>
 
         {/* Subline */}
@@ -61,11 +62,10 @@ export default function FooterCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-sans text-[16px] text-muted leading-[1.9] max-w-xl mx-auto mb-14"
+          className="font-sans text-[19px] text-muted leading-[1.9] max-w-xl mx-auto mb-14"
         >
-          Nos équipes sont à votre disposition pour analyser vos besoins et
-          vous proposer les actifs les plus adaptés à votre activité,
-          en toute confidentialité.
+          Nos équipes vous accompagnent dans la recherche d'espaces adaptés
+          à vos exigences et aux enjeux de votre activité.
         </motion.p>
 
         {/* CTA buttons */}
@@ -82,6 +82,8 @@ export default function FooterCTA() {
             Planifier une visite
           </a>
         </motion.div>
+
+        <MapSection />
 
       </div>
     </section>

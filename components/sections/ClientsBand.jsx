@@ -4,76 +4,112 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 /**
- * ClientsBand — Infinite scrolling partner logos strip
- * ─────────────────────────────────────────────────────────
- * Double-copy marquee technique for seamless loop.
- * Dark Premium — fond noir, logos blanc pâle → or au survol.
- *
- * TO REPLACE PLACEHOLDERS:
- *  <Image src={`/logos/${logo.key}.svg`} alt={logo.name}
- *         width={120} height={36} className="object-contain
- *         brightness-0 invert opacity-20 hover:opacity-60
- *         transition-all duration-300" />
+ * ClientsBand — Logos partenaires défilants
+ * Logos locaux dans /public/logos/
+ * Grayscale par défaut → couleur réelle au survol
  */
 
-const LOGOS = [
-  { key: "geodis",     name: "GEODIS"        },
-  { key: "roche",      name: "Roche"         },
-  { key: "bollore",    name: "Bolloré"       },
-  { key: "kia",        name: "KIA"           },
-  { key: "stellantis", name: "Stellantis"    },
-  { key: "maersk",     name: "Maersk"        },
-  { key: "total",      name: "TotalEnergies" },
-  { key: "bmi",        name: "BMI Group"     },
-  { key: "areva",      name: "Orano"         },
-  { key: "decathlon",  name: "Decathlon"     },
+const CLIENTS = [
+  { name: "McDonald's",    file: "macdonald.webp"    },
+  { name: "Samsung",       file: "samsung.webp"      },
+  { name: "Bolloré",       file: "bolore.webp"       },
+  { name: "Colgate",       file: "Colgate.png"       },
+  { name: "IKEA",          file: "IKEA.png"          },
+  { name: "Shell",         file: "shell.jpg"         },
+  { name: "Huawei",        file: "Huawei.png"        },
+  { name: "KPMG",          file: "KPMG.png"          },
+  { name: "Nestlé",        file: "Nestle.webp"       },
+  { name: "P&G",           file: "P&G.webp"          },
+  { name: "Décathlon",     file: "Decathlon.jpg"     },
+  { name: "Dicastal",      file: "Dicastal.webp"     },
+  { name: "Pfizer",        file: "Pfizer.png"        },
+  { name: "Bayer",         file: "Bayer.png"         },
+  { name: "Nike",          file: "Nike.png"          },
+  { name: "OCP",           file: "OCP.jpg"           },
+  { name: "Allianz",       file: "Allianz.png"       },
+  { name: "Orange",        file: "Orange.png"        },
+  { name: "Stellantis",    file: "Stellantis.png"    },
+  { name: "Philip Morris", file: "philip-morris.png" },
+  { name: "Siemens",       file: "Siemens.jpg"       },
+  { name: "Pneurama",      file: "PNEURAMA.png"      },
+  { name: "Fiat",          file: "fiat.png"          },
+  { name: "Engie",         file: "Engie.png"         },
+  { name: "Aramex",        file: "aramex.jpg"        },
+  { name: "Unilever",      file: "unilever.png"      },
+  { name: "Veolia",        file: "veolia.png"        },
+  { name: "Colas",         file: "colas.png"         },
 ]
+
+function LogoItem({ client }) {
+  return (
+    <div className="flex-none flex items-center justify-center px-8 group cursor-default">
+      {/* Fixed-size container ensures every logo takes the same visual space */}
+      <div className="w-[130px] h-[52px] flex items-center justify-center">
+        <img
+          src={`/logos/${client.file}`}
+          alt={client.name}
+          className="max-w-full max-h-full w-auto h-auto object-contain grayscale-0 opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+          loading="lazy"
+          draggable="false"
+        />
+      </div>
+    </div>
+  )
+}
 
 export default function ClientsBand() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-5% 0px" })
 
-  return (
-    <section ref={ref} className="bg-white py-30 md:py-60 overflow-hidden border-y border-white/5" style={{ clipPath: 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)' }}>
+  /* Triple the list so the infinite scroll never shows a gap */
+  const tripled = [...CLIENTS, ...CLIENTS, ...CLIENTS]
 
-      {/* ── Section header ──────────────────────────── */}
+  return (
+    <section ref={ref} className="bg-white py-16 md:py-24 overflow-hidden border-y border-gray-100">
+
+      {/* Label */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7 }}
-        className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-12 flex flex-col items-center"
+        transition={{ duration: 0.6 }}
+        className="text-center mb-10"
       >
-        <p className="font-sans text-[18px] font-extrabold text-center tracking-[0.4em] uppercase text-gold mb-3">
+        <p className="font-sans text-[15px] font-bold tracking-[0.6em] uppercase text-gold">
           Nos Partenaires de Confiance
-        </p>
-        <p className="font-sans text-[16px] text-center text-neutral-700 max-w-2xl leading-[1.85]">
-          SOFTGROUP Immobilier accompagne les leaders nationaux et internationaux
-          dans leur stratégie d'implantation au Maroc. Un écosystème de partenaires
-          exigeants qui ont trouvé en SoftGroup une solution immobilière à la hauteur
-          de leurs ambitions.
         </p>
       </motion.div>
 
-      {/* ── Marquee track ───────────────────────────── */}
+      {/* Row 1 — scroll gauche → droite */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative"
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="relative overflow-hidden mb-5"
       >
-
-        {/* Scrolling container */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         <div className="flex animate-marquee">
-          {[...LOGOS, ...LOGOS].map((logo, i) => (
-            <div
-              key={`${logo.key}-${i}`}
-              className="flex-none px-10 flex items-center justify-center group cursor-default"
-            >
-              {/* Placeholder — replace with <Image> once logos are available */}
-              <span className="font-serif text-xl text-neutral-800 italic tracking-wide group-hover:text-gold/60 transition-colors duration-400 whitespace-nowrap select-none">
-                {logo.name}
-              </span>
-            </div>
+          {tripled.map((client, i) => (
+            <LogoItem key={`r1-${i}`} client={client} />
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Row 2 — scroll droite → gauche */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="relative overflow-hidden"
+      >
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div
+          className="flex"
+          style={{ animation: "marquee 40s linear infinite reverse" }}
+        >
+          {tripled.map((client, i) => (
+            <LogoItem key={`r2-${i}`} client={client} />
           ))}
         </div>
       </motion.div>
