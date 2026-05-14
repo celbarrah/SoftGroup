@@ -2,24 +2,16 @@ import Image from "next/image"
 import Link from "next/link"
 
 /**
- * Footer — Pied de page SOFTGROUP Immobilier
- * ─────────────────────────────────────────────────────────
- * Trois colonnes :
- *  Col 1 — Logo + Newsletter
- *  Col 2 — Contact & Coordonnées
- *  Col 3 — Navigation
- *
- * Dark Premium — fond noir absolu, accents or.
- * Server Component — pas de "use client" requis.
+ * Footer — Gold background, white text
  */
 
 const FOOTER_LINKS = [
-  { label: "Accueil",                href: "#"           },
-  { label: "Le Groupe",              href: "#groupe"     },
-  { label: "Portefeuille",           href: "#portefeuille"},
-  { label: "Gestion & Valorisation", href: "#gestion"    },
-  { label: "Actualités",             href: "#actualites" },
-  { label: "Nous Contacter",         href: "#contact"    },
+  { label: "Accueil",                href: "/"                     },
+  { label: "Le Groupe",              href: "/le-groupe"            },
+  { label: "Portefeuille",           href: "/portefeuille"         },
+  { label: "Gestion & Valorisation", href: "/gestion-valorisation" },
+  { label: "Actualités",             href: "#actualites"           },
+  { label: "Nous Contacter",         href: "#contact"              },
 ]
 
 const SOCIALS = [
@@ -60,29 +52,31 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#C4A55A] text-cream">
+    <footer className="bg-gold">
 
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 pt-20 pb-16">
-
-        {/* ── Main grid ─────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
 
-          {/* Col 1 — Marque + Newsletter ─────────────────── */}
+          {/* Col 1 — Brand + Newsletter */}
           <div>
-              <Image src={"/img/softgroupe.png"} height={200} width={200} alt="softgroupe" className="brightness-0 invert screen"/>
-            <div className="w-8 h-px bg-gold/50 mt-4 mb-9" />
+            {/* White logo on gold bg */}
+            <Image
+              src="/img/softgroupe.png"
+              height={200} width={200}
+              alt="Softgroup Immobilier"
+              className="brightness-0 invert"
+            />
+            <div className="w-8 h-px bg-white/40 mt-4 mb-9" />
 
-            {/* Tagline */}
-            <p className="font-sans text-[14px] font-bold text-cream leading-[1.8] mb-8 max-w-[240px]">
-              L'immobilier d'excellence au Maroc logistique, bureaux,
+            <p className="font-sans text-[14px] text-white/80 leading-[1.8] mb-8 max-w-[240px]">
+              L'immobilier d'excellence au Maroc — logistique, bureaux,
               résidentiel et retail depuis plus de 35 ans.
             </p>
 
-            {/* Newsletter */}
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-neutral-700 font-bold mb-2">
+            <p className="font-sans text-[9px] tracking-[0.28em] uppercase text-white/60 mb-2">
               Newsletter
             </p>
-            <p className="font-sans text-[13px] text-cream leading-[1.8] mb-5 max-w-[240px]">
+            <p className="font-sans text-[13px] text-white/60 leading-[1.8] mb-5 max-w-[240px]">
               Recevez nos dernières actualités et opportunités en avant-première.
             </p>
 
@@ -91,46 +85,44 @@ export default function Footer() {
                 type="email"
                 placeholder="Votre e-mail"
                 aria-label="Adresse e-mail pour la newsletter"
-                className="flex-1 min-w-0 bg-transparent border border-white text-cream text-xs px-4 py-3 placeholder:text-cream/80 focus:outline-none focus:border-gold transition-colors duration-200"
+                className="flex-1 min-w-0 bg-white/20 border border-white/30 text-white text-[13px] px-4 py-3 placeholder:text-white/50 focus:outline-none focus:border-white transition-colors duration-200"
               />
               <button
                 type="submit"
                 aria-label="S'abonner"
-                className="bg-neutral-600/20 text-noir font-sans text-sm font-medium px-4 py-3 hover:bg-gold-light transition-colors duration-300 flex-none"
+                className="bg-white text-gold font-sans text-sm font-semibold px-4 py-3 hover:bg-white/90 transition-colors duration-300 flex-none"
               >
                 →
               </button>
             </form>
           </div>
 
-          {/* Col 2 — Contact ──────────────────────────────── */}
+          {/* Col 2 — Contact */}
           <div>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-cream mb-7">
+            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-white/60 mb-7">
               Contact
             </p>
             <div className="flex flex-col gap-6">
-
               <div>
-                <p className="font-serif text-base text-neutral-700 mb-1">Casablanca</p>
-                <p className="font-sans text-[16px] text-cream leading-[1.8]">101 Boulevard de la Corniche, Casablanca</p>
+                <p className="font-serif text-base text-white mb-1">Casablanca</p>
+                <p className="font-sans text-[13px] text-white/70 leading-[1.8]">
+                  101 Boulevard de la Corniche, Casablanca
+                </p>
               </div>
-
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-700 mb-1">E-mail</p>
-                <a href="mailto:immo.contact@softgroup.ma" className="font-sans text-[16px] text-cream hover:text-neutral-700 transition-colors duration-200">
+                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-1">E-mail</p>
+                <a href="mailto:immo.contact@softgroup.ma" className="font-sans text-[13px] text-white/80 hover:text-white transition-colors duration-200">
                   immo.contact@softgroup.ma
                 </a>
               </div>
-
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-700 mb-1">Téléphone</p>
-                <a href="tel:+212661978104" className="font-sans text-[16px] text-cream hover:text-neutral-700 transition-colors duration-200">
+                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-1">Téléphone</p>
+                <a href="tel:+212661978104" className="font-sans text-[13px] text-white/80 hover:text-white transition-colors duration-200">
                   +212 661 978 104
                 </a>
               </div>
-
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-700 mb-3">Réseaux sociaux</p>
+                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-3">Réseaux sociaux</p>
                 <div className="flex items-center gap-4">
                   {SOCIALS.map(({ label, href, icon }) => (
                     <a
@@ -139,7 +131,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="text-neutral-600 hover:text-cream transition-colors duration-200"
+                      className="text-white/60 hover:text-white transition-colors duration-200"
                     >
                       {icon}
                     </a>
@@ -149,9 +141,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 3 — Navigation ───────────────────────────── */}
+          {/* Col 3 — Navigation */}
           <div>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-cream mb-7">
+            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-white/60 mb-7">
               Navigation
             </p>
             <nav className="flex flex-col gap-3.5">
@@ -159,7 +151,7 @@ export default function Footer() {
                 <Link
                   key={label}
                   href={href}
-                  className="font-serif text-base text-neutral-600 hover:text-cream transition-colors duration-200 w-fit"
+                  className="font-serif text-base text-white/75 hover:text-white transition-colors duration-200 w-fit"
                 >
                   {label}
                 </Link>
@@ -169,20 +161,20 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Barre inférieure ──────────────────────────────── */}
-      <div className="border-t border-white/6 px-8 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="font-sans text-[11px] text-neutral-700 tracking-wide">
+      {/* Bottom bar */}
+      <div className="border-t border-white/20 px-8 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p className="font-sans text-[11px] text-white/55 tracking-wide">
           © {year} Softgroup Immobilier. Tous droits réservés.
         </p>
         <div className="flex gap-6">
           {[
-            { label: "Mentions légales",              href: "#" },
-            { label: "Politique de confidentialité",  href: "#" },
+            { label: "Mentions légales",             href: "#" },
+            { label: "Politique de confidentialité", href: "#" },
           ].map(({ label, href }) => (
             <a
               key={label}
               href={href}
-              className="font-sans text-[11px] text-cream hover:text-cream/50 transition-colors duration-200 tracking-wide"
+              className="font-sans text-[11px] text-white/55 hover:text-white transition-colors duration-200 tracking-wide"
             >
               {label}
             </a>

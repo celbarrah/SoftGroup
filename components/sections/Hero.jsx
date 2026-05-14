@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { ArrowBigRight, ArrowRight, ChevronDown } from "lucide-react"
 
 /**
  * Hero — Full-screen opening section
@@ -53,25 +53,11 @@ export default function Hero() {
         {/* PLACEHOLDER — swap this entire div with a <video> or <Image>: */}
 
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="https://res.cloudinary.com/dofyrwzop/video/upload/q_auto/f_auto/v1778495364/amplifiles-video-20260511T094655_s4xuic.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dofyrwzop/video/upload/q_auto/f_auto/v1778754925/amplifiles-video-20260514T103205_mf7gew.mp4" type="video/mp4" />
         </video>
      
       {/* ── Dark overlay — opacity controlled by scroll ── */}
-      <motion.div
-        className="absolute inset-0 bg-black pointer-events-none"
-        style={{ opacity: overlayOp }}
-      />
-
-      {/* ── Decorative thin gold divider line ────────────
-          Animates in from the left after the page loads.
-      ── */}
-      <motion.div
-        initial={{ scaleX: 0, opacity: 0 }}
-        animate={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1.6, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-12 right-12 h-px bg-gold/25 origin-left pointer-events-none"
-        style={{ top: "calc(50% + 90px)" }}
-      />
+    
 
       {/* ── Parallax text block ───────────────────────── */}
       <motion.div
@@ -93,19 +79,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-4xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-4xl"
+          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl"
         >
-          Louer ? C'est penser
-          <br />
-          <span className="italic text-gold">SOFTGROUP.</span>
+          <span className="">Louer ? </span> <br /> <span className="font-extrabold">C'est penser </span>
+          
+          <span className="italic text-gold"><span className="font-bold">SOFT</span>GROUP.</span>
         </motion.h1>
 
-        {/* Subtitle */}
+        <div className="flex flex-col md:flex-row justify-start md:justify-between max-w-5xl w-full">
+          {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.95 }}
-          className="font-sans text-[16px] md:text-[22px] md:text-base text-white mt-7 max-w-2xl leading-7 tracking-wide"
+          className="font-sans text-[15px] md:text-[13px] md:text-base text-white mt-7 max-w-xl leading-7 tracking-wide"
         >
           Foncière d'exception, Softgroup est une référence de l'immobilier
           locatif au Maroc. Nous concevons, gérons et valorisons un portefeuille
@@ -120,18 +107,13 @@ export default function Hero() {
           className="mt-10 flex flex-wrap gap-4 justify-start md:justify-center"
         >
           <a
-            href="#portefeuille"
-            className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase text-white bg-gold/90 px-9 py-3.5 hover:bg-gold transition-all duration-300"
-          >
-            Découvrir nos actifs
-          </a>
-          <a
             href="#contact"
-            className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase text-white border border-white/35 px-9 py-3.5 hover:bg-white hover:text-dark transition-all duration-300"
+            className="font-sans text-[10px] h-10 flex justify-center items-center rounded-3xl  tracking-[0.3em] uppercase text-black bg-white border border-white/35 px-5 hover:bg-transparent hover:text-white transition-all duration-300"
           >
-            Nous contacter
+            Voir Nos Bien <ArrowRight size={10} />
           </a>
         </motion.div>
+        </div>
       </motion.div>
 
       {/* ── Stats bar ─────────────────────────────────── */}
@@ -148,12 +130,12 @@ export default function Hero() {
         {STATS.map(({ value, label }) => (
           <div
             key={label}
-            className="flex flex-col items-center py-5 px-4 gap-1.5 hover:bg-white/5 transition-colors duration-300 cursor-default"
+            className="flex flex-col items-center py-5 px-2 md:px-4 gap-1.5 hover:bg-white/5 transition-colors duration-300 cursor-default"
           >
             <span className="font-serif text-xl md:text-2xl text-white font-light tracking-wide">
               {value}
             </span>
-            <span className="font-sans text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-white/45">
+            <span className="font-sans text-[8px] md:text-[10px] tracking-[0.25em] uppercase text-white/45">
               {label}
             </span>
           </div>

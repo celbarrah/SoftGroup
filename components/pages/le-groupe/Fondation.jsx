@@ -21,7 +21,7 @@ export default function Fondation() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-[#080808] py-24 md:py-36 overflow-hidden" id="fondation">
+    <section ref={ref} className="bg-[#F5F3EF] py-24 md:py-36 overflow-hidden" id="fondation">
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -39,34 +39,35 @@ export default function Fondation() {
               </p>
             </div>
 
-            <h2 className="font-serif text-3xl md:text-5xl text-white font-light leading-[1.1] mb-6">
+            <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1] mb-6">
               Fondation
               <br />
               <span className="italic text-gold">Amine Kabbaj</span>
             </h2>
             <div className="w-10 h-px bg-gold/40 mb-8" />
 
-            <p className="font-sans text-[15px] text-white/50 leading-[1.9] mb-6">
+            <p className="font-sans text-[16px] text-neutral-600 leading-[1.9] mb-6">
               Créée en 1995 et reconnue d&apos;utilité publique en 2007, la Fondation Amine Kabbaj
               est une fondation marocaine spécialisée dans la construction et l&apos;aménagement
               d&apos;unités de soins médicaux et chirurgicaux sur l&apos;ensemble du territoire national.
             </p>
-            <p className="font-sans text-[15px] text-white/50 leading-[1.9] mb-10">
+            <p className="font-sans text-[16px] text-neutral-600 leading-[1.9] mb-10">
               Entièrement financée par la famille Kabbaj, la Fondation incarne une vision
               durable du mécénat au Maroc, fondée sur la transmission, la solidarité et
               l&apos;impact durable. L&apos;ensemble des infrastructures financées est intégralement
               remis au Ministère de la Santé et de la Protection sociale.
             </p>
 
-            <div className="grid grid-cols-3 gap-0 border border-white/8">
+            {/* Mini stats row */}
+            <div className="grid grid-cols-3 gap-0 border border-gray-200 bg-white">
               {[
-                { val: "1995",   lbl: "Création"         },
-                { val: "2007",   lbl: "Utilité publique"  },
-                { val: "+30 ans",lbl: "D'engagement"      },
+                { val: "1995",    lbl: "Création"          },
+                { val: "2007",    lbl: "Utilité publique"  },
+                { val: "+30 ans", lbl: "D'engagement"      },
               ].map((s, i) => (
-                <div key={s.lbl} className={`p-6 text-center ${i < 2 ? "border-r border-white/8" : ""}`}>
+                <div key={s.lbl} className={`p-6 text-center ${i < 2 ? "border-r border-gray-200" : ""}`}>
                   <p className="font-serif text-2xl text-gold font-light mb-1">{s.val}</p>
-                  <p className="font-sans text-[8px] tracking-[0.2em] uppercase text-white/30">{s.lbl}</p>
+                  <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-neutral-500">{s.lbl}</p>
                 </div>
               ))}
             </div>
@@ -78,7 +79,7 @@ export default function Fondation() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-white/30 mb-8">
+            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-neutral-400 mb-8">
               Réalisations emblématiques
             </p>
             <ul className="space-y-0">
@@ -88,12 +89,12 @@ export default function Fondation() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.35 + i * 0.07 }}
-                  className="flex items-start gap-4 py-4 border-b border-white/6 group"
+                  className="flex items-start gap-4 py-4 border-b border-gray-200 group hover:bg-white/60 transition-colors duration-200 px-2 -mx-2"
                 >
-                  <span className="font-sans text-[9px] text-gold/50 mt-0.5 flex-none tabular-nums">
+                  <span className="font-sans text-[9px] text-gold/60 mt-0.5 flex-none tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="font-sans text-[16px] text-white/50 leading-[1.7] group-hover:text-white/70 transition-colors duration-300">
+                  <p className="font-sans text-[16px] text-neutral-600 leading-[1.7] group-hover:text-neutral-800 transition-colors duration-300">
                     {item}
                   </p>
                 </motion.li>

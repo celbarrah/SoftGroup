@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip = no horizontal scroll but does NOT break position:sticky (unlike overflow:hidden) */
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -46,7 +46,7 @@ body {
   background-color: #C4A55A;
   color: #1A1A1A;
   font-family: var(--font-dm-sans), Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip preserves sticky positioning — overflow:hidden breaks it */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -72,7 +72,7 @@ body {
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 35s linear infinite;
+  animation: marquee 50s linear infinite;
   will-change: transform;
 }
 .animate-marquee:hover { animation-play-state: paused; }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -60,8 +60,25 @@ export default function Testimonials() {
   const inView  = useInView(ref, { once: true, margin: "-8% 0px" })
   const [current,   setCurrent]   = useState(0)
   const [direction, setDirection] = useState(1)
+  const pauseRef = useRef(false)
+
+  /* Auto-advance every 2.5 s, pause on manual interaction */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (pauseRef.current) return
+      setDirection(1)
+      setCurrent((p) => (p + 1) % TESTIMONIALS.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
+  const pauseAutoPlay = () => {
+    pauseRef.current = true
+    setTimeout(() => { pauseRef.current = false }, 6000)
+  }
 
   const go = (dir) => {
+    pauseAutoPlay()
     setDirection(dir)
     setCurrent((p) => (p + dir + TESTIMONIALS.length) % TESTIMONIALS.length)
   }
@@ -161,7 +178,7 @@ export default function Testimonials() {
             {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
+                onClick={() => { pauseAutoPlay(); setDirection(i > current ? 1 : -1); setCurrent(i) }}
                 aria-label={"Témoignage " + (i + 1)}
                 className={"transition-all duration-300 rounded-full " + (
                   i === current

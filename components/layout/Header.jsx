@@ -83,16 +83,16 @@ export default function Header() {
           />
         </a>
 
-        {/* ── Desktop nav ───────────────────────────── */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* ── Desktop nav  _ hide for now───────────────────────────── */}
+        {/* <nav className="hidden lg:flex items-center gap-8">
 
-          {/* Accueil */}
+          Accueil
           <a href="/" className={linkClass}>Accueil</a>
 
-          {/* Le Groupe */}
+          Le Groupe
           <a href="/le-groupe" className={linkClass}>Le Groupe</a>
 
-          {/* Portefeuille — avec dropdown */}
+          Portefeuille — avec dropdown
           <div
             ref={dropdownRef}
             className="relative"
@@ -141,12 +141,12 @@ export default function Header() {
             </AnimatePresence>
           </div>
 
-          {/* Gestion */}
+          Gestion
           <a href="/gestion-valorisation" className={linkClass}>Gestion</a>
 
-          {/* Actualités */}
+          Actualités
           <a href="#actualites" className={linkClass}>Actualités</a>
-        </nav>
+        </nav> */}
 
         {/* ── CTA + Hamburger ─────────────────────── */}
         <div className="flex items-center gap-5">
@@ -155,7 +155,7 @@ export default function Header() {
             animate={{ opacity: scrolled ? 1 : 0 }}
             transition={{ duration: 0.3 }}
             style={{ pointerEvents: scrolled ? "auto" : "none" }}
-            className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-gold border border-gold/40 px-5 py-2 hover:bg-gold hover:text-white transition-all duration-300 whitespace-nowrap"
+            className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-white bg-gold border border-gold/40 px-5 py-2 hover:scale-102 transition-all duration-300 whitespace-nowrap"
           >
             Planifier une visite
           </motion.a>

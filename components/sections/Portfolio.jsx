@@ -113,14 +113,14 @@ export default function Portfolio() {
               />
 
               {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/45 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500" />
 
               {/* GRADIENT */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
               {/* CONTENT */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="text-[9px] tracking-[0.3em] uppercase text-gold/70 mb-2">
+                <span className="text-[10px] font-extrabold tracking-[0.3em] uppercase text-gold/70 mb-2">
                   {seg.label}
                 </span>
                 <h3 className="text-2xl md:text-3xl text-white font-light leading-tight mb-3 transition-colors duration-300 group-hover:text-gold">

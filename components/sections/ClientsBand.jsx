@@ -61,8 +61,13 @@ export default function ClientsBand() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-5% 0px" })
 
-  /* Triple the list so the infinite scroll never shows a gap */
-  const tripled = [...CLIENTS, ...CLIENTS, ...CLIENTS]
+  /*
+   * Duplicate the list exactly once.
+   * The keyframe uses translateX(-50%), so 2 copies = one seamless loop.
+   * width:max-content is critical — without it the % is relative to the
+   * parent viewport, not the scroll content, and only ~10 logos appear.
+   */
+  const doubled = [...CLIENTS, ...CLIENTS]
 
   return (
     <section ref={ref} className="bg-white py-16 md:py-24 overflow-hidden border-y border-gray-100">
@@ -71,7 +76,7 @@ export default function ClientsBand() {
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="text-center mb-10"
       >
         <p className="font-sans text-[15px] font-bold tracking-[0.6em] uppercase text-gold">
@@ -88,8 +93,9 @@ export default function ClientsBand() {
       >
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-        <div className="flex animate-marquee">
-          {tripled.map((client, i) => (
+        {/* width:max-content makes translateX(-50%) reference the scroll content, not the parent */}
+        <div className="flex animate-marquee" style={{ width: "max-content" }}>
+          {doubled.map((client, i) => (
             <LogoItem key={`r1-${i}`} client={client} />
           ))}
         </div>
@@ -106,9 +112,9 @@ export default function ClientsBand() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         <div
           className="flex"
-          style={{ animation: "marquee 40s linear infinite reverse" }}
+          style={{ width: "max-content", animation: "marquee 45s linear infinite reverse" }}
         >
-          {tripled.map((client, i) => (
+          {doubled.map((client, i) => (
             <LogoItem key={`r2-${i}`} client={client} />
           ))}
         </div>

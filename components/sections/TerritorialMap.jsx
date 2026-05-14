@@ -5,24 +5,11 @@ import { motion, AnimatePresence, useInView } from "framer-motion"
 
 /**
  * TerritorialMap — Carte interactive du Maroc
- * ─────────────────────────────────────────────────────────
- * SVG réel du Maroc (incluant Sahara Occidental) tracé à partir
- * de coordonnées géographiques réelles.
- *
- * Système de coordonnées :
- *   x = (lon + 17.1) × 30.1 + 15   [lon : -17.1°W → -1.5°W → x : 15→485]
- *   y = (36.0 - lat) × 34.6 + 15   [lat : 36°N → 20.7°N → y : 15→545]
- *
- * ViewBox : "0 0 500 560"
- *
- * Villes calculées :
- *   Tanger     35.78°N -5.81°W → (350, 25)
- *   Kénitra    34.26°N -6.59°W → (331, 75)
- *   Casablanca 33.59°N -7.61°W → (300, 98)
- *   Agadir     30.43°N -9.60°W → (241, 208)
+ * SVG réel du Maroc avec marqueurs animés.
+ * Les villes défilent automatiquement toutes les 2 secondes.
+ * Cliquer sur un onglet ou un marqueur pause l'auto-cycle 6s puis reprend.
  */
 
-/* ── City data ─────────────────────────────────────────── */
 const CITIES = [
   {
     id:       "casablanca",
@@ -62,15 +49,6 @@ const CITIES = [
   },
 ]
 
-/*
- * Frontière du Maroc + Sahara Occidental — coordonnées réelles
- * Tracé dans le sens horaire depuis le coin NE (Saidia, frontière algérienne)
- *
- *  NE  → Côte Méditerranée (est → ouest) → Cap Spartel
- *  SW  → Côte Atlantique (nord → sud) → Lagouira
- *  E   → Frontière Mauritanie (ouest → est)
- *  N   → Frontière Algérie (sud → nord) → retour NE
- */
 const MOROCCO_PATH = `
   M 463,46
   C 450,44 435,42 411,41
@@ -107,7 +85,6 @@ const MOROCCO_PATH = `
   Z
 `
 
-/* Côte Atlantique isolée pour le highlight doré */
 const ATLANTIC_COAST = `
   M 351,22 L 348,33 L 344,43
   C 338,57 333,66 331,75
@@ -118,26 +95,20 @@ const ATLANTIC_COAST = `
   L 148,294 L 96,355 L 52,416 L 15,520
 `
 
-/* Routes autoroutières entre villes */
 const HIGHWAYS = [
-  { from: "tanger",     to: "kenitra",    label: "A1"  },
-  { from: "kenitra",    to: "casablanca", label: "A1"  },
-  { from: "casablanca", to: "agadir",     label: "A7"  },
+  { from: "tanger",     to: "kenitra",    label: "A1" },
+  { from: "kenitra",    to: "casablanca", label: "A1" },
+  { from: "casablanca", to: "agadir",     label: "A7" },
 ]
 
-/* Connexions maritimes / aériennes (pointillés) */
-const CONNECTIONS = [
-  { x1: 350, y1: 25,  x2: 350, y2: -15, type: "maritime", label: "EUROPE" },
-  { x1: 300, y1: 98,  x2: 332, y2: 76,  type: "airport",  label: "CMN"    },
-  { x1: 241, y1: 208, x2: 210, y2: 194, type: "airport",  label: "AGA"    },
-]
+const CITY_IDS = CITIES.map(c => c.id)
+const GOLD = "#C4A55A"
 
 /* ── Marqueur pulsant ─────────────────────────────────── */
-function PulseMarker({ city, isActive, onClick, inView }) {
-  const GOLD = "#C4A55A"
+function PulseMarker({ city, isActive, onClick, drawn }) {
   return (
     <g onClick={() => onClick(city.id)} style={{ cursor: "pointer" }}>
-      {inView && (
+      {drawn && (
         <>
           <motion.circle
             cx={city.x} cy={city.y} r={14}
@@ -157,14 +128,12 @@ function PulseMarker({ city, isActive, onClick, inView }) {
           />
         </>
       )}
-      {/* Point central */}
       <circle
         cx={city.x} cy={city.y}
         r={isActive ? 5.5 : 3.5}
         fill={isActive ? GOLD : "rgba(196,165,90,0.75)"}
         style={{ transition: "r 0.3s, fill 0.3s" }}
       />
-      {/* Label ville */}
       <text
         x={city.x + 11} y={city.y + 4}
         fill={isActive ? "rgba(30,30,30,0.9)" : "rgba(80,80,80,0.55)"}
@@ -184,28 +153,28 @@ function CityInfoPanel({ city }) {
   return (
     <motion.div
       key={city.id}
-      initial={{ opacity: 0, x: -20 }}
+      initial={{ opacity: 0, x: -16 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 20 }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      exit={{ opacity: 0, x: 16 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <p className="font-sans text-[11px] tracking-[0.4em] uppercase text-gold mb-3">
+        <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold mb-3">
           {city.subtitle}
         </p>
-        <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light mb-5 leading-tight">
+        <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light mb-4 leading-tight">
           {city.name}
         </h3>
         <div className="w-8 h-px bg-gold mb-6" />
 
         <div className="mb-5">
-          <p className="font-sans text-[8px] tracking-[0.25em] uppercase text-neutral-400 mb-3">
+          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-3">
             Segments
           </p>
           <div className="flex flex-wrap gap-2">
             {city.segments.map((s) => (
-              <span key={s} className="font-sans text-[11px] tracking-[0.1em] text-neutral-600 bg-gray-100 border border-gray-200 px-3 py-1.5">
+              <span key={s} className="font-sans text-[10px] tracking-[0.08em] text-neutral-600 bg-gray-100 border border-gray-200 px-3 py-1.5">
                 {s}
               </span>
             ))}
@@ -213,18 +182,18 @@ function CityInfoPanel({ city }) {
         </div>
 
         <div className="mb-5">
-          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
+          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Connexions
           </p>
           {city.access.map((a) => (
-            <p key={a} className="font-sans text-xs text-neutral-500 leading-relaxed">
+            <p key={a} className="font-sans text-[14px] text-neutral-500 leading-relaxed">
               ← {a}
             </p>
           ))}
         </div>
 
         <div>
-          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
+          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Zones
           </p>
           <p className="font-sans text-[13px] text-neutral-500 leading-relaxed">
@@ -235,7 +204,7 @@ function CityInfoPanel({ city }) {
 
       <a
         href="#contact"
-        className="inline-block mt-8 font-sans text-[11px] tracking-[0.25em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 w-fit"
+        className="inline-block mt-8 font-sans text-[9px] tracking-[0.25em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 w-fit"
       >
         Découvrir les actifs →
       </a>
@@ -249,7 +218,9 @@ export default function TerritorialMap() {
   const inView = useInView(ref, { once: true, margin: "-5% 0px" })
   const [active, setActive] = useState("casablanca")
   const [drawn,  setDrawn]  = useState(false)
+  const pauseRef = useRef(false)
 
+  /* Animate map paths after section enters view */
   useEffect(() => {
     if (inView) {
       const t = setTimeout(() => setDrawn(true), 600)
@@ -257,20 +228,39 @@ export default function TerritorialMap() {
     }
   }, [inView])
 
-  const activeCity = CITIES.find((c) => c.id === active)
-  const coords     = (id) => CITIES.find((c) => c.id === id)
+  /* Auto-cycle cities every 2 seconds */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (pauseRef.current) return
+      setActive(prev => {
+        const idx = CITY_IDS.indexOf(prev)
+        return CITY_IDS[(idx + 1) % CITY_IDS.length]
+      })
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
+  /* Manual select — pause auto-cycle for 6 s */
+  const handleSelect = (id) => {
+    setActive(id)
+    pauseRef.current = true
+    setTimeout(() => { pauseRef.current = false }, 6000)
+  }
+
+  const activeCity = CITIES.find(c => c.id === active)
+  const coords     = (id) => CITIES.find(c => c.id === id)
 
   return (
     <section ref={ref} className="bg-white py-24 md:py-32 overflow-hidden" id="empreinte">
 
-      {/* ── En-tête de section ──────────────────────────── */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-14"
       >
-        <p className="font-sans text-[14px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
+        <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
           Présence Nationale
         </p>
         <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
@@ -284,25 +274,25 @@ export default function TerritorialMap() {
         </p>
       </motion.div>
 
-      {/* ── Layout carte + panneau info ──────────────────── */}
+      {/* Layout */}
       <div className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14 items-center">
 
-          {/* ── Gauche : sélecteur + info ──────────────────── */}
+          {/* Left: tabs + info panel */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="lg:min-h-[480px] flex flex-col"
+            className="lg:min-h-[500px] flex flex-col"
           >
-            {/* Onglets villes */}
+            {/* City tabs */}
             <div className="flex flex-wrap gap-2 mb-8">
               {CITIES.map((city) => (
                 <button
                   key={city.id}
-                  onClick={() => setActive(city.id)}
+                  onClick={() => handleSelect(city.id)}
                   className={[
-                    "font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
+                    "font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
                     active === city.id
                       ? "bg-gold text-white border-gold"
                       : "bg-transparent text-neutral-400 border-neutral-200 hover:border-gold/50 hover:text-neutral-700",
@@ -313,57 +303,85 @@ export default function TerritorialMap() {
               ))}
             </div>
 
-            {/* Carte info */}
-            <div className="flex-1 bg-gray-50 border border-gray-100 p-8">
+            {/* Info card */}
+            <div className="flex-1 bg-gray-50 border border-gray-100 p-8 lg:p-10">
               <AnimatePresence mode="wait">
                 {activeCity && <CityInfoPanel key={active} city={activeCity} />}
               </AnimatePresence>
             </div>
           </motion.div>
 
-          <div >
+          {/* Right: interactive SVG Morocco map */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.1, delay: 0.2 }}
+            className="relative flex items-center justify-center"
+          >
             <svg
               viewBox="0 0 500 560"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
+              className="w-full max-w-[480px]"
+              aria-label="Carte du Maroc — présence territoriale Softgroup"
             >
               <defs>
                 <radialGradient id="mapGlow" cx="45%" cy="40%" r="55%">
-                  <stop offset="0%"   stopColor="#C4A55A" stopOpacity="0.08" />
+                  <stop offset="0%"   stopColor={GOLD} stopOpacity="0.10" />
                   <stop offset="100%" stopColor="transparent" stopOpacity="0" />
                 </radialGradient>
-                <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <filter id="routeGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="2" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
               </defs>
+
+              {/* Background ambient glow */}
               <circle cx="250" cy="280" r="260" fill="url(#mapGlow)" />
-              <path d={MOROCCO_PATH} fill="rgba(196,165,90,0.06)" stroke="rgba(196,165,90,0.50)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
-              <path d={ATLANTIC_COAST} fill="none" stroke="rgba(196,165,90,0.18)" strokeWidth="2.5" strokeLinecap="round" />
+
+              {/* Morocco territory */}
+              <path
+                d={MOROCCO_PATH}
+                fill="rgba(196,165,90,0.07)"
+                stroke="rgba(196,165,90,0.55)"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+
+              {/* Atlantic coast accent */}
+              <path
+                d={ATLANTIC_COAST}
+                fill="none"
+                stroke="rgba(196,165,90,0.25)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+
+              {/* Highway routes */}
               {HIGHWAYS.map((route, i) => {
                 const from = coords(route.from)
                 const to   = coords(route.to)
                 if (!from || !to) return null
-                return <line key={i} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="rgba(196,165,90,0.60)" strokeWidth="1.5" />
+                return (
+                  <line
+                    key={i}
+                    x1={from.x} y1={from.y}
+                    x2={to.x}   y2={to.y}
+                    stroke="rgba(196,165,90,0.50)"
+                    strokeWidth="1.5"
+                    strokeDasharray="4 3"
+                  />
+                )
               })}
+
+              {/* City markers with pulse animation */}
               {CITIES.map((city) => (
-                <g key={city.id}>
-                  <circle cx={city.x} cy={city.y} r={3.5} fill="rgba(196,165,90,0.75)" />
-                  <text x={city.x + 11} y={city.y + 4} fill="rgba(80,80,80,0.55)" fontSize="8.5" fontFamily="sans-serif" letterSpacing="1.8">{city.name.toUpperCase()}</text>
-                </g>
+                <PulseMarker
+                  key={city.id}
+                  city={city}
+                  isActive={active === city.id}
+                  onClick={handleSelect}
+                  drawn={drawn}
+                />
               ))}
             </svg>
-          </div>
+          </motion.div>
 
         </div>
       </div>
