@@ -121,7 +121,7 @@ export default function Hero() {
         Three key stats displayed at the very bottom of the hero,
         separated by thin vertical dividers.
       */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.4 }}
@@ -140,7 +140,7 @@ export default function Hero() {
             </span>
           </div>
         ))}
-      </motion.div>
+      </motion.div> */}
 
       {/* ── Scroll indicator ─────────────────────────── */}
       {/* ── Scroll indicator ──────────────────────────── */}

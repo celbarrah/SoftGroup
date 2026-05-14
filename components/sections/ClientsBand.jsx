@@ -102,7 +102,7 @@ export default function ClientsBand() {
       </motion.div>
 
       {/* Row 2 — scroll droite → gauche */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -118,7 +118,7 @@ export default function ClientsBand() {
             <LogoItem key={`r2-${i}`} client={client} />
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
 
     </section>
   )

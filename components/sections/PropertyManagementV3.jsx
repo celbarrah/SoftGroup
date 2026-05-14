@@ -126,16 +126,16 @@ export default function PropertyManagementV3() {
                     style={{ height: `${HEADER_H}px` }}
                   >
                     <span className="w-2 h-2 rounded-full bg-gold flex-none" />
-                    <span className="font-sans text-[16px] text-neutral-700 tracking-[0.005em]">
+                    <span className="font-sans text-[20px] font-bold text-neutral-700 tracking-[0.005em]">
                       {svc.title}
                     </span>
                   </div>
 
                   {/* ── Card body ── */}
-                  <div className="grid grid-cols-1 h-[600px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
+                  <div className="grid grid-cols-1 h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
 
                     {/* Icon + description */}
-                    <div className="p-8 md:p-10 flex flex-col justify-end">
+                    <div className="p-8 md:p-10 flex flex-col justify-center">
                       <div className="w-14 h-14 bg-[#EAE5DC] flex items-center justify-center mb-6">
                         <Icon
                           size={22}
@@ -143,18 +143,18 @@ export default function PropertyManagementV3() {
                           className="text-neutral-600"
                         />
                       </div>
-                      <p className="font-sans text-[14px] text-neutral-500 leading-[1.88]">
+                      <p className="font-sans text-[20px] text-neutral-500 leading-[1.88]">
                         {svc.desc}
                       </p>
                     </div>
 
                     {/* Photo */}
-                    <div className="relative h-[280px] sm:h-auto min-h-[260px]">
+                    <div className="relative">
                       <Image
                         src={svc.image}
                         alt={svc.title}
                         fill
-                        className="object-center"
+                        className="object-center bg-center"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                       />
                     </div>

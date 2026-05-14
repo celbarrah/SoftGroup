@@ -66,7 +66,7 @@ export default function IntroImpact() {
           {/* Subtle right gradient to blend into white right column */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 hidden lg:block" />
 
-          {/* Floating badge */}
+          {/* Floating badge
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -75,7 +75,7 @@ export default function IntroImpact() {
           >
             <p className="font-sans text-[8px] tracking-[0.4em] uppercase text-gold mb-1">Notre Engagement</p>
             <p className="font-serif text-base text-neutral-800 font-light">+35 ans d&apos;expertise</p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* ── Right: stats + text ────────────────────────── */}
