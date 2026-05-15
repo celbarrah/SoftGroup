@@ -50,7 +50,6 @@ function CompanyLogo({ image, company }) {
           width: "auto",
           maxWidth: 200,
           objectFit: "contain",
-          /* Remove white logo backgrounds on light card surface */
           mixBlendMode: "multiply",
           display: "block",
         }}
@@ -105,8 +104,8 @@ export default function Testimonials() {
             <p className="font-sans text-[14px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
               Témoignages de Partenaires
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
-              <span className="italic text-gold">La satisfaction au cœur<br />de nos collaborations</span>
+            <h2 className="font-serif text-xl md:text-3xl text-neutral-800 font-light leading-[1.1]">
+              <span className="italic text-gold">Notre Meilleure Référence par La satisfaction <br></br> au cœur de nos collaborations</span>
             </h2>
           </div>
 

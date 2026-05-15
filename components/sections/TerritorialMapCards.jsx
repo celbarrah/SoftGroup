@@ -304,6 +304,20 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
                 >
                   {city.segments}
                 </p>
+                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.6)", flexShrink: 0 }} />
+                  <p
+                    style={{
+                      fontFamily:    "var(--font-dm-sans, sans-serif)",
+                      fontSize:      10,
+                      color:         "rgba(255,255,255,0.32)",
+                      margin:        0,
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    {city.zones}
+                  </p>
+                </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.6)", flexShrink: 0 }} />
                   <p
@@ -359,7 +373,7 @@ export default function TerritorialMapCards() {
             </h2>
           </div>
           <p className="font-sans text-[16px] text-neutral-400 max-w-3xl leading-relaxed md:text-right">
-            Implantés dans les 4 pôles économiques stratégiques du Maroc, au plus près de vos besoins.
+            Implantés dans les 4 pôles économiques stratégiques du Maroc, au plus près de vos besoins
           </p>
         </motion.div>
 
@@ -421,15 +435,15 @@ export default function TerritorialMapCards() {
                 <div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: 3, background: "var(--color-gold, #C4A55A)", opacity: isOpen ? 1 : 0, transition: "opacity 0.3s ease" }} />
                 <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "16px 22px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 9, letterSpacing: "0.3em", color: "var(--color-gold, #C4A55A)", textTransform: "uppercase" }}>{city.num}</span>
-                    {isOpen && <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 9, letterSpacing: "0.22em", color: "rgba(196,165,90,0.6)", textTransform: "uppercase" }}>· {city.tagline}</span>}
+                    <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, letterSpacing: "0.3em", color: "var(--color-gold, #C4A55A)", textTransform: "uppercase" }}>{city.num}</span>
+                    {isOpen && <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, letterSpacing: "0.22em", color: "rgba(196,165,90,0.6)", textTransform: "uppercase" }}>· {city.tagline}</span>}
                   </div>
                   <h3 style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: 28, fontWeight: 300, color: "#fff", margin: 0, marginBottom: isOpen ? 12 : 0 }}>{city.name}</h3>
                   {isOpen && (
                     <>
                       <div style={{ width: 30, height: 1, background: "rgba(196,165,90,0.4)", marginBottom: 10 }} />
                       <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, color: "rgba(255,255,255,0.5)", margin: 0, marginBottom: 4, lineHeight: 1.6 }}>{city.segments}</p>
-                      <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 10, color: "rgba(255,255,255,0.3)", margin: 0 }}>{city.access}</p>
+                      <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, color: "rgba(255,255,255,0.3)", margin: 0 }}>{city.access}</p>
                     </>
                   )}
                 </div>
