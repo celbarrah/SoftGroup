@@ -10,6 +10,7 @@ import PropertyManagementV2    from "@/components/sections/PropertyManagementV2"
 import PropertyManagementV3    from "@/components/sections/PropertyManagementV3"
 import TerritorialMap          from "@/components/sections/TerritorialMap"
 import TerritorialMapPremium   from "@/components/sections/TerritorialMapPremium"
+import TerritorialMapCards     from "@/components/sections/TerritorialMapCards"
 import Testimonials            from "@/components/sections/Testimonials"
 import FooterCTA               from "@/components/sections/FooterCTA"
 import Footer                  from "@/components/layout/Footer"
@@ -40,8 +41,9 @@ export default function Page() {
       {false && <PropertyManagementV2 />}
       {false && <PropertyManagement />}
 
-      {/* 8. Carte interactive du Maroc */}
-      <TerritorialMap />
+      {/* 8. Cartes villes — hover expand animation */}
+      <TerritorialMapCards />
+      {false && <TerritorialMap />}
       {false && <TerritorialMapPremium />}
 
       {/* 9. Témoignages clients — carousel auto-advance */}

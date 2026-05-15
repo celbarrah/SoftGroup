@@ -24,35 +24,35 @@ const SERVICES = [
     title: "Maintenance & assistance 24h/24 et 7j/7",
     icon:  Wrench,
     desc:  "Une réactivité sans faille et une assistance permanente pour garantir la continuité absolue de vos opérations, de jour comme de nuit.",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504245/bureaux_et_centre_d_affaires_yoldrb.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778857935/MAINTENANCE_1_io0qxp.jpg",
   },
   {
     id:    "securite",
     title: "Gestion technique complète",
     icon:  Shield,
     desc:  "Prise en charge de vos infrastructures et équipements pour garantir leur fiabilité et leur performance continue. ",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855533/TECHNIQUE_dijci6.jpg",
   },
   {
     id:    "administratif",
     title: "Sécurité renforcée des biens et des occupants",
     icon:  FileText,
     desc:  "Une protection proactive pour sécuriser les personnes, les biens et les opérations en permanence.",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504245/bureaux_et_centre_d_affaires_yoldrb.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855382/SECURITE_c8i7ks.jpg",
   },
   {
     id:    "reporting",
     title: "Optimisation & valorisation des espaces",
     icon:  BarChart3,
     desc:  "Une mise en valeur paysagère et architecturale pour une expérience usager d’exception",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855398/OPTIMI_PAYSG_me7aag.jpg",
   },
   {
     id:    "Flexibilisation ",
     title: "Flexibilisation des baux & solutions sur mesure ",
     icon:  ArrowLeftRight,
     desc:  "Une agilité contractuelle pour s’adapter à vos besoins évolutifs et soutenir votre croissance.",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/t_OPT/FLEX_BAUX_ilqw8f.jpg",
   }
 ]
 
@@ -72,7 +72,7 @@ export default function PropertyManagementV3() {
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="font-sans text-[13px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5"
+              className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5"
             >
               SERVICE APRÈS-LOCATION
             </motion.p>
@@ -132,7 +132,7 @@ export default function PropertyManagementV3() {
                   </div>
 
                   {/* ── Card body ── */}
-                  <div className="grid grid-cols-1 h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
+                  <div className="grid grid-cols-1 min-h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
 
                     {/* Icon + description */}
                     <div className="p-8 md:p-10 flex flex-col justify-center">
@@ -149,12 +149,12 @@ export default function PropertyManagementV3() {
                     </div>
 
                     {/* Photo */}
-                    <div className="relative">
+                    <div className="relative h-[300px] md:h-auto">
                       <Image
                         src={svc.image}
                         alt={svc.title}
                         fill
-                        className="object-center bg-center"
+                        className="object-cover bg-center h-[200px]"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                       />
                     </div>

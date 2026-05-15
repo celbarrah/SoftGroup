@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowBigRight, ArrowRight, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 /**
  * Hero — Full-screen opening section
@@ -32,6 +32,7 @@ const STATS = [
 
 export default function Hero() {
   const ref = useRef(null)
+  const [videoReady, setVideoReady] = useState(false)
 
   /* ── Parallax scroll transforms ─────────────────────── */
   const { scrollYProgress } = useScroll({
@@ -52,7 +53,22 @@ export default function Hero() {
       
         {/* PLACEHOLDER — swap this entire div with a <video> or <Image>: */}
 
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+        {/* Poster shown until video is ready — eliminates the initial black/glitch frame */}
+        <div
+          className="absolute inset-0 bg-neutral-900 transition-opacity duration-700"
+          style={{ opacity: videoReady ? 0 : 1, zIndex: 1 }}
+        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="https://res.cloudinary.com/dofyrwzop/video/upload/so_3,f_jpg,q_auto/v1778754925/amplifiles-video-20260514T103205_mf7gew.jpg"
+          onCanPlay={() => setVideoReady(true)}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+          style={{ opacity: videoReady ? 1 : 0 }}
+        >
           <source src="https://res.cloudinary.com/dofyrwzop/video/upload/q_auto/f_auto/v1778754925/amplifiles-video-20260514T103205_mf7gew.mp4" type="video/mp4" />
         </video>
      
@@ -99,20 +115,6 @@ export default function Hero() {
           d'actifs premium logistique, bureaux, résidentiel, commercial et terrains.
         </motion.p>
 
-        {/* Dual CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.15 }}
-          className="mt-10 flex flex-wrap gap-4 justify-start md:justify-center"
-        >
-          <a
-            href="#contact"
-            className="font-sans text-[10px] h-10 flex justify-center items-center rounded-3xl  tracking-[0.3em] uppercase text-black bg-white border border-white/35 px-5 hover:bg-transparent hover:text-white transition-all duration-300"
-          >
-            Voir Nos Bien <ArrowRight size={10} />
-          </a>
-        </motion.div>
         </div>
       </motion.div>
 

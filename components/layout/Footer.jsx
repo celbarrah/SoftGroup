@@ -73,7 +73,7 @@ export default function Footer() {
               résidentiel et retail depuis plus de 35 ans.
             </p>
 
-            <p className="font-sans text-[9px] tracking-[0.28em] uppercase text-white/60 mb-2">
+            <p className="font-sans text-[13px] font-bold tracking-[0.28em] uppercase text-white/60 mb-2">
               Newsletter
             </p>
             <p className="font-sans text-[13px] text-white/60 leading-[1.8] mb-5 max-w-[240px]">
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Col 2 — Contact */}
           <div>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-white/60 mb-7">
+            <p className="font-sans text-[13px] font-bold tracking-[0.28em] uppercase text-white/60 mb-7">
               Contact
             </p>
             <div className="flex flex-col gap-6">
@@ -110,19 +110,19 @@ export default function Footer() {
                 </p>
               </div>
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-1">E-mail</p>
+                <p className="font-sans text-[13px] font-bold tracking-[0.2em] uppercase text-white/50 mb-1">E-mail</p>
                 <a href="mailto:immo.contact@softgroup.ma" className="font-sans text-[13px] text-white/80 hover:text-white transition-colors duration-200">
                   immo.contact@softgroup.ma
                 </a>
               </div>
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-1">Téléphone</p>
+                <p className="font-sans text-[13px] font-bold tracking-[0.2em] uppercase text-white/50 mb-1">Téléphone</p>
                 <a href="tel:+212661978104" className="font-sans text-[13px] text-white/80 hover:text-white transition-colors duration-200">
                   +212 661 978 104
                 </a>
               </div>
               <div>
-                <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/50 mb-3">Réseaux sociaux</p>
+                <p className="font-sans text-[13px] font-bold tracking-[0.2em] uppercase text-white/50 mb-3">Réseaux sociaux</p>
                 <div className="flex items-center gap-4">
                   {SOCIALS.map(({ label, href, icon }) => (
                     <a
@@ -143,7 +143,7 @@ export default function Footer() {
 
           {/* Col 3 — Navigation */}
           <div>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-white/60 mb-7">
+            <p className="font-sans text-[12px] font-bold tracking-[0.28em] uppercase text-white/60 mb-7">
               Navigation
             </p>
             <nav className="flex flex-col gap-3.5">

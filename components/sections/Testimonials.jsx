@@ -3,7 +3,6 @@
 import { useRef, useState, useEffect } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
 /**
  * Testimonials — Carousel premium avec logos entreprises — Light Theme
  */
@@ -12,46 +11,51 @@ const TESTIMONIALS = [
   {
     company: "GEODIS",
     domain:  "geodis.com",
-    role:    "Partenaire Logistique International",
+    image: "/logos/GEODIS.jpg",
+    role:    "Partenaire logistique",
     quote:   "Nous considérons SOFTGROUP comme un partenaire. Nous bénéficions de bâtiments aux normes internationales en plus d'entretenir des relations privilégiées qui ont su nous accompagner sur nos différents développements.",
   },
   {
-    company: "Roche",
-    domain:  "roche.com",
-    role:    "Implantation Résidentielle & Bureaux",
-    quote:   "J'ai choisi cette résidence pour tous les services qu'elle incluait, les espaces sont confortables et agréables à vivre. De manière générale, on s'y sent très bien.",
-  },
-  {
     company: "Bolloré",
-    domain:  "bollore.com",
-    role:    "Partenaire Industriel — +10 ans",
+    domain:  "",
+    image: "/logos/bolore.webp",
+    role:    "Partenaire industriel",
     quote:   "C'est un partenariat qui dure depuis plus de 10 ans. On cherchait des industriels qui arrivaient à comprendre nos besoins. Nous sommes très satisfaits de cette excellente prestation de service.",
   },
   {
+    company: "Roche",
+    image: "/logos/Roche.jpg",
+    domain:  "roche.com",
+    role:    "Occupant résidentiel",
+    quote:   "J'ai choisi cette résidence pour tous les services qu'elle incluait, les espaces sont confortables et agréables à vivre. De manière générale, on s'y sent très bien.",
+  },
+  {
     company: "KIA",
+    image: "/logos/kia.png",
     domain:  "kia.com",
-    role:    "Locataire SOFTPARK",
+    role:    "Partenaire logistique",
     quote:   "Nous avons choisi les locaux de SOFTPARK pour leur fonctionnalité. La qualité de notre relation avec SOFTGROUP est excellente, la qualité du service est au rendez-vous. Nous sommes ravis du partenariat.",
   },
 ]
 
-function CompanyLogo({ domain, company }) {
-  const [failed, setFailed] = useState(false)
-  if (failed) {
-    return (
-      <span className="font-serif text-xl italic text-neutral-700">
-        {company}
-      </span>
-    )
-  }
+function CompanyLogo({ image, company }) {
   return (
-    <img
-      src={"https://logo.clearbit.com/" + domain}
-      alt={company}
-      onError={() => setFailed(true)}
-      className="h-10 w-auto object-contain grayscale opacity-60"
-      loading="lazy"
-    />
+    <div className="flex items-center">
+      <img
+        src={image}
+        alt={company}
+        loading="lazy"
+        style={{
+          height: 72,
+          width: "auto",
+          maxWidth: 200,
+          objectFit: "contain",
+          /* Remove white logo backgrounds on light card surface */
+          mixBlendMode: "multiply",
+          display: "block",
+        }}
+      />
+    </div>
   )
 }
 
@@ -68,7 +72,7 @@ export default function Testimonials() {
       if (pauseRef.current) return
       setDirection(1)
       setCurrent((p) => (p + 1) % TESTIMONIALS.length)
-    }, 2500)
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
@@ -99,12 +103,10 @@ export default function Testimonials() {
         >
           <div>
             <p className="font-sans text-[14px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
-              Ils Nous Font Confiance
+              Témoignages de Partenaires
             </p>
             <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
-              La Confiance,
-              <br />
-              <span className="italic text-gold">Notre Meilleure Référence</span>
+              <span className="italic text-gold">La satisfaction au cœur<br />de nos collaborations</span>
             </h2>
           </div>
 
@@ -146,17 +148,12 @@ export default function Testimonials() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start bg-white/20 shadow rounded-2xl p-10 md:p-14"
             >
-              {/* Left: logo + info */}
-              <div className="flex flex-col gap-5">
-                <CompanyLogo domain={t.domain} company={t.company} />
-                <div className="mt-2">
-                  <p className="font-sans text-[10px] font-bold tracking-[0.3em] uppercase text-gold mb-1">
-                    {t.company}
-                  </p>
-                  <p className="font-sans text-[10px] text-neutral-500 tracking-[0.1em] leading-relaxed">
-                    {t.role}
-                  </p>
-                </div>
+              {/* Left: logo + role */}
+              <div className="flex flex-col gap-4">
+                <CompanyLogo image={t.image} company={t.company} />
+                <p className="font-sans text-[11px] text-gold tracking-[0.15em] uppercase">
+                  {t.role}
+                </p>
                 <div className="hidden lg:block w-px h-14 bg-gold/25 mt-2" />
               </div>
 

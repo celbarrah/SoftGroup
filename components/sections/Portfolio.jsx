@@ -32,7 +32,7 @@ const SEGMENTS = [
   },
   {
     id: "residentiel",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855307/SEGMENT_RESIDEN_bniuqo.webp",
     anchorId: "residentiel-de-prestige",
     label: "03",
     title: "Résidentiel de Prestige",
@@ -67,7 +67,7 @@ export default function Portfolio() {
   const inView = useInView(ref, { once: true, margin: "-8% 0px" })
 
   return (
-    <section ref={ref} id="portefeuille" className="bg-white py-24 md:py-36 px-8 md:px-12 lg:px-20">
+    <section ref={ref} id="portefeuille" className="bg-white py-10 md:py-10 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
@@ -160,7 +160,7 @@ export default function Portfolio() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
+            className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
           >
             Voir tous nos actifs
             <span className="block h-px w-8 bg-current transition-all duration-300 group-hover:w-14" />

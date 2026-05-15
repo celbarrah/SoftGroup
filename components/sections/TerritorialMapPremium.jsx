@@ -505,18 +505,18 @@ export default function TerritorialMapPremium() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold/70 mb-3">
+                <p className="font-sans text-[12px] tracking-[0.4em] uppercase text-white mb-3">
                   {activeCity.tag}
                 </p>
                 <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light leading-none mb-3">
                   {activeCity.label}
                 </h3>
-                <div className="w-10 h-px bg-gold/40 mb-5" />
+                <div className="w-10 h-px bg-gold mb-5" />
                 <p className="font-sans text-[14px] text-neutral-500 leading-[1.85] mb-6">
                   {activeCity.desc}
                 </p>
                 <div className="mb-7">
-                  <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-neutral-400 mb-3">
+                  <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-3">
                     Actifs clés
                   </p>
                   <ul className="flex flex-col gap-2">
