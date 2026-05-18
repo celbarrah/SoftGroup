@@ -22,44 +22,48 @@ import { motion, useInView } from "framer-motion"
 /* ─── City data ─────────────────────────────────────────────── */
 const CITIES = [
   {
-    id:       "casablanca",
-    num:      "01",
-    name:     "Casablanca",
-    tagline:  "Le Hub Multi-Actifs du Royaume",
-    segments: "Bureaux · Résidentiel · Logistique · Retail",
-    access:   "Port < 20 min · Aéroport 25 min",
-    zones:    "Bd d'Anfa · Ain Diab · CFC · Rachidi · Aïn Sebaâ",
-    image:    "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862098/casablanca_nlw98u.jpg",
+    id:      "casablanca",
+    num:     "01",
+    name:    "Casablanca",
+    tagline: "Le Hub Multi-Actifs du Royaume",
+    line1:   "Premier marché de consommation du Royaume",
+    line2:   "Port < 20 min · Aéroport 25 min",
+    line3:   "Main-d'œuvre qualifiée · Connectivité nationale immédiate",
+    zones:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862098/casablanca_nlw98u.jpg",
   },
   {
-    id:       "tanger",
-    num:      "02",
-    name:     "Tanger",
-    tagline:  "Gateway Logistique & Industriel",
-    segments: "Zones Franches · ZAI · Régimes fiscaux optimisés",
-    access:   "Tanger Med < 45 min · 180 ports mondiaux connectés",
-    zones:    "TFZ · Tanger Automotive City · A1 / A5",
-    image:    "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862217/tanger_wkkzhh.jpg",
+    id:      "tanger",
+    num:     "02",
+    name:    "Tanger",
+    tagline: "Gateway Logistique & Industriel",
+    line1:   "180 ports mondiaux connectés via Tanger Med",
+    line2:   "Zones Franches · Régimes fiscaux optimisés",
+    line3:   "Accès direct Europe · Hub export & transbordement",
+    zones:   "TFZ · Tanger Automotive City · A1 / A5",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862217/tanger_wkkzhh.jpg",
   },
   {
-    id:       "kenitra",
-    num:      "03",
-    name:     "Kénitra",
-    tagline:  "Écosystème Industriel d'Excellence",
-    segments: "Atlantic Free Zone · Automotive Rang 1 & 2",
-    access:   "Stellantis < 5 min · Gare TGV 15 min",
-    zones:    "A1 · Casa 45 min · Tanger 1h30",
-    image:    "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862256/kenitra_sticp8.jpg",
+    id:      "kenitra",
+    num:     "03",
+    name:    "Kénitra",
+    tagline: "Écosystème Industriel d'Excellence",
+    line1:   "Atlantic Free Zone orientée export industriel",
+    line2:   "Écosystème Automotive Rang 1 & 2 intégré",
+    line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
+    zones:   "A1 · Casablanca 45 min · Tanger 1h30",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862256/kenitra_sticp8.jpg",
   },
   {
-    id:       "agadir",
-    num:      "04",
-    name:     "Agadir",
-    tagline:  "Porte Logistique du Grand Sud",
-    segments: "Agro-industrie · Halieutique · Distribution régionale",
-    access:   "Port d'Agadir accès direct · Souss-Massa",
-    zones:    "Axe Agadir-Marrakech < 10 min",
-    image:    "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862302/agadir_ohtokf.jpg",
+    id:      "agadir",
+    num:     "04",
+    name:    "Agadir",
+    tagline: "Porte Logistique du Grand Sud",
+    line1:   "Accès direct au bassin agro-export du Souss-Massa",
+    line2:   "Port d'Agadir · Hub halieutique & chaîne du froid",
+    line3:   "Distribution Sud Maroc & Afrique de l'Ouest",
+    zones:   "Axe Agadir–Marrakech < 10 min",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862302/agadir_ohtokf.jpg",
   },
 ]
 
@@ -236,7 +240,7 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
                 <span
                   style={{
                     fontFamily:    "var(--font-dm-sans, sans-serif)",
-                    fontSize:      8,
+                    fontSize:      11,
                     letterSpacing: "0.25em",
                     textTransform: "uppercase",
                     color:         "#fff",
@@ -284,53 +288,35 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
               {/* Revealed info */}
               <div
                 style={{
-                  maxHeight:  isActive ? 140 : 0,
+                  maxHeight:  isActive ? 200 : 0,
                   overflow:   "hidden",
                   opacity:    isActive ? 1 : 0,
                   transition: `max-height 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease ${isActive ? "0.16s" : "0s"}`,
                 }}
               >
-                <p
-                  style={{
-                    fontFamily:    "var(--font-dm-sans, sans-serif)",
-                    fontSize:      11,
-                    color:         "rgba(255,255,255,0.55)",
-                    margin:        0,
-                    marginBottom:  10,
-                    lineHeight:    1.75,
-                    letterSpacing: "0.03em",
-                    fontWeight:    400,
-                  }}
-                >
-                  {city.segments}
+                {/* Line 1 — main selling point */}
+                <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.72)", margin: 0, marginBottom: 8, lineHeight: 1.6, fontWeight: 500 }}>
+                  {city.line1}
                 </p>
-                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.6)", flexShrink: 0 }} />
-                  <p
-                    style={{
-                      fontFamily:    "var(--font-dm-sans, sans-serif)",
-                      fontSize:      10,
-                      color:         "rgba(255,255,255,0.32)",
-                      margin:        0,
-                      letterSpacing: "0.04em",
-                    }}
-                  >
-                    {city.zones}
+                {/* Line 2 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line2}
                   </p>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.6)", flexShrink: 0 }} />
-                  <p
-                    style={{
-                      fontFamily:    "var(--font-dm-sans, sans-serif)",
-                      fontSize:      10,
-                      color:         "rgba(255,255,255,0.32)",
-                      margin:        0,
-                      letterSpacing: "0.04em",
-                    }}
-                  >
-                    {city.access}
+                {/* Line 3 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line3}
                   </p>
+                </div>
+                {/* Zones badge */}
+                <div style={{ display: "inline-block", border: "1px solid rgba(196,165,90,0.50)", padding: "4px 10px" }}>
+                  <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                    {city.zones}
+                  </span>
                 </div>
               </div>
             </div>
@@ -372,8 +358,8 @@ export default function TerritorialMapCards() {
               <span className="italic text-gold">Territoriale</span>
             </h2>
           </div>
-          <p className="font-sans text-[16px] text-neutral-400 max-w-3xl leading-relaxed md:text-right">
-            Implantés dans les 4 pôles économiques stratégiques du Maroc, au plus près de vos besoins
+          <p className="font-sans text-[18px] md:text-[20px] text-neutral-500 max-w-2xl leading-relaxed md:text-right">
+            4 villes stratégiques, un maillage territorial pensé pour votre croissance.
           </p>
         </motion.div>
 
