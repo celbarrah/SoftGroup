@@ -26,10 +26,13 @@ const CITIES = [
     num:     "01",
     name:    "Casablanca",
     tagline: "Le Hub Multi-Actifs du Royaume",
-    line1:   "Premier marché de consommation du Royaume",
-    line2:   "Port < 20 min · Aéroport 25 min",
-    line3:   "Main-d'œuvre qualifiée · Connectivité nationale immédiate",
-    line4:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
+    lines: [
+      "Premier marché de consommation du Royaume",
+      "Port < 20 min · Aéroport 25 min",
+      "Main-d'œuvre qualifiée",
+      "Connectivité nationale immédiate",
+      "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
+    ],
     zones:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/CASA_rgoqfl.jpg",
   },
@@ -38,10 +41,12 @@ const CITIES = [
     num:     "02",
     name:    "Tanger",
     tagline: "Gateway Logistique & Industriel",
-    line1:   "180 ports mondiaux connectés via Tanger Med",
-    line2:   "Zones Franches · Régimes fiscaux optimisés",
-    line3:   "Accès direct Europe · Hub export & transbordement",
-    line4:   "TFZ · Tanger Automotive City · A1 / A5",
+    lines: [
+      "180 ports mondiaux connectés via Tanger Med",
+      "Zones Franches · Régimes fiscaux optimisés",
+      "Accès direct Europe · Hub export & transbordement",
+      "TFZ · Tanger Automotive City · A1 / A5",
+    ],
     zones:   "TFZ · Tanger Automotive City · A1 / A5",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/TANGER_iaimmo.png",
   },
@@ -50,10 +55,12 @@ const CITIES = [
     num:     "03",
     name:    "Kénitra",
     tagline: "Écosystème Industriel d'Excellence",
-    line1:   "Atlantic Free Zone orientée export industriel",
-    line2:   "Écosystème Automotive Rang 1 & 2 intégré",
-    line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
-    line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
+    lines: [
+      "Atlantic Free Zone orientée export industriel",
+      "Écosystème Automotive Rang 1 & 2 intégré",
+      "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
+      "A1 · Casablanca 45 min · Tanger 1h30",
+    ],
     zones:   "A1 · Casablanca 45 min · Tanger 1h30",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094011/kenitra_hp1mzp.jpg",
   },
@@ -62,10 +69,12 @@ const CITIES = [
     num:     "04",
     name:    "Agadir",
     tagline: "Porte Logistique du Grand Sud",
-    line1:   "Accès direct au bassin agro-export du Souss-Massa",
-    line2:   "Port d'Agadir · Hub halieutique & chaîne du froid",
-    line3:   "Distribution Sud Maroc & Afrique de l'Ouest",
-    line4:   "Axe Agadir–Marrakech < 10 min",
+    lines: [
+      "Accès direct au bassin agro-export du Souss-Massa",
+      "Port d'Agadir · Hub halieutique & chaîne du froid",
+      "Distribution Sud Maroc & Afrique de l'Ouest",
+      "Axe Agadir–Marrakech < 10 min",
+    ],
     zones:   "Axe Agadir–Marrakech < 10 min",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
   },
@@ -298,33 +307,14 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
                   transition: `max-height 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease ${isActive ? "0.16s" : "0s"}`,
                 }}
               >
-                {/* Line 1 — main selling point */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line1}
-                  </p>
-                </div>
-                {/* Line 2 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line2}
-                  </p>
-                </div>
-                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line3}
-                  </p>
-                </div>
-                {/* Line 3 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line4}
-                  </p>
-                </div>
+                {city.lines.map((line, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: i < city.lines.length - 1 ? 5 : 12 }}>
+                    <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                    <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                      {line}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -446,35 +436,14 @@ export default function TerritorialMapCards() {
                   transition: `max-height 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease ${isOpen ? "0.16s" : "0s"}`,
                 }}
               >
-                {/* Line 1 — main selling point */}
-  
-                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line1}
-                  </p>
-                </div>
-                {/* Line 2 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line2}
-                  </p>
-                </div>
-                {/* Line 3 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line3}
-                  </p>
-                </div>
-                  {/* Line 4 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
-                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
-                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
-                    {city.line4}
-                  </p>
-                </div>
+                {city.lines.map((line, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: i < city.lines.length - 1 ? 5 : 12 }}>
+                    <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                    <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                      {line}
+                    </p>
+                  </div>
+                ))}
               </div>
                     </>
                   )}

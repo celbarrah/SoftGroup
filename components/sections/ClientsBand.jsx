@@ -36,7 +36,7 @@ const CLIENTS = [
   { name: "OCP",           file: "/logos/OCP.jpg",            scale: 1    },
   { name: "Allianz",       file: "/logos/Allianz.png",        scale: 1.1    },
   { name: "Orange",        file: "/logos/Orange.png",         scale: 1.75  },
-  { name: "Stellantis",    file: "/logos/Stellantis.png",     scale: 1.8  },
+  { name: "Stellantis",    file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779100366/Stellantis_logo_white_background-removebg-preview_fxd1ky.png",     scale: 2.1  },
   { name: "Philip Morris", file: "/logos/philip-morris.png",  scale: 1.9  },
   { name: "Siemens",       file: "/logos/Siemens.jpg",        scale: 1.3    },
   { name: "Pneurama",      file: "/logos/PNEURAMA.png",       scale: 1.8  },

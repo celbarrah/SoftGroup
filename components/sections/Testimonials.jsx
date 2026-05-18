@@ -135,7 +135,7 @@ export default function Testimonials() {
               Témoignages de Partenaires
             </p>
             <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
-              <span className="italic text-gold">Notre Meilleure Référence</span>
+              <span className="italic text-gold">Notre Meilleure Référence PAR <br/> La satisfaction au cœur de nos collaborations</span>
             </h2>
           </div>
 
