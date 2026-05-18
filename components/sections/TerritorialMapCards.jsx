@@ -30,7 +30,7 @@ const CITIES = [
     line2:   "Port < 20 min · Aéroport 25 min",
     line3:   "Main-d'œuvre qualifiée · Connectivité nationale immédiate",
     zones:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862098/casablanca_nlw98u.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/CASA_rgoqfl.jpg",
   },
   {
     id:      "tanger",
@@ -41,7 +41,7 @@ const CITIES = [
     line2:   "Zones Franches · Régimes fiscaux optimisés",
     line3:   "Accès direct Europe · Hub export & transbordement",
     zones:   "TFZ · Tanger Automotive City · A1 / A5",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862217/tanger_wkkzhh.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/TANGER_iaimmo.png",
   },
   {
     id:      "kenitra",
@@ -52,7 +52,7 @@ const CITIES = [
     line2:   "Écosystème Automotive Rang 1 & 2 intégré",
     line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
     zones:   "A1 · Casablanca 45 min · Tanger 1h30",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862256/kenitra_sticp8.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094011/kenitra_hp1mzp.jpg",
   },
   {
     id:      "agadir",
@@ -63,7 +63,7 @@ const CITIES = [
     line2:   "Port d'Agadir · Hub halieutique & chaîne du froid",
     line3:   "Distribution Sud Maroc & Afrique de l'Ouest",
     zones:   "Axe Agadir–Marrakech < 10 min",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778862302/agadir_ohtokf.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
   },
 ]
 
@@ -430,6 +430,40 @@ export default function TerritorialMapCards() {
                       <div style={{ width: 30, height: 1, background: "rgba(196,165,90,0.4)", marginBottom: 10 }} />
                       <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, color: "rgba(255,255,255,0.5)", margin: 0, marginBottom: 4, lineHeight: 1.6 }}>{city.segments}</p>
                       <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, color: "rgba(255,255,255,0.3)", margin: 0 }}>{city.access}</p>
+                       {/* Revealed info */}
+              <div
+                style={{
+                  maxHeight:  isOpen ? 200 : 0,
+                  overflow:   "hidden",
+                  opacity:    isOpen ? 1 : 0,
+                  transition: `max-height 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease ${isOpen ? "0.16s" : "0s"}`,
+                }}
+              >
+                {/* Line 1 — main selling point */}
+                <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.72)", margin: 0, marginBottom: 8, lineHeight: 1.6, fontWeight: 500 }}>
+                  {city.line1}
+                </p>
+                {/* Line 2 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line2}
+                  </p>
+                </div>
+                {/* Line 3 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line3}
+                  </p>
+                </div>
+                {/* Zones badge */}
+                <div style={{ display: "inline-block", border: "1px solid rgba(196,165,90,0.50)", padding: "4px 10px" }}>
+                  <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                    {city.zones}
+                  </span>
+                </div>
+              </div>
                     </>
                   )}
                 </div>
@@ -438,7 +472,7 @@ export default function TerritorialMapCards() {
           })}
         </motion.div>
 
-        {/* ── Bottom city legend ──────────────────────── */}
+        {/* ── Bottom city legend ────────────────────────
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
@@ -477,7 +511,7 @@ export default function TerritorialMapCards() {
               </span>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>
