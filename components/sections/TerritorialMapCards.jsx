@@ -29,6 +29,7 @@ const CITIES = [
     line1:   "Premier marché de consommation du Royaume",
     line2:   "Port < 20 min · Aéroport 25 min",
     line3:   "Main-d'œuvre qualifiée · Connectivité nationale immédiate",
+    line4:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
     zones:   "Bd d'Anfa · Anfa · Ain Diab · CFC · Aïn Sebaâ",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/CASA_rgoqfl.jpg",
   },
@@ -40,6 +41,7 @@ const CITIES = [
     line1:   "180 ports mondiaux connectés via Tanger Med",
     line2:   "Zones Franches · Régimes fiscaux optimisés",
     line3:   "Accès direct Europe · Hub export & transbordement",
+    line4:   "TFZ · Tanger Automotive City · A1 / A5",
     zones:   "TFZ · Tanger Automotive City · A1 / A5",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094001/TANGER_iaimmo.png",
   },
@@ -50,6 +52,7 @@ const CITIES = [
     tagline: "Écosystème Industriel d'Excellence",
     line1:   "Atlantic Free Zone orientée export industriel",
     line2:   "Écosystème Automotive Rang 1 & 2 intégré",
+    line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
     line3:   "Stellantis < 5 min · Main-d'œuvre industrielle compétitive",
     zones:   "A1 · Casablanca 45 min · Tanger 1h30",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094011/kenitra_hp1mzp.jpg",
@@ -62,6 +65,7 @@ const CITIES = [
     line1:   "Accès direct au bassin agro-export du Souss-Massa",
     line2:   "Port d'Agadir · Hub halieutique & chaîne du froid",
     line3:   "Distribution Sud Maroc & Afrique de l'Ouest",
+    line4:   "Axe Agadir–Marrakech < 10 min",
     zones:   "Axe Agadir–Marrakech < 10 min",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
   },
@@ -288,16 +292,19 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
               {/* Revealed info */}
               <div
                 style={{
-                  maxHeight:  isActive ? 200 : 0,
+                  maxHeight:  isActive ? 260 : 0,
                   overflow:   "hidden",
                   opacity:    isActive ? 1 : 0,
                   transition: `max-height 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease ${isActive ? "0.16s" : "0s"}`,
                 }}
               >
                 {/* Line 1 — main selling point */}
-                <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.72)", margin: 0, marginBottom: 8, lineHeight: 1.6, fontWeight: 500 }}>
-                  {city.line1}
-                </p>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line1}
+                  </p>
+                </div>
                 {/* Line 2 */}
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
                   <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
@@ -305,18 +312,18 @@ function CityCard({ city, isActive, hasActive, onEnter, onLeave }) {
                     {city.line2}
                   </p>
                 </div>
-                {/* Line 3 */}
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
+                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
                   <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
                   <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
                     {city.line3}
                   </p>
                 </div>
-                {/* Zones badge */}
-                <div style={{ display: "inline-block", border: "1px solid rgba(196,165,90,0.50)", padding: "4px 10px" }}>
-                  <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
-                    {city.zones}
-                  </span>
+                {/* Line 3 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line4}
+                  </p>
                 </div>
               </div>
             </div>
@@ -440,9 +447,13 @@ export default function TerritorialMapCards() {
                 }}
               >
                 {/* Line 1 — main selling point */}
-                <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.72)", margin: 0, marginBottom: 8, lineHeight: 1.6, fontWeight: 500 }}>
-                  {city.line1}
-                </p>
+  
+                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line1}
+                  </p>
+                </div>
                 {/* Line 2 */}
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
                   <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
@@ -457,11 +468,12 @@ export default function TerritorialMapCards() {
                     {city.line3}
                   </p>
                 </div>
-                {/* Zones badge */}
-                <div style={{ display: "inline-block", border: "1px solid rgba(196,165,90,0.50)", padding: "4px 10px" }}>
-                  <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
-                    {city.zones}
-                  </span>
+                  {/* Line 4 */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 12 }}>
+                  <div style={{ width: 3, height: 3, borderRadius: "50%", background: "rgba(196,165,90,0.8)", flexShrink: 0, marginTop: 5 }} />
+                  <p style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.5 }}>
+                    {city.line4}
+                  </p>
                 </div>
               </div>
                     </>

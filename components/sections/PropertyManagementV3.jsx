@@ -16,7 +16,7 @@ import { Wrench, Shield, FileText, BarChart3, ArrowLeftRight } from "lucide-reac
  */
 
 const HEADER_H  = 80   // px — card header bar height (keep in sync with actual height)
-const BASE_TOP  = 80   // px — distance from viewport top (≥ header height)
+const BASE_TOP  = 10   // px — distance from viewport top (≥ header height)
 
 const SERVICES = [
   {
