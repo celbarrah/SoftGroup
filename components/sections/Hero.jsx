@@ -77,7 +77,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: [
-            "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 30%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.0) 100%)",
+            "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.60) 30%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.0) 100%)",
             "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 28%)",
           ].join(", "),
           zIndex: 2,
@@ -104,7 +104,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl"
+          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative bottom-10"
         >
           <span className="">Louer ? </span> <br /> <span className="font-extrabold">C'est penser </span>
           
@@ -113,7 +113,7 @@ export default function Hero() {
 
         <div className="flex flex-col md:flex-row justify-start md:justify-between max-w-5xl w-full">
           {/* Subtitle */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.95 }}
@@ -122,7 +122,7 @@ export default function Hero() {
           Foncière d'exception, Softgroup est une référence de l'immobilier
           locatif au Maroc. Nous concevons, gérons et valorisons un portefeuille
           d'actifs premium logistique, bureaux, résidentiel, commercial et terrains.
-        </motion.p>
+        </motion.p> */}
 
         </div>
       </motion.div>
@@ -155,14 +155,14 @@ export default function Hero() {
 
       {/* ── Scroll indicator ─────────────────────────── */}
       {/* ── Scroll indicator ──────────────────────────── */}
-      <motion.div
+      {/* <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-28 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
       >
         <span className="font-sans text-[8px] tracking-[0.35em] uppercase text-white/30">Défiler</span>
         <ChevronDown size={14} strokeWidth={1} className="text-white/30" />
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }

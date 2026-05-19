@@ -41,14 +41,14 @@ export default function HeroGroupe() {
         style={{ opacity: opa }}
         className="relative z-10 h-full flex flex-col justify-end pb-24 px-8 md:px-12 lg:px-20 max-w-7xl mx-auto"
       >
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="font-sans text-[20px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
         >
           Le Groupe
-        </motion.p>
+        </motion.p> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ export default function HeroGroupe() {
         >
           Un Groupe
           <br />
-          Une Vision,
+          Une Vision <br/>
           <span className="italic text-gold"> Un Héritage</span>
         </motion.h1>
 

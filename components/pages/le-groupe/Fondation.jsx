@@ -39,7 +39,8 @@ export default function Fondation() {
             {/* Fondation logo + title block */}
             <div className="flex items-center gap-6 mb-6">
               <img
-                src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115160/FONDATION_xcohse.jpg"
+                src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/FONDATION_xcohse-removebg-preview_if9lyx.png"
+                className="grayscale-0"
                 alt="Fondation Amine Kabbaj"
                 style={{
                   height:      72,
@@ -56,8 +57,11 @@ export default function Fondation() {
                 </h2>
               </div>
             </div>
+             <h2 className="font-serif text-xl md:text-2xl lg:text-3xl leading-[1.1] italic text-gold font-bold">
+              L'Excellence au Service du Bien Commun
+            </h2>
 
-            <div className="w-10 h-px bg-gold/40 mb-8" />
+            <div className="w-10 h-px bg-gold/40 mb-8 relative -bottom-2" />
 
             <p className="font-sans text-[18px] text-neutral-600 leading-[1.9] mb-6">
               Créée en 1995 et reconnue d&apos;utilité publique en 2007, la Fondation Amine Kabbaj

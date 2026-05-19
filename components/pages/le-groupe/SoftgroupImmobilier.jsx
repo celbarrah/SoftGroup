@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react"
 /* ── Slides ─────────────────────────────────────────────────── */
 const SLIDES = [
   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115059/SOFTIMMO_zo6pgq.jpg",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115059/SOFTGROUP_HOLDING_ogdfsm.jpg",
+  // "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115059/SOFTGROUP_HOLDING_ogdfsm.jpg",
   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115064/SOFTIMMO2_h9afgi.jpg",
 ]
 
@@ -128,7 +128,7 @@ function ImageSlider() {
       />
 
       {/* ── Slide counter — top right ── */}
-      <div
+      {/* <div
         style={{
           position:    "absolute",
           top:         22,
@@ -146,7 +146,7 @@ function ImageSlider() {
         <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 11, color: "rgba(255,255,255,0.30)", letterSpacing: "0.15em" }}>
           {String(SLIDES.length).padStart(2, "0")}
         </span>
-      </div>
+      </div> */}
 
       {/* ── Gold progress bar — sweeps bottom edge ── */}
       {/* Track */}
@@ -202,14 +202,25 @@ export default function SoftgroupImmobilier() {
     <section ref={ref} className="bg-gray-50 py-24 md:py-36 overflow-hidden" id="softgroup-immobilier">
       <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-20">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-
-          {/* Left: premium slider */}
+          
+          <div>
+             <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
+              La Filiale Phare
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-light leading-[1.1] mb-5">
+              Softgroup Immobilier
+              <br />
+              <span className="italic text-gold">La Référence Locative Premium</span>
+            </h2>
+            <div className="w-10 h-px bg-gold/40 mb-8" />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          {/* Left: premium slider */} 
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[500px] lg:h-[660px]"
+            className="relative h-[500px] lg:h-[600px]"
           >
             <ImageSlider />
           </motion.div>
@@ -220,7 +231,7 @@ export default function SoftgroupImmobilier() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.0, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
+            {/* <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
               La Filiale Phare
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-light leading-[1.1] mb-5">
@@ -228,7 +239,7 @@ export default function SoftgroupImmobilier() {
               <br />
               <span className="italic text-gold">La Référence Locative Premium</span>
             </h2>
-            <div className="w-10 h-px bg-gold/40 mb-8" />
+            <div className="w-10 h-px bg-gold/40 mb-8" /> */}
 
             <p className="font-sans text-[17px] text-neutral-500 leading-[1.9] mb-3 max-w-lg">
               Constructeur, développeur et gestionnaire d&apos;actifs depuis plus de 35 ans

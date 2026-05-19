@@ -277,7 +277,7 @@ export default function SoftCulture() {
             {/* SoftCulture logo + heading */}
             <div className="flex items-center gap-5 mb-2">
               <img
-                src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115268/CULTURE_qffzuo.jpg"
+                src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/CULTURE_qffzuo-removebg-preview_pkud3g.png"
                 alt="SoftCulture"
                 style={{
                   height:     56,
@@ -290,7 +290,7 @@ export default function SoftCulture() {
                 SoftCulture
               </h2>
             </div>
-            <h2 className="font-serif text-xl md:text-2xl lg:text-3xl text-neutral-800 font-light leading-[1.1] italic text-gold">
+            <h2 className="font-serif text-xl md:text-2xl lg:text-3xl font-bold relative top-10 leading-[1.1] italic text-gold">
               La Culture comme Vecteur de Sens
             </h2>
           </motion.div>
@@ -310,16 +310,7 @@ export default function SoftCulture() {
           </motion.div>
         </div>
 
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-sans text-[12px] tracking-[0.45em] uppercase text-neutral-400 mb-10"
-        >
-          Ouvrages publiés Survolez pour découvrir
-        </motion.p>
-
+    
         {/* ── Books: 5-column bookshelf ───────────────── */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {OUVRAGES.map((book, i) => (
@@ -331,6 +322,15 @@ export default function SoftCulture() {
             />
           ))}
         </div>
+          {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-sans text-[12px] tracking-[0.45em] relative top-6 font-bold uppercase text-neutral-400 mb-10"
+        >
+          Ouvrages publiés Survolez pour découvrir
+        </motion.p>
 
       </div>
     </section>

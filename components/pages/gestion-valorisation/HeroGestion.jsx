@@ -31,9 +31,9 @@ export default function HeroGestion() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[9px] tracking-[0.55em] uppercase text-gold/70 mb-6"
+          className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold/70 mb-6"
         >
-          Gestion &amp; Valorisation
+          Property &amp; Facility Management
         </motion.p>
 
         <motion.h1
@@ -42,20 +42,20 @@ export default function HeroGestion() {
           transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-5xl md:text-7xl text-white font-light leading-[1.0] mb-8 max-w-3xl"
         >
-          Service Après-Location
+          Votre espace.
           <br />
-          <span className="italic text-gold">&amp; Property Management</span>
+          <span className="italic text-gold">Notre engagement.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65 }}
-          className="font-sans text-[15px] text-white/40 leading-[1.9] max-w-lg mb-10"
+          className="font-sans text-[17px] text-white/45 leading-[1.9] max-w-lg mb-10"
         >
-          Chez SOFTGROUP Immobilier, la signature d&apos;un bail marque le début d&apos;un
-          engagement durable. Une gestion intégrée et proactive de vos espaces,
-          disponible 24h/24 et 7j/7.
+          La signature du bail n&apos;est que le début. Softgroup gère, protège
+          et optimise vos espaces au quotidien — avec une présence humaine
+          et technique permanente sur chaque site.
         </motion.p>
 
         <motion.div
