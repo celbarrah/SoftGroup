@@ -25,6 +25,17 @@ export default function HeroGroupe() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#080808]" />
       </motion.div>
 
+      {/* ── Dark overlay — bottom-heavy gradient for text legibility ── */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: [
+            "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 30%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.0) 100%)",
+            "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 28%)",
+          ].join(", "),
+          zIndex: 2,
+        }}
+      />
       {/* Content */}
       <motion.div
         style={{ opacity: opa }}
@@ -34,7 +45,7 @@ export default function HeroGroupe() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[9px] tracking-[0.55em] uppercase text-gold/70 mb-6"
+          className="font-sans text-[20px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
         >
           Le Groupe
         </motion.p>
@@ -43,20 +54,19 @@ export default function HeroGroupe() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.0] mb-8 max-w-3xl"
+          className="font-serif text-5xl md:text-7xl lg:text-7xl text-white font-light leading-[1.0] mb-8 max-w-5xl"
         >
-          Un Groupe.
+          Un Groupe
           <br />
-          Une Vision.
-          <br />
-          <span className="italic text-gold">Un Héritage.</span>
+          Une Vision,
+          <span className="italic text-gold"> Un Héritage</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65 }}
-          className="font-sans text-[15px] text-white/40 leading-[1.9] max-w-lg mb-10"
+          className="font-sans text-[20px] text-white/70 leading-[1.9] max-w-2xl mb-10"
         >
           Depuis 1918, SOFTGROUP s&apos;est développé de génération en génération pour
           devenir un groupe marocain majeur dans les secteurs du textile, de
@@ -71,7 +81,7 @@ export default function HeroGroupe() {
           className="flex items-center gap-3"
         >
           <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
-          <span className="font-sans text-[8px] tracking-[0.4em] uppercase text-white/25">Découvrir</span>
+          <span className="font-sans text-[14px] tracking-[0.4em] uppercase text-white/40">Découvrir</span>
         </motion.div>
       </motion.div>
 

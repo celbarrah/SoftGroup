@@ -27,7 +27,7 @@ function TimelineItem({ event, index }) {
     <div ref={ref} className="relative grid grid-cols-[1fr_40px_1fr] items-start gap-0">
 
       {/* Left column */}
-      <div className={isLeft ? "pr-8 text-right" : ""}>
+      <div className={isLeft ? "pr-1 md:pr-8 text-right" : ""}>
         {isLeft && (
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -55,7 +55,7 @@ function TimelineItem({ event, index }) {
       </div>
 
       {/* Right column */}
-      <div className={!isLeft ? "pl-8" : ""}>
+      <div className={!isLeft ? "pl-2 md:pl-8" : ""}>
         {!isLeft && (
           <motion.div
             initial={{ opacity: 0, x: 24 }}
@@ -78,8 +78,8 @@ export default function Timeline() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-white py-24 md:py-36 overflow-hidden" id="histoire">
-      <div className="max-w-5xl mx-auto px-8 md:px-12 lg:px-20">
+    <section ref={ref} className="bg-white py-10 md:py-20 overflow-hidden" id="histoire">
+      <div className="max-w-400 mx-auto px-2 md:px-12 lg:px-20">
 
         {/* Header */}
         <motion.div
@@ -88,7 +88,7 @@ export default function Timeline() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="font-sans text-[9px] tracking-[0.55em] uppercase text-gold/70 mb-5">
+          <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5">
             Notre Histoire
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
