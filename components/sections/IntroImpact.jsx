@@ -4,14 +4,6 @@ import { useRef, useEffect } from "react"
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion"
 import Image from "next/image"
 
-/**
- * IntroImpact — Notre Savoir-Faire
- * ─────────────────────────────────────────────────────────
- * Photo architectural gauche + chiffres clés droite.
- * Fond blanc, chiffres grands et élégants (modèle transparent).
- * Inspiré design premium white real estate.
- */
-
 const STATS = [
   { prefix: "+", value: 35, suffix: "",  label: "Années d'expertise",    sub: "Depuis 1989"            },
   { prefix: "",  value: 5,  suffix: "",  label: "Segments d'activités",  sub: "Logistique · Bureaux · Résidentiel · Retail · Terrains" },
@@ -49,7 +41,7 @@ export default function IntroImpact() {
     <section ref={ref} className="bg-white overflow-hidden" id="savoir-faire">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
 
-        {/* ── Left: architectural photo ──────────────────── */}
+        {/* Left: architectural photo */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -63,29 +55,16 @@ export default function IntroImpact() {
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          {/* Subtle right gradient to blend into white right column */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 hidden lg:block" />
-
-          {/* Floating badge
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm border border-gray-100 shadow-lg px-6 py-4"
-          >
-            <p className="font-sans text-[8px] tracking-[0.4em] uppercase text-gold mb-1">Notre Engagement</p>
-            <p className="font-serif text-base text-neutral-800 font-light">+35 ans d&apos;expertise</p>
-          </motion.div> */}
         </motion.div>
 
-        {/* ── Right: stats + text ────────────────────────── */}
+        {/* Right: stats + text */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col justify-center px-10 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-6"
         >
-          {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -95,19 +74,20 @@ export default function IntroImpact() {
             Notre Savoir-Faire
           </motion.p>
 
-          {/* Intro text */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-serif text-xl md:text-2xl text-neutral-700 font-light leading-[1.6] italic mb-12 max-w-xl"
+            className="font-sans text-[17px] md:text-[18px] text-neutral-600 leading-[1.85] mb-12 max-w-xl"
           >
-            &ldquo;Fort d&apos;une expertise multi-métiers, SOFTGROUP conçoit
-            des projets de référence où l&apos;innovation et la qualité
-            signent chaque réalisation.&rdquo;
+            Foncière d&apos;exception, Softgroup s&apos;impose comme une référence
+            de l&apos;immobilier locatif au Maroc. Forts d&apos;une expertise intégrée,
+            nous concevons, gérons et valorisons un portefeuille d&apos;actifs
+            premium, où l&apos;innovation et l&apos;exigence de qualité signent
+            chaque réalisation.
           </motion.p>
 
-          {/* Stats grid — 2×2 */}
+          {/* Stats grid 2x2 */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-10">
             {STATS.map((stat, i) => (
               <motion.div
@@ -117,35 +97,43 @@ export default function IntroImpact() {
                 transition={{ duration: 0.7, delay: 0.2 + i * 0.1 }}
                 className="group"
               >
-                {/* Large number — "transparent model" style */}
                 <AnimatedCounter
                   value={stat.value}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
                   delay={0.3 + i * 0.1}
                 />
-                {/* Gold underline */}
                 <div className="w-7 h-px bg-gold/50 my-3" />
-                {/* Label */}
-                <p className="font-sans text-[11px] md:text-[14px] tracking-[0.2em] uppercase text-neutral-700 mb-1">
+                <p className="font-sans text-[13px] md:text-[14px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
                   {stat.label}
                 </p>
-                <p className="font-sans text-[11px] md:text-[14px] text-neutral-400 leading-relaxed">
+                <p className="font-sans text-[12px] text-neutral-400 leading-relaxed">
                   {stat.sub}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          {/* Bottom gold rule */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={inView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1.4, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 h-px bg-gradient-to-r from-gold/30 via-gold/10 to-transparent origin-left"
-          />
-        </motion.div>
+          {/* Gold rule + CTA */}
+          <div className="w-10 h-px bg-gold/40 mt-12 mb-8" />
 
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.55 }}
+          >
+            <a
+              href="/le-groupe"
+              className="inline-flex items-center gap-3 font-sans text-[11px] tracking-[0.28em] uppercase text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+            >
+              Découvrir le Groupe
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path d="M1 12L12 1M12 1H4M12 1V9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </motion.div>
+
+        </motion.div>
       </div>
     </section>
   )

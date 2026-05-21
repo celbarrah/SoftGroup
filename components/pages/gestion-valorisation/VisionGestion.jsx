@@ -1,143 +1,251 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
+
+const COMMITMENTS = [
+  {
+    label:    "DISPONIBILITÉ",
+    value:    "24h / 7j",
+    detail1:  "CRC lun–sam 8h–20h.",
+    detail2:  "Astreinte terrain sans interruption.",
+    bold2:    true,
+    accent:   "#C4A55A",
+    index:    "01",
+  },
+  {
+    label:    "RÉACTIVITÉ",
+    value:    "< 30 min",
+    detail1:  "Examen & décision garantis dès réception.",
+    detail2:  null,
+    bold2:    false,
+    accent:   "#C4A55A",
+    index:    "02",
+  },
+  {
+    label:    "PONCTUALITÉ",
+    value:    "≤ 4h",
+    detail1:  "Interventions traitées le jour même.",
+    detail2:  "Respect des délais contractuels.",
+    bold2:    true,
+    accent:   "#C4A55A",
+    index:    "03",
+  },
+  {
+    label:    "EXPERTISE",
+    value:    "100% interne",
+    detail1:  "Personnel qualifié.",
+    detail2:  "Champ d'intervention défini au contrat.",
+    bold2:    false,
+    accent:   "#C4A55A",
+    index:    "04",
+  },
+]
+
+const PILLARS = [
+  { title: "Équipes multidisciplinaires", sub: "Pilotage centralisé par site" },
+  { title: "Approche préventive",         sub: "Pas uniquement corrective"    },
+  { title: "Rapport systématique",        sub: "Après chaque intervention"    },
+]
+
+function CommitmentCard({ card, inView, index }) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position:         "relative",
+        background:       hovered ? "#ffffff" : "rgba(255,255,255,0.60)",
+        border:           "1px solid " + (hovered ? "rgba(196,165,90,0.30)" : "rgba(196,165,90,0.10)"),
+        padding:          "36px 32px 32px",
+        cursor:           "default",
+        transition:       "background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease",
+        boxShadow:        hovered ? "0 12px 48px rgba(196,165,90,0.08)" : "none",
+        backdropFilter:   "blur(8px)",
+      }}
+    >
+      {/* Top accent line — animates on hover */}
+      <div style={{
+        position:   "absolute",
+        top:        0,
+        left:       0,
+        height:     2,
+        width:      hovered ? "100%" : "32px",
+        background: "#C4A55A",
+        transition: "width 0.55s cubic-bezier(0.22,1,0.36,1)",
+      }} />
+
+      {/* Index */}
+      <p style={{
+        fontFamily:    "var(--font-dm-sans, sans-serif)",
+        fontSize:      9,
+        letterSpacing: "0.4em",
+        textTransform: "uppercase",
+        color:         "rgba(196,165,90,0.45)",
+        marginBottom:  20,
+      }}>
+        {card.index}
+      </p>
+
+      {/* Label */}
+      <p style={{
+        fontFamily:    "var(--font-dm-sans, sans-serif)",
+        fontSize:      10,
+        letterSpacing: "0.35em",
+        textTransform: "uppercase",
+        color:         "rgba(100,90,75,0.65)",
+        marginBottom:  10,
+        fontWeight:    600,
+      }}>
+        {card.label}
+      </p>
+
+      {/* Value — large serif */}
+      <p style={{
+        fontFamily:   "var(--font-cormorant, serif)",
+        fontSize:     "clamp(2rem, 3.5vw, 3rem)",
+        fontWeight:   300,
+        color:        "#C4A55A",
+        lineHeight:   1.0,
+        marginBottom: 20,
+        letterSpacing: "-0.01em",
+        whiteSpace:   "nowrap",
+      }}>
+        {card.value}
+      </p>
+
+      {/* Thin gold rule */}
+      <div style={{ width: 24, height: 1, background: "rgba(196,165,90,0.35)", marginBottom: 16 }} />
+
+      {/* Details */}
+      <p style={{
+        fontFamily: "var(--font-dm-sans, sans-serif)",
+        fontSize:   13,
+        color:      "rgba(75,70,65,0.65)",
+        lineHeight: 1.7,
+        marginBottom: card.detail2 ? 4 : 0,
+      }}>
+        {card.detail1}
+      </p>
+      {card.detail2 && (
+        <p style={{
+          fontFamily: "var(--font-dm-sans, sans-serif)",
+          fontSize:   13,
+          color:      "rgba(75,70,65,0.65)",
+          lineHeight: 1.7,
+          fontWeight: card.bold2 ? 600 : 400,
+        }}>
+          {card.detail2}
+        </p>
+      )}
+    </motion.div>
+  )
+}
 
 export default function VisionGestion() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-[#F7F6F2] py-24 md:py-36 overflow-hidden" id="vision-gestion">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section ref={ref} className="overflow-hidden" id="vision-gestion"
+      style={{ background: "linear-gradient(160deg, #F7F6F2 0%, #FAFAF8 60%, #F2F0EA 100%)" }}>
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-10 py-24 md:py-36">
 
-          {/* Left — text */}
+        {/* Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            <p className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold/70 mb-6">
-              Notre Vision
+            <p className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold/70 font-bold mb-5">
+              LE CADRE DE SERVICE
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1] mb-6">
-              Un accompagnement
+            <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
+              Des engagements
               <br />
-              <span className="italic text-gold">sur mesure</span>
+              <span className="italic text-gold">mesurables & contractuels</span>
             </h2>
-            <div className="w-10 h-px bg-gold/40 mb-8" />
-
-            <p className="font-sans text-[17px] text-neutral-500 leading-[1.9] mb-6">
-              Chez SOFTGROUP, nous allons au-delà de la mise à disposition d&apos;espaces.
-              Notre modèle de gestion intégré est conçu pour offrir une expérience
-              fluide, réactive et durable — de la remise des clés à la fin du bail.
-            </p>
-            <p className="font-sans text-[17px] text-neutral-500 leading-[1.9] mb-12">
-              Des équipes internes multidisciplinaires, un pilotage centralisé,
-              et une approche préventive orientée continuité d&apos;exploitation
-              pour chaque locataire.
-            </p>
-
-            {/* 3 key pillars */}
-            <div className="space-y-0">
-              {[
-                { num: "01", txt: "Une disponibilité 24h/24 et 7j/7 pour chaque site" },
-                { num: "02", txt: "Un pilotage centralisé par des équipes multidisciplinaires" },
-                { num: "03", txt: "Une approche préventive orientée continuité d'exploitation" },
-              ].map((item) => (
-                <div key={item.num} className="flex items-start gap-5 py-5 border-b border-gray-200 first:border-t">
-                  <span className="font-sans text-[10px] text-gold/50 tracking-[0.2em] flex-none mt-0.5 tabular-nums">
-                    {item.num}
-                  </span>
-                  <p className="font-sans text-[17px] text-neutral-600 leading-snug">{item.txt}</p>
-                </div>
-              ))}
-            </div>
           </motion.div>
-
-          {/* Right — image + floating badge */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-            style={{ aspectRatio: "4/3" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="flex items-end"
           >
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80"
-              alt="Espace de bureau géré par Softgroup"
-              style={{
-                width:      "100%",
-                height:     "100%",
-                objectFit:  "cover",
-                display:    "block",
-              }}
-            />
-            {/* Subtle vignette */}
-            <div
-              style={{
-                position:   "absolute",
-                inset:      0,
-                background: "linear-gradient(to top, rgba(0,0,0,0.28) 0%, transparent 50%)",
-              }}
-            />
+            <p className="font-sans text-[16px] text-neutral-500 leading-[1.85] max-w-md">
+              Chez SOFTGROUP, chaque engagement de service est formalisé,
+              mesuré et traçable pour une tranquillité d'esprit absolue.
+            </p>
+          </motion.div>
+        </div>
 
-            {/* Floating 98% satisfaction badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.55 }}
+        {/* 4 commitment cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          {COMMITMENTS.map((card, i) => (
+            <CommitmentCard key={card.label} card={card} inView={inView} index={i} />
+          ))}
+        </div>
+
+        {/* 3 pillars bottom band */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.55 }}
+          style={{
+            display:    "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            background: "rgba(255,255,255,0.70)",
+            border:     "1px solid rgba(196,165,90,0.12)",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          {PILLARS.map((p, i) => (
+            <div
+              key={p.title}
               style={{
-                position:   "absolute",
-                bottom:     24,
-                left:       24,
-                background: "rgba(255,255,255,0.97)",
-                backdropFilter: "blur(8px)",
-                border:     "1px solid rgba(196,165,90,0.20)",
-                padding:    "18px 24px",
-                boxShadow:  "0 8px 32px rgba(0,0,0,0.10)",
+                padding:     "22px 28px",
+                borderRight: i < 2 ? "1px solid rgba(196,165,90,0.12)" : "none",
+                display:     "flex",
+                alignItems:  "center",
+                gap:         14,
               }}
             >
-              <p
-                style={{
-                  fontFamily: "var(--font-cormorant, serif)",
-                  fontSize:   36,
-                  fontWeight: 300,
-                  color:      "#C4A55A",
-                  lineHeight: 1,
-                  marginBottom: 4,
-                }}
-              >
-                98%
-              </p>
-              <p
-                style={{
-                  fontFamily:    "var(--font-dm-sans, sans-serif)",
-                  fontSize:      11,
-                  letterSpacing: "0.08em",
-                  color:         "rgba(15,25,35,0.55)",
-                  textTransform: "uppercase",
-                }}
-              >
-                Taux de satisfaction locataire
-              </p>
-            </motion.div>
+              <div style={{
+                flexShrink:  0,
+                width:       6,
+                height:      6,
+                borderRadius: "50%",
+                background:  "rgba(196,165,90,0.55)",
+              }} />
+              <div>
+                <p style={{
+                  fontFamily:  "var(--font-dm-sans, sans-serif)",
+                  fontSize:    12,
+                  fontWeight:  600,
+                  color:       "#3a3530",
+                  marginBottom: 2,
+                }}>
+                  {p.title}
+                </p>
+                <p style={{
+                  fontFamily: "var(--font-dm-sans, sans-serif)",
+                  fontSize:   11,
+                  color:      "rgba(100,90,80,0.60)",
+                  letterSpacing: "0.02em",
+                }}>
+                  {p.sub}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
 
-            {/* Gold top-left corner accent */}
-            <div
-              style={{
-                position:   "absolute",
-                top:        0,
-                left:       0,
-                width:      2,
-                height:     "35%",
-                background: "linear-gradient(to bottom, #C4A55A, transparent)",
-              }}
-            />
-          </motion.div>
-
-        </div>
       </div>
     </section>
   )

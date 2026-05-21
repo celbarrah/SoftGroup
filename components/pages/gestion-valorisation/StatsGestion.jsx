@@ -16,7 +16,7 @@ export default function StatsGestion() {
 
   return (
     <section ref={ref} className="bg-white overflow-hidden" id="stats-gestion">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20">
+      <div className="max-w-[1500px] mx-auto px-8 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, i) => (
             <motion.div
@@ -24,10 +24,7 @@ export default function StatsGestion() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className={[
-                "py-12 px-8 group hover:bg-[#F7F6F2] transition-colors duration-300 border-b border-gray-100",
-                i < STATS.length - 1 ? "lg:border-r lg:border-gray-100" : "",
-              ].join(" ")}
+              className={"py-12 px-8 group hover:bg-[#F7F6F2] transition-colors duration-300 border-b border-gray-100 " + (i < STATS.length - 1 ? "lg:border-r lg:border-gray-100" : "")}
             >
               <p className="font-serif text-4xl md:text-5xl text-neutral-800 font-light mb-3 group-hover:text-gold transition-colors duration-400">
                 {stat.value}
@@ -35,7 +32,7 @@ export default function StatsGestion() {
               <p className="font-sans text-[12px] tracking-[0.25em] uppercase text-gold/70 mb-2">
                 {stat.label}
               </p>
-              <p className="font-sans text-[15px] text-neutral-400 leading-[1.65]">
+              <p className="font-sans text-[14px] text-neutral-400 leading-relaxed">
                 {stat.sub}
               </p>
             </motion.div>

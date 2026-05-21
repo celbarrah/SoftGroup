@@ -14,13 +14,13 @@ export default function HeroGestion() {
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#080808]">
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504245/bureaux_et_centre_d_affaires_yoldrb.png"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779374441/image_grand_format_lxty35.png"
           alt="Property & Facility Management — Softgroup"
           fill priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-[#080808]" />
       </motion.div>
 
       <motion.div
@@ -31,7 +31,7 @@ export default function HeroGestion() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold/70 mb-6"
+          className="font-sans text-[15px]  font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
         >
           Property &amp; Facility Management
         </motion.p>
@@ -54,7 +54,7 @@ export default function HeroGestion() {
           className="font-sans text-[17px] text-white/45 leading-[1.9] max-w-lg mb-10"
         >
           La signature du bail n&apos;est que le début. Softgroup gère, protège
-          et optimise vos espaces au quotidien — avec une présence humaine
+          et optimise vos espaces au quotidien avec une présence humaine
           et technique permanente sur chaque site.
         </motion.p>
 

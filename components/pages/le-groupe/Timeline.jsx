@@ -78,7 +78,7 @@ export default function Timeline() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-white py-10 md:py-20 overflow-hidden" id="histoire">
+    <section ref={ref} className="bg-white py-10 md:py-20 overflow-hidden" id="notre-histoire">
       <div className="max-w-400 mx-auto px-2 md:px-12 lg:px-20">
 
         {/* Header */}

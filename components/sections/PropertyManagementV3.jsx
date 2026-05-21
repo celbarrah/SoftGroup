@@ -5,18 +5,8 @@ import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { Wrench, Shield, FileText, BarChart3, ArrowLeftRight } from "lucide-react"
 
-/**
- * PropertyManagementV3
- * ─────────────────────────────────────────────────────────────
- * Pure CSS sticky stacking — no JS scroll listeners.
- * Left panel: position:sticky — stays visible throughout.
- * Right column: each card is position:sticky with top offset
- *   = BASE + (index × HEADER_H) so headers tile perfectly as
- *   the user scrolls and cards layer over each other.
- */
-
-const HEADER_H  = 80   // px — card header bar height (keep in sync with actual height)
-const BASE_TOP  = 10   // px — distance from viewport top (≥ header height)
+const HEADER_H  = 80
+const BASE_TOP  = 10
 
 const SERVICES = [
   {
@@ -30,7 +20,7 @@ const SERVICES = [
     id:    "securite",
     title: "Gestion technique complète",
     icon:  Shield,
-    desc:  "Prise en charge de vos infrastructures et équipements pour garantir leur fiabilité et leur performance continue. ",
+    desc:  "Prise en charge de vos infrastructures et équipements pour garantir leur fiabilité et leur performance continue.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855533/TECHNIQUE_dijci6.jpg",
   },
   {
@@ -44,18 +34,17 @@ const SERVICES = [
     id:    "reporting",
     title: "Optimisation & valorisation des espaces",
     icon:  BarChart3,
-    desc:  "Une mise en valeur paysagère et architecturale pour une expérience usager d’exception",
+    desc:  "Une mise en valeur paysagère et architecturale pour une expérience usager d'exception.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855398/OPTIMI_PAYSG_me7aag.jpg",
   },
   {
-    id:    "Flexibilisation ",
-    title: "Flexibilisation des baux & solutions sur mesure ",
+    id:    "flexibilisation",
+    title: "Flexibilisation des baux & solutions sur mesure",
     icon:  ArrowLeftRight,
-    desc:  "Une agilité contractuelle pour s’adapter à vos besoins évolutifs et soutenir votre croissance.",
+    desc:  "Une agilité contractuelle pour s'adapter à vos besoins évolutifs et soutenir votre croissance.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/t_OPT/FLEX_BAUX_ilqw8f.jpg",
-  }
+  },
 ]
-
 
 export default function PropertyManagementV3() {
   const ref    = useRef(null)
@@ -66,7 +55,7 @@ export default function PropertyManagementV3() {
       <div className="max-w-[1500px] mx-auto px-8 md:px-10 lg:px-13">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
-          {/* ── Left: sticky label + title ─────────────── */}
+          {/* Left: sticky label + title */}
           <div className="flex-none lg:w-[36%] sticky top-20">
             <motion.p
               initial={{ opacity: 0, y: 14 }}
@@ -94,36 +83,45 @@ export default function PropertyManagementV3() {
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-sans text-[20px] md:text-[25px] text-neutral-500 leading-[1.9] max-w-[500px]"
+              className="font-sans text-[20px] md:text-[25px] text-neutral-500 leading-[1.9] max-w-[500px] mb-10"
             >
               Nous réinventons la gestion après-location avec une offre de services intégrés, disponibles 24/7, garantissant la qualité, la fiabilité et la performance continue de vos infrastructures.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.35 }}
+            >
+              <a
+                href="/gestion-valorisation"
+                className="inline-flex items-center gap-3 font-sans text-[11px] tracking-[0.28em] uppercase text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+              >
+                Découvrir nos services
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <path d="M1 12L12 1M12 1H4M12 1V9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </motion.div>
           </div>
 
-          {/* ── Right: CSS sticky stacking cards ───────── */}
+          {/* Right: CSS sticky stacking cards */}
           <div className="flex-1 flex flex-col min-w-0">
             {SERVICES.map((svc, i) => {
               const Icon = svc.icon
-              /*
-               * Each card sticks at:  BASE_TOP + i × HEADER_H
-               * Card 1 → 80px, Card 2 → 140px, Card 3 → 200px, Card 4 → 260px
-               *
-               * z-index ascends with DOM order so later cards paint
-               * on top of earlier ones as they slide up.
-               */
               return (
                 <div
                   key={svc.id}
                   className="sticky"
                   style={{
-                    top:    `${BASE_TOP + i * HEADER_H}px`,
+                    top:    BASE_TOP + i * HEADER_H + "px",
                     zIndex: i + 1,
                   }}
                 >
-                  {/* ── Header tab ── */}
+                  {/* Header tab */}
                   <div
                     className="flex items-center gap-3.5 px-6 bg-[#F5F3EF] border border-b-0 border-neutral-200"
-                    style={{ height: `${HEADER_H}px` }}
+                    style={{ height: HEADER_H + "px" }}
                   >
                     <span className="w-2 h-2 rounded-full bg-gold flex-none" />
                     <span className="font-sans text-[20px] font-bold text-neutral-700 tracking-[0.005em]">
@@ -131,30 +129,22 @@ export default function PropertyManagementV3() {
                     </span>
                   </div>
 
-                  {/* ── Card body ── */}
+                  {/* Card body */}
                   <div className="grid grid-cols-1 min-h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
-
-                    {/* Icon + description */}
                     <div className="p-8 md:p-10 flex flex-col justify-center">
                       <div className="w-14 h-14 bg-[#EAE5DC] flex items-center justify-center mb-6">
-                        <Icon
-                          size={22}
-                          strokeWidth={1.4}
-                          className="text-neutral-600"
-                        />
+                        <Icon size={22} strokeWidth={1.4} className="text-neutral-600" />
                       </div>
                       <p className="font-sans text-[20px] text-neutral-500 leading-[1.88]">
                         {svc.desc}
                       </p>
                     </div>
-
-                    {/* Photo */}
                     <div className="relative h-[300px] md:h-auto">
                       <Image
                         src={svc.image}
                         alt={svc.title}
                         fill
-                        className="object-cover bg-center h-[200px]"
+                        className="object-cover object-center"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                       />
                     </div>
@@ -164,7 +154,7 @@ export default function PropertyManagementV3() {
             })}
 
             {/* Spacer so the last card can fully scroll into view */}
-            <div style={{ height: `${(SERVICES.length - 1) * HEADER_H}px` }} />
+            <div style={{ height: (SERVICES.length - 1) * HEADER_H + "px" }} />
           </div>
 
         </div>

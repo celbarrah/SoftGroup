@@ -150,7 +150,7 @@ export default function Header() {
 
         {/* ── CTA + Hamburger ─────────────────────── */}
         <div className="flex items-center gap-5">
-          <motion.a
+          {/* <motion.a
             href="#contact"
             animate={{ opacity: scrolled ? 1 : 0 }}
             transition={{ duration: 0.3 }}
@@ -158,7 +158,7 @@ export default function Header() {
             className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-white bg-gold border border-gold/40 px-5 py-2 hover:scale-102 transition-all duration-300 whitespace-nowrap"
           >
             Planifier une visite
-          </motion.a>
+          </motion.a> */}
 
           <button
             onClick={() => setNavOpen(true)}

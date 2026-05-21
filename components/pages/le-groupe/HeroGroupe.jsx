@@ -15,7 +15,7 @@ export default function HeroGroupe() {
       {/* Background image with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778667663/Gemini_Generated_Image_tmluwxtmluwxtmlu_gwtymr.png"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779373161/IMG_1044_zxriiy.jpg"
           alt="SOFTGROUP — Un Siècle d'Excellence"
           fill
           priority
@@ -30,7 +30,7 @@ export default function HeroGroupe() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: [
-            "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 30%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.0) 100%)",
+            "linear-gradient(to top, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.20) 30%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.0) 100%)",
             "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 28%)",
           ].join(", "),
           zIndex: 2,

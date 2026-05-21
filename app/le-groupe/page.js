@@ -1,11 +1,13 @@
-import HeroGroupe         from "@/components/pages/le-groupe/HeroGroupe"
-import StatsGroupe        from "@/components/pages/le-groupe/StatsGroupe"
-import Timeline           from "@/components/pages/le-groupe/Timeline"
+import HeroGroupe          from "@/components/pages/le-groupe/HeroGroupe"
+import StatsGroupe         from "@/components/pages/le-groupe/StatsGroupe"
+import NavGroupe           from "@/components/pages/le-groupe/NavGroupe"
+import PolesActivites      from "@/components/pages/le-groupe/PolesActivites"
+import Timeline            from "@/components/pages/le-groupe/Timeline"
 import SoftgroupImmobilier from "@/components/pages/le-groupe/SoftgroupImmobilier"
-import Fondation          from "@/components/pages/le-groupe/Fondation"
-import SoftCulture        from "@/components/pages/le-groupe/SoftCulture"
-import FooterCTA          from "@/components/sections/FooterCTA"
-import Footer             from "@/components/layout/Footer"
+import Fondation           from "@/components/pages/le-groupe/Fondation"
+import SoftCulture         from "@/components/pages/le-groupe/SoftCulture"
+import FooterCTA           from "@/components/sections/FooterCTA"
+import Footer              from "@/components/layout/Footer"
 
 export const metadata = {
   title: "Softgroup Holding — Un Siècle d'Excellence au Maroc | Softgroup Immobilier",
@@ -21,20 +23,28 @@ export default function LeGroupePage() {
       {/* 2. Chiffres clés du groupe */}
       <StatsGroupe />
 
-      {/* 3. Frise chronologique interactive */}
+      {/* 3. Navigation horizontale entre sections */}
+      <NavGroupe />
+
+      {/* 4. Pôles d'activités — Trois métiers, une exigence commune */}
+      <PolesActivites />
+
+      {/* 5. Frise chronologique interactive */}
       <Timeline />
 
-      {/* 4. Softgroup Immobilier — filiale phare */}
+      {/* 6. Softgroup Immobilier — filiale phare */}
       <SoftgroupImmobilier />
 
-      {/* 5. Fondation Amine Kabbaj */}
+      {/* 7. Fondation Amine Kabbaj */}
       <Fondation />
 
-      {/* 6. SoftCulture — mécénat culturel */}
+      {/* 8. SoftCulture — mécénat éditorial */}
       <SoftCulture />
 
-      {/* 7. CTA + Footer */}
+      {/* 9. CTA contact + carte */}
       <FooterCTA />
+
+      {/* 10. Pied de page */}
       <Footer />
     </main>
   )

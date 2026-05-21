@@ -162,7 +162,7 @@ export default function Portfolio() {
             href="#contact"
             className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
           >
-            Voir tous nos actifs
+            Découvrir nos actifs
             <span className="block h-px w-8 bg-current transition-all duration-300 group-hover:w-14" />
           </a>
         </motion.div>

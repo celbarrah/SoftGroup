@@ -12,10 +12,17 @@ import { X } from "lucide-react"
  */
 
 const NAV_ITEMS = [
-  { label: "Accueil", href: "/" },
+  { 
+    label: "Accueil", 
+    href: "/" 
+  },
+  { 
+    label: "Le Groupe",
+    href: "/le-groupe"
+  },
   {
     label: "NOTRE PORTEFEUILLE D'ACTIFS",
-    href: "#portefeuille",
+    href: "/portefeuille",
     children: [
       { label: "Logistique & Industriel",      href: "/portefeuille#logistique-industriel"      },
       { label: "Bureaux & Centres d'Affaires", href: "/portefeuille#bureaux-centres-d-affaires" },
@@ -24,8 +31,8 @@ const NAV_ITEMS = [
       { label: "Terrains & Développements",    href: "/portefeuille#terrains-developpements"    },
     ],
   },
-  { label: "Le Groupe",              href: "/le-groupe"              },
-  { label: "Gestion & Valorisation", href: "/gestion-valorisation"  },
+  { label: "Services Aprés Location", href: "/gestion-valorisation"  },
+  { label: "Build to-Suit", href: "#"  },
   { label: "Actualités",             href: "#actualites"             },
   { label: "Nous Contacter",         href: "#contact"                },
 ]
@@ -114,7 +121,7 @@ export default function SideNav({ isOpen, onClose }) {
                   {item.children ? (
                     <div className="mb-5">
                       {/* Catégorie — non cliquable */}
-                      <span className="block font-sans text-[9px] tracking-[0.38em] uppercase text-neutral-400 mb-3">
+                      <span className="block font-sans text-[13px] font-bold tracking-[0.38em] uppercase text-neutral-400 mb-3">
                         {item.label}
                       </span>
                       {/* Sous-liens */}
@@ -144,13 +151,13 @@ export default function SideNav({ isOpen, onClose }) {
 
             {/* Pied du panneau — CTA */}
             <div className="px-10 py-7 border-t border-gray-100 space-y-4">
-              <a
+              {/* <a
                 href="#contact"
                 onClick={onClose}
                 className="block text-center font-sans text-[10px] tracking-[0.25em] uppercase text-white bg-gold px-6 py-3 hover:bg-gold/90 transition-colors duration-300"
               >
                 Planifier une visite
-              </a>
+              </a> */}
               <a
                 href="tel:+212661978104"
                 className="block font-sans text-xs tracking-[0.2em] text-neutral-400 hover:text-gold transition-colors duration-200 text-center"
