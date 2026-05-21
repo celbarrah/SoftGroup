@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-import { Wrench, Shield, FileText, BarChart3, ArrowLeftRight } from "lucide-react"
+import { Wrench, Shield, FileText, BarChart3, ArrowLeftRight, ServerCog, ShieldCheck, Shovel, ChartNoAxesCombined } from "lucide-react"
 
 const HEADER_H  = 80
 const BASE_TOP  = 10
@@ -19,28 +19,28 @@ const SERVICES = [
   {
     id:    "securite",
     title: "Gestion technique complète",
-    icon:  Shield,
+    icon:  ServerCog,
     desc:  "Prise en charge de vos infrastructures et équipements pour garantir leur fiabilité et leur performance continue.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855533/TECHNIQUE_dijci6.jpg",
   },
   {
     id:    "administratif",
     title: "Sécurité renforcée des biens et des occupants",
-    icon:  FileText,
+    icon:  ShieldCheck,
     desc:  "Une protection proactive pour sécuriser les personnes, les biens et les opérations en permanence.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855382/SECURITE_c8i7ks.jpg",
   },
   {
     id:    "reporting",
     title: "Optimisation & valorisation des espaces",
-    icon:  BarChart3,
+    icon:  Shovel,
     desc:  "Une mise en valeur paysagère et architecturale pour une expérience usager d'exception.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855398/OPTIMI_PAYSG_me7aag.jpg",
   },
   {
     id:    "flexibilisation",
     title: "Flexibilisation des baux & solutions sur mesure",
-    icon:  ArrowLeftRight,
+    icon:  ChartNoAxesCombined,
     desc:  "Une agilité contractuelle pour s'adapter à vos besoins évolutifs et soutenir votre croissance.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/t_OPT/FLEX_BAUX_ilqw8f.jpg",
   },

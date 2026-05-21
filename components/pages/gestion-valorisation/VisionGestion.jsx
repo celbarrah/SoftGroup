@@ -197,9 +197,9 @@ export default function VisionGestion() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.55 }}
+          className="grid-cols-1 md:grid-cols-3"
           style={{
             display:    "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
             background: "rgba(255,255,255,0.70)",
             border:     "1px solid rgba(196,165,90,0.12)",
             backdropFilter: "blur(8px)",

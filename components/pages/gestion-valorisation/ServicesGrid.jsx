@@ -222,23 +222,10 @@ export default function ServicesGrid() {
 
         {/* Scrollable cards */}
         <div
-          ref={scrollRef}
-          onMouseDown={onMouseDown}
-          onMouseLeave={onMouseLeave}
-          onMouseUp={onMouseUp}
-          onMouseMove={onMouseMove}
-          style={{
-            display:            "flex",
-            gap:                16,
-            overflowX:          "auto",
-            cursor:             isDragging.current ? "grabbing" : "grab",
-            scrollbarWidth:     "none",
-            msOverflowStyle:    "none",
-            paddingBottom:      4,
-          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 justify-center items-center place-items-center lg:grid-cols-4 pb-70 md:pb-0"
         >
           {SERVICES.map((service, i) => (
-            <div key={service.tag} style={{ width: "clamp(260px, 28vw, 360px)" }} className="grid grid-cols-4">
+            <div key={service.tag} className="w-full" >
               <ServiceCard service={service} index={i} inView={inView} />
             </div>
           ))}
