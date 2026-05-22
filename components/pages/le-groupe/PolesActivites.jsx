@@ -86,7 +86,7 @@ export default function PolesActivites() {
               />
               
               {/* Dark Gradient Overlay (Darkens slightly more on hover to improve text legibility) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/20 to-transparent transition-all duration-500 group-hover:from-[#0f172a] group-hover:via-[#0f172a]/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-all duration-500 group-hover:from-black group-hover:via-black/60" />
 
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 p-8 md:p-10 flex flex-col z-10 w-full">

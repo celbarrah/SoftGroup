@@ -49,7 +49,7 @@ export default function Fondation() {
             </h3>
 
             {/* Paragraph */}
-            <p className="font-sans text-[13px] md:text-[14px] text-slate-500 leading-[1.8] mb-12 max-w-[500px]">
+            <p className="font-sans text-[13px] md:text-[14px] text-neutral-700 leading-[1.8] mb-12 max-w-[500px]">
               Crée en 1995 et reconnue d'utilité publique en 2007, la Fondation est
               spécialisée dans la construction et l'aménagement d'unités de soins médicaux
               et chirurgicaux sur l'ensemble du territoire national. Entièrement financée
@@ -96,9 +96,9 @@ export default function Fondation() {
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[#0b121c] rounded-2xl p-8 md:p-10 mb-12 shadow-xl"
+              className="bg-black rounded-2xl p-8 md:p-10 mb-12 shadow-xl"
             >
-              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6b89a8] font-semibold mb-3">
+              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-neutral-400 font-semibold mb-3">
                 Distinction Royale
               </p>
               <h4 className="font-serif text-xl md:text-2xl text-white font-normal mb-3">
