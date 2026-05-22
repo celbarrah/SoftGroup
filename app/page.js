@@ -8,6 +8,7 @@ import ProcessSection          from "@/components/sections/ProcessSection"
 import PropertyManagement      from "@/components/sections/PropertyManagement"
 import PropertyManagementV2    from "@/components/sections/PropertyManagementV2"
 import PropertyManagementV3    from "@/components/sections/PropertyManagementV3"
+import BuildToSuitTeaser       from "@/components/sections/BuildToSuitTeaser"
 import TerritorialMap          from "@/components/sections/TerritorialMap"
 import TerritorialMapPremium   from "@/components/sections/TerritorialMapPremium"
 import TerritorialMapCards     from "@/components/sections/TerritorialMapCards"
@@ -40,6 +41,9 @@ export default function Page() {
       <PropertyManagementV3 />
       {false && <PropertyManagementV2 />}
       {false && <PropertyManagement />}
+
+      {/* 7b. Build-to-Suit — teaser section après service après location */}
+      <BuildToSuitTeaser />
 
       {/* 8. Cartes villes — hover expand animation */}
       <TerritorialMapCards />

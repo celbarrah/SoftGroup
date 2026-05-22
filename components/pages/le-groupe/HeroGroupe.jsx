@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
+import StatsGroupe from "./StatsGroupe"
 
 export default function HeroGroupe() {
   const ref = useRef(null)
@@ -11,7 +12,7 @@ export default function HeroGroupe() {
   const opa = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <section ref={ref} className="relative h-screen min-h-[680px] overflow-hidden bg-[#080808]">
+    <section ref={ref} className="relative h-screen flex justify-start items-center min-h-[680px] overflow-hidden bg-[#080808]">
       {/* Background image with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
         <Image
@@ -22,7 +23,7 @@ export default function HeroGroupe() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/30 to-[#fff]/20" />
       </motion.div>
 
       {/* ── Dark overlay — bottom-heavy gradient for text legibility ── */}
@@ -39,17 +40,17 @@ export default function HeroGroupe() {
       {/* Content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 h-full flex flex-col justify-end pb-24 px-8 md:px-12 lg:px-20 max-w-7xl mx-auto"
+        className="relative z-10 bg-black/5 rounded-2xl backdrop-blur-2xl h-auto flex flex-col justify-end md:mb-40 pb-10 px-8 md:px-12 lg:pl-10 lg:pr-20 pt-10 max-w-7xl ml-0 md:ml-20"
       >
-        {/* <motion.p
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[20px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
+          className="font-sans text-[12px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
         >
-          Le Groupe
-        </motion.p> */}
-
+          Softgroup Holding — Depuis 1918
+        </motion.p>
+     
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,7 +75,7 @@ export default function HeroGroupe() {
         </motion.p>
 
         {/* Scroll indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
@@ -82,10 +83,14 @@ export default function HeroGroupe() {
         >
           <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
           <span className="font-sans text-[14px] tracking-[0.4em] uppercase text-white/40">Découvrir</span>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Bottom gold rule */}
+       {/* 2. Chiffres clés du groupe */}
+        <section className="w-full absolute bottom-0 md:flex justify-center items-center hidden ">
+          <StatsGroupe />
+        </section>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
     </section>
   )

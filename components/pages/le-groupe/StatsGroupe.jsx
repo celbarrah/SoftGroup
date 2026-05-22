@@ -69,14 +69,14 @@ function StatCell({ stat, inView, index }) {
       transition={{ duration: 0.7, delay: index * 0.12 }}
       className="text-center lg:px-8 group"
     >
-      <p className="font-serif text-5xl md:text-6xl text-neutral-800 font-light leading-none mb-3 group-hover:text-gold transition-colors duration-500 tabular-nums whitespace-nowrap">
+      <p className="font-serif text-3xl md:text-4xl text-neutral-800 font-light leading-none mb-3 group-hover:text-gold transition-colors duration-500 tabular-nums whitespace-nowrap">
         {count}
       </p>
-      <div className="w-6 h-px bg-gold/40 mx-auto my-4" />
-      <p className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-600 mb-2">
+      <div className="w-6 h-px bg-gold/40 mx-auto my-1" />
+      <p className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-600">
         {stat.label}
       </p>
-      <p className="font-sans text-[15px] text-neutral-400 leading-relaxed">
+      <p className="font-sans text-[15px] text-neutral-900 leading-relaxed">
         {stat.sub}
       </p>
     </motion.div>
@@ -88,22 +88,22 @@ export default function StatsGroupe() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-white py-10 overflow-hidden border-b border-gray-100">
-      <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-25">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-14 text-center"
-        >
-          Softgroup en chiffres
-        </motion.p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-0 lg:divide-x divide-gray-200">
-          {STATS.map((stat, i) => (
-            <StatCell key={stat.label} stat={stat} inView={inView} index={i} />
-          ))}
+      <section ref={ref} className="bg-white md:bg-white/60 backdrop-blur-2xl rounded-none md:rounded-2xl py-5 static md:absolute bottom-0 md:bottom-3.5 overflow-hidden border-b border-gray-100">
+        <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-25">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="font-sans text-[11px] font-bold tracking-[0.55em] uppercase text-neutral-900/70 mb-5 text-center"
+          >
+            Softgroup en chiffres
+          </motion.p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-0 lg:divide-x divide-gray-200">
+            {STATS.map((stat, i) => (
+              <StatCell key={stat.label} stat={stat} inView={inView} index={i} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }

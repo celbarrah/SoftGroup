@@ -20,14 +20,20 @@ const SERVICES = [
   {
     tag:   "Aménagement",
     title: "Solutions Sur-Mesure",
-    desc:  "Reconfiguration, conseil en architecture intérieure et accompagnement clé en main — vos espaces évoluent avec votre activité.",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779374417/SUR_MESURE_ws2gkh.png",
+    desc:  "Reconfiguration, conseil en architecture intérieure et accompagnement clé en main vos espaces évoluent avec votre activité.",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779447660/2_apsykt.png",
   },
   {
     tag:   "Facilitation",
     title: "Gestion & Conformité",
     desc:  "Coordination administrative, suivi des réclamations, accompagnement réglementaire. Toute la complexité gérée à votre place.",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779374414/CONFORMITE_a2vx52.png",
+  },
+  {
+    tag:   "Extérieur",
+    title: "Espaces verts & façades",
+    desc:  "Jardins, piscines, parties communes, façades entretenus selon les plus hauts standards pour préserver image et valeur.",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779447601/ESPACE_VERT_h5cpno.png",
   },
 ]
 
@@ -196,7 +202,7 @@ export default function ServicesGrid() {
         WebkitClipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
         clipPath:       "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
       }}>
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 pb-30">
+      <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-20 pb-30">
 
         {/* Header */}
         <motion.div
@@ -222,7 +228,7 @@ export default function ServicesGrid() {
 
         {/* Scrollable cards */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 justify-center items-center place-items-center lg:grid-cols-4 pb-70 md:pb-0"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 justify-center items-center place-items-center lg:grid-cols-5 pb-70 md:pb-0"
         >
           {SERVICES.map((service, i) => (
             <div key={service.tag} className="w-full" >

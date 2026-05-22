@@ -16,129 +16,130 @@ const REALISATIONS = [
 ]
 
 export default function Fondation() {
-  const ref    = useRef(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-[#F5F3EF] py-24 md:py-36 overflow-hidden" id="fondation">
-      <div className="max-w-400 mx-auto px-4 md:px-12 lg:px-20">
+    <section ref={ref} className="bg-[#fcfbf9] py-20 md:py-32 overflow-hidden" id="fondation">
+      <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-16">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          {/* Left */}
+          {/* ── Left Column ────────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col"
           >
             {/* Eyebrow */}
-            <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-7">
+            <p className="font-sans text-[10px] md:text-[11px] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
               Engagement Social
             </p>
 
-            {/* Fondation logo + title block */}
-            <div className="flex items-center gap-6 mb-6">
-              <img
-                src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/FONDATION_xcohse-removebg-preview_if9lyx.png"
-                className="grayscale-0"
-                alt="Fondation Amine Kabbaj"
-                style={{
-                  height:      72,
-                  width:       "auto",
-                  objectFit:   "contain",
-                  flexShrink:  0,
-                }}
-              />
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-light leading-[1.1]">
-                  Fondation
-                  <br />
-                  <span className="italic text-gold">Amine Kabbaj</span>
-                </h2>
-              </div>
-            </div>
-            <h2 className="font-serif text-xl md:text-2xl lg:text-3xl leading-[1.1] italic text-gold font-bold">
-              L'Excellence au Service du Bien Commun
+            {/* Title */}
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1a202c] font-normal leading-[1.15] mb-2">
+              Fondation<br />
+              <span className="font-medium">Amine Kabbaj</span>
             </h2>
 
-            <div className="w-10 h-px bg-gold/40 mb-8 relative -bottom-2" />
+            {/* Subtitle */}
+            <h3 className="font-serif text-xl md:text-2xl text-gold font-normal leading-snug mb-6">
+              L'Excellence au Service du Bien Commun
+            </h3>
 
-            <p className="font-sans text-[18px] text-neutral-600 leading-[1.9] mb-10">
-              Crée en 1995 et reconnue d&apos;utilité publique en 2007, la Fondation est
-              spécialisée dans la construction et l&apos;aménagement d&apos;unités de soins médicaux
-              et chirurgicaux sur l&apos;ensemble du territoire national. Entièrement financée
+            {/* Paragraph */}
+            <p className="font-sans text-[13px] md:text-[14px] text-slate-500 leading-[1.8] mb-12 max-w-[500px]">
+              Crée en 1995 et reconnue d'utilité publique en 2007, la Fondation est
+              spécialisée dans la construction et l'aménagement d'unités de soins médicaux
+              et chirurgicaux sur l'ensemble du territoire national. Entièrement financée
               par la famille Kabbaj, toutes les infrastructures sont remises au Ministère
               de la Santé.
             </p>
 
-            {/* Mini stats row */}
-            <div className="grid grid-cols-3 gap-0 border border-gray-200 bg-white mb-4">
+            {/* Large Image */}
+            <img
+              src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/FONDATION_xcohse-removebg-preview_if9lyx.png"
+              alt="Fondation Amine Kabbaj"
+              className="w-full max-w-[420px] object-contain mb-10"
+            />
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-3 gap-4 max-w-[480px]">
               {[
-                { val: "1995",    lbl: "Création"          },
-                { val: "2007",    lbl: "Utilité publique"  },
-                { val: "+30 ans", lbl: "D'engagement"      },
+                { val: "1995",  lbl: "Création" },
+                { val: "2007",  lbl: "Utilité publique" },
+                { val: "30+",   lbl: "Ans d'engagement" },
               ].map((s, i) => (
-                <div key={s.lbl} className={"p-6 text-center " + (i < 2 ? "border-r border-gray-200" : "")}>
-                  <p className="font-serif text-2xl text-gold font-light mb-1">{s.val}</p>
-                  <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-neutral-500">{s.lbl}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Distinction Royale */}
-            <div className="border border-gold/30 bg-white p-6 flex items-start gap-5">
-              <div className="flex-none w-12 h-12 border border-gold/20 flex items-center justify-center" style={{ background: "rgba(196,165,90,0.05)" }}>
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <circle cx="11" cy="13" r="7" stroke="#C4A55A" strokeWidth="1.2"/>
-                  <path d="M8 6L11 2L14 6" stroke="#C4A55A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M7 6H15" stroke="#C4A55A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <circle cx="11" cy="13" r="3.5" stroke="#C4A55A" strokeWidth="1"/>
-                </svg>
-              </div>
-              <div>
-                <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-gold/70 font-bold mb-1">
-                  Distinction Royale
-                </p>
-                <p className="font-serif text-lg text-neutral-800 font-light italic mb-2">
-                  Wissam Al Arch
-                </p>
-                <p className="font-sans text-[14px] text-neutral-500 leading-[1.75]">
-                  Mohamed Kabbaj a été décoré par Sa Majesté le Roi Mohammed VI
-                  du Wissam Al Arch en 2015, en reconnaissance de son engagement
-                  exceptionnel au service du bien commun.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right — réalisations */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="font-sans text-[12px] tracking-[0.45em] font-bold uppercase text-neutral-400 mb-6">
-              Réalisations
-            </p>
-
-            <ul className="space-y-0">
-              {REALISATIONS.map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.55, delay: 0.25 + i * 0.07 }}
-                  className="flex items-start gap-4 py-4 border-b border-gray-200 group"
+                <motion.div
+                  key={s.lbl}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+                  className="bg-white border border-gray-100 rounded-xl py-5 px-2 flex flex-col items-center justify-center shadow-sm"
                 >
-                  <span className="flex-none mt-[6px] w-1.5 h-1.5 rounded-full bg-gold/50 group-hover:bg-gold transition-colors duration-300" />
-                  <span className="font-sans text-[16px] text-neutral-600 leading-[1.7] group-hover:text-neutral-800 transition-colors duration-300">
-                    {item}
-                  </span>
-                </motion.li>
+                  <p className="font-serif text-[19px] text-[#517b96] mb-1">{s.val}</p>
+                  <p className="font-sans text-[9px] md:text-[10px] tracking-[0.15em] uppercase text-slate-400 text-center">
+                    {s.lbl}
+                  </p>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </motion.div>
 
+
+          {/* ── Right Column ───────────────────────────────── */}
+          <div className="flex flex-col">
+            
+            {/* Distinction Royale Box */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-[#0b121c] rounded-2xl p-8 md:p-10 mb-12 shadow-xl"
+            >
+              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6b89a8] font-semibold mb-3">
+                Distinction Royale
+              </p>
+              <h4 className="font-serif text-xl md:text-2xl text-white font-normal mb-3">
+                Wissam Al Arch
+              </h4>
+              <p className="font-sans text-[13px] text-slate-300 leading-[1.8]">
+                Mohamed Kabbaj a été décoré par Sa Majesté le Roi Mohammed VI
+                du Wissam Al Arch en 2015, en reconnaissance de son engagement
+                exceptionnel au service du bien commun.
+              </p>
+            </motion.div>
+
+            {/* Réalisations Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="font-sans text-[11px] tracking-[0.2em] font-semibold uppercase text-slate-500 mb-6">
+                Réalisations
+              </p>
+
+              <ul className="space-y-3 md:space-y-4">
+                {REALISATIONS.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 15 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 0.05 }}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="flex-none mt-[8px] w-1 h-1 rounded-full bg-slate-400" />
+                    <span className="font-sans text-[13px] text-slate-500 leading-relaxed">
+                      {item}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+          </div>
         </div>
       </div>
     </section>

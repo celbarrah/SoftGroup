@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 const POLES = [
@@ -28,27 +28,27 @@ const POLES = [
 ]
 
 export default function PolesActivites() {
-  const ref    = useRef(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-8%" })
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
   return (
-    <section ref={ref} id="poles-activites" className="bg-[#F5F3EF] py-24 md:py-36 overflow-hidden">
-      <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-20">
+    <section ref={ref} id="poles-activites" className="bg-[#fcfcfc] py-24 md:py-36 overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-8 md:px-12 lg:px-16">
 
         {/* ── Header ──────────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-end">
+        <div className="mb-16 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
-              Pôles d&apos;Activités
+            <p className="font-sans text-[11px] md:text-[12px] font-semibold tracking-[0.2em] uppercase text-[#C4A55A] mb-6">
+              Pôles d'activités
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-neutral-800 font-light leading-[1.05]">
-              Trois métiers,
-              <br />
-              <span className="italic text-gold">une exigence commune</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1a202c] font-normal leading-[1.15] mb-6">
+              Trois métiers,<br />
+              une exigence commune
             </h2>
           </motion.div>
 
@@ -57,8 +57,8 @@ export default function PolesActivites() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <p className="font-sans text-[17px] text-neutral-500 leading-[1.9]">
-              Depuis plus d&apos;un siècle, Softgroup construit son développement autour
+            <p className="font-sans text-[14px] md:text-[15px] text-slate-500 leading-relaxed max-w-[550px]">
+              Depuis plus d'un siècle, Softgroup construit son développement autour
               de pôles complémentaires, chacun leader ou référence dans son secteur au Maroc.
             </p>
           </motion.div>
@@ -73,68 +73,45 @@ export default function PolesActivites() {
               initial={{ opacity: 0, y: 36 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.75, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative overflow-hidden block"
-              style={{ textDecoration: "none" }}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="group relative overflow-hidden block rounded-2xl h-[450px] md:h-[500px] lg:h-[600px]"
             >
               {/* Image */}
-              <div className="relative h-[260px] overflow-hidden">
-                <img
-                  src={pole.image}
-                  alt={pole.title}
-                  loading="lazy"
-                  style={{
-                    position:   "absolute",
-                    inset:      0,
-                    width:      "100%",
-                    height:     "100%",
-                    objectFit:  "cover",
-                    transition: "transform 0.7s cubic-bezier(0.22,1,0.36,1)",
-                  }}
-                  className="group-hover:scale-105"
-                />
-                {/* Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <img
+                src={pole.image}
+                alt={pole.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+              />
+              
+              {/* Dark Gradient Overlay (Darkens slightly more on hover to improve text legibility) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/20 to-transparent transition-all duration-500 group-hover:from-[#0f172a] group-hover:via-[#0f172a]/60" />
 
-                {/* Number badge */}
-                <div
-                  style={{
-                    position:     "absolute",
-                    top:          16,
-                    left:         16,
-                    fontFamily:   "var(--font-dm-sans, sans-serif)",
-                    fontSize:     9,
-                    letterSpacing:"0.4em",
-                    textTransform:"uppercase",
-                    color:        "rgba(196,165,90,0.75)",
-                    fontWeight:   500,
-                  }}
-                >
+              {/* Text Content */}
+              <div className="absolute bottom-0 left-0 p-8 md:p-10 flex flex-col z-10 w-full">
+                <span className="font-sans text-[11px] tracking-[0.15em] text-[#C4A55A] font-medium mb-2">
                   {pole.num}
-                </div>
-
-                {/* Gold bottom line */}
-                <div
-                  style={{
-                    position:   "absolute",
-                    bottom:     0,
-                    left:       0,
-                    height:     2,
-                    background: "#C4A55A",
-                    width:      "28px",
-                    transition: "width 0.5s cubic-bezier(0.22,1,0.36,1)",
-                  }}
-                  className="group-hover:!w-full"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="bg-white px-6 py-7 border border-gray-100 border-t-0">
-                <h3 className="font-serif text-xl text-neutral-800 font-light leading-snug mb-3 group-hover:text-gold transition-colors duration-300">
+                </span>
+                <h3 className="font-serif text-xl md:text-2xl text-white font-light">
                   {pole.title}
                 </h3>
-                <p className="font-sans text-[15px] text-neutral-500 leading-[1.75]">
-                  {pole.desc}
-                </p>
+                
+                {/* Expandable Description */}
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: hoveredIndex === i ? "auto" : 0,
+                    opacity: hoveredIndex === i ? 1 : 0,
+                    marginTop: hoveredIndex === i ? "12px" : "0px",
+                  }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <p className="font-sans text-sm md:text-[15px] text-white/80 leading-relaxed">
+                    {pole.desc}
+                  </p>
+                </motion.div>
               </div>
             </motion.a>
           ))}
