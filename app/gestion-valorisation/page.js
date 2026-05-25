@@ -18,7 +18,7 @@ export default function GestionValorisationPage() {
       <HeroGestion />
 
       {/* 2. 4 chiffres clés en bandeau */}
-      <StatsGestion />
+      {/* <StatsGestion /> */}
 
       {/* 3. Vision + interlocuteur dédié */}
       <VisionGestion />

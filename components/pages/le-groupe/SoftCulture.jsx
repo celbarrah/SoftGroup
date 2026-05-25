@@ -97,14 +97,14 @@ function BookCard({ book, inView, index }) {
 
       {/* Static Text Below Card */}
       <div className="flex flex-col gap-1.5 px-1">
-        <span className="font-sans text-[10px] tracking-[0.15em] text-[#6b89a8] font-medium">
+        <span className="font-sans text-[10px] tracking-[0.15em] text-gold font-medium">
           {book.num}
         </span>
-        <h3 className="font-serif text-[14px] md:text-[15px] lg:text-[16px] text-white font-light leading-[1.4]">
+        <h3 className="font-serif text-[14px] md:text-[15px] lg:text-[15px] text-white font-bold leading-[1.4]">
           {book.title}
         </h3>
         {book.author && (
-          <p className="font-sans text-[11px] text-[#6b89a8] mt-1">
+          <p className="font-sans text-[11px] text-gold mt-1">
             {book.author}
           </p>
         )}
@@ -126,7 +126,7 @@ export default function SoftCulture() {
       {/* Subtle Background Decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1a2639]/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
-      <div className="max-w-[1500px] mx-auto px-6 md:px-12 relative z-10 mb-20">
+      <div className="max-w-[1550px] mx-auto px-6 md:px-12 relative z-10 mb-20">
 
         {/* ── Header ──────────────────────────────────────────── */}
         <div className="mb-20">
@@ -153,9 +153,9 @@ export default function SoftCulture() {
                   <span className="text-[#D4AF37]">La Culture comme Vecteur de Sens</span>
                 </h2>
                 
-                <p className="font-sans text-[13px] md:text-[14px] text-slate-400 leading-[1.8] max-w-3xl mt-6">
+                <p className="font-sans text-[13px] md:text-[14px] text-white leading-[1.8] max-w-3xl mt-6">
                   Parce qu'un groupe d'exception se mesure aussi à son empreinte intellectuelle,
-                  SOFTGROUP a créé le label éditorial SoftCulture — une initiative portée par les
+                  SOFTGROUP a créé le label éditorial SoftCulture une initiative portée par les
                   membres fondateurs et dirigeants du groupe pour valoriser le patrimoine marocain et
                   la réflexion prospective.
                 </p>
@@ -170,7 +170,7 @@ export default function SoftCulture() {
           initial={{ opacity: 0 }} 
           animate={inView ? { opacity: 1 } : {}} 
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-sans text-[10px] tracking-[0.2em] font-bold uppercase text-[#33465e] mb-8"
+          className="font-sans text-[10px] tracking-[0.2em] font-bold uppercase text-gold mb-8"
         >
           Ouvrages publiés
         </motion.p>

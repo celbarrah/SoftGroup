@@ -32,16 +32,17 @@ function VisitModal({ onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8"
+      className="fixed inset-0 z-[200] overflow-y-auto"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="flex min-h-full items-center justify-center p-4 md:p-8">
       <motion.div
         initial={{ opacity: 0, y: 32, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 24, scale: 0.97 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="relative bg-white w-full max-w-2xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="h-[3px] bg-gold w-full" />
@@ -131,6 +132,7 @@ function VisitModal({ onClose }) {
           )}
         </div>
       </motion.div>
+      </div>
     </motion.div>
   )
 }

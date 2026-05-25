@@ -32,7 +32,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Services Aprés Location", href: "/gestion-valorisation"  },
-  { label: "Build to-Suit", href: "#"  },
+  { label: "Build to-Suit", href: "/build-to-suit"  },
   { label: "Actualités",             href: "#actualites"             },
   { label: "Nous Contacter",         href: "#contact"                },
 ]

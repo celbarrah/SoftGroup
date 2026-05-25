@@ -21,9 +21,7 @@ export default function LeGroupePage() {
       <HeroGroupe />
 
       {/* 2. Chiffres clés du groupe */}
-      <div className="block md:hidden">
         <StatsGroupe />
-      </div>
 
       {/* 3. Navigation horizontale entre sections */}
       <NavGroupe />

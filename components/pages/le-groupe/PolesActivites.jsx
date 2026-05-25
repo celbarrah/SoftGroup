@@ -9,21 +9,21 @@ const POLES = [
     title:   "Immobilier Locatif",
     desc:    "Foncière locative de référence au Maroc depuis plus de 35 ans, SoftGroup Immobilier est un constructeur-développeur intégré maîtrisant l'intégralité du cycle de vie des projets : de la conception à la gestion locative.",
     anchor:  "#softgroup-immobilier",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504245/bureaux_et_centre_d_affaires_yoldrb.png",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779719152/IMMOBILIER_zdlobk.png",
   },
   {
     num:     "02",
     title:   "Industrie Textile",
     desc:    "Pionnier certifié ISO 9001 et premier producteur national de maille, SoftGroup exporte le savoir-faire marocain à l'international grâce à un outil industriel totalement intégré et une expertise technique de pointe.",
     anchor:  "#notre-histoire",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855307/SEGMENT_RESIDEN_bniuqo.webp",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779719154/textile_ruj3as.png",
   },
   {
     num:     "03",
     title:   "Distribution & Retail",
     desc:    "N°1 de la distribution de mode au Maroc, le groupe pilote un réseau retail puissant porté par ses deux marques phares : Diamantine, l'icône du prêt-à-porter traditionnel modernisé, et Bigdil, la référence des accessoires de mode féminins.",
     anchor:  "#notre-histoire",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504226/retail_et_commerce_fuezst.png",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779719140/distribution.jpg_xpcme3.webp",
   },
 ]
 
@@ -57,7 +57,7 @@ export default function PolesActivites() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <p className="font-sans text-[14px] md:text-[15px] text-slate-500 leading-relaxed max-w-[550px]">
+            <p className="font-sans text-[14px] md:text-[15px] text-neutral-700 leading-relaxed max-w-[550px]">
               Depuis plus d'un siècle, Softgroup construit son développement autour
               de pôles complémentaires, chacun leader ou référence dans son secteur au Maroc.
             </p>

@@ -228,7 +228,7 @@ export default function ServicesGrid() {
 
         {/* Scrollable cards */}
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 justify-center items-center place-items-center lg:grid-cols-5 pb-70 md:pb-0"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 justify-center items-center place-items-center xl:grid-cols-4 2xl:grid-cols-5 pb-70 md:pb-0"
         >
           {SERVICES.map((service, i) => (
             <div key={service.tag} className="w-full" >

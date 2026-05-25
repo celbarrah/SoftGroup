@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
-import StatsGroupe from "./StatsGroupe"
 
 export default function HeroGroupe() {
   const ref = useRef(null)
@@ -40,13 +39,13 @@ export default function HeroGroupe() {
       {/* Content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 bg-black/5 rounded-2xl backdrop-blur-2xl h-auto flex flex-col justify-end md:mb-40 pb-10 px-8 md:px-12 lg:pl-10 lg:pr-20 pt-10 max-w-7xl ml-0 md:ml-20"
+        className="relative z-10 bg-black/5 rounded-2xl backdrop-blur-2xl h-auto flex flex-col justify-end pb-10 px-8 md:px-12 lg:pl-10 lg:pr-20 pt-10 max-w-7xl ml-0 md:ml-20"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[12px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6"
+          className="font-sans text-[12px] font-bold tracking-[0.55em] uppercase text-gold mb-6"
         >
           Softgroup Holding — Depuis 1918
         </motion.p>
@@ -69,9 +68,9 @@ export default function HeroGroupe() {
           transition={{ duration: 0.8, delay: 0.65 }}
           className="font-sans text-[20px] text-white/70 leading-[1.9] max-w-2xl mb-10"
         >
-          Depuis 1918, SOFTGROUP s&apos;est développé de génération en génération pour
+          Depuis 1918, SOFTGROUP s'est développé de génération en génération pour
           devenir un groupe marocain majeur dans les secteurs du textile, de
-          l&apos;immobilier et de la distribution.
+          l'immobilier et de la distribution.
         </motion.p>
 
         {/* Scroll indicator */}
@@ -86,12 +85,8 @@ export default function HeroGroupe() {
         </motion.div> */}
       </motion.div>
 
-      {/* Bottom gold rule */}
-       {/* 2. Chiffres clés du groupe */}
-        <section className="w-full absolute bottom-0 md:flex justify-center items-center hidden ">
-          <StatsGroupe />
-        </section>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+      <div className=" absolute bottom-0 left-0 right-0 h-[320px] pointer-events-none z-10 bg-gradient-to-b from-white/0 via-white/40 to-white"/>
     </section>
   )
 }

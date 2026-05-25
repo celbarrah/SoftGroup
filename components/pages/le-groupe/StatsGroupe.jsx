@@ -88,7 +88,7 @@ export default function StatsGroupe() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-      <section ref={ref} className="bg-white md:bg-white/60 backdrop-blur-2xl rounded-none md:rounded-2xl py-5 static md:absolute bottom-0 md:bottom-3.5 overflow-hidden border-b border-gray-100">
+      <section ref={ref} className="bg-white backdrop-blur-2xl rounded-none md:rounded-2xl py-5 overflow-hidden border-b border-gray-100">
         <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-25">
           <motion.p
             initial={{ opacity: 0, y: 16 }}

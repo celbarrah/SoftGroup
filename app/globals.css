@@ -76,3 +76,49 @@ body {
   will-change: transform;
 }
 .animate-marquee:hover { animation-play-state: paused; }
+
+/* ── Promise item — bottom gold sweep line (::after) ─ */
+.promise-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #C4A55A, #D4B970);
+  transition: width 0.45s ease;
+}
+.promise-item:hover::after { width: 100%; }
+
+/* ── Pilier card — left accent bar (::before pseudo) ─ */
+.pilier-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  background: #C4A55A;
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.pilier-card:hover::before { transform: scaleY(1); }
+
+/* ── Hero scroll bounce ───────────────────────────────── */
+@keyframes bts-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ── Build-to-Suit ticker animation ──────────────────── */
+@keyframes bts-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.bts-ticker {
+  animation: bts-scroll 36s linear infinite;
+  will-change: transform;
+}
+.bts-ticker:hover { animation-play-state: paused; }
