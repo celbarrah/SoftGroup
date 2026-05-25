@@ -67,6 +67,20 @@ export default function HeroPortefeuille() {
           aux standards les plus exigeants du marché immobilier marocain.
         </motion.p>
 
+        {/* DÉFILER indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.6 }}
+          className="absolute bottom-[clamp(160px,18vw,220px)] right-14 cursor-pointer"
+          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+        >
+          <div className="hero-deflier flex flex-col items-center gap-2">
+            <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+            <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">Défiler</span>
+          </div>
+        </motion.div>
+
         {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

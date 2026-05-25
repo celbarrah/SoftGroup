@@ -56,7 +56,7 @@ export default function ProcessGestion() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,14,12,0.40) 0%, transparent 50%)" }} />
       </div> */}
 
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 py-24 md:py-32">
+      <div className="max-w-[1500px] mx-auto px-8 md:px-12 lg:px-20 py-24 md:py-32">
 
         {/* Header */}
         <motion.div

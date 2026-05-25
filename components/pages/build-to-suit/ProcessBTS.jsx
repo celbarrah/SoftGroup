@@ -49,12 +49,12 @@ export default function ProcessBTS() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="relative bg-noir overflow-hidden py-[100px] px-[clamp(20px,5vw,80px)]"
+    <section ref={ref} className="relative bg-[#f8f9fa] overflow-hidden py-[100px] px-[clamp(20px,5vw,80px)]"
       id="process">
 
       {/* Ambient glow */}
       <div className="absolute -top-[200px] -right-[200px] w-[700px] h-[700px] rounded-full
-                      bg-[radial-gradient(circle,rgba(196,165,90,.04)_0%,transparent_70%)]
+                      bg-[radial-gradient(circle,rgba(196,165,90,.08)_0%,transparent_70%)]
                       pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto">
@@ -67,10 +67,10 @@ export default function ProcessBTS() {
           className="mb-16"
         >
           <span className="block font-sans text-[13px] tracking-[0.24em] uppercase
-                           text-gold/65 font-bold mb-[14px]">
+                           text-gold font-bold mb-[14px]">
             Notre méthodologie
           </span>
-          <h2 className="font-serif text-[clamp(36px,3.8vw,56px)] font-light text-white
+          <h2 className="font-serif text-[clamp(36px,3.8vw,56px)] font-light text-noir
                          leading-[1.06] tracking-[-0.01em]">
             Un pilotage à 360°.
             <br />
@@ -85,7 +85,7 @@ export default function ProcessBTS() {
 
           {/* Horizontal connector line — desktop only */}
           <div className="hidden lg:block absolute top-[22px] left-[10%] right-[10%] h-px
-                          bg-white/[0.07]" />
+                          bg-dark/[0.12]" />
 
           {STEPS.map((step, i) => (
             <motion.div
@@ -97,27 +97,27 @@ export default function ProcessBTS() {
             >
               {/* Dot */}
               <div className="relative z-10 w-11 h-11 rounded-full mb-7 flex items-center justify-center
-                              border border-white/[0.14] bg-white/10
+                              border border-dark/[0.14] bg-dark/5
                               font-sans text-[12px] font-medium text-gold
-                              transition-all duration-400 cubic-bezier(.22,1,.36,1)
+                              transition-all duration-400
                               group-hover:bg-gold group-hover:border-gold group-hover:text-noir
-                              group-hover:scale-[1.12] group-hover:shadow-[0_0_0_6px_rgba(196,165,90,.12)]">
+                              group-hover:scale-[1.12] group-hover:shadow-[0_0_0_6px_rgba(196,165,90,.14)]">
                 {step.num}
               </div>
 
               {/* Week */}
               <span className="font-sans text-[13px] font-bold tracking-[0.14em] uppercase
-                               text-gold/60 mb-2.5">
+                               text-gold/70 mb-2.5">
                 {step.week}
               </span>
 
               {/* Title */}
-              <h3 className="font-sans text-[13.5px] font-semibold text-white mb-2 leading-[1.3]">
+              <h3 className="font-sans text-[13.5px] font-semibold text-noir mb-2 leading-[1.3]">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p className="font-sans text-[14px] font-light text-white/50 leading-[1.7] mb-3">
+              <p className="font-sans text-[14px] font-light text-dark/50 leading-[1.7] mb-3">
                 {step.desc}
               </p>
 

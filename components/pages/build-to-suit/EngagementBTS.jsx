@@ -67,17 +67,15 @@ export default function EngagementBTS() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="relative bg-noir overflow-hidden py-[100px] px-[clamp(20px,5vw,80px)] pb-50" style={{
+    <section ref={ref} className="relative bg-[#f8f9fa] overflow-hidden py-[100px] px-[clamp(20px,5vw,80px)] pb-50" style={{
         WebkitClipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
         clipPath:       "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
       }}>
 
-      {/* Ambient glows */}
+      {/* Ambient glow */}
       <div className="absolute -top-[250px] -right-[200px] w-[700px] h-[700px] rounded-full
-                      bg-[radial-gradient(circle,rgba(196,165,90,.04)_0%,transparent_70%)]
+                      bg-[radial-gradient(circle,rgba(196,165,90,.08)_0%,transparent_70%)]
                       pointer-events-none" />
-      <div className="absolute -bottom-[150px] -left-[100px] w-[400px] h-[400px] rounded-full
-                      bg-noir/50 pointer-events-none" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
 
@@ -89,10 +87,10 @@ export default function EngagementBTS() {
             transition={{ duration: 0.8 }}
           >
             <span className="block font-sans text-[13px] tracking-[0.24em] uppercase
-                             text-gold/60 font-bold mb-[14px]">
+                             text-gold font-bold mb-[14px]">
               Votre infrastructure de croissance
             </span>
-            <h2 className="font-serif text-[clamp(40px,5vw,64px)] font-light text-white
+            <h2 className="font-serif text-[clamp(40px,5vw,64px)] font-light text-noir
                            leading-[1.04] tracking-[-0.02em]">
               Un catalyseur <em className="italic text-gold"> de croissance </em>pour votre
               <br /><strong className="font-semibold">Supply Chain</strong>
@@ -103,7 +101,7 @@ export default function EngagementBTS() {
             initial={{ opacity: 0, x: 28 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-sans text-[15.5px] font-light text-white/60 leading-[1.82] self-end"
+            className="font-sans text-[15.5px] font-light text-dark/60 leading-[1.82] self-end"
           >
             Nous ne livrons pas seulement des mètres carrés. Nous créons des
             partenariats à long terme conçus pour optimiser vos flux, réduire
@@ -113,9 +111,7 @@ export default function EngagementBTS() {
 
         {/* 5-column engagement grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 rounded-[18px] overflow-hidden
-                        border border-white/[0.07]"
-          style={{ background: "rgba(255,255,255,0.03)" }}
-        >
+                        border border-dark/[0.08] bg-white">
           {ENGAGEMENTS.map((eng, i) => (
             <motion.div
               key={eng.num}
@@ -123,19 +119,19 @@ export default function EngagementBTS() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="group flex flex-col p-[36px_28px]
-                         border-r border-white/[0.07] last:border-r-0
-                         transition-colors duration-300 hover:bg-gold/[0.06]"
+                         border-r border-dark/[0.08] last:border-r-0
+                         transition-colors duration-300 hover:bg-gold/[0.05]"
             >
               {/* Top row: icon + ghost number */}
               <div className="flex items-start justify-between mb-5">
                 <div className="w-10 h-10 rounded-[10px] flex items-center justify-center
-                                bg-white/20 text-gold shrink-0
-                                transition-colors duration-300 group-hover:bg-gold/[0.15]">
+                                bg-gold/10 text-gold shrink-0
+                                transition-colors duration-300 group-hover:bg-gold/[0.18]">
                   {eng.icon}
                 </div>
                 <span className="font-serif text-[44px] font-light leading-[0.9] tracking-[-0.03em]
-                                 text-white/20 transition-colors duration-300
-                                 group-hover:text-gold/[0.15]">
+                                 text-dark/15 transition-colors duration-300
+                                 group-hover:text-gold/[0.25]">
                   {eng.num}
                 </span>
               </div>
@@ -145,12 +141,12 @@ export default function EngagementBTS() {
                               transition-all duration-[350ms] group-hover:w-11" />
 
               {/* Title */}
-              <h4 className="font-sans text-[13.5px] font-semibold text-white mb-2 leading-[1.3]">
+              <h4 className="font-sans text-[13.5px] font-semibold text-noir mb-2 leading-[1.3]">
                 {eng.title}
               </h4>
 
               {/* Description */}
-              <p className="font-sans text-[12px] font-light text-white/35 leading-[1.7]">
+              <p className="font-sans text-[12px] font-light text-dark/50 leading-[1.7]">
                 {eng.desc}
               </p>
             </motion.div>

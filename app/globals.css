@@ -111,6 +111,9 @@ body {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(8px); }
 }
+.hero-deflier {
+  animation: bts-scroll-bounce 2.2s ease-in-out infinite;
+}
 
 /* ── Build-to-Suit ticker animation ──────────────────── */
 @keyframes bts-scroll {

@@ -85,8 +85,22 @@ export default function HeroGroupe() {
         </motion.div> */}
       </motion.div>
 
+      {/* DÉFILER indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-[180px] right-14 z-20 cursor-pointer"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+      >
+        <div className="hero-deflier flex flex-col items-center gap-2">
+          <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">Défiler</span>
+        </div>
+      </motion.div>
+
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
-      <div className=" absolute bottom-0 left-0 right-0 h-[320px] pointer-events-none z-10 bg-gradient-to-b from-white/0 via-white/40 to-white"/>
+      <div className="absolute bottom-0 left-0 right-0 h-[320px] pointer-events-none z-10 bg-gradient-to-b from-white/0 via-white/40 to-white" />
     </section>
   )
 }

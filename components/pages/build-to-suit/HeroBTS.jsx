@@ -23,7 +23,7 @@ export default function HeroBTS() {
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 w-full h-[115%] -top-[8%] will-change-transform">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778667663/Gemini_Generated_Image_tmluwxtmluwxtmlu_gwtymr.png"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779726385/IMG_1067_vkn3cu.jpg"
           alt="Build-to-Suit — Softgroup Immobilier"
           fill priority
           className="object-cover object-center"
@@ -40,7 +40,7 @@ export default function HeroBTS() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-noir/40 backdrop-blur-[22px] border border-white/[0.13]
+          className="bg-noir/20 backdrop-blur-[22px] border border-white/[0.13]
                      rounded-[24px] px-[52px] py-[48px]"
         >
           {/* Eyebrow */}
@@ -57,7 +57,7 @@ export default function HeroBTS() {
           </h1>
 
           {/* Subtitle */}
-          <p className="font-sans text-[15px] font-light text-white/75 leading-[1.8] max-w-[42ch]">
+          <p className="font-sans text-[15px] font-light text-white/75 leading-[1.8] max-w-xl">
             Vous avez un besoin spécifique, une surface précise, des exigences
             techniques particulières. Softgroup conçoit, finance et livre votre
             bâtiment sur mesure exactement comme vous le souhaitez.
@@ -70,13 +70,15 @@ export default function HeroBTS() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-[180px] right-14 z-10 flex flex-col items-center gap-2"
-        style={{ animation: "bts-scroll-bounce 2.2s ease-in-out infinite" }}
+        className="absolute bottom-[180px] right-14 z-10 cursor-pointer"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
       >
-        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
-        <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">
-          Défiler
-        </span>
+        <div className="hero-deflier flex flex-col items-center gap-2">
+          <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">
+            Défiler
+          </span>
+        </div>
       </motion.div>
 
     </section>

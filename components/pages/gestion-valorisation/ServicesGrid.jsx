@@ -47,125 +47,73 @@ function ServiceCard({ service, index, inView }) {
       transition={{ duration: 0.7, delay: 0.1 + index * 0.08 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        position:    "relative",
-        overflow:    "hidden",
-        cursor:      "pointer",
-        aspectRatio: "3/4",
-        minHeight:   360,
-        flexShrink:  0,
-      }}
+      className="relative overflow-hidden cursor-pointer snap-start flex-none
+                 w-[82vw] sm:w-[48vw] md:w-[34vw] lg:w-[26vw] xl:w-[20vw]"
+      style={{ aspectRatio: "3/4", minHeight: 340 }}
     >
       {/* Background image */}
       <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-[750ms]"
         style={{
-          position:         "absolute",
-          inset:            0,
-          backgroundImage:  "url(" + service.image + ")",
-          backgroundSize:   "cover",
-          backgroundPosition: "center",
-          transform:        hovered ? "scale(1.06)" : "scale(1.0)",
-          transition:       "transform 0.75s cubic-bezier(0.22,1,0.36,1)",
+          backgroundImage: `url(${service.image})`,
+          transform: hovered ? "scale(1.06)" : "scale(1.0)",
         }}
       />
 
       {/* Gradient overlay */}
-      <div style={{
-        position:   "absolute",
-        inset:      0,
-        background: "linear-gradient(to top, rgba(8,6,4,0.90) 0%, rgba(8,6,4,0.35) 50%, rgba(8,6,4,0.05) 100%)",
-        transition: "opacity 0.4s ease",
-      }} />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,6,4,0.90)] via-[rgba(8,6,4,0.35)] to-[rgba(8,6,4,0.05)]" />
 
       {/* Hover shimmer */}
-      <div style={{
-        position:   "absolute",
-        inset:      0,
-        background: "linear-gradient(135deg, transparent 0%, rgba(196,165,90,0.04) 50%, transparent 100%)",
-        opacity:    hovered ? 1 : 0,
-        transition: "opacity 0.5s ease",
-      }} />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-transparent via-gold/[0.04] to-transparent transition-opacity duration-500"
+        style={{ opacity: hovered ? 1 : 0 }}
+      />
 
       {/* Bottom accent line */}
-      <div style={{
-        position:   "absolute",
-        bottom:     0,
-        left:       0,
-        height:     2,
-        width:      hovered ? "100%" : "28px",
-        background: "#C4A55A",
-        transition: "width 0.55s cubic-bezier(0.22,1,0.36,1)",
-      }} />
+      <div
+        className="absolute bottom-0 left-0 h-[2px] bg-gold transition-all duration-[550ms]"
+        style={{ width: hovered ? "100%" : "28px" }}
+      />
 
       {/* Content */}
-      <div style={{
-        position: "absolute",
-        bottom:   0,
-        left:     0,
-        right:    0,
-        padding:  "0 24px 28px",
-      }}>
-        {/* Tag pill */}
-        <span style={{
-          display:       "inline-block",
-          fontFamily:    "var(--font-dm-sans, sans-serif)",
-          fontSize:      9,
-          letterSpacing: "0.25em",
-          textTransform: "uppercase",
-          color:         "rgba(196,165,90,0.80)",
-          background:    "rgba(196,165,90,0.10)",
-          border:        "1px solid rgba(196,165,90,0.18)",
-          padding:       "3px 10px",
-          marginBottom:  10,
-        }}>
+      <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
+        {/* Tag */}
+        <span className="inline-block font-sans text-[9px] tracking-[0.25em] uppercase
+                         text-gold/80 bg-gold/10 border border-gold/[0.18] rounded-sm
+                         px-[10px] py-[3px] mb-[10px]">
           {service.tag}
         </span>
 
         {/* Title */}
-        <h3 style={{
-          fontFamily:  "var(--font-cormorant, serif)",
-          fontSize:    "clamp(1.25rem, 1.6vw, 1.5rem)",
-          fontWeight:  300,
-          color:       "#fff",
-          lineHeight:  1.2,
-          marginBottom: 0,
-        }}>
+        <h3 className="font-serif text-[clamp(1.15rem,1.8vw,1.5rem)] font-light text-white leading-[1.2]">
           {service.title}
         </h3>
 
         {/* Description — reveals on hover */}
-        <div style={{
-          overflow:   "hidden",
-          maxHeight:  hovered ? 120 : 0,
-          opacity:    hovered ? 1 : 0,
-          marginTop:  hovered ? 10 : 0,
-          transition: "max-height 0.45s ease, opacity 0.45s ease, margin-top 0.3s ease",
-        }}>
-          <p style={{
-            fontFamily: "var(--font-dm-sans, sans-serif)",
-            fontSize:   13,
-            color:      "rgba(255,255,255,0.58)",
-            lineHeight: 1.7,
-          }}>
+        <div
+          className="overflow-hidden transition-all duration-[450ms]"
+          style={{
+            maxHeight: hovered ? 120 : 0,
+            opacity:   hovered ? 1 : 0,
+            marginTop: hovered ? 10 : 0,
+          }}
+        >
+          <p className="font-sans text-[13px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>
 
         {/* Arrow reveal */}
-        <div style={{
-          overflow:   "hidden",
-          maxHeight:  hovered ? 40 : 0,
-          opacity:    hovered ? 1 : 0,
-          marginTop:  hovered ? 14 : 0,
-          transition: "max-height 0.3s ease 0.1s, opacity 0.3s ease 0.1s, margin-top 0.3s ease",
-          display:    "flex",
-          alignItems: "center",
-          gap:        6,
-        }}>
-          <span style={{ fontFamily: "var(--font-dm-sans, sans-serif)", fontSize: 12, color: "rgba(196,165,90,0.80)", letterSpacing: "0.06em" }}>
-            En savoir plus
-          </span>
-          <ArrowRight size={12} style={{ color: "rgba(196,165,90,0.80)" }} strokeWidth={1.5} />
+        <div
+          className="overflow-hidden flex items-center gap-1.5 transition-all duration-300"
+          style={{
+            maxHeight: hovered ? 40 : 0,
+            opacity:   hovered ? 1 : 0,
+            marginTop: hovered ? 14 : 0,
+          }}
+        >
+          <span className="font-sans text-[12px] text-gold/80 tracking-[0.06em]">En savoir plus</span>
+          <ArrowRight size={12} className="text-gold/80" strokeWidth={1.5} />
         </div>
       </div>
     </motion.div>
@@ -177,64 +125,78 @@ export default function ServicesGrid() {
   const scrollRef = useRef(null)
   const inView   = useInView(ref, { once: true, margin: "-8%" })
 
+  /* Drag-to-scroll */
   const isDragging = useRef(false)
   const startX     = useRef(0)
   const scrollLeft = useRef(0)
 
   const onMouseDown = useCallback((e) => {
     isDragging.current = true
+    if (scrollRef.current) scrollRef.current.style.cursor = "grabbing"
     startX.current     = e.pageX - scrollRef.current.offsetLeft
     scrollLeft.current = scrollRef.current.scrollLeft
   }, [])
-  const onMouseLeave = useCallback(() => { isDragging.current = false }, [])
-  const onMouseUp    = useCallback(() => { isDragging.current = false }, [])
-  const onMouseMove  = useCallback((e) => {
+  const onMouseLeave = useCallback(() => {
+    isDragging.current = false
+    if (scrollRef.current) scrollRef.current.style.cursor = "grab"
+  }, [])
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false
+    if (scrollRef.current) scrollRef.current.style.cursor = "grab"
+  }, [])
+  const onMouseMove = useCallback((e) => {
     if (!isDragging.current) return
     e.preventDefault()
     const x    = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX.current) * 1.3
+    const walk = (x - startX.current) * 1.4
     scrollRef.current.scrollLeft = scrollLeft.current - walk
   }, [])
 
   return (
-    <section ref={ref} className="bg-[#080808] py-24 md:py-32 overflow-hidden" id="services-gestion"
-     style={{
-        WebkitClipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
-        clipPath:       "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
-      }}>
-      <div className="max-w-400 mx-auto px-8 md:px-12 lg:px-20 pb-30">
+    <section ref={ref} className="bg-off-white py-24 md:py-32 overflow-hidden" id="services-gestion" style={{
+      WebkitClipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
+      clipPath:       "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
+    }}>
+      <div className="pb-30">
 
-        {/* Header */}
+        {/* Header — with side padding */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="mb-14"
+          className="mb-14 px-8 md:px-12 lg:px-20"
         >
-          <p className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold/60 mb-4">
+          <p className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold mb-4">
             Nos Services
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-serif text-3xl md:text-5xl text-white font-light leading-[1.1]">
+            <h2 className="font-serif text-3xl md:text-5xl text-noir font-light leading-[1.1]">
               Un écosystème
               <br />
               <span className="italic text-gold">de services intégrés</span>
             </h2>
-            <p className="font-sans text-[15px] leading-[1.8] max-w-sm md:text-right" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="font-sans text-[14px] text-dark/40 leading-[1.8] max-w-sm md:text-right">
               Glissez pour explorer
             </p>
           </div>
         </motion.div>
 
-        {/* Scrollable cards */}
+        {/* Scroll rail — full width, left-padded only so cards overflow right */}
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 justify-center items-center place-items-center xl:grid-cols-4 2xl:grid-cols-5 pb-70 md:pb-0"
+          ref={scrollRef}
+          className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory
+                     pl-8 md:pl-12 lg:pl-20 pr-8"
+          style={{ cursor: "grab" }}
+          onMouseDown={onMouseDown}
+          onMouseLeave={onMouseLeave}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
         >
           {SERVICES.map((service, i) => (
-            <div key={service.tag} className="w-full" >
-              <ServiceCard service={service} index={i} inView={inView} />
-            </div>
+            <ServiceCard key={service.tag} service={service} index={i} inView={inView} />
           ))}
+          {/* Right spacer so last card isn't flush with edge */}
+          <div className="flex-none w-4 md:w-8 lg:w-16 shrink-0" />
         </div>
 
       </div>

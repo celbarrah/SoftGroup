@@ -59,7 +59,7 @@ export default function Fondation() {
 
             {/* Large Image */}
             <img
-              src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/FONDATION_xcohse-removebg-preview_if9lyx.png"
+              src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779210148/CULTURE_qffzuo-removebg-preview_pkud3g.png"
               alt="Fondation Amine Kabbaj"
               className="w-full max-w-[420px] object-contain mb-10"
             />
@@ -99,7 +99,7 @@ export default function Fondation() {
               className="bg-gold/20 border border-gold/20 rounded-2xl p-8 md:p-10 mb-12 shadow-xl"
             >
               <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-neutral-800 font-semibold mb-3">
-                Distinction Royale
+                RÉALISATIONS EMBLÉMATIQUES
               </p>
               <h4 className="font-serif text-xl md:text-2xl text-black font-normal mb-3">
                 Wissam Al Arch

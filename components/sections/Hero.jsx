@@ -154,15 +154,18 @@ export default function Hero() {
       </motion.div> */}
 
       {/* ── Scroll indicator ─────────────────────────── */}
-      {/* ── Scroll indicator ──────────────────────────── */}
-      {/* <motion.div
-        animate={{ y: [0, 7, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-28 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-[180px] right-14 z-10 cursor-pointer"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
       >
-        <span className="font-sans text-[8px] tracking-[0.35em] uppercase text-white/30">Défiler</span>
-        <ChevronDown size={14} strokeWidth={1} className="text-white/30" />
-      </motion.div> */}
+        <div className="hero-deflier flex flex-col items-center gap-2">
+          <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">Défiler</span>
+        </div>
+      </motion.div>
     </section>
   )
 }
