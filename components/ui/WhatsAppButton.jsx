@@ -48,7 +48,7 @@ export default function WhatsAppButton() {
           </svg>
 
           {/* Tooltip */}
-          <span className="absolute right-16 whitespace-nowrap bg-[#0A0A0A] text-cream text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 border border-white/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="absolute right-16 whitespace-nowrap bg-[#0A0A0A] text-cream text-[11px] tracking-[0.15em] uppercase px-3 py-1.5 border border-white/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             Contactez-nous
           </span>
         </motion.a>

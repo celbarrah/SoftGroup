@@ -94,7 +94,7 @@ export default function StatsGroupe() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-sans text-[11px] font-bold tracking-[0.55em] uppercase text-neutral-900/70 mb-5 text-center"
+            className="font-sans text-[13px] font-bold tracking-[0.55em] uppercase text-neutral-900/70 mb-5 text-center"
           >
             Softgroup en chiffres
           </motion.p>

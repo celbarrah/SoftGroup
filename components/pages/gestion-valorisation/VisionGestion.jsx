@@ -84,7 +84,7 @@ function PilierCard({ pilier, inView, index }) {
             {pilier.icon}
           </div>
         </div>
-        <span className="font-sans text-[11px] tracking-[0.16em] uppercase text-gold font-medium">
+        <span className="font-sans text-[15px] tracking-[0.16em] uppercase font-bold text-gold font-medium">
           {pilier.kw}
         </span>
       </div>
@@ -115,7 +115,7 @@ export default function VisionGestion() {
       id="vision-gestion"
       className="bg-off-white py-[100px] px-[clamp(20px,5vw,80px)]"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1500px] mx-auto">
 
         {/* Header */}
         <motion.div
@@ -124,14 +124,14 @@ export default function VisionGestion() {
           transition={{ duration: 0.7 }}
           className="mb-14"
         >
-          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-gold font-semibold mb-4">
+          <p className="font-sans text-[15px] tracking-[0.25em] uppercase text-gold font-semibold mb-4">
             Notre vision
           </p>
           <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-light text-dark leading-[1.15] mb-4">
             Un accompagnement<br />
             <strong className="font-semibold">sur mesure</strong>
           </h2>
-          <p className="font-sans text-[17px] font-light text-muted leading-[1.8] max-w-[58ch] mt-4">
+          <p className="font-sans text-[19px] font-light text-muted leading-[1.8] max-w-[58ch] mt-4">
             Chez Softgroup, nous allons au-delà de la mise à disposition d'espaces.
             Notre modèle de gestion intégré est conçu pour offrir une expérience
             fluide, réactive et durable.

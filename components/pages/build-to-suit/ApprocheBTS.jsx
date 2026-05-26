@@ -36,7 +36,7 @@ export default function ApprocheBTS() {
               <div className="font-serif text-[28px] font-light text-gold leading-none">
                 A → Z
               </div>
-              <div className="font-sans text-[11px] text-neutral-900 mt-1 tracking-[0.04em]">
+              <div className="font-sans text-[13px] text-neutral-900 mt-1 tracking-[0.04em]">
                 Maîtrise intégrale
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function ApprocheBTS() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="block font-sans text-[14px] tracking-[0.24em] uppercase
+            <span className="block font-sans text-[17px] tracking-[0.24em] uppercase
                              text-gold font-bold mb-[14px]">
               Capacités de développement
             </span>
@@ -57,7 +57,7 @@ export default function ApprocheBTS() {
               Une expertise globale en<br />
               <strong className="font-semibold">développement immobilier logistique</strong>
             </h2>
-            <p className="font-sans text-[16px] font-light text-muted leading-[1.85]">
+            <p className="font-sans text-[18px] font-light text-muted leading-[1.85]">
               Nous vous accompagnons à chaque étape du projet : sélection du site,
               acquisition foncière, définition technique des installations, obtention
               des autorisations, construction, livraison et gestion des actifs.

@@ -90,7 +90,7 @@ export default function ClientsBand() {
         transition={{ duration: 1 }}
         className="text-center mb-10"
       >
-        <p className="font-sans text-[15px] font-bold tracking-[0.6em] uppercase text-gold">
+        <p className="font-sans text-[17px] font-bold tracking-[0.6em] uppercase text-gold">
           Nos Partenaires de Confiance
         </p>
       </motion.div>

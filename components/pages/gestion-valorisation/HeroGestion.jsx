@@ -35,14 +35,14 @@ export default function HeroGestion() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white/10 backdrop-blur-[22px] border border-white/[0.15]
+          className="bg-black/45 backdrop-blur-[22px] border border-white/[0.15]
                      rounded-[24px] px-[52px] py-[48px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-sans text-[11px] font-bold tracking-[0.55em] uppercase text-gold mb-6"
+            className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold mb-6"
           >
             Property &amp; Facility Management
           </motion.p>
@@ -62,7 +62,7 @@ export default function HeroGestion() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[17px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans text-[19px] text-white/70 leading-[1.9] max-w-lg"
           >
             La signature du bail n&apos;est que le début. Softgroup gère, protège
             et optimise vos espaces au quotidien avec une présence humaine
@@ -81,7 +81,7 @@ export default function HeroGestion() {
       >
         <div className="hero-deflier flex flex-col items-center gap-2">
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
-          <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">
+          <span className="font-sans text-[12px] tracking-[0.14em] uppercase text-white/35">
             Défiler
           </span>
         </div>

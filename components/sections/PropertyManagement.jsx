@@ -44,7 +44,7 @@ export default function PropertyManagement() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg px-5 py-4"
           >
-            <p className="font-sans text-[8px] tracking-[0.3em] uppercase text-gold mb-1">Disponibilité</p>
+            <p className="font-sans text-[15px] tracking-[0.3em] uppercase font-bold text-gold mb-1">Disponibilité</p>
             <p className="font-serif text-lg text-neutral-800 font-light">24h / 7j</p>
           </motion.div>
         </div>
@@ -55,7 +55,7 @@ export default function PropertyManagement() {
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-sans text-[13px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-7"
+            className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-7"
           >
             Gestion Après-Location
           </motion.p>
@@ -82,7 +82,7 @@ export default function PropertyManagement() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-sans text-[16px] text-neutral-600 leading-[1.9] mb-10 max-w-md"
+            className="font-sans text-[18px] text-neutral-600 leading-[1.9] mb-10 max-w-md"
           >
             Nous réinventons la gestion après-location à travers une approche
             personnalisée, alliant expertise technique, sécuritaire et
@@ -105,7 +105,7 @@ export default function PropertyManagement() {
                 className="flex items-start gap-3"
               >
                 <CheckCircle size={14} className="text-gold flex-none mt-0.5" strokeWidth={1.5} />
-                <span className="font-sans text-[15px] text-neutral-600 leading-snug">{item}</span>
+                <span className="font-sans text-[18px] text-neutral-600 leading-snug">{item}</span>
               </motion.li>
             ))}
           </motion.ul>
@@ -117,7 +117,7 @@ export default function PropertyManagement() {
           >
             <a
               href="#contact"
-              className="inline-flex items-center gap-3 font-sans text-[10px] tracking-[0.3em] uppercase text-gold border border-gold/30 px-8 py-4 hover:bg-gold hover:text-white transition-all duration-400 group"
+              className="inline-flex items-center gap-3 font-sans text-[15px] tracking-[0.3em] uppercase font-bold text-gold border border-gold/30 px-8 py-4 hover:bg-gold hover:text-white transition-all duration-400 group"
             >
               Demander une expertise
               <ArrowUpRight size={14} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

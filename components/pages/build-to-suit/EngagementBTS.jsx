@@ -86,13 +86,13 @@ export default function EngagementBTS() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="block font-sans text-[13px] tracking-[0.24em] uppercase
+            <span className="block font-sans text-[15px] tracking-[0.24em] uppercase
                              text-gold font-bold mb-[14px]">
               Votre infrastructure de croissance
             </span>
             <h2 className="font-serif text-[clamp(40px,5vw,64px)] font-light text-noir
                            leading-[1.04] tracking-[-0.02em]">
-              Un catalyseur <em className="italic text-gold"> de croissance </em>pour votre
+              Un catalyseur <br /> <em className="italic text-gold"> de croissance </em> <br /> pour votre
               <br /><strong className="font-semibold">Supply Chain</strong>
             </h2>
           </motion.div>
@@ -146,7 +146,7 @@ export default function EngagementBTS() {
               </h4>
 
               {/* Description */}
-              <p className="font-sans text-[12px] font-light text-dark/50 leading-[1.7]">
+              <p className="font-sans text-[14px] font-light text-dark/50 leading-[1.7]">
                 {eng.desc}
               </p>
             </motion.div>

@@ -39,7 +39,7 @@ export default function PromesseBTS() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="block font-sans text-[13px]  tracking-[0.24em] uppercase text-gold font-bold mb-[14px]">
+            <span className="block font-sans text-[15px]  tracking-[0.24em] uppercase text-gold font-bold mb-[14px]">
               La Promesse Softgroup
             </span>
             <h2 className="font-serif text-[clamp(36px,3.8vw,56px)] font-light text-dark
@@ -53,7 +53,7 @@ export default function PromesseBTS() {
             initial={{ opacity: 0, x: 28 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-sans text-[16px] font-light text-muted leading-[1.85] max-w-[58ch]"
+            className="font-sans text-[18px] font-light text-muted leading-[1.85] max-w-[58ch]"
           >
             De la première étude de faisabilité jusqu'à la remise des clés,
             vous avez un seul interlocuteur et un seul objectif : que votre
@@ -83,7 +83,7 @@ export default function PromesseBTS() {
                               transition-colors duration-[350ms] group-hover:text-gold/[0.14]">
                 {card.num}
               </div>
-              <h3 className="font-sans text-[16px] font-semibold text-dark leading-[1.3] mb-3">
+              <h3 className="font-sans text-[18px] font-semibold text-dark leading-[1.3] mb-3">
                 {card.title}
               </h3>
               <p className="font-sans text-[13.5px] font-light text-muted leading-[1.75]">

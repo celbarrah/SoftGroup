@@ -23,28 +23,28 @@ export default function HeroBTS() {
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 w-full h-[115%] -top-[8%] will-change-transform">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779726385/IMG_1067_vkn3cu.jpg"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779797778/ChatGPT_Image_26_mai_2026_a%CC%80_12_08_45_hxznz3.png"
           alt="Build-to-Suit — Softgroup Immobilier"
           fill priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Layered overlays */}
-        {/* <div className="absolute inset-0 bg-noir/30" /> */}
-        <div className="absolute inset-0 bg-gradient-to-b from-noir/20 via-transparent to-white" />
+        {/* Dark overlay — keeps entire hero dark */}
+        <div className="absolute inset-0 bg-noir/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir/70 via-noir/30 to-transparent" />
       </div>
 
       {/* Glass card — content */}
-      <div className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[700px]">
+      <div className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[660px]">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-noir/20 backdrop-blur-[22px] border border-white/[0.13]
+          className="bg-noir/45 border border-white/[0.13]
                      rounded-[24px] px-[52px] py-[48px]"
         >
           {/* Eyebrow */}
-          <span className="block font-sans text-[11px] tracking-[0.22em] uppercase text-gold mb-[22px]">
+          <span className="block font-sans text-[15px] tracking-[0.22em] uppercase font-bold text-gold mb-[22px]">
             Build-to-Suit — Clé en main
           </span>
 
@@ -57,7 +57,7 @@ export default function HeroBTS() {
           </h1>
 
           {/* Subtitle */}
-          <p className="font-sans text-[15px] font-light text-white/75 leading-[1.8] max-w-xl">
+          <p className="font-sans text-[18px] font-light text-white/75 leading-[1.8] max-w-xl">
             Vous avez un besoin spécifique, une surface précise, des exigences
             techniques particulières. Softgroup conçoit, finance et livre votre
             bâtiment sur mesure exactement comme vous le souhaitez.
@@ -75,7 +75,7 @@ export default function HeroBTS() {
       >
         <div className="hero-deflier flex flex-col items-center gap-2">
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
-          <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">
+          <span className="font-sans text-[12px] tracking-[0.14em] uppercase text-white/35">
             Défiler
           </span>
         </div>

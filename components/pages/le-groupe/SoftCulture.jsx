@@ -95,14 +95,14 @@ function BookCard({ book, inView, index }) {
 
       {/* Text Below Card */}
       <div className="flex flex-col gap-1.5 px-1">
-        <span className="font-sans text-[10px] tracking-[0.15em] text-gold font-medium">
+        <span className="font-sans text-[12px] tracking-[0.15em] text-gold font-medium">
           {book.num}
         </span>
-        <h3 className="font-serif text-[14px] md:text-[15px] text-noir font-semibold leading-[1.4]">
+        <h3 className="font-serif text-[18px] md:text-[18px] text-noir font-semibold leading-[1.4]">
           {book.title}
         </h3>
         {book.author && (
-          <p className="font-sans text-[11px] text-gold mt-1">
+          <p className="font-sans text-[13px] text-gold mt-1">
             {book.author}
           </p>
         )}
@@ -140,7 +140,7 @@ export default function SoftCulture() {
 
               {/* Titles & Text */}
               <div className="flex flex-col">
-                <p className="font-sans text-[10px] md:text-[11px] font-semibold tracking-[0.2em] uppercase text-gold mb-4">
+                <p className="font-sans text-[15px] md:text-[15px] font-semibold tracking-[0.2em] uppercase text-gold mb-4">
                   Mécénat Culturel
                 </p>
 
@@ -150,7 +150,7 @@ export default function SoftCulture() {
                   <span className="text-gold">La Culture comme Vecteur de Sens</span>
                 </h2>
 
-                <p className="font-sans text-[13px] md:text-[14px] text-dark/65 leading-[1.8] max-w-3xl mt-6">
+                <p className="font-sans text-[16px] text-dark/65 leading-[1.8] max-w-3xl mt-6">
                   Parce qu'un groupe d'exception se mesure aussi à son empreinte intellectuelle,
                   SOFTGROUP a créé le label éditorial SoftCulture une initiative portée par les
                   membres fondateurs et dirigeants du groupe pour valoriser le patrimoine marocain et
@@ -167,7 +167,7 @@ export default function SoftCulture() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-sans text-[10px] tracking-[0.2em] font-bold uppercase text-gold mb-8"
+          className="font-sans text-[15px] tracking-[0.2em] font-bold uppercase text-gold mb-8"
         >
           Ouvrages publiés
         </motion.p>

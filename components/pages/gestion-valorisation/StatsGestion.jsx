@@ -29,10 +29,10 @@ export default function StatsGestion() {
               <p className="font-serif text-4xl md:text-5xl text-neutral-800 font-light mb-3 group-hover:text-gold transition-colors duration-400">
                 {stat.value}
               </p>
-              <p className="font-sans text-[12px] tracking-[0.25em] uppercase text-gold/70 mb-2">
+              <p className="font-sans text-[15px] tracking-[0.25em] uppercase font-bold text-gold/70 mb-2">
                 {stat.label}
               </p>
-              <p className="font-sans text-[14px] text-neutral-400 leading-relaxed">
+              <p className="font-sans text-[18px] text-neutral-400 leading-relaxed">
                 {stat.sub}
               </p>
             </motion.div>

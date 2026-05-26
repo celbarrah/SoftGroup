@@ -47,7 +47,7 @@ function ServiceCard({ service, index, inView }) {
       transition={{ duration: 0.7, delay: 0.1 + index * 0.08 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden cursor-pointer snap-start flex-none
+      className="relative overflow-hidden cursor-pointer rounded-2xl snap-start flex-none
                  w-[82vw] sm:w-[48vw] md:w-[34vw] lg:w-[26vw] xl:w-[20vw]"
       style={{ aspectRatio: "3/4", minHeight: 340 }}
     >
@@ -78,8 +78,8 @@ function ServiceCard({ service, index, inView }) {
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
         {/* Tag */}
-        <span className="inline-block font-sans text-[9px] tracking-[0.25em] uppercase
-                         text-gold/80 bg-gold/10 border border-gold/[0.18] rounded-sm
+        <span className="inline-block font-sans text-[11px] tracking-[0.25em] uppercase
+                         text-gold/80 bg-gold/10 border border-gold/[0.18] rounded-md
                          px-[10px] py-[3px] mb-[10px]">
           {service.tag}
         </span>
@@ -98,7 +98,7 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 10 : 0,
           }}
         >
-          <p className="font-sans text-[13px] text-white/55 leading-[1.7]">
+          <p className="font-sans text-[15px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>
@@ -112,7 +112,7 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 14 : 0,
           }}
         >
-          <span className="font-sans text-[12px] text-gold/80 tracking-[0.06em]">En savoir plus</span>
+          <span className="font-sans text-[14px] text-gold/80 tracking-[0.06em]">En savoir plus</span>
           <ArrowRight size={12} className="text-gold/80" strokeWidth={1.5} />
         </div>
       </div>
@@ -166,23 +166,27 @@ export default function ServicesGrid() {
           transition={{ duration: 0.7 }}
           className="mb-14 px-8 md:px-12 lg:px-20"
         >
-          <p className="font-sans text-[12px] tracking-[0.55em] uppercase text-gold mb-4">
+          <p className="font-sans text-[15px] tracking-[0.55em] uppercase font-bold text-gold mb-4">
             Nos Services
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-serif text-3xl md:text-5xl text-noir font-light leading-[1.1]">
-              Un écosystème
+            <div>
+               <h2 className="font-serif text-3xl md:text-5xl text-noir font-light leading-[1.1]">
+              L'écosystème intégré :
               <br />
-              <span className="italic text-gold">de services intégrés</span>
+              <span className="italic text-gold">Acteur de votre performance</span>
             </h2>
-            <p className="font-sans text-[14px] text-dark/40 leading-[1.8] max-w-sm md:text-right">
+            <p className="font-sans text-[17px] max-w-xl pt-8 text-neutral-900/55 leading-[1.7]">Des services intégrés qui améliorent l'expérience des occupants, optimisent les opérations et assurent la continuité de vos activités au quotidien.</p>
+            </div>
+            <p className="font-sans text-[18px] text-dark/40 leading-[1.8] max-w-sm md:text-right">
               Glissez pour explorer
             </p>
           </div>
         </motion.div>
 
         {/* Scroll rail — full width, left-padded only so cards overflow right */}
-        <div
+        <div className="px-10">
+           <div
           ref={scrollRef}
           className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory
                      pl-8 md:pl-12 lg:pl-20 pr-8"
@@ -197,6 +201,7 @@ export default function ServicesGrid() {
           ))}
           {/* Right spacer so last card isn't flush with edge */}
           <div className="flex-none w-4 md:w-8 lg:w-16 shrink-0" />
+        </div>
         </div>
 
       </div>

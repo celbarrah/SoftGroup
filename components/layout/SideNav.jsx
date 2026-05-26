@@ -98,7 +98,7 @@ export default function SideNav({ isOpen, onClose }) {
           >
             {/* En-tête panneau */}
             <div className="flex items-center justify-between px-10 pt-9 pb-7 border-b border-gray-100">
-              <span className="font-serif text-base tracking-[0.35em] uppercase text-gold">
+              <span className="font-serif text-base tracking-[0.35em] uppercase font-bold text-gold">
                 SOFTGROUP<span className="font-light text-neutral-500"> IMMOBILIER</span>
               </span>
               <button
@@ -121,7 +121,7 @@ export default function SideNav({ isOpen, onClose }) {
                   {item.children ? (
                     <div className="mb-5">
                       {/* Catégorie — non cliquable */}
-                      <span className="block font-sans text-[13px] font-bold tracking-[0.38em] uppercase text-neutral-400 mb-3">
+                      <span className="block font-sans text-[15px] font-bold tracking-[0.38em] uppercase text-neutral-400 mb-3">
                         {item.label}
                       </span>
                       {/* Sous-liens */}
@@ -154,7 +154,7 @@ export default function SideNav({ isOpen, onClose }) {
               {/* <a
                 href="#contact"
                 onClick={onClose}
-                className="block text-center font-sans text-[10px] tracking-[0.25em] uppercase text-white bg-gold px-6 py-3 hover:bg-gold/90 transition-colors duration-300"
+                className="block text-center font-sans text-[12px] tracking-[0.25em] uppercase text-white bg-gold px-6 py-3 hover:bg-gold/90 transition-colors duration-300"
               >
                 Planifier une visite
               </a> */}

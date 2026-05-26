@@ -101,7 +101,7 @@ export default function BuildToSuitTeaser() {
             {/* Eyebrow */}
             <div className="flex items-center gap-2.5 mb-4">
               {/* <span className="block w-7 h-px bg-gold shrink-0" /> */}
-              <span className="font-sans text-[11px] font-semibold tracking-[0.18em] uppercase text-gold">
+              <span className="font-sans text-[15px] font-semibold tracking-[0.18em] uppercase text-gold">
                 Build-to-Suit
               </span>
             </div>
@@ -140,7 +140,7 @@ export default function BuildToSuitTeaser() {
                             px-[clamp(16px,2.5vw,32px)] border-r border-gold/[0.14]">
               <Link href="/build-to-suit">
                 <button className="bg-gold hover:bg-gold-light text-noir
-                                   font-sans text-[12px] font-semibold tracking-[0.06em]
+                                   font-sans text-[14px] font-semibold tracking-[0.06em]
                                    px-6 py-2 rounded-full whitespace-nowrap
                                    transition-all duration-200
                                    hover:shadow-[0_4px_24px_rgba(196,165,90,.35)]">
@@ -169,7 +169,7 @@ export default function BuildToSuitTeaser() {
                     <span className="flex items-center shrink-0 text-gold">
                       {pill.icon}
                     </span>
-                    <span className="font-sans text-[12px] font-medium tracking-[0.04em] text-cream/70">
+                    <span className="font-sans text-[14px] font-medium tracking-[0.04em] text-cream/70">
                       {pill.label}
                     </span>
                   </div>

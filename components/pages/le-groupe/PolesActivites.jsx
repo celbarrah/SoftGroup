@@ -33,7 +33,7 @@ export default function PolesActivites() {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   return (
-    <section ref={ref} id="poles-activites" className="bg-[#fcfcfc] py-24 md:py-36 overflow-hidden">
+    <section ref={ref} id="poles-activites" className="bg-[#fcfcfc] py-24 md:py-20 overflow-hidden">
       <div className="max-w-[1500px] mx-auto px-8 md:px-12 lg:px-16">
 
         {/* ── Header ──────────────────────────────────── */}
@@ -43,10 +43,10 @@ export default function PolesActivites() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="font-sans text-[11px] md:text-[12px] font-semibold tracking-[0.2em] uppercase text-[#C4A55A] mb-6">
+            <p className="font-sans text-[13px] md:text-[14px] font-semibold tracking-[0.2em] uppercase text-[#C4A55A] mb-6">
               Pôles d'activités
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1a202c] font-normal leading-[1.15] mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1a202c] font-bold leading-[1.15] mb-6">
               Trois métiers,<br />
               une exigence commune
             </h2>
@@ -57,7 +57,7 @@ export default function PolesActivites() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <p className="font-sans text-[14px] md:text-[15px] text-neutral-700 leading-relaxed max-w-[550px]">
+            <p className="font-sans text-[15px] text-neutral-700 leading-relaxed max-w-[550px]">
               Depuis plus d'un siècle, Softgroup construit son développement autour
               de pôles complémentaires, chacun leader ou référence dans son secteur au Maroc.
             </p>
@@ -90,7 +90,7 @@ export default function PolesActivites() {
 
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 p-8 md:p-10 flex flex-col z-10 w-full">
-                <span className="font-sans text-[11px] tracking-[0.15em] text-[#C4A55A] font-medium mb-2">
+                <span className="font-sans text-[13px] tracking-[0.15em] text-[#C4A55A] font-medium mb-2">
                   {pole.num}
                 </span>
                 <h3 className="font-serif text-xl md:text-2xl text-white font-light">
@@ -108,7 +108,7 @@ export default function PolesActivites() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="font-sans text-sm md:text-[15px] text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm md:text-[13px] text-white/80 leading-relaxed">
                     {pole.desc}
                   </p>
                 </motion.div>

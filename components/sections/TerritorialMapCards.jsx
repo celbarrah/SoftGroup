@@ -347,7 +347,7 @@ export default function TerritorialMapCards() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
         >
           <div>
-            <p className="font-sans text-[14px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
+            <p className="font-sans text-[17px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
               Présence Nationale
             </p>
             <h2 className="font-serif text-4xl md:text-6xl text-neutral-800 font-light leading-[1.1]">
@@ -355,7 +355,7 @@ export default function TerritorialMapCards() {
               <span className="italic text-gold">Territoriale</span>
             </h2>
           </div>
-          <p className="font-sans text-[18px] md:text-[20px] text-neutral-500 max-w-2xl leading-relaxed md:text-right">
+          <p className="font-sans text-[20px] md:text-[20px] text-neutral-500 max-w-2xl leading-relaxed md:text-right">
             4 villes stratégiques, un maillage territorial pensé pour votre croissance.
           </p>
         </motion.div>

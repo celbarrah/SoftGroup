@@ -1,4 +1,3 @@
-import { Geist, Playfair_Display } from "next/font/google"
 import { Cormorant_Garamond, DM_Sans } from "next/font/google"
 import "./globals.css"
 import LenisProvider    from "@/components/providers/LenisProvider"
@@ -21,17 +20,8 @@ const cormorant = Cormorant_Garamond({
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets:  ["latin"],
-  weight:   ["300", "400", "500", "600"],
+  weight:   ["300", "400", "500", "600", "700"],
   display:  "swap",
-})
-export const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-})
-
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
 })
 
 export const metadata = {
@@ -41,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${geist.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
         <LenisProvider>
           <Header />

@@ -45,7 +45,7 @@ export default function NavGroupe() {
               key={item.label}
               href={item.href}
               onClick={(e) => handleClick(e, item.href, i)}
-              className="relative flex-none md:flex-1 px-5 py-5 font-sans text-[11px] tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 text-center"
+              className="relative flex-none md:flex-1 px-5 py-5 font-sans text-[13px] tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 text-center"
               style={{
                 color:  active === i ? "#C4A55A" : "rgba(64,64,64,0.6)",
                 fontWeight: active === i ? 600 : 400,

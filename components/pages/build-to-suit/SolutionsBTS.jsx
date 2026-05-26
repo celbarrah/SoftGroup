@@ -4,8 +4,6 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 
-/* ─── Data ─────────────────────────────────────────────────────── */
-
 const CARDS = [
   {
     tag: "Logistique",
@@ -33,179 +31,93 @@ const CARDS = [
   },
 ]
 
-/* ─── Component ─────────────────────────────────────────────────── */
-
 export default function SolutionsBTS() {
   const ref = useRef(null)
-
-  const inView = useInView(ref, {
-    once: true,
-    margin: "-8%",
-  })
+  const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section
-      ref={ref}
-      className="bg-off-white py-[100px] overflow-hidden"
-    >
-      {/* Header */}
-      <div className="px-[clamp(20px,5vw,80px)] max-w-[1500px] mx-auto">
+    <section ref={ref} className="bg-off-white py-[100px] overflow-hidden">
+
+      {/* ── Header ── */}
+      <div className="px-[clamp(24px,5vw,80px)] max-w-[1500px] mx-auto mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span
-            className="block font-sans text-[12px]
-                       tracking-[0.24em] uppercase
-                       text-gold font-bold mb-[14px]"
-          >
+          <span className="block font-sans text-[14px] tracking-[0.24em] uppercase text-gold font-bold mb-[14px]">
             Solutions clés en main
           </span>
-
-          <h2
-            className="font-serif text-[clamp(36px,3.8vw,56px)]
-                       font-light text-dark leading-[1.06]
-                       tracking-[-0.02em]"
-          >
+          <h2 className="font-serif text-[clamp(36px,3.8vw,56px)] font-light text-dark leading-[1.06] tracking-[-0.02em] mb-[22px]">
             Une ingénierie de pointe
             <br />
-            <strong className="font-semibold">
-              centrée sur vos usages
-            </strong>
+            <strong className="font-semibold">centrée sur vos usages</strong>
           </h2>
+          <p className="font-sans text-[18px] font-light text-neutral-600 leading-[1.85] max-w-3xl">
+            Co-concevoir des infrastructures sur mesure qui répondent précisément aux réalités de votre activité.
+            Chaque projet fait l&apos;objet d&apos;une modélisation rigoureuse où chaque détail compte : ratios de quais,
+            stationnement, flux, sécurité et fonctionnalités spécifiques.
+          </p>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.12 }}
-          className="font-sans text-[15px]
-                     font-light text-neutral-700
-                     leading-[1.85]
-                     max-w-5xl mt-[22px] mb-[52px]"
-        >
-          Co-concevoir des infrastructures sur mesure qui répondent
-          précisément aux réalités de votre activité.
-          <br />
-          <br />
-          Chaque projet fait l'objet d'une modélisation rigoureuse où chaque
-          détail compte : ratios de quais, stationnement, flux, sécurité et
-          fonctionnalités spécifiques.
-        </motion.p>
       </div>
 
-      {/* Slider */}
-      <div className="relative">
+      {/* ── Cards
+            Mobile  → horizontal scroll (snap)
+            Desktop → 4-column grid
+      ── */}
+      <div className="px-[clamp(24px,5vw,80px)] max-w-[1500px] mx-auto">
+
+        {/* Scroll wrapper — flex on mobile, grid on lg+ */}
         <div
           className="
             flex gap-5
             overflow-x-auto overflow-y-hidden
-            snap-x snap-mandatory
-            scroll-smooth
-            px-[20px] md:px-[40px] lg:px-[80px]
+            snap-x snap-mandatory scroll-smooth
             pb-4
-            no-scrollbar
-            touch-pan-x
+            lg:grid lg:grid-cols-4
+            lg:overflow-visible lg:pb-0
+            lg:snap-none
           "
-          style={{
-            WebkitOverflowScrolling: "touch",
-          }}
+          style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {CARDS.map((card, i) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.65,
-                delay: i * 0.08,
-              }}
+              transition={{ duration: 0.65, delay: i * 0.08 }}
+              /* Mobile: fixed-width card that snaps; Desktop: grid auto-sizes */
               className="
+                flex-none w-[80vw] sm:w-[360px]
+                snap-start
+                lg:w-auto lg:flex-auto lg:snap-none
                 group
-                min-w-[86vw]
-                sm:min-w-[420px]
-                lg:min-w-[360px]
-                lg:max-w-[360px]
-                flex-shrink-0
-                snap-center
               "
             >
-              <div
-                className="
-                  h-full
-                  rounded-[22px]
-                  overflow-hidden
-                  bg-white
-                  border border-neutral-200/70
-                  shadow-[0_10px_30px_rgba(0,0,0,0.04)]
-                  transition-all duration-500
-                  hover:-translate-y-1.5
-                  hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]
-                "
-              >
+              <div className="h-full rounded-[22px] overflow-hidden bg-white border border-neutral-200/70 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
                 {/* Image */}
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={card.img}
                     alt={card.title}
                     fill
                     draggable={false}
-                    sizes="(max-width:768px) 86vw, 360px"
-                    className="
-                      object-cover
-                      transition-transform duration-700
-                      group-hover:scale-[1.06]
-                    "
+                    sizes="(max-width:1024px) 80vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="px-6 pt-6 pb-7">
-                  <span
-                    className="
-                      inline-flex items-center
-                      rounded-full
-                      bg-gold/10
-                      text-gold
-                      px-3 py-1
-                      text-[10px]
-                      tracking-[0.16em]
-                      uppercase
-                      font-medium
-                      mb-3
-                    "
-                  >
+                  <span className="inline-flex items-center rounded-full bg-gold/10 text-gold px-3 py-1 text-[12px] tracking-[0.16em] uppercase font-medium mb-3">
                     {card.tag}
                   </span>
-
-                  <h3
-                    className="
-                      font-serif
-                      text-[25px]
-                      leading-[1.15]
-                      text-neutral-900
-                      font-light
-                      mb-4
-                    "
-                  >
+                  <h3 className="font-serif text-[22px] leading-[1.15] text-neutral-900 font-light mb-4">
                     {card.title}
                   </h3>
-
                   <div className="flex flex-wrap gap-2">
                     {card.specs.map((s) => (
-                      <span
-                        key={s}
-                        className="
-                          text-[11px]
-                          text-neutral-600
-                          bg-neutral-100
-                          border border-neutral-200
-                          rounded-full
-                          px-3 py-1
-                          whitespace-nowrap
-                        "
-                      >
+                      <span key={s} className="text-[12px] text-neutral-600 bg-neutral-100 border border-neutral-200 rounded-full px-3 py-1 whitespace-nowrap">
                         {s}
                       </span>
                     ))}
@@ -215,37 +127,23 @@ export default function SolutionsBTS() {
             </motion.div>
           ))}
         </div>
-      </div>
 
-      {/* Hint */}
-      <div className="mt-7 px-[20px] md:px-[40px] lg:px-[80px]">
-        <div
-          className="
-            inline-flex items-center gap-3
-            rounded-full
-            border border-neutral-200
-            bg-white
-            px-5 py-3
-            text-[12px]
-            text-neutral-500
-          "
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-7"
         >
-          <span className="text-gold text-[14px]">→</span>
-          <span>Faites défiler horizontalement</span>
-        </div>
+          <div className="inline-flex items-center gap-3 border border-neutral-200 bg-white rounded-sm px-5 py-3 font-sans text-[13px] font-light text-muted">
+            <span className="text-gold text-[16px]">→</span>
+            <span>Faites défiler pour explorer toutes les typologies</span>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Hide scrollbar */}
-      <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
+      {/* Hide scrollbar globally for this element */}
+      <style>{`.solutions-scroll::-webkit-scrollbar { display: none; }`}</style>
     </section>
   )
 }

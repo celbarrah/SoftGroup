@@ -160,7 +160,7 @@ function CityInfoPanel({ city }) {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-gold mb-3">
+        <p className="font-sans text-[15px] tracking-[0.4em] uppercase font-bold text-gold mb-3">
           {city.subtitle}
         </p>
         <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light mb-4 leading-tight">
@@ -169,12 +169,12 @@ function CityInfoPanel({ city }) {
         <div className="w-8 h-px bg-gold mb-6" />
 
         <div className="mb-5">
-          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-3">
+          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-3">
             Segments
           </p>
           <div className="flex flex-wrap gap-2">
             {city.segments.map((s) => (
-              <span key={s} className="font-sans text-[10px] tracking-[0.08em] text-neutral-600 bg-gray-100 border border-gray-200 px-3 py-1.5">
+              <span key={s} className="font-sans text-[12px] tracking-[0.08em] text-neutral-600 bg-gray-100 border border-gray-200 px-3 py-1.5">
                 {s}
               </span>
             ))}
@@ -182,21 +182,21 @@ function CityInfoPanel({ city }) {
         </div>
 
         <div className="mb-5">
-          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
+          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Connexions
           </p>
           {city.access.map((a) => (
-            <p key={a} className="font-sans text-[14px] text-neutral-500 leading-relaxed">
+            <p key={a} className="font-sans text-[18px] text-neutral-500 leading-relaxed">
               ← {a}
             </p>
           ))}
         </div>
 
         <div>
-          <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
+          <p className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400 mb-2">
             Zones
           </p>
-          <p className="font-sans text-[13px] text-neutral-500 leading-relaxed">
+          <p className="font-sans text-[18px] text-neutral-500 leading-relaxed">
             {city.zones.join(" · ")}
           </p>
         </div>
@@ -204,7 +204,7 @@ function CityInfoPanel({ city }) {
 
       <a
         href="#contact"
-        className="inline-block mt-8 font-sans text-[9px] tracking-[0.25em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 w-fit"
+        className="inline-block mt-8 font-sans text-[15px] tracking-[0.25em] uppercase font-bold text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 w-fit"
       >
         Découvrir les actifs →
       </a>
@@ -260,7 +260,7 @@ export default function TerritorialMap() {
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-14"
       >
-        <p className="font-sans text-[11px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
+        <p className="font-sans text-[15px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
           Présence Nationale
         </p>
         <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
@@ -268,7 +268,7 @@ export default function TerritorialMap() {
           <br />
           <span className="italic">Territoriale</span>
         </h2>
-        <p className="font-sans text-[16px] text-neutral-500 mt-5 max-w-lg leading-[1.85]">
+        <p className="font-sans text-[18px] text-neutral-500 mt-5 max-w-lg leading-[1.85]">
           Implantés dans les 4 pôles économiques stratégiques du Maroc,
           au plus près de vos besoins.
         </p>
@@ -292,7 +292,7 @@ export default function TerritorialMap() {
                   key={city.id}
                   onClick={() => handleSelect(city.id)}
                   className={[
-                    "font-sans text-[10px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
+                    "font-sans text-[12px] tracking-[0.2em] uppercase px-4 py-2.5 border transition-all duration-300",
                     active === city.id
                       ? "bg-gold text-white border-gold"
                       : "bg-transparent text-neutral-400 border-neutral-200 hover:border-gold/50 hover:text-neutral-700",

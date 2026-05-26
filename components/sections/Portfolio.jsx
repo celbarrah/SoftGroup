@@ -77,7 +77,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="mb-14"
         >
-          <p className="text-[14px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
+          <p className="text-[17px] font-extrabold tracking-[0.4em] uppercase text-gold mb-4">
             Nos Segments
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-neutral-900 font-light max-w-2xl leading-[1.1]">
@@ -85,7 +85,7 @@ export default function Portfolio() {
             <br />
             <span className="italic">Des Actifs d&apos;Exception</span>
           </h2>
-          <p className="text-[17px] text-neutral-500 mt-5 max-w-xl leading-[1.85]">
+          <p className="text-[19px] text-neutral-500 mt-5 max-w-xl leading-[1.85]">
             Cinq segments d&apos;activité pour répondre aux exigences les plus
             pointues du marché marocain.
           </p>
@@ -120,7 +120,7 @@ export default function Portfolio() {
 
               {/* CONTENT */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="text-[10px] font-extrabold tracking-[0.3em] uppercase text-gold/70 mb-2">
+                <span className="text-[15px] font-extrabold tracking-[0.3em] uppercase text-gold/70 mb-2">
                   {seg.label}
                 </span>
                 <h3 className="text-2xl md:text-3xl text-white font-light leading-tight mb-3 transition-colors duration-300 group-hover:text-gold">
@@ -134,7 +134,7 @@ export default function Portfolio() {
                     {seg.locations.map((loc) => (
                       <span
                         key={loc}
-                        className="text-[8px] tracking-[0.2em] uppercase text-white border border-white/40 rounded-md px-2.5 py-1"
+                        className="text-[10px] tracking-[0.2em] uppercase text-white border border-white/40 rounded-md px-2.5 py-1"
                       >
                         {loc}
                       </span>
@@ -160,7 +160,7 @@ export default function Portfolio() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
+            className="inline-flex items-center gap-3 text-[15px] font-bold tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
           >
             Découvrir nos actifs
             <span className="block h-px w-8 bg-current transition-all duration-300 group-hover:w-14" />

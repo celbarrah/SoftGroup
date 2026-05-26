@@ -108,7 +108,7 @@ export default function PoleActivite() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
-            <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
+            <p className="font-sans text-[17px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-6">
               Mécénat Culturel
             </p>
             <div className="flex items-center gap-5 mb-2">
@@ -122,7 +122,7 @@ export default function PoleActivite() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.15 }} className="flex items-end">
-            <p className="font-sans text-[17px] text-neutral-500 leading-[1.9] max-w-md">
+            <p className="font-sans text-[19px] text-neutral-500 leading-[1.9] max-w-md">
               Parce qu&apos;un groupe d&apos;exception se mesure aussi à son empreinte intellectuelle,
               SOFTGROUP a créé le label éditorial SoftCulture — une initiative portée par les
               membres fondateurs et dirigeants du groupe pour valoriser le patrimoine marocain
@@ -132,7 +132,7 @@ export default function PoleActivite() {
         </div>
 
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-sans text-[12px] tracking-[0.45em] font-bold uppercase text-neutral-400 mb-6">
+          className="font-sans text-[14px] tracking-[0.45em] font-bold uppercase text-neutral-400 mb-6">
           Ouvrages publiés
         </motion.p>
 
@@ -143,7 +143,7 @@ export default function PoleActivite() {
         </div>
 
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.5 }}
-          className="font-sans text-[14px] tracking-[0.35em] font-bold uppercase text-neutral-600 mt-6">
+          className="font-sans text-[17px] tracking-[0.35em] font-bold uppercase text-neutral-600 mt-6">
           Survolez pour découvrir
         </motion.p>
 

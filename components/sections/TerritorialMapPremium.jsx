@@ -411,7 +411,7 @@ export default function TerritorialMapPremium() {
           transition={{ duration: 0.8 }}
           className="mb-14"
         >
-          <p className="font-sans text-[11px] font-bold tracking-[0.55em] uppercase text-gold/60 mb-4">
+          <p className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold/60 mb-4">
             Présence Territoriale
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
@@ -419,7 +419,7 @@ export default function TerritorialMapPremium() {
               Implantation<br />
               <span className="italic text-gold">Nationale</span>
             </h2>
-            <p className="font-sans text-[13px] text-neutral-400 md:text-right max-w-xs">
+            <p className="font-sans text-[15px] text-neutral-400 md:text-right max-w-xs">
               Glissez le globe pour explorer.<br />Cliquez sur une ville pour en savoir plus.
             </p>
           </div>
@@ -467,7 +467,7 @@ export default function TerritorialMapPremium() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="absolute bottom-2 left-1/2 -translate-x-1/2 font-sans text-[9px] tracking-[0.35em] uppercase text-neutral-400 whitespace-nowrap pointer-events-none"
+              className="absolute bottom-2 left-1/2 -translate-x-1/2 font-sans text-[11px] tracking-[0.35em] uppercase text-neutral-400 whitespace-nowrap pointer-events-none"
             >
               ← Faites glisser →
             </motion.p>
@@ -505,39 +505,39 @@ export default function TerritorialMapPremium() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="font-sans text-[12px] tracking-[0.4em] uppercase text-white mb-3">
+                <p className="font-sans text-[14px] tracking-[0.4em] uppercase text-white mb-3">
                   {activeCity.tag}
                 </p>
                 <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light leading-none mb-3">
                   {activeCity.label}
                 </h3>
                 <div className="w-10 h-px bg-gold mb-5" />
-                <p className="font-sans text-[14px] text-neutral-500 leading-[1.85] mb-6">
+                <p className="font-sans text-[18px] text-neutral-500 leading-[1.85] mb-6">
                   {activeCity.desc}
                 </p>
                 <div className="mb-7">
-                  <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-3">
+                  <p className="font-sans text-[13px] tracking-[0.3em] uppercase text-neutral-400 mb-3">
                     Actifs clés
                   </p>
                   <ul className="flex flex-col gap-2">
                     {activeCity.assets.map(a => (
                       <li key={a} className="flex items-center gap-2.5">
                         <span className="w-1 h-1 rounded-full bg-gold/60 flex-none" />
-                        <span className="font-sans text-[13px] text-neutral-600">{a}</span>
+                        <span className="font-sans text-[15px] text-neutral-600">{a}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="inline-flex items-center gap-3 border border-gold/25 px-4 py-2.5 mb-8">
                   <span className="font-serif text-2xl text-gold font-light">{activeCity.stat}</span>
-                  <span className="font-sans text-[9px] tracking-[0.25em] uppercase text-neutral-400">actifs gérés</span>
+                  <span className="font-sans text-[11px] tracking-[0.25em] uppercase text-neutral-400">actifs gérés</span>
                 </div>
               </motion.div>
             </AnimatePresence>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-3 font-sans text-[10px] tracking-[0.3em] uppercase text-gold border border-gold/30 px-7 py-4 hover:bg-gold hover:text-white transition-all duration-300 group"
+              className="inline-flex items-center gap-3 font-sans text-[15px] tracking-[0.3em] uppercase font-bold text-gold border border-gold/30 px-7 py-4 hover:bg-gold hover:text-white transition-all duration-300 group"
             >
               Explorer nos implantations
               <ArrowUpRight size={12} strokeWidth={1.5} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

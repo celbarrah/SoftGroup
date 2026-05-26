@@ -50,8 +50,8 @@ export default function Header() {
 
   /* Link classes adapt to scroll state */
   const linkClass = scrolled
-    ? "font-sans text-[13px] tracking-[0.15em] uppercase text-neutral-600 hover:text-gold transition-colors duration-300"
-    : "font-sans text-[13px] tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-300"
+    ? "font-sans text-[15px] tracking-[0.15em] uppercase font-bold text-neutral-600 hover:text-gold transition-colors duration-300"
+    : "font-sans text-[15px] tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-300"
 
   return (
     <>
@@ -130,7 +130,7 @@ export default function Header() {
                         key={label}
                         href={href}
                         onClick={() => setPortfolioOpen(false)}
-                        className="block px-5 py-2.5 font-sans text-[11px] tracking-[0.12em] uppercase text-neutral-600 hover:text-gold hover:bg-gray-50 transition-all duration-200"
+                        className="block px-5 py-2.5 font-sans text-[15px] tracking-[0.12em] uppercase font-bold text-neutral-600 hover:text-gold hover:bg-gray-50 transition-all duration-200"
                       >
                         {label}
                       </a>
@@ -155,7 +155,7 @@ export default function Header() {
             animate={{ opacity: scrolled ? 1 : 0 }}
             transition={{ duration: 0.3 }}
             style={{ pointerEvents: scrolled ? "auto" : "none" }}
-            className="hidden md:block font-sans text-[10px] tracking-[0.2em] uppercase text-white bg-gold border border-gold/40 px-5 py-2 hover:scale-102 transition-all duration-300 whitespace-nowrap"
+            className="hidden md:block font-sans text-[12px] tracking-[0.2em] uppercase text-white bg-gold border border-gold/40 px-5 py-2 hover:scale-102 transition-all duration-300 whitespace-nowrap"
           >
             Planifier une visite
           </motion.a> */}

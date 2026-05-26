@@ -60,13 +60,13 @@ function VisitModal({ onClose }) {
                 <Check size={28} strokeWidth={1.5} className="text-gold" />
               </div>
               <h3 className="font-serif text-3xl text-neutral-800 font-light mb-3">Demande envoyée</h3>
-              <p className="font-sans text-[16px] text-neutral-500 leading-[1.8] max-w-sm mx-auto">
+              <p className="font-sans text-[18px] text-neutral-500 leading-[1.8] max-w-sm mx-auto">
                 Nos équipes vous contacteront dans les 24 heures pour confirmer votre rendez-vous.
               </p>
             </motion.div>
           ) : (
             <>
-              <p className="font-sans text-[12px] tracking-[0.45em] uppercase text-gold/70 font-bold mb-4">
+              <p className="font-sans text-[15px] tracking-[0.45em] uppercase text-gold/70 font-bold mb-4">
                 Planifier une visite
               </p>
               <h3 className="font-serif text-3xl md:text-4xl text-neutral-800 font-light leading-[1.1] mb-2">
@@ -79,52 +79,52 @@ function VisitModal({ onClose }) {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Nom *</label>
+                    <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Nom *</label>
                     <input name="nom" value={form.nom} onChange={handleChange} required placeholder="Kabbaj"
-                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
+                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
                   </div>
                   <div>
-                    <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Prénom *</label>
+                    <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Prénom *</label>
                     <input name="prenom" value={form.prenom} onChange={handleChange} required placeholder="Mohamed"
-                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
+                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
                   </div>
                 </div>
                 <div>
-                  <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Société</label>
+                  <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Société</label>
                   <input name="societe" value={form.societe} onChange={handleChange} placeholder="Votre entreprise"
-                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
+                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Email *</label>
+                    <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Email *</label>
                     <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="votre@email.com"
-                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
+                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
                   </div>
                   <div>
-                    <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Téléphone</label>
+                    <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Téléphone</label>
                     <input name="tel" type="tel" value={form.tel} onChange={handleChange} placeholder="+212 6 XX XX XX XX"
-                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
+                      className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200" />
                   </div>
                 </div>
                 <div>
-                  <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Type d&apos;espace *</label>
+                  <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Type d&apos;espace *</label>
                   <select name="type" value={form.type} onChange={handleChange} required
-                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200 appearance-none">
+                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200 appearance-none">
                     <option value="" disabled>Sélectionnez un segment</option>
                     {TYPES.map(t => <option key={t} value={t}>{t}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="font-sans text-[11px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Votre projet</label>
+                  <label className="font-sans text-[13px] tracking-[0.2em] uppercase text-neutral-400 block mb-2">Votre projet</label>
                   <textarea name="message" value={form.message} onChange={handleChange} rows={3} placeholder="Décrivez brièvement vos besoins…"
-                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[15px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200 resize-none" />
+                    className="w-full border border-gray-200 bg-gray-50 px-4 py-3 font-sans text-[18px] text-neutral-700 placeholder:text-neutral-300 focus:outline-none focus:border-gold/50 focus:bg-white transition-all duration-200 resize-none" />
                 </div>
                 <button type="submit"
-                  className="inline-flex items-center gap-3 bg-neutral-900 text-white font-sans text-[11px] tracking-[0.28em] uppercase px-10 py-4 hover:bg-gold transition-colors duration-300 w-full justify-center group">
+                  className="inline-flex items-center gap-3 bg-neutral-900 text-white font-sans text-[13px] tracking-[0.28em] uppercase px-10 py-4 hover:bg-gold transition-colors duration-300 w-full justify-center group">
                   Envoyer ma demande
                   <ArrowUpRight size={14} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </button>
-                <p className="font-sans text-[11px] text-neutral-400 text-center leading-relaxed">
+                <p className="font-sans text-[13px] text-neutral-400 text-center leading-relaxed">
                   Nos équipes vous répondront dans les 24 heures ouvrées.
                 </p>
               </form>
@@ -157,7 +157,7 @@ export default function FooterCTA() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
-            className="font-sans text-[13px] tracking-[0.5em] uppercase text-gold font-bold mb-7">
+            className="font-sans text-[15px] tracking-[0.5em] uppercase text-gold font-bold mb-7">
             Parlons de votre projet
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.85, delay: 0.1 }}
@@ -167,14 +167,14 @@ export default function FooterCTA() {
             <span className="italic text-gold">en location&nbsp;?</span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-sans text-[19px] text-muted leading-[1.9] max-w-xl mx-auto mb-14">
+            className="font-sans text-[21px] text-muted leading-[1.9] max-w-xl mx-auto mb-14">
             Nos équipes vous accompagnent dans la recherche d&apos;espaces adaptés
             à vos exigences et aux enjeux de votre activité.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.32 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button onClick={() => setOpen(true)}
-              className="inline-flex items-center gap-3 bg-gold text-noir font-sans text-[10px] tracking-[0.28em] uppercase px-11 py-4 hover:bg-gold-light transition-colors duration-300 font-medium cursor-pointer">
+              className="inline-flex items-center gap-3 bg-gold text-noir font-sans text-[12px] tracking-[0.28em] uppercase px-11 py-4 hover:bg-gold-light transition-colors duration-300 font-medium cursor-pointer">
               Planifier une visite
             </button>
           </motion.div>

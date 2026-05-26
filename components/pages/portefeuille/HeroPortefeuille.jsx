@@ -18,7 +18,7 @@ export default function HeroPortefeuille() {
   const opa = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#080808]">
+    <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#080808] flex items-center">
       {/* Parallax image */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
         <Image
@@ -29,75 +29,66 @@ export default function HeroPortefeuille() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-[#080808]" />
+        {/* Dark overlays */}
+        <div className="absolute inset-0 bg-noir/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir/70 via-noir/30 to-transparent" />
       </motion.div>
 
-      {/* Content */}
+      {/* Glass card — content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 min-h-screen flex flex-col justify-end pb-24 px-8 md:px-12 lg:px-20 max-w-7xl mx-auto"
+        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[550px]"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-sans text-[9px] tracking-[0.55em] uppercase text-gold/70 mb-6"
-        >
-          Nos Actifs
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-7xl text-white font-light leading-[1.0] mb-8 max-w-3xl"
-        >
-          Un Portefeuille d&apos;Exception,
-          <br />
-          <span className="italic text-gold">Cinq Segments de Référence</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65 }}
-          className="font-sans text-[15px] text-white/40 leading-[1.9] max-w-lg mb-16"
-        >
-          Une offre complète de solutions locatives haut de gamme, développées pour répondre
-          aux standards les plus exigeants du marché immobilier marocain.
-        </motion.p>
-
-        {/* DÉFILER indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-          className="absolute bottom-[clamp(160px,18vw,220px)] right-14 cursor-pointer"
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
-        >
-          <div className="hero-deflier flex flex-col items-center gap-2">
-            <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
-            <span className="font-sans text-[10px] tracking-[0.14em] uppercase text-white/35">Défiler</span>
-          </div>
-        </motion.div>
-
-        {/* Stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 border border-white/8"
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-black/30 backdrop-blur-[22px] border border-white/[0.15] rounded-[24px] px-[40px] py-[30px]"
         >
-          {STATS.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`px-7 py-5 ${i < STATS.length - 1 ? "border-r border-white/8" : ""}`}
-            >
-              <p className="font-serif text-2xl md:text-3xl text-white font-light mb-1">{stat.value}</p>
-              <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-white/30">{stat.label}</p>
-            </div>
-          ))}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="font-sans text-[15px] tracking-[0.55em] uppercase font-bold text-gold mb-6"
+          >
+            Nos Actifs
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="font-serif text-5xl md:text-6xl text-white font-light leading-[1.0] mb-8"
+          >
+            Un Portefeuille d'Exception,
+            <br />
+            <span className="italic text-gold">Cinq Segments <br/> de Référence</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
+          >
+            Une offre complète de solutions locatives haut de gamme, développées pour répondre
+            aux standards les plus exigeants du marché immobilier marocain.
+          </motion.p>
         </motion.div>
+      </motion.div>
+
+      {/* DÉFILER indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-[clamp(160px,18vw,220px)] right-14 z-10 cursor-pointer"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+      >
+        <div className="hero-deflier flex flex-col items-center gap-2">
+          <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="font-sans text-[12px] tracking-[0.14em] uppercase text-white/35">Défiler</span>
+        </div>
       </motion.div>
     </section>
   )

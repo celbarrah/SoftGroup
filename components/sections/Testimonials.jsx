@@ -131,7 +131,7 @@ export default function Testimonials() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16"
         >
           <div>
-            <p className="font-sans text-[14px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
+            <p className="font-sans text-[17px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-4">
               Témoignages de Partenaires
             </p>
             <h2 className="font-serif text-3xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
@@ -148,7 +148,7 @@ export default function Testimonials() {
             >
               <ChevronLeft size={18} strokeWidth={1.5} />
             </button>
-            <span className="font-sans text-[10px] text-neutral-400 tracking-widest tabular-nums">
+            <span className="font-sans text-[12px] text-neutral-400 tracking-widest tabular-nums">
               {String(current + 1).padStart(2, "0")} / {String(TESTIMONIALS.length).padStart(2, "0")}
             </span>
             <button
@@ -191,7 +191,7 @@ export default function Testimonials() {
                     company={t.company}
                     logoScale={t.logoScale}
                   />
-                  <p className="font-sans text-[11px] text-gold tracking-[0.15em] uppercase">
+                  <p className="font-sans text-[15px] text-gold tracking-[0.15em] uppercase font-bold">
                     {t.role}
                   </p>
                   <div className="hidden lg:block w-px h-14 bg-gold/25 mt-2" />

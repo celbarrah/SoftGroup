@@ -56,7 +56,7 @@ export default function ProcessGestion() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,14,12,0.40) 0%, transparent 50%)" }} />
       </div> */}
 
-      <div className="max-w-[1500px] mx-auto px-8 md:px-12 lg:px-20 py-24 md:py-32">
+      <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-20 py-24 md:py-32">
 
         {/* Header */}
         <motion.div
@@ -65,7 +65,7 @@ export default function ProcessGestion() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/60 mb-4">
+          <p className="font-sans text-[17px] font-bold tracking-[0.55em] uppercase text-gold/60 mb-4">
             Notre Engagement
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-black font-light leading-[1.1]">
@@ -84,7 +84,7 @@ export default function ProcessGestion() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-sans text-[17px] font-light leading-[1.85] mb-12 max-w-[44ch] text-black">
+            <p className="font-sans text-[19px] font-light leading-[1.85] mb-12 max-w-[44ch] text-black">
               Un gestionnaire dédié, des délais mesurés, un rapport à chaque clôture.
               Pas de promesse floue des résultats traçables.
             </p>

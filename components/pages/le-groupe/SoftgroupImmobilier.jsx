@@ -72,7 +72,7 @@ export default function SoftgroupImmobilier() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-[#f8f9fa] py-20 md:py-32 overflow-hidden" id="softgroup-immobilier">
+    <section ref={ref} className="bg-[#f8f9fa] py-20 md:py-20 overflow-hidden" id="softgroup-immobilier">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         <motion.div 
@@ -90,7 +90,7 @@ export default function SoftgroupImmobilier() {
           {/* ── Right Column (Content) ─────────────────────────────── */}
           <div className="w-full lg:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
 
-            <p className="font-sans text-[10px] md:text-[11px] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+            <p className="font-sans text-[15px] md:text-[15px] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
               La Filiale Phare
             </p>
 
@@ -101,7 +101,7 @@ export default function SoftgroupImmobilier() {
               La Référence Locative Premium
             </h2>
 
-            <p className="font-sans text-[13px] md:text-[14px] text-dark/60 leading-[1.8] mb-10 max-w-xl">
+            <p className="font-sans text-[18px] md:text-[18px] text-dark/60 leading-[1.8] mb-10 max-w-xl">
               Constructeur, développeur et gestionnaire d'actifs depuis plus de 35 ans, Softgroup Immobilier est la foncière locative de référence au Maroc. Maîtrisant l'intégralité du cycle de vie immobilier, de la conception architecturale à la valorisation patrimoniale, elle couvre cinq segments stratégiques avec une exigence absolue de qualité et de performance.
             </p>
 
@@ -116,11 +116,11 @@ export default function SoftgroupImmobilier() {
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                    <h4 className="font-sans text-[14px] text-noir font-medium">
+                    <h4 className="font-sans text-[18px] text-noir font-medium">
                       {pt.title}
                     </h4>
                   </div>
-                  <p className="font-sans text-[13px] text-dark/65 leading-[1.7] pl-4.5 max-w-xl">
+                  <p className="font-sans text-[18px] text-dark/65 leading-[1.7] pl-4.5 max-w-xl">
                     {pt.desc}
                   </p>
                 </motion.div>
@@ -131,13 +131,13 @@ export default function SoftgroupImmobilier() {
             <div className="flex flex-wrap items-center gap-4 mt-auto">
               <a
                 href="/portefeuille"
-                className="inline-flex items-center gap-2 font-sans text-[13px] font-medium text-noir bg-gold px-6 py-3 rounded-full hover:bg-gold-light transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-sans text-[15px] font-medium text-noir bg-gold px-6 py-3 rounded-full hover:bg-gold-light transition-colors duration-300"
               >
-                Découvrir nos projets <span className="text-[16px] leading-none">➔</span>
+                Découvrir nos projets <span className="text-[18px] leading-none">➔</span>
               </a>
               <a
                 href="#build-to-suit"
-                className="inline-flex items-center justify-center font-sans text-[13px] font-medium text-noir border border-gold px-6 py-3 rounded-full hover:bg-gold hover:text-noir transition-colors duration-300"
+                className="inline-flex items-center justify-center font-sans text-[15px] font-medium text-noir border border-gold px-6 py-3 rounded-full hover:bg-gold hover:text-noir transition-colors duration-300"
               >
                 Build-to-Suit
               </a>

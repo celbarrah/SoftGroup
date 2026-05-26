@@ -116,13 +116,13 @@ function ServiceCard({ service, direction }) {
         <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
           {/* Number badge */}
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2">
-            <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-white/60">Service</span>
+            <span className="font-sans text-[12px] tracking-[0.35em] uppercase text-white/60">Service</span>
             <p className="font-serif text-2xl text-white font-light leading-none mt-0.5">{service.num}</p>
           </div>
 
           {/* Category pill */}
           <div className="bg-gold/90 backdrop-blur-sm px-4 py-2">
-            <span className="font-sans text-[9px] tracking-[0.3em] uppercase text-white">{service.category}</span>
+            <span className="font-sans text-[11px] tracking-[0.3em] uppercase text-white">{service.category}</span>
           </div>
         </div>
 
@@ -137,20 +137,20 @@ function ServiceCard({ service, direction }) {
         <h3 className="font-serif text-2xl md:text-3xl text-neutral-800 font-light leading-[1.15] mb-4 whitespace-pre-line">
           {service.title}
         </h3>
-        <p className="font-sans text-[14px] text-neutral-500 leading-[1.8] mb-6 line-clamp-3">
+        <p className="font-sans text-[18px] text-neutral-500 leading-[1.8] mb-6 line-clamp-3">
           {service.desc}
         </p>
         <ul className="grid grid-cols-1 gap-2 mb-6">
           {service.features.map((f) => (
             <li key={f} className="flex items-center gap-2.5">
               <span className="w-1 h-1 rounded-full bg-gold flex-none" />
-              <span className="font-sans text-[13px] text-neutral-600">{f}</span>
+              <span className="font-sans text-[15px] text-neutral-600">{f}</span>
             </li>
           ))}
         </ul>
         <a
           href="#contact"
-          className="inline-flex items-center gap-2 font-sans text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+          className="inline-flex items-center gap-2 font-sans text-[15px] tracking-[0.3em] uppercase font-bold text-gold border border-gold/30 px-5 py-2.5 hover:bg-gold hover:text-white transition-all duration-300 group"
         >
           En savoir plus
           <ArrowUpRight size={12} strokeWidth={1.5} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -210,7 +210,7 @@ export default function PropertyManagementV2() {
         <div className="relative bg-[#F5F3EF] flex flex-col justify-center px-10 md:px-14 lg:px-16 xl:px-20 py-8 lg:py-0 order-2 lg:order-1 overflow-y-auto">
 
           {/* Eyebrow */}
-          <p className="font-sans text-[11px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-7">
+          <p className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-7">
             Gestion Après-Location
           </p>
 
@@ -225,7 +225,7 @@ export default function PropertyManagementV2() {
           <div className="w-14 h-px bg-gold/50 mb-7" />
 
           {/* Description */}
-          <p className="font-sans text-[15px] text-neutral-600 leading-[1.9] mb-10 max-w-sm">
+          <p className="font-sans text-[18px] text-neutral-600 leading-[1.9] mb-10 max-w-sm">
             Nous réinventons la gestion de vos actifs à travers une approche
             personnalisée, alliant expertise technique, sécuritaire et
             administrative — disponibles 24h/24 et 7j/7.
@@ -265,7 +265,7 @@ export default function PropertyManagementV2() {
                   </div>
                   <div>
                     <p className={[
-                      "font-sans text-[11px] tracking-[0.2em] uppercase transition-colors duration-300",
+                      "font-sans text-[13px] tracking-[0.2em] uppercase transition-colors duration-300",
                       isActive ? "text-gold" : "text-neutral-400",
                     ].join(" ")}>
                       {s.num} · {s.category}
@@ -296,7 +296,7 @@ export default function PropertyManagementV2() {
                 0{activeIdx + 1}
               </motion.span>
             </AnimatePresence>
-            <span className="font-sans text-[13px] text-neutral-400">/ 0{SERVICES.length}</span>
+            <span className="font-sans text-[15px] text-neutral-400">/ 0{SERVICES.length}</span>
           </div>
 
           {/* Bottom gold line */}
@@ -319,7 +319,7 @@ export default function PropertyManagementV2() {
                 transition={{ delay: 1.2, duration: 0.8 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
               >
-                <span className="font-sans text-[9px] tracking-[0.3em] uppercase text-white/40">Défiler</span>
+                <span className="font-sans text-[11px] tracking-[0.3em] uppercase text-white/40">Défiler</span>
                 <motion.div
                   animate={{ y: [0, 6, 0] }}
                   transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}

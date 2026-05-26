@@ -61,7 +61,7 @@ export default function PropertyManagementV3() {
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5"
+              className="font-sans text-[17px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5"
             >
               SERVICE APRÈS-LOCATION
             </motion.p>
@@ -70,11 +70,11 @@ export default function PropertyManagementV3() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif text-4xl md:text-6xl text-neutral-800 font-light leading-[1.1] mb-5"
+              className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1] mb-5"
             >
               Property & Facility
               <br />
-              <span className="italic text-gold">Management<br />Intégré</span>
+              <span className="italic text-gold">Management Intégré</span>
             </motion.h2>
 
             <div className="w-10 h-px bg-gold/40 mb-6" />
@@ -95,7 +95,7 @@ export default function PropertyManagementV3() {
             >
               <a
                 href="/gestion-valorisation"
-                className="inline-flex items-center gap-3 font-sans text-[11px] tracking-[0.28em] uppercase text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+                className="inline-flex items-center gap-3 font-sans text-[15px] tracking-[0.28em] uppercase font-bold text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
               >
                 Découvrir nos services
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

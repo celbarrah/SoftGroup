@@ -23,17 +23,20 @@
 
   /* ── Texte sombre (sur fond clair) ── */
   --color-dark:       #0A0A0A;   /* Quasi-noir — texte sur blanc     */
-  --color-muted:      #888888;   /* Texte secondaire / légendes      */
+  --color-muted:      #888888;
 
-  /* ── Typography ── */
-  --font-serif: var(--font-cormorant);  /* Titres — serif luxueux      */
-  --font-sans:  var(--font-dm-sans);    /* Corps — géométrique clean   */
+  /* ── Typography — maps font-serif / font-sans Tailwind classes ── */
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans:  var(--font-dm-sans), system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip; /* clip = no horizontal scroll but does NOT break position:sticky (unlike overflow:hidden) */
+  overflow-x: clip;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 18px;
 }
+
 
 /* ═══════════════════════════════════════════════════════════
    BASE RESET
@@ -45,7 +48,7 @@ html {
 body {
   background-color: #C4A55A;
   color: #1A1A1A;
-  font-family: var(--font-dm-sans), Arial, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
   overflow-x: clip; /* clip preserves sticky positioning — overflow:hidden breaks it */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

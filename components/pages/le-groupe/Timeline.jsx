@@ -35,8 +35,8 @@ function TimelineItem({ event, index }) {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <p className="font-serif text-3xl md:text-4xl text-gold font-light mb-2">{event.year}</p>
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
-            <p className="font-sans text-[16px] text-neutral-500 leading-[1.8]">{event.desc}</p>
+            <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
+            <p className="font-sans text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
           </motion.div>
         )}
       </div>
@@ -63,8 +63,8 @@ function TimelineItem({ event, index }) {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <p className="font-serif text-3xl md:text-4xl text-gold font-light mb-2">{event.year}</p>
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
-            <p className="font-sans text-[16px] text-neutral-500 leading-[1.8]">{event.desc}</p>
+            <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
+            <p className="font-sans text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
           </motion.div>
         )}
       </div>
@@ -88,10 +88,10 @@ export default function Timeline() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="font-sans text-[14px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5">
+          <p className="font-sans text-[17px] font-bold tracking-[0.55em] uppercase text-gold/70 mb-5">
             Notre Histoire
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-neutral-800 font-light leading-[1.1]">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-neutral-800  leading-[1.1]">
             Plus d&apos;un siècle
             <br />
             <span className="italic">d&apos;engagement et de réalisations</span>
@@ -115,8 +115,8 @@ export default function Timeline() {
           className="mt-12 text-center"
         >
           <div className="inline-block border border-gold/30 px-8 py-4 bg-gold/4">
-            <p className="font-sans text-[8px] tracking-[0.45em] uppercase text-gold mb-2">Aujourd'hui</p>
-            <p className="font-serif text-xl text-neutral-800 font-light">
+            <p className="font-sans text-[10px] tracking-[0.45em] uppercase font-bold text-gold mb-2">Aujourd'hui</p>
+            <p className="font-serif text-xl text-neutral-900 font-bold">
               9 filiales · +4 500 collaborateurs · 4 générations
             </p>
           </div>

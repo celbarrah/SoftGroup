@@ -52,7 +52,7 @@ export default function PropertyShowcase() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-sans text-[12px] font-bold tracking-[0.5em] uppercase text-gold mb-5"
+          className="font-sans text-[15px] font-bold tracking-[0.5em] uppercase text-gold mb-5"
         >
           Groupe National Immobilier au Maroc
         </motion.p>
@@ -76,7 +76,7 @@ export default function PropertyShowcase() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.38 }}
-          className="font-sans text-[14px] text-white/65 max-w-md leading-[1.85] mb-10"
+          className="font-sans text-[18px] text-white/65 max-w-md leading-[1.85] mb-10"
         >
           Sérieux, confiance, respect et excellence — la philosophie
           d&apos;un grand groupe national au service de votre bien-être
@@ -92,13 +92,13 @@ export default function PropertyShowcase() {
         >
           <a
             href="#portefeuille"
-            className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase text-[#0A0A0A] bg-gold px-9 py-3.5 hover:bg-gold-light transition-all duration-300"
+            className="inline-block font-sans text-[12px] tracking-[0.3em] uppercase text-[#0A0A0A] bg-gold px-9 py-3.5 hover:bg-gold-light transition-all duration-300"
           >
             Voir nos biens
           </a>
           <a
             href="#contact"
-            className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase text-white border border-white/35 px-9 py-3.5 hover:bg-white/10 transition-all duration-300"
+            className="inline-block font-sans text-[12px] tracking-[0.3em] uppercase text-white border border-white/35 px-9 py-3.5 hover:bg-white/10 transition-all duration-300"
           >
             Contact
           </a>

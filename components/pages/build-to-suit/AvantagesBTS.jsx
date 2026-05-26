@@ -91,13 +91,13 @@ function AvCard({ card, inView, i }) {
       </div>
 
       {/* Title */}
-      <h4 className={`font-sans text-[15px] font-semibold leading-[1.3] mb-[10px]
+      <h4 className={`font-sans text-[18px] font-semibold leading-[1.3] mb-[10px]
                       ${card.dark ? "text-white" : "text-dark"}`}>
         {card.title}
       </h4>
 
       {/* Description */}
-      <p className={`font-sans text-[13px] font-light leading-[1.72] flex-1
+      <p className={`font-sans text-[18px] font-light leading-[1.72] flex-1
                      ${card.dark ? "text-white/50" : "text-muted"}`}>
         {card.desc}
       </p>
@@ -120,7 +120,7 @@ export default function AvantagesBTS() {
 
   return (
     <section ref={ref} className="bg-white py-[100px] px-[clamp(20px,5vw,80px)]">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1500px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.4fr] gap-16 items-start">
 
           {/* Sidebar */}
@@ -129,11 +129,11 @@ export default function AvantagesBTS() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="block font-sans text-[13px] tracking-[0.24em] uppercase
+            <span className="block font-sans text-[15px] tracking-[0.24em] uppercase
                              text-gold font-bold mb-[14px]">
               Notre Plus-Value
             </span>
-            <h2 className="font-serif text-[clamp(30px,3.8vw,40px)] font-light text-dark
+            <h2 className="font-serif text-[clamp(40px,4.5vw,50px)] font-light text-dark
                            leading-[1.06] tracking-[-0.01em]">
               Bien plus qu'un fournisseur :<br />
               <strong className="font-semibold">un partenaire intégré</strong>
@@ -146,7 +146,7 @@ export default function AvantagesBTS() {
                 &lt;&nbsp;12
                 <span className="text-[0.55em] text-gold align-middle ml-1">mois</span>
               </div>
-              <p className="font-sans text-[16px] font-light text-muted leading-[1.55] max-w-xl">
+              <p className="font-sans text-[18px] font-light text-muted leading-[1.55] max-w-xl">
                 De la signature au lancement opérationnel
               </p>
             </div>

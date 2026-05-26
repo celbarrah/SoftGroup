@@ -69,7 +69,7 @@ export default function IntroImpact() {
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-sans text-[16px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-8"
+            className="font-sans text-[18px] font-extrabold tracking-[0.55em] uppercase text-gold/70 mb-8"
           >
             Notre Savoir-Faire
           </motion.p>
@@ -78,7 +78,7 @@ export default function IntroImpact() {
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-sans text-[17px] md:text-[18px] text-neutral-600 leading-[1.85] mb-12 max-w-xl"
+            className="font-sans text-[19px] md:text-[20px] text-neutral-600 leading-[1.85] mb-12 max-w-xl"
           >
             Foncière d&apos;exception, Softgroup s&apos;impose comme une référence
             de l&apos;immobilier locatif au Maroc. Forts d&apos;une expertise intégrée,
@@ -104,10 +104,10 @@ export default function IntroImpact() {
                   delay={0.3 + i * 0.1}
                 />
                 <div className="w-7 h-px bg-gold/50 my-3" />
-                <p className="font-sans text-[13px] md:text-[14px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
+                <p className="font-sans text-[15px] md:text-[17px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
                   {stat.label}
                 </p>
-                <p className="font-sans text-[12px] text-neutral-400 leading-relaxed">
+                <p className="font-sans text-[14px] text-neutral-400 leading-relaxed">
                   {stat.sub}
                 </p>
               </motion.div>
@@ -124,7 +124,7 @@ export default function IntroImpact() {
           >
             <a
               href="/le-groupe"
-              className="inline-flex items-center gap-3 font-sans text-[11px] tracking-[0.28em] uppercase text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+              className="inline-flex items-center gap-3 font-sans text-[15px] tracking-[0.28em] uppercase font-bold text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
             >
               Découvrir le Groupe
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
