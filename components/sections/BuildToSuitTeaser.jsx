@@ -56,7 +56,7 @@ const PILLS = [
 const TICKER_ITEMS = [...PILLS, ...PILLS]
 
 const IMAGE_URL =
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779726385/IMG_1067_vkn3cu.jpg"
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779797778/ChatGPT_Image_26_mai_2026_a%CC%80_12_08_45_hxznz3.png"
 
 /* ─── Component ─────────────────────────────────────────────────── */
 
