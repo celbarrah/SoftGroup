@@ -46,13 +46,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-black/30  border border-white/[0.15] rounded-[24px] px-[52px] py-[20px] max-w-[660px]"
+          className="bg-black/20  border border-white/[0.15] rounded-[24px] px-[52px] py-[20px] max-w-[660px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-sans text-[13px] font-bold tracking-[0.45em] uppercase text-gold mb-6"
+            className="text-[13px] tracking-[0.20em] uppercase text-gold mb-6"
           >
             L'Immobilier d'Excellence au Maroc
           </motion.p>
@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[18px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
           >
             Foncière d&apos;exception, Softgroup est une référence de l&apos;immobilier
             locatif au Maroc. Nous concevons, gérons et valorisons un portefeuille

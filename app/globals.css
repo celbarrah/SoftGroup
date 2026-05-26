@@ -26,7 +26,7 @@
   --color-muted:      #888888;
 
   /* ── Typography — maps font-serif / font-sans Tailwind classes ── */
-  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-serif: var(--font-cormorant) , serif;
   --font-sans:  var(--font-dm-sans), system-ui, sans-serif;
 }
 

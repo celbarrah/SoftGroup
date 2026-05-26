@@ -29,7 +29,7 @@ export default function HeroGroupe() {
       {/* Glass card — content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[700px]"
+        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -41,7 +41,7 @@ export default function HeroGroupe() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold mb-6"
+            className="text-[12px] tracking-[0.20em] uppercase text-gold mb-6"
           >
             Softgroup Holding — Depuis 1918
           </motion.p>
@@ -50,19 +50,19 @@ export default function HeroGroupe() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-5xl md:text-6xl lg:text-6xl text-white font-light leading-[1.0] mb-8"
+            className="font-serif text-5xl md:text-6xl lg:text-7xl text-white font-light leading-[1.0] mb-8"
           >
-            Un Groupe
+            Un Groupe.
             <br />
-            Une Vision <br />
-            <span className="italic text-gold">Un Héritage</span>
+            Une Vision. <br />
+            <span className="italic text-gold">Un Héritage.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[18px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
           >
             Depuis 1918, SOFTGROUP s'est développé de génération en génération pour
             devenir un groupe marocain majeur dans les secteurs du textile, de

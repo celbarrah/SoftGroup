@@ -3,36 +3,46 @@
 import { useRef, useState, useCallback } from "react"
 import { motion, useInView } from "framer-motion"
 
+/* ─────────────────────────────────────────────────────────────────
+   BOOK_SCALE — Valeur par défaut si non spécifiée dans le tableau
+   ───────────────────────────────────────────────────────────────── */
+const BOOK_SCALE = 1
+
 const OUVRAGES = [
   {
     num: "01",
     title: "Un Bouquet de Proverbes Marocains",
     author: "Par Mohamed Kabbaj",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115241/IMG_0986_s6ehpb.jpg",
+    scale: 2, // Ajout du scale individuel
   },
   {
     num: "02",
     title: "1 001 Manières de Porter Châle et Foulard",
     author: "SoftCulture",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115344/ChatGPT_Image_15_mai_2026_%C3%A0_09_51_09_pyezoa.png",
+    scale: 2, // Ajout du scale individuel
   },
   {
     num: "03",
     title: "Le Maghreb des Origines à Nos Jours : Vision 2050",
     author: "Par Mohamed Kabbaj & Malek Chebel",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115403/23001655-04FF-4936-A13C-6AADC4705D03_1_sph8h6.png",
+    scale: 1, // Taille normale pour ce livre
   },
   {
     num: "04",
     title: "Contes et Proverbes Marocains",
     author: "Par Mohamed Kabbaj & Hicham Lamghari",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115560/ChatGPT_Image_14_mai_2026_%C3%A0_10_26_51_1_l22e5v.png",
+    scale: 2, // Ajout du scale individuel
   },
   {
     num: "05",
     title: "Cœur de Mécènes, Mécènes de Cœur",
     author: "Par Zhor Kabbaj",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779181461/ChatGPT_Image_15_mai_2026_%C3%A0_09_53_05_bxcurr.png",
+    scale: 2, // Ajout du scale individuel
   },
 ]
 
@@ -64,6 +74,10 @@ function BookCard({ book, inView, index }) {
     setHovered(false)
   }, [])
 
+  // Calcul du scale de base et du scale au survol
+  const baseScale = book.scale || BOOK_SCALE
+  const hoverScale = baseScale * 1.08 // Zoom de 8% par rapport à la taille de base
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -77,7 +91,7 @@ function BookCard({ book, inView, index }) {
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="bg-white rounded-2xl overflow-hidden aspect-[3/4.2] relative p-5 md:p-6 flex items-center justify-center cursor-pointer shadow-lg"
+        className="bg-white rounded-2xl overflow-hidden aspect-[3/4.2] relative p-1 md:p-2 flex items-center justify-center cursor-pointer shadow-lg"
         style={{ transformStyle: "preserve-3d" }}
       >
         <img
@@ -85,7 +99,7 @@ function BookCard({ book, inView, index }) {
           alt={book.title}
           loading="lazy"
           className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 ease-out"
-          style={{ transform: hovered ? "scale(1.08)" : "scale(1)" }}
+          style={{ transform: hovered ? `scale(${hoverScale})` : `scale(${baseScale})` }}
         />
         <div
           className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 pointer-events-none transition-opacity duration-500"

@@ -127,7 +127,7 @@ export default function BuildToSuitTeaser() {
         </div>
 
         {/* ── Bottom Strip ────────────────────────────────────────── */}
-        <div className="relative bg-noir border-t border-gold/[0.14] overflow-hidden">
+        <div className="relative bg-cream border-t border-gold/[0.14] overflow-hidden">
 
           {/* Ambient glow */}
           <div className="absolute inset-0 pointer-events-none
@@ -154,9 +154,9 @@ export default function BuildToSuitTeaser() {
 
               {/* Fade masks */}
               <div className="absolute left-0 inset-y-0 w-12 z-10 pointer-events-none
-                              bg-gradient-to-r from-noir to-transparent" />
+                              bg-gradient-to-r from-cream to-transparent" />
               <div className="absolute right-0 inset-y-0 w-12 z-10 pointer-events-none
-                              bg-gradient-to-l from-noir to-transparent" />
+                              bg-gradient-to-l from-cream to-transparent" />
 
               {/* Ticker */}
               <div className="bts-ticker flex items-center">
@@ -169,7 +169,7 @@ export default function BuildToSuitTeaser() {
                     <span className="flex items-center shrink-0 text-gold">
                       {pill.icon}
                     </span>
-                    <span className="font-sans text-[14px] font-medium tracking-[0.04em] text-cream/70">
+                    <span className="font-sans text-[14px] font-medium tracking-[0.04em] text-neutral-900/70">
                       {pill.label}
                     </span>
                   </div>

@@ -29,7 +29,7 @@ export default function HeroGestion() {
       {/* Transparent glass card — content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[700px]"
+        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -42,9 +42,9 @@ export default function HeroGestion() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-sans text-[15px] font-bold tracking-[0.55em] uppercase text-gold mb-6"
+            className="text-[13px] tracking-[0.20em] uppercase text-gold mb-6"
           >
-            Property &amp; Facility Management
+            Property & Facility Management
           </motion.p>
 
           <motion.h1
@@ -55,16 +55,16 @@ export default function HeroGestion() {
           >
             Votre espace
             <br />
-            <span className="italic text-gold">Notre engagement</span>
+            <span className="italic text-gold">Notre <br /> engagement</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[19px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
           >
-            La signature du bail n&apos;est que le début. Softgroup gère, protège
+            La signature du bail n'est que le début. Softgroup gère, protège
             et optimise vos espaces au quotidien avec une présence humaine
             et technique permanente sur chaque site.
           </motion.p>
