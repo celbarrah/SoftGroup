@@ -11,12 +11,12 @@ export default function HeroGestion() {
   const opa = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <section ref={ref} className="relative h-screen flex justify-start items-center min-h-[680px] overflow-hidden bg-[#080808]">
+    <section ref={ref} className="relative h-screen flex justify-start items-center min-h-[700px] overflow-hidden bg-[#080808]">
 
       {/* Background image with parallax */}
-      <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
+      <motion.div style={{ y }} className="absolute inset-0 w-[full] h-[100%] ">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779374441/image_grand_format_lxty35.png"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779811786/ChatGPT_Image_23_mai_2026_a%CC%80_03_26_34_fj0xf3.png"
           alt="Property & Facility Management — Softgroup"
           fill
           priority
@@ -29,14 +29,14 @@ export default function HeroGestion() {
       {/* Transparent glass card — content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
+        className="relative left-30 z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-black/45 backdrop-blur-[22px] border border-white/[0.15]
-                     rounded-[24px] px-[52px] py-[48px]"
+          className="bg-black/30 backdrop-blur-[22px] border border-white/[0.15]
+                     rounded-[24px] px-[52px] py-[30px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function HeroGestion() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans text-[15px] text-white/80 leading-[1.9] max-w-lg"
           >
             La signature du bail n'est que le début. Softgroup gère, protège
             et optimise vos espaces au quotidien avec une présence humaine

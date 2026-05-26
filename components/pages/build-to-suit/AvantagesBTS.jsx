@@ -84,8 +84,8 @@ function AvCard({ card, inView, i }) {
         </div>
         <span className={`font-serif text-[40px] font-light leading-none tracking-[-0.03em]
                           transition-colors duration-300
-                          ${card.dark ? "text-white/20 group-hover:text-gold/20"
-                                      : "text-dark/20 group-hover:text-gold/20"}`}>
+                          ${card.dark ? "text-white/40 group-hover:text-gold/40"
+                                      : "text-dark/40 group-hover:text-gold/40"}`}>
           {card.idx}
         </span>
       </div>

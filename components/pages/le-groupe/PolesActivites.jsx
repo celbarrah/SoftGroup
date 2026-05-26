@@ -75,7 +75,7 @@ export default function PolesActivites() {
               transition={{ duration: 0.75, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative overflow-hidden block rounded-2xl h-[450px] md:h-[500px] lg:h-[600px]"
+              className="group relative overflow-hidden block rounded-2xl h-[450px] md:h-[500px]"
             >
               {/* Image */}
               <img

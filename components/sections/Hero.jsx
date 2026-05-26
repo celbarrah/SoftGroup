@@ -106,7 +106,7 @@ export default function Hero() {
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative bottom-10"
         >
-          <span className="font-bold">Louer ? </span> <br /> <span className="font-extrabold">C'est penser </span>
+          <span className="text-gold">Louer ? </span> <br /> <span className="font-extrabold">C'est penser </span>
           
           <span className="italic text-gold"><span className="font-bold">SOFT</span>GROUP.</span>
         </motion.h1>

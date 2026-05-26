@@ -35,7 +35,7 @@ export default function HeroGroupe() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-black/30 backdrop-blur-[22px] border border-white/[0.15] rounded-[24px] px-[52px] py-[48px]"
+          className="bg-black/10 backdrop-blur-[22px] border border-white/[0.15] rounded-[24px] px-[52px] py-[48px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}

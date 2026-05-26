@@ -21,7 +21,7 @@ const SERVICES = [
     tag:   "Aménagement",
     title: "Solutions Sur-Mesure",
     desc:  "Reconfiguration, conseil en architecture intérieure et accompagnement clé en main vos espaces évoluent avec votre activité.",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779447660/2_apsykt.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779811649/SUR_MESURE_g2xpur.png",
   },
   {
     tag:   "Facilitation",
@@ -98,7 +98,7 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 10 : 0,
           }}
         >
-          <p className="font-sans text-[15px] text-white/55 leading-[1.7]">
+          <p className="font-sans text-[15px] lg:text-[13px] xl:text-[15px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>

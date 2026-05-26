@@ -31,7 +31,7 @@ const NAV_ITEMS = [
       { label: "Terrains & Développements",    href: "/portefeuille#terrains-developpements"    },
     ],
   },
-  { label: "Services Aprés Location", href: "/gestion-valorisation"  },
+  { label: "Services Après Location", href: "/gestion-valorisation"  },
   { label: "Build to-Suit", href: "/build-to-suit"  },
   { label: "Actualités",             href: "#actualites"             },
   { label: "Nous Contacter",         href: "#contact"                },

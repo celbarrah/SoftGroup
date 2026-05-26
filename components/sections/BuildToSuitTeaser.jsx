@@ -56,7 +56,7 @@ const PILLS = [
 const TICKER_ITEMS = [...PILLS, ...PILLS]
 
 const IMAGE_URL =
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779797778/ChatGPT_Image_26_mai_2026_a%CC%80_12_08_45_hxznz3.png"
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779726385/IMG_1067_vkn3cu.jpg"
 
 /* ─── Component ─────────────────────────────────────────────────── */
 
@@ -80,27 +80,36 @@ export default function BuildToSuitTeaser() {
         {/* ── Photo Panel ─────────────────────────────────────────── */}
         <div className="group relative h-[clamp(300px,36vw,460px)] overflow-hidden">
 
-          {/* Background image */}
-          <div
-            className="absolute -inset-[6px] bg-cover bg-center
-                       transition-transform duration-[10000ms] ease-linear
-                       group-hover:scale-[1.04]"
-            style={{ backgroundImage: `url('${IMAGE_URL}')` }}
-          />
+          {/* Background Image Setup */}
+          {/* Outer div handles the "reveal" zoom (1.15 to 1.0) using framer-motion */}
+          <motion.div
+            initial={{ scale: 1.15 }}
+            animate={inView ? { scale: 1 } : {}}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 w-full h-full"
+          >
+            {/* Inner div handles the "hover" zoom using pure Tailwind */}
+            {/* The scale on hover is relative to the *already scaled down* parent */}
+            <div
+              className="w-full h-full bg-cover bg-center
+                         transition-transform duration-[8000ms] ease-out
+                         group-hover:scale-110"
+              style={{ backgroundImage: `url('${IMAGE_URL}')` }}
+            />
+          </motion.div>
 
           {/* Gradient overlay — heavy left for readability */}
-          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(8,9,10,.88)_0%,rgba(8,9,10,.58)_44%,rgba(8,9,10,.12)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(8,9,10,.88)_0%,rgba(8,9,10,.58)_44%,rgba(8,9,10,.12)_100%)] pointer-events-none" />
 
           {/* Gold top accent */}
-          <div className="absolute top-0 left-0 w-[42%] h-0.5 bg-gradient-to-r from-gold to-transparent" />
-          <div className="absolute top-0 left-0 w-1.5 h-1.5 rounded-br bg-gold" />
+          <div className="absolute top-0 left-0 w-[42%] h-0.5 bg-gradient-to-r from-gold to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 w-1.5 h-1.5 rounded-br bg-gold pointer-events-none" />
 
           {/* Text — anchored to bottom */}
-          <div className="absolute inset-0 flex flex-col justify-end p-[clamp(28px,4vw,52px)]">
+          <div className="absolute inset-0 flex flex-col justify-end p-[clamp(28px,4vw,52px)] pointer-events-none">
 
             {/* Eyebrow */}
             <div className="flex items-center gap-2.5 mb-4">
-              {/* <span className="block w-7 h-px bg-gold shrink-0" /> */}
               <span className="font-sans text-[15px] font-semibold tracking-[0.18em] uppercase text-gold">
                 Build-to-Suit
               </span>

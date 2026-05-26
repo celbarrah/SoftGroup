@@ -40,7 +40,7 @@ export default function HeroBTS() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-noir/30 border border-white/[0.13]
+          className="bg-noir/10 border border-white/[0.13]
                      rounded-[24px] px-[52px] py-[48px]"
         >
           {/* Eyebrow */}

@@ -121,7 +121,7 @@ export default function ProcessGestion() {
                   {/* Timeline Dot */}
                   <div className="relative z-10 flex items-center justify-center w-[36px] h-[36px] rounded-full border border-[#c4a55a]/30 bg-white shrink-0 transition-colors duration-300 group-hover:bg-[#c4a55a] group-hover:border-[#c4a55a]">
                     <Icon 
-                      size={14} 
+                      size={20} 
                       strokeWidth={1.8} 
                       className="text-[#c4a55a] transition-colors duration-300 group-hover:text-white" 
                     />
