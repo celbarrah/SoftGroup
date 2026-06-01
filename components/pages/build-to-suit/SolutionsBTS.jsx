@@ -14,19 +14,19 @@ const CARDS = [
   {
     tag: "Industriel",
     title: "Unité de production",
-    img: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=1200&q=80",
+    img: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780325130/UNITE_DE_PRODUCTION_ggklto.jpg",
     specs: ["2 000–30 000 m²", "Pont roulant", "Fosse maintenance"],
   },
   {
     tag: "Distribution",
     title: "Hub multi-température",
-    img: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80",
+    img: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780324937/HUB_MULTI_TEMP_lbmavc.png",
     specs: ["Froid & surgelé", "Pharma Grade", "Alimentaire"],
   },
   {
     tag: "Urban Logistics",
     title: "Dernier Kilomètre",
-    img: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1200&q=80",
+    img: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780324892/DERNIER_KM_tsjrhu.png",
     specs: ["500–5 000 m²", "E-commerce", "Zone urbaine"],
   },
 ]
@@ -36,7 +36,7 @@ export default function SolutionsBTS() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section ref={ref} className="bg-off-white py-[100px] overflow-hidden">
+    <section ref={ref} className="bg-off-white py-14 overflow-hidden">
 
       {/* ── Header ── */}
       <div className="px-[clamp(24px,5vw,80px)] max-w-[1500px] mx-auto mb-12">
@@ -96,7 +96,7 @@ export default function SolutionsBTS() {
             >
               <div className="h-full rounded-[22px] overflow-hidden bg-white border border-neutral-200/70 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
                 {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
                     src={card.img}
                     alt={card.title}
@@ -128,18 +128,6 @@ export default function SolutionsBTS() {
           ))}
         </div>
 
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-7"
-        >
-          <div className="inline-flex items-center gap-3 border border-neutral-200 bg-white rounded-sm px-5 py-3 font-sans text-[13px] font-light text-muted">
-            <span className="text-gold text-[16px]">→</span>
-            <span>Faites défiler pour explorer toutes les typologies</span>
-          </div>
-        </motion.div>
       </div>
 
       {/* Hide scrollbar globally for this element */}

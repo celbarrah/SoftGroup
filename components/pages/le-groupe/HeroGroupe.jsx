@@ -22,20 +22,26 @@ export default function HeroGroupe() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-noir/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-noir/70 via-noir/30 to-transparent" />
+        <div className="absolute inset-0 bg-noir/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir/50 via-noir/30 to-transparent" />
       </motion.div>
+
+        {/* White bottom fade — matches reference height:260px */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-[2] pointer-events-none"
+        style={{ height: 150, background: "linear-gradient(to bottom, transparent, #fff)" }}
+      />
 
       {/* Glass card — content */}
       <motion.div
-        style={{ opacity: opa }}
+        // style={{ opacity: opa }}
         className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-black/10 backdrop-blur-[22px] border border-white/[0.15] rounded-[24px] px-[52px] py-[48px]"
+          className="bg-black/10 backdrop-blur-[50px] rounded-[24px] px-[52px] py-[48px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +68,7 @@ export default function HeroGroupe() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="font-sans text-[15px] text-white/70 leading-[1.9] max-w-lg"
+            className="font-sans pr-3.5 text-[15px] text-white/70 leading-[1.9] max-w-lg"
           >
             Depuis 1918, SOFTGROUP s'est développé de génération en génération pour
             devenir un groupe marocain majeur dans les secteurs du textile, de
@@ -86,7 +92,6 @@ export default function HeroGroupe() {
       </motion.div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[250px] pointer-events-none z-10 bg-gradient-to-b from-white/0 via-white/40 to-white" />
     </section>
   )
 }

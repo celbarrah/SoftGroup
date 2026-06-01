@@ -2,7 +2,6 @@
 
 import { useRef, useState, useCallback } from "react"
 import { motion, useInView } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 
 const SERVICES = [
   {
@@ -48,8 +47,8 @@ function ServiceCard({ service, index, inView }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative overflow-hidden cursor-pointer rounded-2xl snap-start flex-none
-                 w-[82vw] sm:w-[48vw] md:w-[34vw] lg:w-[26vw] xl:w-[20vw]"
-      style={{ aspectRatio: "3/4", minHeight: 340 }}
+                 w-[70vw] sm:w-[38vw] md:w-[26vw] lg:w-[20vw] xl:w-[16vw]"
+      style={{ aspectRatio: "3/4", minHeight: 240 }}
     >
       {/* Background image */}
       <div
@@ -85,7 +84,7 @@ function ServiceCard({ service, index, inView }) {
         </span>
 
         {/* Title */}
-        <h3 className="font-serif text-[clamp(1.15rem,1.8vw,1.5rem)] font-light text-white leading-[1.2]">
+        <h3 className="font-serif text-[clamp(1rem,1.3vw,1rem)] font-light text-white leading-[1.2]">
           {service.title}
         </h3>
 
@@ -98,23 +97,11 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 10 : 0,
           }}
         >
-          <p className="font-sans text-[15px] lg:text-[13px] xl:text-[15px] text-white/55 leading-[1.7]">
+          <p className="font-sans text-[15px] lg:text-[13px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>
 
-        {/* Arrow reveal */}
-        <div
-          className="overflow-hidden flex items-center gap-1.5 transition-all duration-300"
-          style={{
-            maxHeight: hovered ? 40 : 0,
-            opacity:   hovered ? 1 : 0,
-            marginTop: hovered ? 14 : 0,
-          }}
-        >
-          <span className="font-sans text-[14px] text-gold/80 tracking-[0.06em]">En savoir plus</span>
-          <ArrowRight size={12} className="text-gold/80" strokeWidth={1.5} />
-        </div>
       </div>
     </motion.div>
   )
@@ -178,7 +165,7 @@ export default function ServicesGrid() {
             </h2>
             <p className="font-sans text-[17px] max-w-xl pt-8 text-neutral-900/55 leading-[1.7]">Des services intégrés qui améliorent l'expérience des occupants, optimisent les opérations et assurent la continuité de vos activités au quotidien.</p>
             </div>
-            <p className="font-sans text-[18px] text-dark/40 leading-[1.8] max-w-sm md:text-right">
+            <p className="font-sans text-[15px] text-dark/40 leading-[1.8] max-w-sm md:text-right">
               Glissez pour explorer
             </p>
           </div>

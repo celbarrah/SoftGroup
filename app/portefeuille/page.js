@@ -1,4 +1,5 @@
 import HeroPortefeuille   from "@/components/pages/portefeuille/HeroPortefeuille"
+import SecNav             from "@/components/pages/portefeuille/SecNav"
 import SegmentLogistique  from "@/components/pages/portefeuille/SegmentLogistique"
 import SegmentBureaux     from "@/components/pages/portefeuille/SegmentBureaux"
 import SegmentResidentiel from "@/components/pages/portefeuille/SegmentResidentiel"
@@ -15,25 +16,28 @@ export const metadata = {
 export default function PortefeuillePage() {
   return (
     <main>
-      {/* 1. Hero — chiffres clés */}
+      {/* 1. Hero */}
       <HeroPortefeuille />
 
-      {/* 2. Segment 01 — Logistique & Industriel */}
+      {/* 2. Sticky segment navigation */}
+      <SecNav />
+
+      {/* 3. Segment 01 — Logistique & Industriel */}
       <SegmentLogistique />
 
-      {/* 3. Segment 02 — Bureaux & Centres d'Affaires */}
+      {/* 4. Segment 02 — Bureaux & Centres d'Affaires */}
       <SegmentBureaux />
 
-      {/* 4. Segment 03 — Résidentiel de Prestige */}
+      {/* 5. Segment 03 — Résidentiel de Prestige */}
       <SegmentResidentiel />
 
-      {/* 5. Segment 04 — Retail & Commerce */}
+      {/* 6. Segment 04 — Retail & Commerce */}
       <SegmentRetail />
 
-      {/* 6. Segment 05 — Terrains & Développements */}
+      {/* 7. Segment 05 — Terrains & Développements */}
       <SegmentTerrains />
 
-      {/* 7. CTA + Footer */}
+      {/* 8. CTA + Footer */}
       <FooterCTA />
       <Footer />
     </main>

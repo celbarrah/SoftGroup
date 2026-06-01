@@ -149,16 +149,17 @@ export default function Header() {
         </nav> */}
 
         {/* ── CTA + Hamburger ─────────────────────── */}
-        <div className="flex items-center gap-5">
-          {/* <motion.a
-            href="#contact"
-            animate={{ opacity: scrolled ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ pointerEvents: scrolled ? "auto" : "none" }}
-            className="hidden md:block font-sans text-[12px] tracking-[0.2em] uppercase text-white bg-gold border border-gold/40 px-5 py-2 hover:scale-102 transition-all duration-300 whitespace-nowrap"
+        <div className="flex items-center gap-4">
+          {/* Gold phone badge — always visible */}
+          <a
+            href="tel:+212661978104"
+            className="hidden sm:flex items-center gap-2 bg-gold text-noir font-sans text-[13px] font-bold tracking-[0.08em] px-4 py-2 rounded-full hover:bg-gold-light transition-colors duration-300 whitespace-nowrap shadow-sm"
           >
-            Planifier une visite
-          </motion.a> */}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            +212 661 978 104
+          </a>
 
           <button
             onClick={() => setNavOpen(true)}

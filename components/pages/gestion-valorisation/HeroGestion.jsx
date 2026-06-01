@@ -23,26 +23,27 @@ export default function HeroGestion() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
+        <div className="absolute inset-0 bg-noir/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir/65 via-noir/20 to-transparent" />
       </motion.div>
 
       {/* Transparent glass card — content */}
       <motion.div
-        style={{ opacity: opa }}
-        className="relative left-30 z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
+        // style={{ opacity: opa }}
+        className="relative z-10 left-0 md:left-24 ml-[clamp(32px,8vw,130px)] max-w-[520px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="bg-black/30 backdrop-blur-[22px] border border-white/[0.15]
-                     rounded-[24px] px-[52px] py-[30px]"
+                     rounded-[24px] px-[40px] py-[36px]"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-[13px] tracking-[0.20em] uppercase text-gold mb-6"
+            className="font-sans text-[13px] tracking-[0.20em] uppercase text-gold font-bold mb-5"
           >
             Property & Facility Management
           </motion.p>
@@ -51,11 +52,11 @@ export default function HeroGestion() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-5xl md:text-7xl text-white font-light leading-[1.0] mb-8 max-w-3xl"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-light leading-[1.05] mb-6"
           >
-            Votre espace
+            Votre espace.
             <br />
-            <span className="italic text-gold">Notre <br /> engagement</span>
+            <span className="italic text-gold">Notre engagement.</span>
           </motion.h1>
 
           <motion.p
@@ -87,8 +88,6 @@ export default function HeroGestion() {
         </div>
       </motion.div>
 
-      {/* Bottom fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-[320px] pointer-events-none z-10 bg-gradient-to-b from-white/0 via-white/50 to-white" />
     </section>
   )
 }

@@ -40,11 +40,11 @@ export default function HeroBTS() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-noir/10 border border-white/[0.13]
+          className="bg-black/50 backdrop-blur-[22px] border border-white/[0.15]
                      rounded-[24px] px-[52px] py-[48px]"
         >
           {/* Eyebrow */}
-          <span className="text-[13px] tracking-[0.22em] uppercase text-gold mb-[22px]">
+          <span className="block font-sans text-[13px] tracking-[0.22em] uppercase font-bold text-gold mb-[22px]">
             Build-to-Suit — Clé en main
           </span>
 

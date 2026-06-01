@@ -2,132 +2,180 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import SegmentImageBlock from "./SegmentImageBlock"
+import SegmentSlider from "./SegmentSlider"
 
-const IMAGES = [
-  { src: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg", alt: "Résidentiel de Prestige — Softgroup" },
+const SLIDES = [
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
 ]
 
-const FEATURES = [
-  { num: "01", name: "Luxe & Confort absolu",  desc: "Finitions premium, matériaux nobles, climatisation & chauffage central dans chaque espace." },
-  { num: "02", name: "Sérénité & Sécurité",   desc: "Gardiennage 24h/24 · Vidéosurveillance · Contrôle d'accès · Parkings privés sécurisés." },
-  { num: "03", name: "Évasion Privée",          desc: "Jardins paysagers, piscines individuelles et rooftops exclusifs avec vue panoramique." },
-  { num: "04", name: "Sanctuaire Wellness",     desc: "Spa · Hammam · Sauna · Jacuzzi · Fitness club haut de gamme." },
-  { num: "05", name: "Business & Services",     desc: "Centres d'affaires intégrés et services de maintenance dédiés à la résidence." },
+const TYPES = [
+  { label: "Résidence fermée de villas" },
+  { label: "Villas individuelles de prestige", active: true },
+  { label: "Résidences d'appartements de luxe" },
 ]
 
-const TYPES = ["Villas de prestige", "Appartements de standing", "Penthouses & Duplex", "Résidences sécurisées"]
+const PRESTATIONS = [
+  {
+    gold: false,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><path d="M5 12H3l9-9 9 9h-2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V12z"/><path d="M9 22V12h6v10"/></svg>,
+    name: "Luxe & Confort absolu",
+    text: "Finitions premium, climatisation & chauffage central dans chaque espace.",
+  },
+  {
+    gold: false,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+    name: "Sérénité Totale",
+    text: "Sécurité 24h/24 avec gardiennage et parkings privés sécurisés.",
+  },
+  {
+    gold: true,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+    name: "Évasion Privée",
+    text: "Jardins paysagers, piscines individuelles et rooftops exclusifs.",
+  },
+  {
+    gold: false,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>,
+    name: "Sanctuaire Wellness",
+    text: "Spa · Hammam · Sauna · Jacuzzi · Fitness club.",
+  },
+  {
+    gold: false,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
+    name: "Business & Services",
+    text: "Centres d'affaires intégrés et services de maintenance dédiés.",
+  },
+]
 
 export default function SegmentResidentiel() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "-6%" })
+  const ref    = useRef(null)
+  const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section id="residentiel-de-prestige" className="overflow-hidden bg-[#F5F2EC]">
+    <section id="residentiel" className="overflow-hidden bg-[#F5F2EC]">
 
-      {/* ── ACT 1 — Title ── */}
-      <div className="relative text-center py-[100px] px-[clamp(24px,8vw,80px)] bg-[#F5F2EC]">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/22 to-transparent" />
-        <motion.div ref={ref} initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.85 }}>
-          <div className="flex items-center justify-center gap-3 mb-3">
-            <div className="w-[22px] h-px bg-gold/55 flex-shrink-0" />
-            <span className="font-sans text-[10px] tracking-[0.32em] uppercase text-gold font-bold">Résidentiel de Prestige</span>
-          </div>
-          <h2 className="font-serif font-light text-[#0F1923] leading-[0.92] tracking-[-0.025em] mb-7" style={{ fontSize: "clamp(48px,7vw,96px)" }}>
+      {/* ACT 1 — Title panel */}
+      <div className="relative py-[100px] px-[clamp(20px,5vw,80px)] bg-[#F5F2EC] text-center overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div ref={ref} className="relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center gap-3 mb-3"
+          >
+            <span className="block w-[22px] h-px bg-gold/55 shrink-0" />
+            <span className="font-sans text-[9.5px] tracking-[0.32em] uppercase text-gold font-bold">
+              Résidentiel de Prestige
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="font-serif font-light text-[#0F1923] leading-[0.92] tracking-[-0.025em] mb-7"
+            style={{ fontSize: "clamp(52px,7vw,100px)" }}
+          >
             L&apos;Exclusivité
             <br />
             <em className="italic text-gold">pour Seul Standard</em>
-          </h2>
-          <div className="w-10 h-px bg-gold/35 mx-auto mb-7" />
-          <p className="font-sans text-[17px] font-light text-neutral-500 leading-[1.9] max-w-[54ch] mx-auto">
-            Au cœur des quartiers les plus exclusifs, se déploient des résidences dédiées à un art de vivre
-            d&apos;exception. Architecture contemporaine, finitions haut de gamme et perfection du détail créent
-            des lieux où élégance et confort s&apos;équilibrent à la perfection.
-          </p>
-        </motion.div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/22 to-transparent" />
+          </motion.h2>
+
+          <div className="w-[40px] h-px bg-gold/35 mx-auto mb-7" />
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-sans text-[16px] font-light text-[rgba(15,25,35,0.55)] leading-[1.9] max-w-[54ch] mx-auto"
+          >
+            Au cœur des quartiers les plus exclusifs, se déploient des résidences dédiées à un art de
+            vivre d&apos;exception. Architecture contemporaine, finitions haut de gamme et perfection du
+            détail créent des lieux où élégance et confort s&apos;équilibrent à la perfection.
+          </motion.p>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </div>
 
-      {/* ── ACT 2 — Full-screen image ── */}
-      <motion.div initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, delay: 0.15 }}>
-        <SegmentImageBlock images={IMAGES} badge="Résidences d'Exception" />
-      </motion.div>
+      {/* ACT 2 — Slider */}
+      <SegmentSlider slides={SLIDES} badge="L'Exclusivité pour Seul Standard" />
 
-      {/* ── ACT 3 — Staggered feature list ── */}
-      <div className="bg-white">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          className="px-[clamp(24px,8vw,80px)] py-16 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-start"
-        >
-          {/* Left — staggered features */}
-          <div>
-            <p className="flex items-center gap-3 font-sans text-[9px] tracking-[0.35em] uppercase text-gold font-bold mb-6 after:flex-1 after:h-px after:bg-gradient-to-r after:from-gold/25 after:to-transparent">
-              Prestations &amp; Services
-            </p>
-            <div className="flex flex-col">
-              {FEATURES.map((feat) => (
-                <div key={feat.num} className="group flex items-start gap-6 py-5 border-b border-gold/10 last:border-b-0 hover:pl-2 transition-all duration-300 cursor-default">
-                  <span className="font-serif text-[28px] font-light text-gold/30 flex-shrink-0 leading-[1] mt-0.5 group-hover:text-gold/60 transition-colors duration-300 min-w-[32px]">
-                    {feat.num}
-                  </span>
-                  <div>
-                    <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-bold text-[#0F1923] mb-1.5">{feat.name}</p>
-                    <p className="font-sans text-[13px] text-neutral-500 font-light leading-[1.65]">{feat.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* ACT 3 */}
+      <div className="bg-[#F5F2EC]">
+        <div className="px-[clamp(20px,5vw,80px)] py-[72px]">
+          <div className="max-w-[1400px] mx-auto">
 
-          {/* Right — types + info */}
-          <div>
-            <p className="flex items-center gap-3 font-sans text-[9px] tracking-[0.35em] uppercase text-gold font-bold mb-6 after:flex-1 after:h-px after:bg-gradient-to-r after:from-gold/25 after:to-transparent">
+            {/* Type pills */}
+            <p className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold mb-5">
               Types de biens
             </p>
-            <div className="grid grid-cols-2 gap-3 mb-10">
+            <div className="flex flex-wrap gap-[10px] mb-10">
               {TYPES.map((t) => (
-                <div key={t} className="flex flex-col gap-1 p-5 rounded-lg bg-[#F5F2EC] border border-gold/15 hover:border-gold/40 transition-all duration-300 cursor-default">
-                  <span className="font-sans text-[13px] font-semibold text-[#0F1923]">{t}</span>
-                </div>
+                <span
+                  key={t.label}
+                  className={[
+                    "inline-flex items-center font-sans text-[11px] tracking-[0.12em] uppercase px-4 py-2 rounded-full transition-colors",
+                    t.active
+                      ? "bg-gold text-noir font-semibold"
+                      : "border border-[rgba(196,165,90,0.25)] text-[rgba(15,25,35,0.6)]",
+                  ].join(" ")}
+                >
+                  {t.label}
+                </span>
               ))}
             </div>
-            <p className="flex items-center gap-3 font-sans text-[9px] tracking-[0.35em] uppercase text-gold font-bold mb-5 after:flex-1 after:h-px after:bg-gradient-to-r after:from-gold/25 after:to-transparent">
-              Localisations
+
+            {/* Prestations 5-col grid */}
+            <p className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold mb-5">
+              Prestations exclusives
             </p>
-            <div className="flex flex-col gap-2">
-              {[
-                { city: "Casablanca", zones: "Anfa · CIL · Racine" },
-                { city: "Marrakech",  zones: "Guéliz · Hivernage" },
-              ].map((loc) => (
-                <div key={loc.city} className="flex flex-col gap-0.5 px-[18px] py-3 rounded-lg bg-[#F5F2EC] border border-gold/15">
-                  <strong className="font-sans text-[13px] font-semibold text-[#0F1923]">{loc.city}</strong>
-                  <span className="font-sans text-[11px] text-neutral-500 font-light">{loc.zones}</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {PRESTATIONS.map((p, i) => (
+                <div
+                  key={i}
+                  className={[
+                    "rounded-[14px] p-6 border",
+                    p.gold
+                      ? "bg-[rgba(196,165,90,0.08)] border-gold/40"
+                      : "bg-white/70 border-[rgba(196,165,90,0.15)]",
+                  ].join(" ")}
+                >
+                  <div
+                    className={[
+                      "w-11 h-11 rounded-xl flex items-center justify-center mb-4",
+                      p.gold
+                        ? "bg-gold border border-gold text-white"
+                        : "border border-[rgba(196,165,90,0.2)] text-gold",
+                    ].join(" ")}
+                  >
+                    {p.icon}
+                  </div>
+                  <p className="font-sans text-[14px] font-semibold text-[#0F1923] mb-2">{p.name}</p>
+                  <p className="font-sans text-[13px] font-light text-[rgba(15,25,35,0.55)] leading-[1.7]">{p.text}</p>
                 </div>
               ))}
             </div>
+
           </div>
-        </motion.div>
+        </div>
 
         {/* Meta strip */}
-        <div className="flex items-center flex-wrap gap-8 px-[clamp(24px,8vw,80px)] py-5 bg-gold/4 border-t border-gold/10">
+        <div className="bg-[rgba(196,165,90,0.04)] border-t border-[rgba(196,165,90,0.1)] px-[clamp(20px,5vw,80px)] py-8 flex flex-wrap items-center gap-8">
           <div className="flex flex-col gap-1">
-            <span className="font-sans text-[8px] tracking-[0.32em] uppercase text-neutral-400">Surfaces</span>
-            <span className="font-sans text-[13px] text-[#0F1923]">80 m² à 600 m²+</span>
+            <span className="font-sans text-[9.5px] tracking-[0.2em] uppercase text-[rgba(15,25,35,0.4)] font-medium">Localisations</span>
+            <span className="font-sans text-[13.5px] font-light text-[#0F1923]">Casablanca : Anfa Supérieur · Aïn Diab · CFC · Bd d&apos;Anfa</span>
           </div>
-          <div className="w-px h-8 bg-gold/15" />
+          <div className="w-px h-8 bg-[rgba(196,165,90,0.2)]" />
           <div className="flex flex-col gap-1">
-            <span className="font-sans text-[8px] tracking-[0.32em] uppercase text-neutral-400">Profil occupant</span>
-            <span className="font-sans text-[13px] text-[#0F1923]">Particuliers · Familles · Expatriés · Investisseurs</span>
-          </div>
-          <div className="w-px h-8 bg-gold/15" />
-          <div className="flex flex-col gap-1">
-            <span className="font-sans text-[8px] tracking-[0.32em] uppercase text-neutral-400">Standing</span>
-            <span className="font-sans text-[13px] text-[#0F1923]">Prestige · Luxe</span>
+            <span className="font-sans text-[9.5px] tracking-[0.2em] uppercase text-[rgba(15,25,35,0.4)] font-medium">Profil occupant</span>
+            <span className="font-sans text-[13.5px] font-light italic text-[#0F1923]">Multinationales · Expatriés · Diplomates et Grands Corps d&apos;État</span>
           </div>
         </div>
       </div>
+
     </section>
   )
 }

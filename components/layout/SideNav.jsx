@@ -32,7 +32,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Services Après Location", href: "/gestion-valorisation"  },
-  { label: "Build to-Suit", href: "/build-to-suit"  },
+  { label: "Build-to-Suit", href: "/build-to-suit"  },
   { label: "Actualités",             href: "#actualites"             },
   { label: "Nous Contacter",         href: "#contact"                },
 ]
@@ -114,16 +114,21 @@ export default function SideNav({ isOpen, onClose }) {
             <motion.div
               variants={listVariants}
               initial="hidden" animate="visible"
-              className="flex-1 overflow-y-auto px-10 py-10 flex flex-col gap-2"
+              className="flex-1 overflow-y-scroll px-10 py-10 flex flex-col gap-2"
+              style={{ scrollbarWidth: "thin", scrollbarColor: "#C4A55A #f1f1f1" }}
             >
               {NAV_ITEMS.map((item) => (
                 <motion.div key={item.label} variants={itemVariants}>
                   {item.children ? (
                     <div className="mb-5">
-                      {/* Catégorie — non cliquable */}
-                      <span className="block font-sans text-[15px] font-bold tracking-[0.38em] uppercase text-neutral-400 mb-3">
+                      {/* Catégorie — cliquable → redirige vers /portefeuille */}
+                      <a
+                        href={item.href}
+                        onClick={onClose}
+                        className="block font-sans text-[15px] font-bold tracking-[0.38em] uppercase text-gold hover:text-gold-light transition-colors duration-200 mb-3"
+                      >
                         {item.label}
-                      </span>
+                      </a>
                       {/* Sous-liens */}
                       {item.children.map((child) => (
                         <a
@@ -160,7 +165,7 @@ export default function SideNav({ isOpen, onClose }) {
               </a> */}
               <a
                 href="tel:+212661978104"
-                className="block font-sans text-xs tracking-[0.2em] text-neutral-400 hover:text-gold transition-colors duration-200 text-center"
+                className="block font-sans text-[16px] font-bold tracking-[0.15em] text-gold hover:text-gold-light transition-colors duration-200 text-center"
               >
                 +212 661 978 104
               </a>

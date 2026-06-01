@@ -21,7 +21,7 @@ export default function ApprocheBTS() {
                        shadow-[0_20px_60px_rgba(8,9,10,.10)]"
           >
             <Image
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
+              src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780324930/Ma%C3%AEtrise_int%C3%A9grale_onjswy.png"
               alt="Construction Softgroup"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -33,7 +33,7 @@ export default function ApprocheBTS() {
                             rounded-[14px] px-[22px] py-4
                             shadow-[0_8px_32px_rgba(8,9,10,.14)]
                             border border-dark/[0.06]">
-              <div className="font-serif text-[28px] font-light text-gold leading-none">
+              <div className="font-serif text-[28px] font-light text-black leading-none">
                 A → Z
               </div>
               <div className="font-sans text-[13px] text-neutral-900 mt-1 tracking-[0.04em]">

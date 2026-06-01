@@ -90,18 +90,18 @@ export default function SoftgroupImmobilier() {
           {/* ── Right Column (Content) ─────────────────────────────── */}
           <div className="w-full lg:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
 
-            <p className="font-sans text-[15px] md:text-[15px] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+            <p className="font-sans text-[15px] md:text-[14px] font-semibold tracking-[0.2em] uppercase text-gold mb-3">
               La Filiale Phare
             </p>
 
-            <h2 className="font-serif text-3xl md:text-4xl text-noir font-normal leading-[1.2] mb-1">
+            <h2 className="font-serif text-3xl md:text-5xl text-noir font-normal leading-[1.2] mb-1">
               Softgroup Immobilier
             </h2>
-            <h2 className="font-serif text-3xl md:text-4xl text-gold font-normal leading-[1.2] mb-6">
+            <h2 className="font-serif text-3xl md:text-5xl text-gold font-normal leading-[1.2] mb-6">
               La Référence Locative Premium
             </h2>
 
-            <p className="font-sans text-[18px] md:text-[18px] text-dark/60 leading-[1.8] mb-10 max-w-xl">
+            <p className="font-sans text-[18px] md:text-[15px] text-dark/60 leading-[1.8] mb-10 max-w-xl">
               Constructeur, développeur et gestionnaire d'actifs depuis plus de 35 ans, Softgroup Immobilier est la foncière locative de référence au Maroc. Maîtrisant l'intégralité du cycle de vie immobilier, de la conception architecturale à la valorisation patrimoniale, elle couvre cinq segments stratégiques avec une exigence absolue de qualité et de performance.
             </p>
 
@@ -116,11 +116,11 @@ export default function SoftgroupImmobilier() {
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                    <h4 className="font-sans text-[18px] text-noir font-medium">
+                    <h4 className="font-sans text-[15px] text-noir font-medium">
                       {pt.title}
                     </h4>
                   </div>
-                  <p className="font-sans text-[18px] text-dark/65 leading-[1.7] pl-4.5 max-w-xl">
+                  <p className="font-sans text-[13px] text-dark/65 leading-[1.7] pl-4.5 max-w-xl">
                     {pt.desc}
                   </p>
                 </motion.div>
