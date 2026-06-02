@@ -44,8 +44,6 @@ export default function LeGroupePage() {
       {/* 9. CTA contact + carte */}
       <FooterCTA />
 
-      {/* 10. Pied de page */}
-      <Footer />
     </main>
   )
 }

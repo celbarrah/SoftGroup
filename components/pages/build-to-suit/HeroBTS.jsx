@@ -35,7 +35,7 @@ export default function HeroBTS() {
       </div>
 
       {/* Glass card — content */}
-      <div className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]">
+      <div className="relative z-10 -left-5 md:left-0 ml-[clamp(32px,8vw,130px)] max-w-[600px]">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}

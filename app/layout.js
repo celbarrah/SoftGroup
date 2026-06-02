@@ -3,6 +3,7 @@ import "./globals.css"
 import LenisProvider    from "@/components/providers/LenisProvider"
 import Header           from "@/components/layout/Header"
 import WhatsAppButton   from "@/components/ui/WhatsAppButton"
+import Footer from "@/components/layout/Footer"
 
 /* ─────────────────────────────────────────────────────────
    FONTS
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           <Header />
           {children}
+          <Footer />
           {/* Bouton WhatsApp sticky — visible sur toutes les pages */}
           <WhatsAppButton />
         </LenisProvider>

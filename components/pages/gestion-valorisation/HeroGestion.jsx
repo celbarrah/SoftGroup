@@ -30,7 +30,7 @@ export default function HeroGestion() {
       {/* Transparent glass card — content */}
       <motion.div
         // style={{ opacity: opa }}
-        className="relative z-10 left-0 md:left-24 ml-[clamp(32px,8vw,130px)] max-w-[520px]"
+        className="relative z-10 -left-5 md:left-24 ml-[clamp(32px,8vw,130px)] max-w-[520px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}

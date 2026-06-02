@@ -75,7 +75,7 @@ function ServiceCard({ service, index, inView }) {
       />
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
+      <div className="absolute bottom-0 left-0 right-0 px-2 2xl:px-6 pb-7">
         {/* Tag */}
         <span className="inline-block font-sans text-[11px] tracking-[0.25em] uppercase
                          text-gold/80 bg-gold/10 border border-gold/[0.18] rounded-md
@@ -97,7 +97,7 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 10 : 0,
           }}
         >
-          <p className="font-sans text-[15px] lg:text-[13px] text-white/55 leading-[1.7]">
+          <p className="font-sans text-[15px] lg:text-[11px] xl:text-[13px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>

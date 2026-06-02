@@ -11,11 +11,27 @@ const SLIDES = [
 ]
 
 const TYPES = [
-  { label: "Boutiques & Espaces Retail" },
-  { label: "Magasins Commerciaux" },
-  { label: "Showrooms Professionnels" },
-  { label: "Centres Commerciaux", active: true },
-  { label: "Flagship Stores" },
+  {
+    label: "Boutiques & Espaces Retail",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M3 9l1-6h16l1 6"/><path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0"/><path d="M5 9v11a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1V9"/></svg>,
+  },
+  {
+    label: "Magasins Commerciaux",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/></svg>,
+  },
+  {
+    label: "Showrooms Professionnels",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
+  },
+  {
+    label: "Centres Commerciaux",
+    active: true,
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M3 9l1-6h16l1 6"/><path d="M5 9v11a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1V9"/></svg>,
+  },
+  {
+    label: "Flagship Stores",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>,
+  },
 ]
 
 const FEATURES = [
@@ -51,6 +67,15 @@ const FEATURES = [
   },
 ]
 
+function A3Label({ children }) {
+  return (
+    <div className="flex items-center gap-3 mb-6">
+      <span className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold whitespace-nowrap">{children}</span>
+      <span className="flex-1 h-px bg-gradient-to-r from-[rgba(196,165,90,0.25)] to-transparent" />
+    </div>
+  )
+}
+
 export default function SegmentRetail() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-8%" })
@@ -69,9 +94,7 @@ export default function SegmentRetail() {
             className="flex items-center justify-center gap-3 mb-3"
           >
             <span className="block w-[22px] h-px bg-gold/55 shrink-0" />
-            <span className="font-sans text-[9.5px] tracking-[0.32em] uppercase text-gold font-bold">
-              Retail &amp; Commerce
-            </span>
+            <span className="font-sans text-[9.5px] tracking-[0.32em] uppercase text-gold font-bold">Retail &amp; Commerce</span>
           </motion.div>
 
           <motion.h2
@@ -104,35 +127,33 @@ export default function SegmentRetail() {
       {/* ACT 2 — Slider */}
       <SegmentSlider slides={SLIDES} badge="L'Emplacement qui fait la Différence" />
 
-      {/* ACT 3 — 2-col layout */}
+      {/* ACT 3 */}
       <div className="bg-[#F7F9FB]">
         <div className="px-[clamp(20px,5vw,80px)] py-[72px]">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-start">
 
-            {/* Left: type pills + localisation */}
+            {/* Left: type list + localisation */}
             <div>
-              <p className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold mb-5">
-                Types d&apos;espaces
-              </p>
-              <div className="flex flex-col gap-[9px] mb-9">
+              <A3Label>Types d&apos;espaces</A3Label>
+              <div className="flex flex-col gap-[9px] mb-10">
                 {TYPES.map((t) => (
                   <div
                     key={t.label}
                     className={[
-                      "flex items-center gap-3 font-sans text-[13px] tracking-[0.04em] px-[18px] py-3 rounded-lg border transition-colors",
+                      "flex items-center gap-3 font-sans text-[13px] px-[18px] py-3 rounded-lg border transition-all duration-300 cursor-default",
                       t.active
-                        ? "bg-gold/10 border-gold/40 text-[#0F1923] font-medium"
-                        : "border-[rgba(196,165,90,0.18)] text-[rgba(15,25,35,0.6)]",
+                        ? "bg-[rgba(196,165,90,0.08)] border-gold text-[#0F1923] font-semibold"
+                        : "border-[rgba(196,165,90,0.18)] text-[rgba(15,25,35,0.65)] hover:border-gold/40 hover:bg-[rgba(196,165,90,0.03)]",
                     ].join(" ")}
                   >
+                    <span className={t.active ? "text-gold" : "text-gold/60 transition-colors duration-300 group-hover:text-gold"}>{t.icon}</span>
                     {t.label}
                   </div>
                 ))}
               </div>
-              <p className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold mb-5">
-                Localisations
-              </p>
-              <div className="inline-flex flex-col gap-1 border border-[rgba(196,165,90,0.2)] rounded-xl px-4 py-3">
+
+              <A3Label>Localisations</A3Label>
+              <div className="inline-flex flex-col gap-1 border border-[rgba(196,165,90,0.2)] rounded-xl px-5 py-3 transition-all duration-300 hover:border-gold hover:bg-[rgba(196,165,90,0.03)] cursor-default">
                 <strong className="font-sans text-[13px] font-semibold text-[#0F1923]">Casablanca</strong>
                 <span className="font-sans text-[12px] font-light text-[rgba(15,25,35,0.5)]">Bd d&apos;Anfa · Tit Melil · Bd Rachidi</span>
               </div>
@@ -140,18 +161,16 @@ export default function SegmentRetail() {
 
             {/* Right: feature lines */}
             <div>
-              <p className="font-sans text-[9px] tracking-[0.35em] uppercase font-bold text-gold mb-5">
-                Caractéristiques
-              </p>
+              <A3Label>Caractéristiques</A3Label>
               <div className="flex flex-col">
                 {FEATURES.map((f, i) => (
-                  <div key={i} className="flex items-start gap-4 py-5 border-b border-[rgba(196,165,90,0.1)] last:border-0">
-                    <div className="w-10 h-10 shrink-0 rounded-xl border border-[rgba(196,165,90,0.2)] flex items-center justify-center text-gold">
+                  <div key={i} className="group/fl flex items-start gap-4 py-4 border-b border-[rgba(196,165,90,0.08)] last:border-0 transition-all duration-300 hover:pl-[6px]">
+                    <div className="w-9 h-9 shrink-0 rounded-lg bg-[rgba(196,165,90,0.07)] border border-[rgba(196,165,90,0.14)] flex items-center justify-center text-gold transition-all duration-300 group-hover/fl:bg-gold group-hover/fl:text-white group-hover/fl:border-gold">
                       {f.icon}
                     </div>
                     <div>
-                      <p className="font-sans text-[14px] font-semibold text-[#0F1923] mb-1">{f.name}</p>
-                      <p className="font-sans text-[13px] font-light text-[rgba(15,25,35,0.55)] leading-[1.6]">{f.desc}</p>
+                      <p className="font-sans text-[13px] font-semibold text-[#0F1923] mb-[2px]">{f.name}</p>
+                      <p className="font-sans text-[12.5px] font-light text-[rgba(15,25,35,0.55)] leading-[1.6]">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -162,10 +181,10 @@ export default function SegmentRetail() {
         </div>
 
         {/* Meta strip */}
-        <div className="bg-[rgba(196,165,90,0.04)] border-t border-[rgba(196,165,90,0.1)] px-[clamp(20px,5vw,80px)] py-8 flex flex-wrap items-center gap-8">
+        <div className="bg-[rgba(196,165,90,0.04)] border-t border-[rgba(196,165,90,0.1)] px-[clamp(20px,5vw,80px)] py-5 flex flex-wrap items-center gap-8">
           <div className="flex flex-col gap-1">
-            <span className="font-sans text-[9.5px] tracking-[0.2em] uppercase text-[rgba(15,25,35,0.4)] font-medium">Profil occupant</span>
-            <span className="font-sans text-[13.5px] font-light italic text-[#0F1923]">Enseignes nationales &amp; internationales · Franchises · Retailers spécialisés · Grandes surfaces</span>
+            <span className="font-sans text-[8px] tracking-[0.32em] uppercase text-[rgba(15,25,35,0.32)]">Profil occupant</span>
+            <span className="font-sans text-[13px] font-light italic text-[#0F1923]">Enseignes nationales &amp; internationales · Franchises · Retailers spécialisés · Grandes surfaces</span>
           </div>
         </div>
       </div>

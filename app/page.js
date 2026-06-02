@@ -56,8 +56,7 @@ export default function Page() {
       {/* 10. Bannière CTA avant footer */}
       <FooterCTA />
 
-      {/* 11. Pied de page */}
-      <Footer />
+
     </main>
   )
 }

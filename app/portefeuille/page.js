@@ -39,7 +39,6 @@ export default function PortefeuillePage() {
 
       {/* 8. CTA + Footer */}
       <FooterCTA />
-      <Footer />
     </main>
   )
 }

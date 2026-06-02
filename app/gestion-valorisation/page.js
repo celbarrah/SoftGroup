@@ -31,7 +31,6 @@ export default function GestionValorisationPage() {
 
       {/* 6. CTA + Footer */}
       <FooterCTA />
-      <Footer />
     </main>
   )
 }

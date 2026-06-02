@@ -7,6 +7,7 @@ import AvantagesBTS  from "@/components/pages/build-to-suit/AvantagesBTS"
 import EngagementBTS from "@/components/pages/build-to-suit/EngagementBTS"
 import FooterCTA     from "@/components/sections/FooterCTA"
 import Footer        from "@/components/layout/Footer"
+import FooterCTABTS from "@/components/sections/FooterCTA-BTS"
 
 export const metadata = {
   title: "Build-to-Suit — Clé en main | Softgroup Immobilier",
@@ -38,8 +39,8 @@ export default function BuildToSuitPage() {
       <EngagementBTS />
 
       {/* 8. CTA + Footer */}
-      <FooterCTA />
-      <Footer />
+      <FooterCTABTS />
+  
     </main>
   )
 }
