@@ -10,8 +10,9 @@ const FOOTER_LINKS = [
   { label: "Le Groupe",              href: "/le-groupe"            },
   { label: "Portefeuille",           href: "/portefeuille"         },
   { label: "Gestion & Valorisation", href: "/gestion-valorisation" },
-  { label: "Actualités",             href: "#actualites"           },
-  { label: "Nous Contacter",         href: "#contact"              },
+  { label: "Build-to-Suit",          href: "/build-to-suit"        },
+  { label: "Patrimoine Art Déco",    href: "/patrimoine-art-deco"  },
+  { label: "Actualités",             href: "/actualites"           },
 ]
 
 const SOCIALS = [

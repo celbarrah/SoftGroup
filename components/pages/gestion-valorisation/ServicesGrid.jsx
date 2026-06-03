@@ -47,8 +47,8 @@ function ServiceCard({ service, index, inView }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative overflow-hidden cursor-pointer rounded-2xl snap-start flex-none
-                 w-[70vw] sm:w-[38vw] md:w-[26vw] lg:w-[20vw] xl:w-[16vw]"
-      style={{ aspectRatio: "3/4", minHeight: 240 }}
+                 w-[70vw] sm:w-[38vw] md:w-[26vw] lg:w-[20vw] xl:w-[18vw]"
+      style={{ aspectRatio: "3/4", minHeight: 200 }}
     >
       {/* Background image */}
       <div
@@ -97,7 +97,7 @@ function ServiceCard({ service, index, inView }) {
             marginTop: hovered ? 10 : 0,
           }}
         >
-          <p className="font-sans text-[15px] lg:text-[11px] xl:text-[13px] text-white/55 leading-[1.7]">
+          <p className="font-sans text-[15px] lg:text-[13px] xl:text-[14px] text-white/55 leading-[1.7]">
             {service.desc}
           </p>
         </div>
@@ -172,10 +172,10 @@ export default function ServicesGrid() {
         </motion.div>
 
         {/* Scroll rail — full width, left-padded only so cards overflow right */}
-        <div className="px-10">
+        <div className="px-2 md:px-0">
            <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory
+          className="flex lg:grid lg:grid-cols-5 gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory
                      pl-8 md:pl-12 lg:pl-20 pr-8"
           style={{ cursor: "grab" }}
           onMouseDown={onMouseDown}

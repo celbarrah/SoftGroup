@@ -1,9 +1,6 @@
 import { Cormorant_Garamond, DM_Sans } from "next/font/google"
 import "./globals.css"
-import LenisProvider    from "@/components/providers/LenisProvider"
-import Header           from "@/components/layout/Header"
-import WhatsAppButton   from "@/components/ui/WhatsAppButton"
-import Footer from "@/components/layout/Footer"
+import ConditionalLayout from "@/components/providers/ConditionalLayout"
 
 /* ─────────────────────────────────────────────────────────
    FONTS
@@ -34,13 +31,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
-        <LenisProvider>
-          <Header />
+        <ConditionalLayout>
           {children}
-          <Footer />
-          {/* Bouton WhatsApp sticky — visible sur toutes les pages */}
-          <WhatsAppButton />
-        </LenisProvider>
+        </ConditionalLayout>
       </body>
     </html>
   )
