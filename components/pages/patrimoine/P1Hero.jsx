@@ -89,17 +89,13 @@ export default function P1Hero() {
 
         <h1 className="ad-h1">
           <span className="ad-phrase ad-r ad-d2">
-            <span className="ad-setup">Là où l'</span>
-            <span className="ad-hero-word ad-shimmer">Histoire</span>
-            <span className="ad-soft">vit <em>encore,</em></span>
+            <span className="ad-setup pb-3">Là où l'Histoire vit encore</span>
           </span>
           <div className="ad-phrase-rule">
             <span className="l" /><span className="d" /><span className="l" />
           </div>
           <span className="ad-phrase ad-r ad-d3">
-            <span className="ad-setup">Quand le</span>
-            <span className="ad-hero-word ad-shimmer">Patrimoine</span>
-            <span className="ad-soft">devient <em>éternel.</em></span>
+            <span className="ad-setup pt-3">Quand le Patrimoine devient éternel.</span>
           </span>
         </h1>
 

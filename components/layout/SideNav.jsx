@@ -114,8 +114,10 @@ export default function SideNav({ isOpen, onClose }) {
             <motion.div
               variants={listVariants}
               initial="hidden" animate="visible"
-              className="flex-1 overflow-y-scroll px-10 py-10 flex flex-col gap-2"
-              style={{ scrollbarWidth: "thin", scrollbarColor: "#C4A55A #f1f1f1" }}
+              className="flex-1 min-h-0 overflow-y-auto px-10 py-10 flex flex-col gap-2"
+              style={{ scrollbarWidth: "thin", scrollbarColor: "#C4A55A #f1f1f1", overscrollBehavior: "contain" }}
+              onWheel={e => e.stopPropagation()}
+              onTouchMove={e => e.stopPropagation()}
             >
               {NAV_ITEMS.map((item) => (
                 <motion.div key={item.label} variants={itemVariants}>

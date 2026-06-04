@@ -1,4 +1,5 @@
 import ActualitesPage from "@/components/pages/actualites/ActualitesPage"
+import FooterCTA from "@/components/sections/FooterCTA"
 
 export const metadata = {
   title: "Actualités — Soft Group Immobilier",
@@ -6,5 +7,10 @@ export const metadata = {
 }
 
 export default function Actualites() {
-  return <ActualitesPage />
+  return (
+    <>
+    <ActualitesPage />
+    <FooterCTA />
+    </>
+  )
 }

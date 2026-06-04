@@ -4,11 +4,11 @@ export default function P2Souffle() {
   return (
     <Panel id="adp2">
       {/* Background photo with cream veil — reference: .deco-bg + .deco-veil */}
-      <div className="ad-deco-bg" style={{ backgroundImage: "url('/img/anfa-ambiance.jpg')" }} />
+      <div className="ad-deco-bg" />
       <div className="ad-deco-veil" />
 
       <div className="ad-scene-num">II</div>
-      <div className="ad-panel-inner" style={{ textAlign: "center", maxWidth: "1100px" }}>
+      <div className="ad-panel-inner">
         <div className="ad-pretitle ad-r">— Le souffle des lieux —</div>
         <h2 className="ad-p2-h2 ad-r ad-d1">
           Il est des lieux<br />

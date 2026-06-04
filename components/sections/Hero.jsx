@@ -55,7 +55,7 @@ export default function Hero() {
 
         {/* Poster shown until video is ready — eliminates the initial black/glitch frame */}
         <div
-          className="absolute inset-0 bg-neutral-900 transition-opacity duration-700"
+          className="absolute inset-0 transition-opacity duration-700"
           style={{ opacity: videoReady ? 0 : 1, zIndex: 1 }}
         />
         <video

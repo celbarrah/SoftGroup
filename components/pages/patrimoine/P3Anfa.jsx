@@ -14,7 +14,7 @@ export default function P3Anfa() {
           </div>
           <div className="ad-p3-text">
             <div className="ad-pretitle ad-r">— Janvier 1943 · Hôtel d'Anfa —</div>
-            <h2 className="ad-r ad-d1">La Conférence d'<em>Anfa</em></h2>
+            <h2 className="ad-r ad-d1 ">La Conférence d'<em>Anfa</em></h2>
             <p className="ad-r ad-d2">
               Pendant quatorze jours, <strong>Franklin D. Roosevelt</strong> et <strong>Winston Churchill</strong>,
               accompagnés du général <strong>Charles de Gaulle</strong>, se réunissent à l'Hôtel d'Anfa, en

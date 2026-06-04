@@ -488,17 +488,17 @@ body {
 .ad-setup {
   display: block;
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(18px, 2.2vw, 36px);
+  font-size: clamp(11px, 0.9vw, 13px);
   font-weight: 700;
   letter-spacing: .48em;
   text-transform: uppercase;
   color: var(--ad-ink-soft);
-  margin-bottom: 8px; line-height: 1;
+  margin-bottom: 6px; line-height: 1;
 }
 .ad-hero-word {
   display: block;
   font-family: var(--font-cormorant), serif;
-  font-size: clamp(64px, 12.5vw, 220px);
+  font-size: clamp(56px, 9vw, 148px);
   line-height: .88;
   letter-spacing: .045em;
   text-transform: uppercase;
@@ -526,9 +526,9 @@ body {
   display: block;
   font-family: var(--font-cormorant), serif;
   font-style: italic; font-weight: 500;
-  font-size: clamp(26px, 3.8vw, 58px);
+  font-size: clamp(22px, 3vw, 46px);
   color: var(--ad-ink-soft);
-  margin-top: 8px; letter-spacing: 0; line-height: 1.1;
+  margin-top: 6px; letter-spacing: 0; line-height: 1.1;
 }
 .ad-soft em { font-style: italic; color: var(--ad-gold-deep); font-weight: 700; }
 
@@ -572,14 +572,18 @@ body {
   background: linear-gradient(90deg, var(--ad-gold-deep), transparent);
 }
 .ad-p2-h2 {
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(50px,8.5vh,120px);
-  text-transform: uppercase; letter-spacing: .045em;
-  font-weight: 400; line-height: .96; color: var(--ad-ink);
-  margin: 0 auto 56px; max-width: 16ch;
+  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif;
+  font-size: clamp(70px,9.5vh,150px);
+  text-transform: uppercase; 
+  letter-spacing: .045em;
+  font-weight: 400; 
+  line-height: .96; 
+  color: var(--ad-ink);
+  margin: 0 auto 56px; 
+  max-width: 30ch;
 }
 .ad-p2-h2 em {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-cinzel), 'Cinzel', 'Times New Roman', serif;
   font-style: italic; text-transform: none;
   color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0;
 }
@@ -615,10 +619,14 @@ body {
   backdrop-filter: blur(8px); z-index: 3;
 }
 .ad-p3-text h2 {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif;
   font-size: clamp(48px,7.5vh,96px);
-  text-transform: uppercase; letter-spacing: .04em;
-  font-weight: 400; line-height: .98; color: var(--ad-ink); margin-bottom: 32px;
+  text-transform: uppercase; 
+  letter-spacing: .04em;
+  font-weight: 400; 
+  line-height: .98; 
+  color: var(--ad-ink); 
+  margin-bottom: 32px;
 }
 .ad-p3-text h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-p3-text p { font-size: clamp(16px,2vh,19px); line-height: 1.65; color: var(--ad-ink-soft); margin-bottom: 14px; font-weight: 500; }
@@ -677,7 +685,7 @@ body {
 .ad-p5-image .ad-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 .ad-p5-image .ad-seal-overlay { position: absolute; top: -30px; right: -32px; z-index: 5; }
 
-.ad-p5-text h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,8vh,104px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 26px; }
+.ad-p5-text h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,8vh,104px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 26px; }
 .ad-p5-text h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-lede { font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(18px,2.4vh,23px); line-height: 1.6; color: var(--ad-ink); margin-bottom: 30px; padding-left: 18px; border-left: 2px solid var(--ad-gold-deep); font-weight: 500; }
 .ad-h3 { font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 600; font-size: clamp(24px,3.2vh,34px); color: var(--ad-gold-deep); margin: 26px 0 16px; line-height: 1.15; }
@@ -686,7 +694,7 @@ body {
 /* ── P6 ──────────────────────────────────────────────────── */
 #adp6 { background: var(--ad-paper-2); }
 .ad-p6-head { text-align: center; margin-bottom: 4vh; }
-.ad-p6-h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .045em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 16px; }
+.ad-p6-h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .045em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 16px; }
 .ad-p6-h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-p6-tag { margin-top: 10px; font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 600; font-size: clamp(16px,2vh,21px); color: var(--ad-gold-deep); letter-spacing: .02em; }
 .ad-pillars { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; max-width: 1400px; margin: 0 auto; }
@@ -716,7 +724,7 @@ body {
 .ad-p7-image .ad-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
 .ad-p7-image .ad-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 .ad-p7-image .ad-seal-overlay { position: absolute; top: -30px; right: -32px; z-index: 5; }
-.ad-p7-text h2 { font-family: var(--font-cormorant), serif; font-size: clamp(40px,6.8vh,88px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: 1.0; color: var(--ad-ink); margin-bottom: 30px; }
+.ad-p7-text h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(40px,6.8vh,88px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: 1.0; color: var(--ad-ink); margin-bottom: 30px; }
 .ad-p7-text h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-p7-text p { font-size: clamp(16px,2vh,19px); line-height: 1.7; color: var(--ad-ink-soft); margin-bottom: 16px; font-weight: 500; }
 .ad-pull { margin: 22px 0; padding: 16px 22px; border-left: 3px solid var(--ad-gold-deep); background: rgba(232,201,135,.14); font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(17px,2.2vh,21px); line-height: 1.5; color: var(--ad-ink); font-weight: 500; }
@@ -729,13 +737,13 @@ body {
 #adp8 .ad-panel-inner { text-align: center; z-index: 5; max-width: 1100px; }
 .ad-small-cap { font-family: var(--font-sans), sans-serif; font-size: 12px; letter-spacing: .5em; font-weight: 700; color: var(--ad-gold-deep); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 14px; }
 .ad-small-cap::before, .ad-small-cap::after { content: ''; width: 50px; height: 1px; background: var(--ad-gold-deep); }
-.ad-p8-h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .94; color: var(--ad-ink); margin: 0 auto 16px; max-width: 18ch; }
+.ad-p8-h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .94; color: var(--ad-ink); margin: 0 auto 16px; max-width: 18ch; }
 .ad-p8-h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-finale-line { width: 72px; height: 1px; background: var(--ad-gold-deep); margin: 0 auto 16px; }
 .ad-softgroup-name { font-family: var(--font-cormorant), serif; font-size: clamp(16px,2vh,22px); letter-spacing: .35em; color: var(--ad-gold-deep); margin: 0 auto 26px; text-transform: uppercase; }
 .ad-gardien-block { margin: 0 auto 26px; text-align: center; }
 .ad-gs-setup { font-family: var(--font-sans), sans-serif; font-size: clamp(13px,1.6vw,22px); font-weight: 700; letter-spacing: .42em; text-transform: uppercase; color: var(--ad-ink-soft); margin-bottom: 6px; }
-.ad-gs-hero { font-family: var(--font-cormorant), serif; font-size: clamp(38px,5.5vw,94px); line-height: .96; letter-spacing: .04em; text-transform: uppercase; color: var(--ad-gold-deep); text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
+.ad-gs-hero { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(38px,5.5vw,94px); line-height: .96; letter-spacing: .04em; text-transform: uppercase; color: var(--ad-gold-deep); text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
 .ad-finale-body { font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(17px,2.1vh,22px); line-height: 1.55; color: var(--ad-ink-soft); max-width: 760px; margin: 0 auto 14px; font-weight: 500; }
 .ad-finale-body strong { color: var(--ad-gold-deep); font-weight: 700; font-style: normal; }
 .ad-finale-invite { font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 500; font-size: clamp(18px,2.3vh,24px); color: var(--ad-ink); margin: 22px auto 26px; max-width: 36ch; line-height: 1.35; }
@@ -783,6 +791,28 @@ body {
 .ad-counter .cur, .ad-counter .ad-cur { color: var(--ad-gold-deep); font-weight: 700; font-size: 15px; }
 .ad-counter .sep, .ad-counter .ad-sep { width: 18px; height: 1px; background: var(--ad-gold-deep); display: inline-block; }
 .ad-counter .tot, .ad-counter .ad-tot { color: var(--ad-ink-mute); }
+/* ── NAV RIGHT (counter + hamburger grouped) ─────────────── */
+.ad-nav-right {
+  display: flex; align-items: center; gap: 12px;
+}
+.ad-hamburger {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  background: rgba(253,250,242,.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--ad-line);
+  color: var(--ad-ink);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+  padding: 0;
+}
+.ad-hamburger:hover {
+  background: rgba(253,250,242,.96);
+  border-color: var(--ad-gold-deep);
+  color: var(--ad-gold-deep);
+}
+
 
 /* ── SIDE RAIL ───────────────────────────────────────────── */
 .ad-rail {
@@ -816,8 +846,13 @@ body {
 .ad-dot:hover .ad-label { opacity: 1; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
+
+/* Prevent horizontal overflow at root level */
+.patrimoine-root { overflow-x: hidden; }
+.ad-panel        { max-width: 100vw; }
+
 @media (max-width: 960px) {
-  .ad-panel { padding: 110px 22px 90px; }
+  .ad-panel { padding: 110px 56px 90px 22px; } /* extra right clears the rail */
   #adp1 { height: auto; min-height: 100vh; }
   .ad-scene-num { left: 22px; top: 96px; font-size: 16px; }
   .ad-nav { padding: 14px 16px; }
@@ -840,10 +875,77 @@ body {
   .ad-w2, .ad-w3 { grid-column: span 3; grid-row: span 2; }
   .ad-w4, .ad-w5 { grid-column: span 3; grid-row: span 2; }
   .ad-pillars { grid-template-columns: 1fr 1fr; gap: 16px; }
+  /* Reduce vh-based headings on tablet — switch to vw so height of phone doesn't inflate them */
+  .ad-hero-word    { font-size: clamp(40px, 8vw,  100px); }
+  .ad-p2-h2        { font-size: clamp(32px, 5.5vw, 62px); }
+  .ad-p3-text h2   { font-size: clamp(30px, 5.5vw, 60px); }
+  .ad-p5-text h2   { font-size: clamp(30px, 5.5vw, 60px); }
+  .ad-p6-h2        { font-size: clamp(30px, 5.5vw, 58px); }
+  .ad-p7-text h2   { font-size: clamp(28px, 5vw,  54px); }
+  .ad-p8-h2        { font-size: clamp(30px, 5.5vw, 58px); }
+  .ad-big-quote    { font-size: clamp(24px, 4.2vw, 48px); }
+  .ad-gs-hero      { font-size: clamp(32px, 6vw,  72px); }
 }
+
 @media (max-width: 600px) {
+  /* Hide side rail — too narrow to show, causes right-side overflow */
+  .ad-rail { display: none; }
+  /* Symmetric padding now rail is gone */
+  .ad-panel { padding: 100px 20px 80px; }
+  .ad-panel-inner { max-width: 100%; }
   .ad-pillars { grid-template-columns: 1fr; }
-  .ad-panel { padding: 110px 18px 80px; }
+
+  /* Disable reveal animations on mobile — panel content can exceed 100vh when
+     stacked in 1 column, so IntersectionObserver threshold:0.5 never fires.
+     Make all content immediately visible instead. */
+  .ad-r, .ad-rs {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    transition: none !important;
+  }
+
+  /* All big headings: vw-based clamps scale with screen width, not height */
+  .ad-hero-word    { font-size: clamp(26px, 8.5vw, 46px); letter-spacing: .02em; }
+  .ad-setup        { font-size: clamp(9px,  2.2vw, 13px); }
+  .ad-soft         { font-size: clamp(16px, 4.5vw, 28px); }
+  .ad-p2-h2        { font-size: clamp(24px, 7.5vw, 42px); }
+  .ad-p3-text h2   { font-size: clamp(22px, 7vw,  40px); }
+  .ad-p5-text h2   { font-size: clamp(22px, 7vw,  40px); }
+  .ad-p6-h2        { font-size: clamp(22px, 7vw,  40px); }
+  .ad-p7-text h2   { font-size: clamp(20px, 6.5vw, 38px); }
+  .ad-p8-h2        { font-size: clamp(22px, 7vw,  40px); }
+  .ad-big-quote    { font-size: clamp(18px, 5.5vw, 30px); max-width: 100%; }
+  .ad-gs-hero      { font-size: clamp(24px, 7.5vw, 46px); }
+  .ad-gs-setup     { font-size: clamp(10px, 2.8vw, 16px); letter-spacing: .28em; }
+  .ad-hero-sub     { font-size: clamp(16px, 4.5vw, 24px); }
+  .ad-qmark        { font-size: clamp(60px, 16vw, 90px); }
+
+  /* Image height on small screens */
+  .ad-p3-photo, .ad-p5-image, .ad-p7-image { height: 260px; }
+
+  /* Witnesses grid — simpler 2-col on mobile */
+  .ad-witnesses { grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(100px, 22vw); gap: 6px; }
+  .ad-w1 { grid-column: span 2; grid-row: span 2; }
+  .ad-w2, .ad-w3, .ad-w4, .ad-w5 { grid-column: span 1; grid-row: span 1; }
+
+  /* Decorative elements — smaller */
+  .ad-hero-seal { bottom: 24px; left: 18px; }
+  .ad-seal-sm   { width: 62px; height: 62px; }
+  .ad-scene-num { font-size: 12px; left: 16px; top: 86px; }
+  .ad-hero-frame { inset: 8px; }
+  .ad-hf-corner  { width: 40px; height: 40px; }
+}
+
+@media (max-width: 400px) {
+  .ad-hero-word  { font-size: clamp(20px, 8vw, 34px); }
+  .ad-p2-h2,
+  .ad-p3-text h2,
+  .ad-p5-text h2,
+  .ad-p6-h2,
+  .ad-p7-text h2,
+  .ad-p8-h2      { font-size: clamp(18px, 6.5vw, 30px); }
+  .ad-big-quote  { font-size: clamp(15px, 5vw, 24px); }
+  .ad-gs-hero    { font-size: clamp(20px, 7vw, 36px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ad-scroll-wrap { scroll-snap-type: none; scroll-behavior: auto; }
@@ -854,220 +956,71 @@ body {
   .ad-shimmer { color: var(--ad-gold-deep); -webkit-text-fill-color: var(--ad-gold-deep); background: none; }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   PATRIMOINE ART DÉCO — Immersive scroll-snap experience
-   Scoped under .patrimoine-root to avoid any global bleed
-   ═══════════════════════════════════════════════════════════ */
-
-/* ── Root tokens (Art Déco warm palette) ─────────────────── */
-.patrimoine-root {
-  --ad-white:       #fdfaf2;
-  --ad-paper:       #faf5e8;
-  --ad-paper-2:     #f5edd9;
-  --ad-paper-3:     #efe3c2;
-  --ad-ivory:       #fffaee;
-  --ad-gold:        #b8893a;
-  --ad-gold-deep:   #7d5215;
-  --ad-gold-rich:   #9c6d20;
-  --ad-gold-bright: #d4a955;
-  --ad-gold-pale:   #e8c987;
-  --ad-gold-glow:   #f2d896;
-  --ad-ink:         #1f1810;
-  --ad-ink-soft:    #3d3220;
-  --ad-ink-mute:    #6e5e48;
-  --ad-line:        rgba(125, 82, 21, 0.22);
-  --ad-line-strong: rgba(125, 82, 21, 0.45);
+/* ── PATRIMOINE TITLES — Limelight / Cinzel font override ─── */
+/* Applied at all breakpoints to preserve Art Déco typography  */
+.patrimoine-root .ad-h1,
+.patrimoine-root .ad-hero-word,
+.patrimoine-root .ad-p2-h2,
+.patrimoine-root .ad-p3-text h2,
+.patrimoine-root .ad-p4-text h2,
+.patrimoine-root .ad-p5-text h2,
+.patrimoine-root .ad-p6-h2,
+.patrimoine-root .ad-p7-text h2,
+.patrimoine-root .ad-p8-h2,
+.patrimoine-root .ad-gs-hero {
+  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
+  font-weight: 400;
+}
+.patrimoine-root .ad-p2-h2 em,
+.patrimoine-root .ad-p3-text h2 em,
+.patrimoine-root .ad-p5-text h2 em,
+.patrimoine-root .ad-p6-h2 em,
+.patrimoine-root .ad-p7-text h2 em,
+.patrimoine-root .ad-p8-h2 em {
+  font-family: var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
+  font-style: italic;
 }
 
-/* ── Full-viewport scroll-snap wrapper ───────────────────── */
-.ad-scroll-wrap {
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+/* Reinforce at all responsive breakpoints */
+@media (max-width: 960px) {
+  .patrimoine-root .ad-hero-word,
+  .patrimoine-root .ad-p2-h2,
+  .patrimoine-root .ad-p3-text h2,
+  .patrimoine-root .ad-p4-text h2,
+  .patrimoine-root .ad-p5-text h2,
+  .patrimoine-root .ad-p6-h2,
+  .patrimoine-root .ad-p7-text h2,
+  .patrimoine-root .ad-p8-h2,
+  .patrimoine-root .ad-gs-hero {
+    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
+    font-weight: 400;
+  }
 }
-
-/* ── Panel scaffold ──────────────────────────────────────── */
-.ad-panel {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 110px 56px 84px;
-  background: var(--ad-white);
-  color: var(--ad-ink);
-  font-family: var(--font-cormorant), 'Cormorant Garamond', 'Garamond', serif;
-  font-weight: 500;
-  line-height: 1.55;
+@media (max-width: 600px) {
+  .patrimoine-root .ad-hero-word,
+  .patrimoine-root .ad-p2-h2,
+  .patrimoine-root .ad-p3-text h2,
+  .patrimoine-root .ad-p4-text h2,
+  .patrimoine-root .ad-p5-text h2,
+  .patrimoine-root .ad-p6-h2,
+  .patrimoine-root .ad-p7-text h2,
+  .patrimoine-root .ad-p8-h2,
+  .patrimoine-root .ad-gs-hero {
+    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
+    font-weight: 400;
+  }
 }
-.ad-panel::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: var(--ad-white);
-  z-index: 50;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .8s ease;
+@media (max-width: 400px) {
+  .patrimoine-root .ad-hero-word,
+  .patrimoine-root .ad-p2-h2,
+  .patrimoine-root .ad-p3-text h2,
+  .patrimoine-root .ad-p4-text h2,
+  .patrimoine-root .ad-p5-text h2,
+  .patrimoine-root .ad-p6-h2,
+  .patrimoine-root .ad-p7-text h2,
+  .patrimoine-root .ad-p8-h2,
+  .patrimoine-root .ad-gs-hero {
+    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
+    font-weight: 400;
+  }
 }
-.ad-panel.ad-entering::before { opacity: .35; }
-.ad-panel::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(31,24,16,.06) 100%);
-  pointer-events: none;
-  z-index: 40;
-}
-.ad-panel-inner {
-  position: relative; z-index: 5;
-  width: 100%; max-width: 1500px;
-  margin: 0 auto;
-}
-
-/* ── Reveal animations ───────────────────────────────────── */
-.ad-r {
-  opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1);
-}
-.ad-panel.ad-active .ad-r { opacity: 1; transform: translateY(0); }
-.ad-panel.ad-active .ad-r.ad-d1 { transition-delay: .15s; }
-.ad-panel.ad-active .ad-r.ad-d2 { transition-delay: .30s; }
-.ad-panel.ad-active .ad-r.ad-d3 { transition-delay: .45s; }
-.ad-panel.ad-active .ad-r.ad-d4 { transition-delay: .60s; }
-.ad-panel.ad-active .ad-r.ad-d5 { transition-delay: .75s; }
-.ad-panel.ad-active .ad-r.ad-d6 { transition-delay: .90s; }
-.ad-panel.ad-active .ad-r.ad-d7 { transition-delay: 1.05s; }
-.ad-rs {
-  opacity: 0;
-  transform: scale(1.08);
-  transition: opacity 1.4s ease, transform 1.6s cubic-bezier(.2,.7,.2,1);
-}
-.ad-panel.ad-active .ad-rs { opacity: 1; transform: scale(1); }
-
-/* ── Scene number ────────────────────────────────────────── */
-.ad-scene-num {
-  position: absolute;
-  top: 110px; left: 56px;
-  z-index: 6;
-  font-size: 22px;
-  letter-spacing: .3em;
-  color: var(--ad-gold-deep);
-  opacity: .92;
-  font-family: var(--font-cormorant), serif;
-}
-.ad-scene-num::after {
-  content: '';
-  display: block;
-  width: 36px; height: 1px;
-  background: var(--ad-gold-deep);
-  margin-top: 8px;
-}
-
-/* ── Scroll cue ──────────────────────────────────────────── */
-.ad-cue {
-  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-  z-index: 6;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-family: var(--font-sans), sans-serif;
-  font-size: 10px; letter-spacing: .42em;
-  font-weight: 600;
-  color: var(--ad-gold-deep);
-  opacity: 0; transition: opacity .8s ease 1.2s;
-}
-.ad-panel.ad-active .ad-cue { opacity: 1; }
-.ad-cue .ad-cue-line {
-  width: 1px; height: 40px;
-  background: linear-gradient(180deg, var(--ad-gold-deep), transparent);
-  animation: adCueLine 2.4s ease-in-out infinite;
-}
-@keyframes adCueLine {
-  0%, 100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  50%       { transform: scaleY(.25); opacity: .35; }
-}
-
-/* ── SEAL ────────────────────────────────────────────────── */
-.ad-seal { display: block; width: 100%; height: 100%; color: var(--ad-gold-deep); }
-.ad-seal-rays { stroke: var(--ad-gold-deep); stroke-width: 1.2; fill: none; stroke-linecap: round; opacity: .85; }
-.ad-seal-outer { fill: var(--ad-white); stroke: var(--ad-gold-deep); stroke-width: 1.4; }
-.ad-seal-inner { fill: none; stroke: var(--ad-gold-deep); stroke-width: 0.5; }
-.ad-seal-top    { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; fill: var(--ad-gold-deep); }
-.ad-seal-main   { font-size: 30px; letter-spacing: 3.5px; fill: var(--ad-gold-deep); }
-.ad-seal-dots circle { fill: var(--ad-gold-deep); }
-.ad-seal-rule   { stroke: var(--ad-gold-deep); stroke-width: 0.6; }
-.ad-seal-bottom { font-size: 7px; font-weight: 600; letter-spacing: 1.8px; fill: var(--ad-gold-deep); }
-.ad-seal-wrap {
-  position: relative; display: inline-block;
-  opacity: 0;
-  transform: scale(1.22) rotate(-9deg);
-  transition: opacity .7s ease, transform .9s cubic-bezier(.2,1.4,.4,1);
-  filter: drop-shadow(0 8px 20px rgba(31,24,16,.18));
-}
-.ad-panel.ad-active .ad-seal-wrap {
-  opacity: 1;
-  transform: scale(1) rotate(-4deg);
-  transition-delay: .6s;
-}
-.ad-seal-wrap:hover { transform: scale(1.06) rotate(-2deg) !important; transition: transform .4s ease; }
-.ad-seal-sm { width: 96px; height: 96px; }
-.ad-seal-md { width: 156px; height: 156px; }
-
-/* ── P1 HERO ─────────────────────────────────────────────── */
-#adp1 { padding: 0; height: 100vh; min-height: 720px; }
-
-.ad-hero-stage { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.ad-slide {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: 0; transform: scale(1.05);
-  animation-duration: 28s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  filter: sepia(.3) contrast(1.04);
-}
-
-/* ── Hamburger button (Patrimoine nav) ─────────────────────── */
-.ad-hamburger {
-  background: rgba(253,250,242,.82); backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--ad-line); cursor: pointer;
-  width: 48px; height: 48px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--ad-ink); transition: background .2s, border-color .2s;
-  pointer-events: auto;
-}
-.ad-hamburger:hover {
-  background: rgba(196,165,90,.18);
-  border-color: var(--ad-gold-deep);
-  color: var(--ad-gold-deep);
-}
-
-/* Brand text block */
-.ad-b-text { display: flex; flex-direction: column; gap: 2px; }
-.ad-b1 { font-family: var(--font-sans), sans-serif; font-size: 13px; letter-spacing: .32em; color: var(--ad-ink); font-weight: 700; display: block; line-height: 1; }
-.ad-b2 { font-family: var(--font-cormorant), serif; font-style: italic; font-size: 11.5px; color: var(--ad-gold-deep); margin-top: 4px; letter-spacing: .08em; font-weight: 500; display: block; }
-
-/* Nav right group — counter + hamburger side by side */
-.ad-nav-right {
-  display: flex; align-items: center; gap: 0;
-  pointer-events: auto;
-}
-.ad-nav-right .ad-counter {
-  border-right: none;
-}
-.ad-nav-right .ad-hamburger {
-  border-left: none;
-}
-
-/* P2 bg + veil */
-.ad-deco-bg { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; filter: sepia(.35) brightness(.92) contrast(1.04); }
-.ad-deco-veil { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(253,250,242,.62) 0%, rgba(253,250,242,.52) 40%, rgba(253,250,242,.72) 100%); }
-
-/* P5 italic */
-.ad-p5-italic { font-style: italic; color: var(--ad-gold-deep); font-weight: 600; margin-top: 8px; }
-
-.ad-gold-text { color: var(--ad-gold-deep); font-weight: 700; }
