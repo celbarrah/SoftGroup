@@ -154,13 +154,11 @@ body {
   --ad-line-strong: rgba(125, 82, 21, 0.45);
 }
 
-/* ── Full-viewport scroll-snap wrapper ───────────────────── */
+/* ── Scroll panels wrapper ───────────────────────────────── */
+/* Scroll-snap is applied to html element by PatrimoineClient  */
+/* via useEffect so Footer below is reachable by window scroll */
 .ad-scroll-wrap {
-  height: 100vh;
-  overflow-y: scroll;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 /* ── Panel scaffold ──────────────────────────────────────── */
@@ -572,11 +570,11 @@ body {
   background: linear-gradient(90deg, var(--ad-gold-deep), transparent);
 }
 .ad-p2-h2 {
-  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif;
+  font-family: var(--font-cormorant), serif;
   font-size: clamp(70px,9.5vh,150px);
   text-transform: uppercase; 
   letter-spacing: .045em;
-  font-weight: 400; 
+  font-weight: bolder; 
   line-height: .96; 
   color: var(--ad-ink);
   margin: 0 auto 56px; 
@@ -619,11 +617,11 @@ body {
   backdrop-filter: blur(8px); z-index: 3;
 }
 .ad-p3-text h2 {
-  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif;
+  font-family: var(--font-cormorant), serif;
   font-size: clamp(48px,7.5vh,96px);
   text-transform: uppercase; 
   letter-spacing: .04em;
-  font-weight: 400; 
+  font-weight: bolder; 
   line-height: .98; 
   color: var(--ad-ink); 
   margin-bottom: 32px;
@@ -685,7 +683,7 @@ body {
 .ad-p5-image .ad-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 .ad-p5-image .ad-seal-overlay { position: absolute; top: -30px; right: -32px; z-index: 5; }
 
-.ad-p5-text h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,8vh,104px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 26px; }
+.ad-p5-text h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,8vh,104px); text-transform: uppercase; letter-spacing: .04em; font-weight: bolder; line-height: .96; color: var(--ad-ink); margin-bottom: 26px; }
 .ad-p5-text h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-lede { font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(18px,2.4vh,23px); line-height: 1.6; color: var(--ad-ink); margin-bottom: 30px; padding-left: 18px; border-left: 2px solid var(--ad-gold-deep); font-weight: 500; }
 .ad-h3 { font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 600; font-size: clamp(24px,3.2vh,34px); color: var(--ad-gold-deep); margin: 26px 0 16px; line-height: 1.15; }
@@ -694,7 +692,7 @@ body {
 /* ── P6 ──────────────────────────────────────────────────── */
 #adp6 { background: var(--ad-paper-2); }
 .ad-p6-head { text-align: center; margin-bottom: 4vh; }
-.ad-p6-h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .045em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 16px; }
+.ad-p6-h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .045em; font-weight: 400; line-height: .96; color: var(--ad-ink); margin-bottom: 16px; }
 .ad-p6-h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-p6-tag { margin-top: 10px; font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 600; font-size: clamp(16px,2vh,21px); color: var(--ad-gold-deep); letter-spacing: .02em; }
 .ad-pillars { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; max-width: 1400px; margin: 0 auto; }
@@ -724,7 +722,7 @@ body {
 .ad-p7-image .ad-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
 .ad-p7-image .ad-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 .ad-p7-image .ad-seal-overlay { position: absolute; top: -30px; right: -32px; z-index: 5; }
-.ad-p7-text h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(40px,6.8vh,88px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: 1.0; color: var(--ad-ink); margin-bottom: 30px; }
+.ad-p7-text h2 { font-family: var(--font-cormorant), serif; font-size: clamp(40px,6.8vh,88px); text-transform: uppercase; letter-spacing: .04em; font-weight: bolder; line-height: 1.0; color: var(--ad-ink); margin-bottom: 30px; }
 .ad-p7-text h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-p7-text p { font-size: clamp(16px,2vh,19px); line-height: 1.7; color: var(--ad-ink-soft); margin-bottom: 16px; font-weight: 500; }
 .ad-pull { margin: 22px 0; padding: 16px 22px; border-left: 3px solid var(--ad-gold-deep); background: rgba(232,201,135,.14); font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(17px,2.2vh,21px); line-height: 1.5; color: var(--ad-ink); font-weight: 500; }
@@ -737,13 +735,13 @@ body {
 #adp8 .ad-panel-inner { text-align: center; z-index: 5; max-width: 1100px; }
 .ad-small-cap { font-family: var(--font-sans), sans-serif; font-size: 12px; letter-spacing: .5em; font-weight: 700; color: var(--ad-gold-deep); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 14px; }
 .ad-small-cap::before, .ad-small-cap::after { content: ''; width: 50px; height: 1px; background: var(--ad-gold-deep); }
-.ad-p8-h2 { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; line-height: .94; color: var(--ad-ink); margin: 0 auto 16px; max-width: 18ch; }
+.ad-p8-h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .04em; font-weight: bolder; line-height: .94; color: var(--ad-ink); margin: 0 auto 16px; max-width: 18ch; }
 .ad-p8-h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
 .ad-finale-line { width: 72px; height: 1px; background: var(--ad-gold-deep); margin: 0 auto 16px; }
 .ad-softgroup-name { font-family: var(--font-cormorant), serif; font-size: clamp(16px,2vh,22px); letter-spacing: .35em; color: var(--ad-gold-deep); margin: 0 auto 26px; text-transform: uppercase; }
 .ad-gardien-block { margin: 0 auto 26px; text-align: center; }
 .ad-gs-setup { font-family: var(--font-sans), sans-serif; font-size: clamp(13px,1.6vw,22px); font-weight: 700; letter-spacing: .42em; text-transform: uppercase; color: var(--ad-ink-soft); margin-bottom: 6px; }
-.ad-gs-hero { font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif; font-size: clamp(38px,5.5vw,94px); line-height: .96; letter-spacing: .04em; text-transform: uppercase; color: var(--ad-gold-deep); text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
+.ad-gs-hero { font-family: var(--font-cormorant), serif; font-size: clamp(38px,5.5vw,94px); line-height: .96; letter-spacing: .04em; text-transform: uppercase; color: var(--ad-gold-deep); text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
 .ad-finale-body { font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(17px,2.1vh,22px); line-height: 1.55; color: var(--ad-ink-soft); max-width: 760px; margin: 0 auto 14px; font-weight: 500; }
 .ad-finale-body strong { color: var(--ad-gold-deep); font-weight: 700; font-style: normal; }
 .ad-finale-invite { font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 500; font-size: clamp(18px,2.3vh,24px); color: var(--ad-ink); margin: 22px auto 26px; max-width: 36ch; line-height: 1.35; }
@@ -948,79 +946,10 @@ body {
   .ad-gs-hero    { font-size: clamp(20px, 7vw, 36px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ad-scroll-wrap { scroll-snap-type: none; scroll-behavior: auto; }
+  html { scroll-snap-type: none !important; scroll-behavior: auto !important; }
   .ad-r, .ad-rs { opacity: 1; transform: none; transition: none; }
   .ad-seal-wrap { opacity: 1; transform: rotate(-4deg); transition: none; }
   .ad-slide, .ad-hero-spotlight, .ad-deco { animation: none; }
   .ad-slide.s1 { opacity: 1; }
   .ad-shimmer { color: var(--ad-gold-deep); -webkit-text-fill-color: var(--ad-gold-deep); background: none; }
-}
-
-/* ── PATRIMOINE TITLES — Limelight / Cinzel font override ─── */
-/* Applied at all breakpoints to preserve Art Déco typography  */
-.patrimoine-root .ad-h1,
-.patrimoine-root .ad-hero-word,
-.patrimoine-root .ad-p2-h2,
-.patrimoine-root .ad-p3-text h2,
-.patrimoine-root .ad-p4-text h2,
-.patrimoine-root .ad-p5-text h2,
-.patrimoine-root .ad-p6-h2,
-.patrimoine-root .ad-p7-text h2,
-.patrimoine-root .ad-p8-h2,
-.patrimoine-root .ad-gs-hero {
-  font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
-  font-weight: 400;
-}
-.patrimoine-root .ad-p2-h2 em,
-.patrimoine-root .ad-p3-text h2 em,
-.patrimoine-root .ad-p5-text h2 em,
-.patrimoine-root .ad-p6-h2 em,
-.patrimoine-root .ad-p7-text h2 em,
-.patrimoine-root .ad-p8-h2 em {
-  font-family: var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
-  font-style: italic;
-}
-
-/* Reinforce at all responsive breakpoints */
-@media (max-width: 960px) {
-  .patrimoine-root .ad-hero-word,
-  .patrimoine-root .ad-p2-h2,
-  .patrimoine-root .ad-p3-text h2,
-  .patrimoine-root .ad-p4-text h2,
-  .patrimoine-root .ad-p5-text h2,
-  .patrimoine-root .ad-p6-h2,
-  .patrimoine-root .ad-p7-text h2,
-  .patrimoine-root .ad-p8-h2,
-  .patrimoine-root .ad-gs-hero {
-    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
-    font-weight: 400;
-  }
-}
-@media (max-width: 600px) {
-  .patrimoine-root .ad-hero-word,
-  .patrimoine-root .ad-p2-h2,
-  .patrimoine-root .ad-p3-text h2,
-  .patrimoine-root .ad-p4-text h2,
-  .patrimoine-root .ad-p5-text h2,
-  .patrimoine-root .ad-p6-h2,
-  .patrimoine-root .ad-p7-text h2,
-  .patrimoine-root .ad-p8-h2,
-  .patrimoine-root .ad-gs-hero {
-    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
-    font-weight: 400;
-  }
-}
-@media (max-width: 400px) {
-  .patrimoine-root .ad-hero-word,
-  .patrimoine-root .ad-p2-h2,
-  .patrimoine-root .ad-p3-text h2,
-  .patrimoine-root .ad-p4-text h2,
-  .patrimoine-root .ad-p5-text h2,
-  .patrimoine-root .ad-p6-h2,
-  .patrimoine-root .ad-p7-text h2,
-  .patrimoine-root .ad-p8-h2,
-  .patrimoine-root .ad-gs-hero {
-    font-family: var(--font-limelight), 'Limelight', var(--font-cinzel), 'Cinzel', 'Times New Roman', serif !important;
-    font-weight: 400;
-  }
 }

@@ -1,7 +1,9 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import SideNav from "@/components/layout/SideNav"
+import { useEffect, useState } from "react"
+import Header    from "@/components/layout/Header"
+import Footer    from "@/components/layout/Footer"
+import FooterCTA from "@/components/sections/FooterCTA"
 
 import P1Hero        from "./P1Hero"
 import P2Souffle     from "./P2Souffle"
@@ -24,27 +26,30 @@ const DOT_LABELS = [
 ]
 
 /* ─────────────────────────────────────────────
-   BRAND MARK SVG
-   ───────────────────────────────────────────── */
-function BrandMark() {
-  return (
-    <svg viewBox="0 0 40 40" fill="none" className="ad-mark">
-      <circle cx="20" cy="20" r="19" stroke="#7d5215" strokeWidth="1"/>
-      <path d="M20 4 L36 20 L20 36 L4 20 Z" stroke="#7d5215" strokeWidth="1" fill="none"/>
-      <path d="M20 12 L28 20 L20 28 L12 20 Z" fill="#7d5215"/>
-    </svg>
-  )
-}
-
-/* ─────────────────────────────────────────────
    MAIN ORCHESTRATOR
    ───────────────────────────────────────────── */
 export default function PatrimoineClient() {
   const [activeIdx, setActiveIdx] = useState(0)
-  const [navOpen,   setNavOpen]   = useState(false)
+
+  /* ── Activate scroll-snap on the html element so:
+        1. Panels snap correctly (window scroll, not a container)
+        2. window.scrollY changes → Header auto-transitions
+        3. Footer is reachable by scrolling past P8
+        Cleaned up on unmount so other pages aren't affected.    ── */
+  useEffect(() => {
+    const html = document.documentElement
+    html.style.scrollSnapType  = "y mandatory"
+    html.style.scrollBehavior  = "smooth"
+    html.style.overflowY       = "scroll"
+    return () => {
+      html.style.scrollSnapType  = ""
+      html.style.scrollBehavior  = ""
+      html.style.overflowY       = ""
+    }
+  }, [])
 
   /* ── IntersectionObserver: add ad-active class to DOM panels
-        AND update counter state                                ── */
+        AND update rail state                                ── */
   useEffect(() => {
     const panels = PANEL_IDS.map(id => document.getElementById(id)).filter(Boolean)
     if (!panels.length) return
@@ -53,12 +58,10 @@ export default function PatrimoineClient() {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Add active class directly → triggers CSS reveal of .ad-r elements
             entry.target.classList.add("ad-active")
             const idx = PANEL_IDS.indexOf(entry.target.id)
             if (idx !== -1) {
               setActiveIdx(idx)
-              // Update rail dots
               document.querySelectorAll(".ad-dot").forEach((d, i) =>
                 d.classList.toggle("active", i === idx)
               )
@@ -110,41 +113,12 @@ export default function PatrimoineClient() {
     <div className="patrimoine-root">
 
       {/* ══════════════════════════════════════════
-          TOP NAV — Brand LEFT · [Counter + Hamburger] RIGHT
+          STANDARD HEADER
+          window.scrollY now changes naturally as
+          the user scrolls → Header auto-transitions
+          transparent → white after 60px.
           ══════════════════════════════════════════ */}
-      <nav className="ad-nav">
-        {/* Brand — left */}
-        <div className="ad-brand">
-          <BrandMark />
-          <div className="ad-b-text">
-            <span className="ad-b1">SoftGroup</span>
-            <span className="ad-b2">Gardien d&apos;un héritage</span>
-          </div>
-        </div>
-
-        {/* Counter + Hamburger — right, combined */}
-        <div className="ad-nav-right">
-          <div className="ad-counter">
-            <span className="ad-cur">{ROMAN[activeIdx]}</span>
-            <span className="ad-sep" />
-            <span className="ad-tot">VIII</span>
-          </div>
-          <button
-            className="ad-hamburger"
-            onClick={() => setNavOpen(true)}
-            aria-label="Ouvrir le menu"
-          >
-            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-              <line x1="0" y1="2"  x2="22" y2="2"/>
-              <line x1="0" y1="8"  x2="22" y2="8"/>
-              <line x1="0" y1="14" x2="22" y2="14"/>
-            </svg>
-          </button>
-        </div>
-      </nav>
-
-      {/* SideNav — same component used on all other pages */}
-      <SideNav isOpen={navOpen} onClose={() => setNavOpen(false)} />
+      <Header />
 
       {/* ══════════════════════════════════════════
           SIDE RAIL
@@ -168,8 +142,15 @@ export default function PatrimoineClient() {
 
       {/* ══════════════════════════════════════════
           SCROLL WRAP — 8 snap panels
+          Scroll-snap is applied to html (see useEffect above),
+          not this container. This div is just a structural wrapper.
           ══════════════════════════════════════════ */}
-      <div className="ad-scroll-wrap">
+      <div className="ad-scroll-wrap pb-20" 
+       style={{
+        WebkitClipPath: "polygon(0 0, 100% 0, 100% 99%, 0 100%)",
+        clipPath:       "polygon(0 0, 100% 0, 100% 98%, 0 100%)",
+      }}
+      >
         <P1Hero />
         <P2Souffle />
         <P3Anfa />
@@ -178,6 +159,17 @@ export default function PatrimoineClient() {
         <P6Ame />
         <P7Approfondit />
         <P8Finale />
+      </div>
+
+      {/* ══════════════════════════════════════════
+          FOOTER ZONE — outside the snap panels
+          Reachable by scrolling past P8. Has
+          scroll-snap-align: start so it snaps cleanly
+          into view when approached from P8.
+          ══════════════════════════════════════════ */}
+      <div className="ad-footer-zone">
+        <FooterCTA />
+        <Footer />
       </div>
 
     </div>
