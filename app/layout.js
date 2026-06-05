@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, DM_Sans, Cinzel, Limelight } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import ConditionalLayout from "@/components/providers/ConditionalLayout"
 
@@ -7,6 +8,7 @@ import ConditionalLayout from "@/components/providers/ConditionalLayout"
    Cormorant Garamond → serif luxueux pour les titres
    DM Sans            → géométrique propre pour le corps
    Cinzel             → display Art Déco — patrimoine page
+   Limelight          → Art Déco display optionnel
    ───────────────────────────────────────────────────────── */
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -37,6 +39,13 @@ const limelight = Limelight({
   display:  "swap",
 })
 
+/* ─────────────────────────────────────────────────────────
+   TRACKING IDs
+   ───────────────────────────────────────────────────────── */
+const GTM_ID  = "GTM-PSJ4JBHS"
+const GA4_ID  = "G-GTM2WQVX6J"
+const FB_PX   = "2375036423025939"
+
 export const metadata = {
   title:       "SOFTGROUP Immobilier | L'Immobilier d'Excellence au Maroc",
   description: "Foncière d'exception | logistique, bureaux, résidentiel, retail et terrains. Implantés dans les 4 pôles économiques stratégiques du Maroc.",
@@ -45,7 +54,61 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={`${cormorant.variable} ${dmSans.variable} ${cinzel.variable} ${limelight.variable}`}>
+      <head>
+        {/* ── Google Tag Manager — <head> snippet ── */}
+        <Script id="gtm-head" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+
+        {/* ── Google Analytics 4 ── */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA4_ID}');`}
+        </Script>
+
+        {/* ── Facebook Pixel ── */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window,document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${FB_PX}');
+          fbq('track', 'PageView');`}
+        </Script>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1" width="1" style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${FB_PX}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+      </head>
+
       <body>
+        {/* ── Google Tag Manager — <body> noscript ── */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0" width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         <ConditionalLayout>
           {children}
         </ConditionalLayout>

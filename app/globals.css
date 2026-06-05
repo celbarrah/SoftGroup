@@ -733,31 +733,6 @@ body {
 .ad-finale-veil { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(253,250,242,.88) 0%, rgba(253,250,242,.76) 35%, rgba(253,250,242,.88) 100%); }
 .ad-finale-rays { position: absolute; inset: 0; top: auto; height: 45vh; background: repeating-conic-gradient(from -90deg at 50% 100%, var(--ad-gold-deep) 0deg 0.5deg, transparent 0.5deg 8deg); mask-image: radial-gradient(ellipse at 50% 100%, black 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 30%, transparent 75%); opacity: .12; pointer-events: none; z-index: 3; }
 #adp8 .ad-panel-inner { text-align: center; z-index: 5; max-width: 1100px; }
-.ad-small-cap { font-family: var(--font-sans), sans-serif; font-size: 12px; letter-spacing: .5em; font-weight: 700; color: var(--ad-gold-deep); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 14px; }
-.ad-small-cap::before, .ad-small-cap::after { content: ''; width: 50px; height: 1px; background: var(--ad-gold-deep); }
-.ad-p8-h2 { font-family: var(--font-cormorant), serif; font-size: clamp(46px,7vh,92px); text-transform: uppercase; letter-spacing: .04em; font-weight: bolder; line-height: .94; color: var(--ad-ink); margin: 0 auto 16px; max-width: 18ch; }
-.ad-p8-h2 em { font-style: italic; text-transform: none; color: var(--ad-gold-deep); font-weight: 500; letter-spacing: 0; }
-.ad-finale-line { width: 72px; height: 1px; background: var(--ad-gold-deep); margin: 0 auto 16px; }
-.ad-softgroup-name { font-family: var(--font-cormorant), serif; font-size: clamp(16px,2vh,22px); letter-spacing: .35em; color: var(--ad-gold-deep); margin: 0 auto 26px; text-transform: uppercase; }
-.ad-gardien-block { margin: 0 auto 26px; text-align: center; }
-.ad-gs-setup { font-family: var(--font-sans), sans-serif; font-size: clamp(13px,1.6vw,22px); font-weight: 700; letter-spacing: .42em; text-transform: uppercase; color: var(--ad-ink-soft); margin-bottom: 6px; }
-.ad-gs-hero { font-family: var(--font-cormorant), serif; font-size: clamp(38px,5.5vw,94px); line-height: .96; letter-spacing: .04em; text-transform: uppercase; color: var(--ad-gold-deep); text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
-.ad-finale-body { font-family: var(--font-cormorant), serif; font-style: italic; font-size: clamp(17px,2.1vh,22px); line-height: 1.55; color: var(--ad-ink-soft); max-width: 760px; margin: 0 auto 14px; font-weight: 500; }
-.ad-finale-body strong { color: var(--ad-gold-deep); font-weight: 700; font-style: normal; }
-.ad-finale-invite { font-family: var(--font-cormorant), serif; font-style: italic; font-weight: 500; font-size: clamp(18px,2.3vh,24px); color: var(--ad-ink); margin: 22px auto 26px; max-width: 36ch; line-height: 1.35; }
-.ad-invite-hero { display: block; font-family: var(--font-cormorant), serif; font-style: normal; font-weight: 400; font-size: clamp(30px,4.6vw,76px); line-height: .98; letter-spacing: .04em; text-transform: uppercase; margin: 8px auto; text-shadow: 0 2px 6px rgba(125,82,21,.14), 0 10px 28px rgba(125,82,21,.10); }
-.ad-finale-cta {
-  display: inline-flex; align-items: center; gap: 14px;
-  padding: 17px 36px; background: var(--ad-ink); color: var(--ad-ivory);
-  font-family: var(--font-sans), sans-serif; font-size: 11px; letter-spacing: .4em; font-weight: 700;
-  text-decoration: none; text-transform: uppercase;
-  position: relative; transition: all .4s ease; overflow: hidden;
-}
-.ad-finale-cta::before { content: ''; position: absolute; inset: 4px; border: 1px solid var(--ad-gold-bright); opacity: 0; transition: opacity .4s ease; }
-.ad-finale-cta:hover { background: var(--ad-gold-deep); }
-.ad-finale-cta:hover::before { opacity: 1; }
-.ad-finale-footer { margin-top: 30px; font-family: var(--font-sans), sans-serif; font-size: 10px; letter-spacing: .4em; font-weight: 600; color: var(--ad-ink-mute); }
-.ad-finale-footer .ad-sep { margin: 0 12px; color: var(--ad-gold-deep); }
 
 /* ── TOP NAV ─────────────────────────────────────────────── */
 .ad-nav {
@@ -815,7 +790,7 @@ body {
 /* ── SIDE RAIL ───────────────────────────────────────────── */
 .ad-rail {
   position: fixed; right: 32px; top: 50%; transform: translateY(-50%);
-  z-index: 9999; display: flex; flex-direction: column; gap: 22px; padding: 18px 8px;
+  z-index: 30; display: flex; flex-direction: column; gap: 22px; padding: 18px 8px;
 }
 .ad-rail::before {
   content: ''; position: absolute; top: 22px; bottom: 22px; left: 50%; transform: translateX(-50%);
@@ -842,6 +817,7 @@ body {
   opacity: 0; pointer-events: none; transition: opacity .3s ease;
 }
 .ad-dot:hover .ad-label { opacity: 1; }
+
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
@@ -880,9 +856,7 @@ body {
   .ad-p5-text h2   { font-size: clamp(30px, 5.5vw, 60px); }
   .ad-p6-h2        { font-size: clamp(30px, 5.5vw, 58px); }
   .ad-p7-text h2   { font-size: clamp(28px, 5vw,  54px); }
-  .ad-p8-h2        { font-size: clamp(30px, 5.5vw, 58px); }
   .ad-big-quote    { font-size: clamp(24px, 4.2vw, 48px); }
-  .ad-gs-hero      { font-size: clamp(32px, 6vw,  72px); }
 }
 
 @media (max-width: 600px) {
@@ -911,10 +885,7 @@ body {
   .ad-p5-text h2   { font-size: clamp(22px, 7vw,  40px); }
   .ad-p6-h2        { font-size: clamp(22px, 7vw,  40px); }
   .ad-p7-text h2   { font-size: clamp(20px, 6.5vw, 38px); }
-  .ad-p8-h2        { font-size: clamp(22px, 7vw,  40px); }
   .ad-big-quote    { font-size: clamp(18px, 5.5vw, 30px); max-width: 100%; }
-  .ad-gs-hero      { font-size: clamp(24px, 7.5vw, 46px); }
-  .ad-gs-setup     { font-size: clamp(10px, 2.8vw, 16px); letter-spacing: .28em; }
   .ad-hero-sub     { font-size: clamp(16px, 4.5vw, 24px); }
   .ad-qmark        { font-size: clamp(60px, 16vw, 90px); }
 
@@ -941,9 +912,7 @@ body {
   .ad-p5-text h2,
   .ad-p6-h2,
   .ad-p7-text h2,
-  .ad-p8-h2      { font-size: clamp(18px, 6.5vw, 30px); }
   .ad-big-quote  { font-size: clamp(15px, 5vw, 24px); }
-  .ad-gs-hero    { font-size: clamp(20px, 7vw, 36px); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-snap-type: none !important; scroll-behavior: auto !important; }

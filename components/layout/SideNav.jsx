@@ -82,7 +82,7 @@ export default function SideNav({ isOpen, onClose }) {
             variants={backdropVariants}
             initial="hidden" animate="visible" exit="exit"
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/30 backdrop-blur-[2px]"
+            className="fixed inset-0 z-[9999] bg-black/30 backdrop-blur-[2px]"
             aria-hidden="true"
           />
 
@@ -94,7 +94,7 @@ export default function SideNav({ isOpen, onClose }) {
             aria-label="Navigation principale"
             variants={panelVariants}
             initial="hidden" animate="visible" exit="exit"
-            className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[360px] md:max-w-[420px] bg-white border-l border-gray-100 flex flex-col shadow-2xl"
+            className="fixed top-0 right-0 bottom-0 z-[9999] w-full max-w-[360px] md:max-w-[420px] bg-white border-l border-gray-100 flex flex-col shadow-2xl"
           >
             {/* En-tête panneau */}
             <div className="flex items-center justify-between px-10 pt-9 pb-7 border-b border-gray-100">

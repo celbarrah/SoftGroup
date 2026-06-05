@@ -66,6 +66,10 @@ export default function VisitModal({ onClose }) {
 
       if (data.success) {
         setStatus("success")
+        // Facebook Pixel — Lead event on successful form submission
+        if (typeof window !== "undefined" && window.fbq) {
+          window.fbq("track", "Lead")
+        }
       } else if (data.errors) {
         setErrors(data.errors)
         setStatus("idle")

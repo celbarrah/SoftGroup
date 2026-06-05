@@ -147,8 +147,8 @@ export default function PatrimoineClient() {
           ══════════════════════════════════════════ */}
       <div className="ad-scroll-wrap pb-20" 
        style={{
-        WebkitClipPath: "polygon(0 0, 100% 0, 100% 99%, 0 100%)",
-        clipPath:       "polygon(0 0, 100% 0, 100% 98%, 0 100%)",
+        WebkitClipPath: "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
+        clipPath:       "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
       }}
       >
         <P1Hero />
