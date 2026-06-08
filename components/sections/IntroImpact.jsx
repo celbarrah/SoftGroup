@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const STATS = [
   { prefix: "+", value: 35, suffix: "",  label: "Années d'expertise",    sub: "Depuis 1989"            },
-  { prefix: "",  value: 5,  suffix: "",  label: "Segments d'activités",  sub: "Logistique . Industriel . Résidentiel . Bureaux . Commercia" },
+  { prefix: "",  value: 5,  suffix: "",  label: "Segments d'activités",  sub: "Logistique . Industriel . Résidentiel . Bureaux . Commercial" },
   { prefix: "",  value: 5,  suffix: "",  label: "Villes stratégiques",   sub: "Casablanca · Kénitra · Marrakech · Tanger · Agadir" },
   { prefix: "",  value: 98, suffix: "%", label: "Taux d'occupation",     sub: "Gestion proactive & intégrée"     },
 ]
