@@ -53,7 +53,7 @@ export default function IntroImpact() {
             alt="SOFTGROUP — Excellence immobilière au Maroc"
             fill
             className="object-cover object-center"
-            sizes="(max-width: 1280px) 100vw, 50vw"
+            // sizes="(max-width: 1280px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 hidden lg:block" />
         </motion.div>
@@ -80,7 +80,7 @@ export default function IntroImpact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-sans text-[19px] md:text-[20px] text-neutral-600 leading-[1.85] mb-12 max-w-xl"
           >
-            Foncière d&apos;exception, Softgroup s&apos;impose comme une référence de l&apos;immobilier locatif au Maroc. Forte d&apos;une expertise intégrée, SOFTGROUP conçoit, gère et valorise un portefeuille d&apos;actifs premium, où l&apos;innovation et l&apos;exigence de qualité signent chacune de ses réalisations.
+            Foncière d'exception, Softgroup s'impose comme une référence de l'immobilier locatif au Maroc. Forte d'une expertise intégrée, SOFTGROUP conçoit, gère et valorise un portefeuille d'actifs premium, où l'innovation et l'exigence de qualité signent chacune de ses réalisations.
           </motion.p>
 
           {/* Stats grid 2x2 */}
@@ -100,10 +100,10 @@ export default function IntroImpact() {
                   delay={0.3 + i * 0.1}
                 />
                 <div className="w-7 h-px bg-gold/50 my-3" />
-                <p className="font-sans text-[15px] md:text-[17px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
+                <p className="font-sans text-[15px] md:text-[15px] 2xl:text-[17px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
                   {stat.label}
                 </p>
-                <p className="font-sans text-[13px] text-neutral-400 leading-relaxed">
+                <p className="font-sans text-[13px] lg:text-[12px] xl:text-[13px] text-neutral-400 leading-relaxed">
                   {stat.sub}
                 </p>
               </motion.div>

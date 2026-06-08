@@ -126,7 +126,7 @@ export default function SegmentTerrains() {
   return (
     <section id="terrains" className="overflow-hidden bg-[#F7F9FB] pb-10"  style={{
         WebkitClipPath: "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
-        clipPath:       "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
+        clipPath:       "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
       }} >
 
       {/* ACT 1 — Title panel */}

@@ -12,7 +12,7 @@ const MapSection = () => {
             style={{ minHeight: "480px" }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13292.887836868216!2d-7.662422!3d33.599545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d306041585e7%3A0xb91ed398330cf3cd!2sANFAPLACE%20SHOPPING%20CENTER!5e0!3m2!1sfr!2sma!4v1778667821577!5m2!1sfr!2sma"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.221955363532!2d-7.6624216999999994!3d33.5995451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d306eef8cf9f%3A0x2d6a3a2b230a7d79!2sSOFTGROUP%20Immobilier!5e0!3m2!1sfr!2sma!4v1780932668643!5m2!1sfr!2sma"
               width="100%"
               height="100%"
               style={{ border: 0, position: "absolute", inset: 0, minHeight: "480px" }}

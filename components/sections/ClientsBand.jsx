@@ -26,7 +26,7 @@ const CLIENTS = [
   { name: "Huawei",        file: "/logos/Huawei.png",         scale: 1    },
   { name: "KPMG",          file: "/logos/KPMG.png",           scale: 1    },
   { name: "Nestlé",        file: "/logos/Nestle.webp",        scale: 1    },
-  { name: "McDonald's",    file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780911635/logo-McDonalds_hyshjf.jpg", scale: 1 },
+  { name: "McDonald's",    file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780931857/OIP_1_ymkw91.webp", scale: 1 },
   { name: "KITEA",         file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780911550/Logo_158x158_1__vjwcju.webp", scale: 1.4 },
   { name: "P&G",           file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779093123/P_G-removebg-preview_lv6mon.png",           scale: 0.8    },
   { name: "Décathlon",     file: "/logos/Decathlon.jpg",      scale: 1.3   },

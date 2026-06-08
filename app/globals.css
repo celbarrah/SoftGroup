@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 150px;
   overflow-x: clip;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   font-size: 18px;

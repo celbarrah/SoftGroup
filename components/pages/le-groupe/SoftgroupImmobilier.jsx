@@ -73,7 +73,7 @@ export default function SoftgroupImmobilier() {
 
   return (
     <section ref={ref} className="bg-[#f8f9fa] py-20 md:py-20 overflow-hidden" id="softgroup-immobilier">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-4 2xl:px-12">
         
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -83,7 +83,7 @@ export default function SoftgroupImmobilier() {
         >
           
           {/* ── Left Column (Image & Badge) ─────────────────────────────── */}
-          <div className="relative w-full lg:w-1/2 min-h-[400px] lg:min-h-[700px]">
+          <div className="relative w-full lg:w-1/2 min-h-[400px] lg:min-h-[600px] 2xl:min-h-[700px]">
             <ImageSlider />
           </div>
 
