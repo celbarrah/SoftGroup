@@ -37,9 +37,9 @@ const CITIES = [
     id: "marrakech",
     label: "Marrakech",
     lon: -8.01, lat: 31.63,
-    tag: "Prestige & Tourisme",
-    desc: "Destination d'excellence mondiale. Villas de prestige et hôtels d'affaires incarnent le raffinement marocain.",
-    assets: ["Palmeraie Resort", "Route de Fès", "Guéliz Business"],
+    tag: "Pôle d'Investissement à Attractivité Internationale",
+    desc: "Actifs Premium · Logistique Nouvelle Génération · Écosystème favorable aux investissements à long terme · Aéroport International < 15 min · +3M de visiteurs/an · Autoroute A7 · Axe Casablanca–Agadir",
+    assets: ["Ouled Jelal", "Aéroport International < 15 min", "Autoroute A7 · Axe Casa–Agadir"],
     stat: "15+",
   },
   {

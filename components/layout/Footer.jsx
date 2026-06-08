@@ -6,19 +6,19 @@ import Link from "next/link"
  */
 
 const FOOTER_LINKS = [
-  { label: "Accueil",                href: "/"                     },
-  { label: "Le Groupe",              href: "/le-groupe"            },
-  { label: "Portefeuille",           href: "/portefeuille"         },
-  { label: "Gestion & Valorisation", href: "/gestion-valorisation" },
-  { label: "Build-to-Suit",          href: "/build-to-suit"        },
-  { label: "Patrimoine Art Déco",    href: "/patrimoine-art-deco"  },
-  { label: "Actualités",             href: "/actualites"           },
+  { label: "Accueil",                  href: "/"                     },
+  { label: "Le Groupe",                href: "/le-groupe"            },
+  { label: "Portefeuille d'actifs",    href: "/portefeuille"         },
+  { label: "Service après location",   href: "/gestion-valorisation" },
+  { label: "Build-to-Suit",            href: "/build-to-suit"        },
+  { label: "Patrimoine Art Déco",      href: "/patrimoine-art-deco"  },
+  { label: "Actualités",               href: "/actualites"           },
 ]
 
 const SOCIALS = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61590664766833",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -27,7 +27,7 @@ const SOCIALS = [
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/softgroup_immobilier/",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -38,7 +38,7 @@ const SOCIALS = [
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/softgroup.ma",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -70,15 +70,14 @@ export default function Footer() {
             <div className="w-8 h-px bg-white/40 mt-4 mb-9" />
 
             <p className="font-sans text-[18px] text-white/80 leading-[1.8] mb-8 max-w-[240px]">
-              L'immobilier d'excellence au Maroc — logistique, bureaux,
-              résidentiel et retail depuis plus de 35 ans.
+              L'immobilier d'excellence au Maroc — logistique, industriel, résidentiel, bureaux, et commercial depuis plus de 35 ans.
             </p>
 
             <p className="font-sans text-[15px] font-bold tracking-[0.28em] uppercase text-white/60 mb-2">
               Newsletter
             </p>
             <p className="font-sans text-[18px] text-white/60 leading-[1.8] mb-5 max-w-[240px]">
-              Recevez nos dernières actualités et opportunités en avant-première.
+              Recevez nos dernières actualités et disponibilités en avant-première.
             </p>
 
             <form className="flex max-w-[260px]">

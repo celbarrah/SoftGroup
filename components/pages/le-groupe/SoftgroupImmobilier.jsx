@@ -24,8 +24,8 @@ const POINTS_FORTS = [
     desc: "Des actifs situés dans les zones économiques les plus dynamiques : Casablanca, Tanger, Kénitra et Agadir." 
   },
   { 
-    title: "+300 clients grands comptes",         
-    desc: "Des multinationales, groupes industriels et leaders sectoriels font confiance à Softgroup Immobilier pour leurs besoins immobiliers stratégiques au Maroc." 
+    title: "+400 clients grands comptes",
+    desc: "Des multinationales, groupes industriels et leaders sectoriels font confiance à Softgroup Immobilier pour leurs besoins immobiliers stratégiques au Maroc."
   },
 ]
 

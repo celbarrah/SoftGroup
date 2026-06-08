@@ -19,7 +19,7 @@ const OUVRAGES = [
   {
     num: "02",
     title: "1 001 Manières de Porter Châle et Foulard",
-    author: "SoftCulture",
+    author: "Par Mohamed Kabbaj",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115344/ChatGPT_Image_15_mai_2026_%C3%A0_09_51_09_pyezoa.png",
     scale: 2, // Ajout du scale individuel
   },

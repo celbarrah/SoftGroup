@@ -3,6 +3,7 @@
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ChevronDown } from "lucide-react"
+import Image from "next/image"
 
 /**
  * Hero — Full-screen opening section
@@ -104,11 +105,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative bottom-10"
+          className="font-serif text-5xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative bottom-10"
         >
-          <span className="text-gold">Louer ? </span> <br /> <span className="font-extrabold">C'est penser </span>
-          
-          <span className="italic text-gold"><span className="font-bold">SOFT</span>GROUP.</span>
+          <span className="text-gold">LOUER ? </span> <br />
+          <div className="flex items-center justify-start gap-3 md:gap-4 flex-wrap">
+            <span className="font-extrabold whitespace-nowrap">C&apos;est penser</span>
+            <Image
+              src="/img/softgroupe.png"
+              height={300}
+              width={300}
+              alt="SOFTGROUP Immobilier"
+              className="brightness-0 invert relative top-2 w-[180px] md:w-[200px] lg:w-[250px] xl:w-[300px] h-auto flex-shrink-0"
+            />
+          </div>
+         
         </motion.h1>
 
         <div className="flex flex-col md:flex-row justify-start md:justify-between max-w-5xl w-full">

@@ -15,7 +15,6 @@ import { motion, useInView } from "framer-motion"
  * too small inside the 130×52 container (e.g. Dicastal, Orange…).
  */
 const CLIENTS = [
-  { name: "McDonald's",    file: "/logos/macdonald.webp",    scale: 1    },
   { name: "Samsung",       file: "/logos/samsung.webp",       scale: 1    },
   { name: "Bolloré",       file: "/logos/bolore.webp",        scale: 2    },
   { name: "GEODIS",        file: "/logos/GEODIS.jpg",         scale: 1.5    },
@@ -27,6 +26,8 @@ const CLIENTS = [
   { name: "Huawei",        file: "/logos/Huawei.png",         scale: 1    },
   { name: "KPMG",          file: "/logos/KPMG.png",           scale: 1    },
   { name: "Nestlé",        file: "/logos/Nestle.webp",        scale: 1    },
+  { name: "McDonald's",    file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780911635/logo-McDonalds_hyshjf.jpg", scale: 1 },
+  { name: "KITEA",         file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780911550/Logo_158x158_1__vjwcju.webp", scale: 1.4 },
   { name: "P&G",           file: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779093123/P_G-removebg-preview_lv6mon.png",           scale: 0.8    },
   { name: "Décathlon",     file: "/logos/Decathlon.jpg",      scale: 1.3   },
   { name: "Dicastal",      file: "/logos/Dicastal.webp",      scale: 2.2  },
@@ -105,7 +106,7 @@ export default function ClientsBand() {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         {/* width:max-content makes translateX(-50%) reference the scroll content, not the parent */}
-        <div className="flex animate-marquee" style={{ width: "max-content" }}>
+        <div className="flex animate-marquee" style={{ width: "max-content", animationDuration: "25s" }}>
           {CLIENTS.map((client, i) => (
             <LogoItem key={`r1-${i}`} client={client} />
           ))}

@@ -6,8 +6,8 @@ import Image from "next/image"
 
 const STATS = [
   { prefix: "+", value: 35, suffix: "",  label: "Années d'expertise",    sub: "Depuis 1989"            },
-  { prefix: "",  value: 5,  suffix: "",  label: "Segments d'activités",  sub: "Logistique · Bureaux · Résidentiel · Retail · Terrains" },
-  { prefix: "",  value: 4,  suffix: "",  label: "Villes stratégiques",   sub: "Casa · Kénitra · Tanger · Agadir" },
+  { prefix: "",  value: 5,  suffix: "",  label: "Segments d'activités",  sub: "Logistique . Industriel . Résidentiel . Bureaux . Commercia" },
+  { prefix: "",  value: 5,  suffix: "",  label: "Villes stratégiques",   sub: "Casablanca · Kénitra · Marrakech · Tanger · Agadir" },
   { prefix: "",  value: 98, suffix: "%", label: "Taux d'occupation",     sub: "Gestion proactive & intégrée"     },
 ]
 
@@ -46,14 +46,14 @@ export default function IntroImpact() {
           initial={{ opacity: 0, x: -40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative h-[360px] lg:h-auto overflow-hidden"
+          className="relative h-[360px] lg:h-[700px] xl:h-auto overflow-hidden"
         >
           <Image
             src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778667663/Gemini_Generated_Image_tmluwxtmluwxtmlu_gwtymr.png"
             alt="SOFTGROUP — Excellence immobilière au Maroc"
             fill
             className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1280px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 hidden lg:block" />
         </motion.div>
@@ -80,15 +80,11 @@ export default function IntroImpact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-sans text-[19px] md:text-[20px] text-neutral-600 leading-[1.85] mb-12 max-w-xl"
           >
-            Foncière d&apos;exception, Softgroup s&apos;impose comme une référence
-            de l&apos;immobilier locatif au Maroc. Forts d&apos;une expertise intégrée,
-            nous concevons, gérons et valorisons un portefeuille d&apos;actifs
-            premium, où l&apos;innovation et l&apos;exigence de qualité signent
-            chaque réalisation.
+            Foncière d&apos;exception, Softgroup s&apos;impose comme une référence de l&apos;immobilier locatif au Maroc. Forte d&apos;une expertise intégrée, SOFTGROUP conçoit, gère et valorise un portefeuille d&apos;actifs premium, où l&apos;innovation et l&apos;exigence de qualité signent chacune de ses réalisations.
           </motion.p>
 
           {/* Stats grid 2x2 */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10">
+          <div className="grid grid-cols-2 gap-x- gap-y-10">
             {STATS.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -107,7 +103,7 @@ export default function IntroImpact() {
                 <p className="font-sans text-[15px] md:text-[17px] tracking-[0.15em] uppercase text-neutral-600 mb-1">
                   {stat.label}
                 </p>
-                <p className="font-sans text-[14px] text-neutral-400 leading-relaxed">
+                <p className="font-sans text-[13px] text-neutral-400 leading-relaxed">
                   {stat.sub}
                 </p>
               </motion.div>

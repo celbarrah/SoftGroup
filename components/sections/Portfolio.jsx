@@ -16,8 +16,8 @@ const SEGMENTS = [
     anchorId: "logistique-industriel",
     label: "01",
     title: "Logistique & Industriel",
-    description: "Entrepôts modernes, plateformes logistiques et parcs industriels conformes aux normes internationales.",
-    locations: ["Casablanca", "Kénitra", "Tanger", "Agadir"],
+    description: "Des parcs d'activités accueillant des plateformes logistiques et industrielles conformes aux normes internationales.",
+    locations: ["Casablanca", "Kénitra", "Marrakech", "Tanger", "Agadir"],
     span: "lg:col-span-7",
   },
   {
@@ -36,7 +36,7 @@ const SEGMENTS = [
     anchorId: "residentiel-de-prestige",
     label: "03",
     title: "Résidentiel de Prestige",
-    description: "Résidences de villas et condominiums haut de gamme dans les quartiers les plus exclusifs.",
+    description: "Résidences de villas et condominiums d'appartements haut de gamme dans les quartiers les plus exclusifs.",
     locations: ["Casablanca", "Marrakech"],
     span: "lg:col-span-4",
   },
@@ -45,7 +45,7 @@ const SEGMENTS = [
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504226/retail_et_commerce_fuezst.png",
     anchorId: "retail-commerce",
     label: "04",
-    title: "Retail & Commerce",
+    title: "Commercial",
     description: "Espaces commerciaux, showrooms et centres commerciaux stratégiquement implantés.",
     locations: ["Casablanca"],
     span: "lg:col-span-4",
@@ -56,7 +56,7 @@ const SEGMENTS = [
     anchorId: "terrains-developpements",
     label: "05",
     title: "Terrains & Développements",
-    description: "Lots de terrains viabilisés et réserves foncières à fort potentiel de développement.",
+    description: "Lots de terrains viabilisés à fort potentiel de développement.",
     locations: ["Maroc"],
     span: "lg:col-span-4",
   },
@@ -159,7 +159,7 @@ export default function Portfolio() {
           className="mt-10 text-right"
         >
           <a
-            href="#contact"
+            href="/portefeuille"
             className="inline-flex items-center gap-3 text-[15px] font-bold tracking-[0.25em] uppercase text-neutral-500 hover:text-gold transition-colors duration-300 group"
           >
             Découvrir nos actifs

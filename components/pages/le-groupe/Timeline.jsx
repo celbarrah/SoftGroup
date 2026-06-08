@@ -4,17 +4,18 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 const EVENTS = [
-  { year: "1918", title: "Fondation",              desc: "Création par Haj M'hamed de la maison spécialisée dans l'exportation de tissus et produits d'artisanat vers le Sénégal et le Mali." },
+  { year: "1918", title: "Fondation",              desc: "Création par Haj M'hamed Harouchi de la maison spécialisée dans l'exportation de tissus et produits d'artisanat vers le Sénégal et le Mali." },
   { year: "1948", title: "Import Lyon",            desc: "Développement des activités d'importation de tissus depuis Lyon par son fils Abdellatif Kabbaj, structurant ainsi l'activité textile du groupe." },
   { year: "1968", title: "Diversification",        desc: "Prise de relais par Mohamed Kabbaj avec le lancement de l'impression de foulards et la diversification vers plusieurs métiers du textile." },
   { year: "1987", title: "Premier projet immo.",   desc: "Construction du premier projet immobilier du groupe, marquant l'entrée dans le secteur de la promotion immobilière." },
+  { year: "1994", title: "Wissam Alaouite",        desc: "Mohamed Kabbaj est fait chevalier du Wissam Alaouite par Sa Majesté le Roi Hassan II." },
   { year: "1995", title: "Fondation Amine Kabbaj", desc: "Création de la Fondation Amine Kabbaj, dédiée à la construction d'unités de soins médicaux sur l'ensemble du territoire national." },
   { year: "1999", title: "ISO 9002",               desc: "SOFTGROUP devient la première entreprise textile à obtenir la certification ISO 9002 au Maroc." },
   { year: "2002", title: "Diamantine",             desc: "Création et lancement de la marque Diamantine, spécialisée dans le prêt-à-porter féminin haut de gamme." },
   { year: "2007", title: "1er producteur pulls",   desc: "SOFTGROUP devient le premier producteur national de pulls 100% export." },
   { year: "2008", title: "Clair Ô Foncé",          desc: "Création de la marque Clair Ô Foncé, spécialisée dans les châles, carrés et tissus en pure soie." },
   { year: "2012", title: "Marque N°1",             desc: "Diamantine est élue première marque marocaine de commerce et de distribution." },
-  { year: "2015", title: "Wissam Al Arch",         desc: "Mohamed Kabbaj est décoré du Wissam Al Arch par Sa Majesté le Roi Mohammed VI." },
+  { year: "2016", title: "Wissam Alaoui",          desc: "Mohamed Kabbaj est décoré du Wissam Alaoui par Sa Majesté le Roi Mohammed VI." },
   { year: "2016", title: "SOFT TECH",              desc: "Création de la filiale SOFT TECH, spécialisée dans le textile technique et le non-tissé." },
 ]
 
@@ -107,7 +108,7 @@ export default function Timeline() {
         </div>
 
         {/* Aujourd'hui badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -120,7 +121,7 @@ export default function Timeline() {
               9 filiales · +4 500 collaborateurs · 4 générations
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

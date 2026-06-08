@@ -94,7 +94,7 @@ export default function SegmentRetail() {
             className="flex items-center justify-center gap-3 mb-3"
           >
             <span className="block w-[22px] h-px bg-gold/55 shrink-0" />
-            <span className="font-sans text-[9.5px] tracking-[0.32em] uppercase text-gold font-bold">Retail &amp; Commerce</span>
+            <span className="font-sans text-[9.5px] tracking-[0.32em] uppercase text-gold font-bold">Commercial</span>
           </motion.div>
 
           <motion.h2

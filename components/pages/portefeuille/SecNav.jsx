@@ -4,9 +4,9 @@ import { useState, useEffect } from "react"
 
 const SEGMENTS = [
   { id: "logistique",  label: "Logistique & Industriel" },
-  { id: "bureaux",     label: "Bureaux & Centres d'Affaires" },
   { id: "residentiel", label: "Résidentiel de Prestige" },
-  { id: "retail",      label: "Retail & Commerce" },
+  { id: "bureaux",     label: "Bureaux & Centres d'Affaires" },
+  { id: "retail",      label: "Commercial" },
   { id: "terrains",    label: "Terrains & Développements" },
 ]
 

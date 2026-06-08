@@ -127,9 +127,7 @@ export default function BuildToSuitTeaser() {
             {/* Description */}
             <p className="font-sans text-[clamp(13px,1vw,15px)] leading-[1.78]
                           text-white/65 max-w-[480px]">
-              Ne cherchez plus un espace qui s'adapte à votre activité : concevez
-              une infrastructure pensée pour elle, alignée sur vos flux et vos
-              objectifs de performance durable.
+              Ne cherchez plus un espace qui s'adapte à votre activité : SOFTGROUP conçoit et réalise pour vous une infrastructure pensée pour elle, alignée sur vos flux et vos objectifs de performance durable.
             </p>
 
           </div>

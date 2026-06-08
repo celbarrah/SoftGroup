@@ -78,6 +78,20 @@ const CITIES = [
     zones:   "Axe Agadir–Marrakech < 10 min",
     image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
   },
+  {
+    id:      "Marrakech",
+    num:     "05",
+    name:    "Marrakech",
+    tagline: "Pôle d'Investissement à Attractivité Internationale",
+    lines: [
+      "Actifs Premium · Logistique Nouvelle Génération",
+      "Écosystème favorable aux investissements à long terme",
+      "Aéroport International < 15 min · +3M de visiteurs/an",
+      "Autoroute A7 · Axe Casablanca–Agadir",
+    ],
+    zones:   "Autoroute A7 · Axe Casablanca–Agadir",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
+  },
 ]
 
 /* ─── Injected CSS — 3D tilt only, no color overlays ───────── */
@@ -356,7 +370,7 @@ export default function TerritorialMapCards() {
             </h2>
           </div>
           <p className="font-sans text-[20px] md:text-[20px] text-neutral-500 max-w-2xl leading-relaxed md:text-right">
-            4 villes stratégiques, un maillage territorial pensé pour votre croissance.
+            5 villes stratégiques, un maillage territorial pensé pour votre croissance.
           </p>
         </motion.div>
 

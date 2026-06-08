@@ -102,12 +102,11 @@ export default function Fondation() {
                 RÉALISATIONS EMBLÉMATIQUES
               </p>
               <h4 className="font-serif text-xl md:text-2xl text-black font-normal mb-3">
-                Wissam Al Arch
+                Wissam Alaoui
               </h4>
               <p className="font-sans text-[15px] text-neutral-900/70 leading-[1.8]">
-                Mohamed Kabbaj a été décoré par Sa Majesté le Roi Mohammed VI
-                du Wissam Al Arch en 2015, en reconnaissance de son engagement
-                exceptionnel au service du bien commun.
+                Mohamed Kabbaj a été décoré par Sa Majesté le Roi Mohammed VI du Wissam Alaoui en 2016, 
+                en reconnaissance de son engagement exceptionnel au service du bien commun.
               </p>
             </motion.div>
 

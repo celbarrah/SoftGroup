@@ -43,10 +43,11 @@ const TYPE_PILLS = [
 ]
 
 const LOCS = [
-  { city: "Casablanca", zones: "Sidi Bernoussi · Aïn Sebaâ · Lissasfa" },
+  { city: "Casablanca", zones: "Sidi Bernoussi · Tit Mellil · Lissasfa · Dar Bouazza · Ouled Saleh" },
   { city: "Kénitra",    zones: "Atlantic Free Zone (AFZ)" },
+  { city: "Marrakech",  zones: "Ouled Jelal" },
   { city: "Tanger",     zones: "Tanger Free Zone (TFZ)" },
-  { city: "Agadir",     zones: "Inezgane · Préfecture d'Inezgane" },
+  { city: "Agadir",     zones: "Ait Melloul" },
 ]
 
 function A3Label({ children }) {

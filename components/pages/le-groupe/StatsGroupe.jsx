@@ -4,8 +4,8 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 
 const STATS = [
-  { value: "1918",   label: "Année de fondation",   sub: "Depuis Haj M'hamed Kabbaj"          },
-  { value: "+100",   label: "Ans d'expertise",       sub: "4 générations de la famille Kabbaj"  },
+  { value: "1918",   label: "Année de fondation",   sub: "Depuis Haj M'hamed Harouchi"         },
+  { value: "+100",   label: "Ans d'expertise",       sub: "4 générations"                        },
   { value: "3",      label: "Coeurs de métier",      sub: "Textile - Immobilier - Distribution" },
   { value: "9",      label: "Filiales",              sub: "Présence multi-sectorielle"           },
   { value: "+4 500", label: "Collaborateurs",        sub: "Un groupe humain et engagé"           },
