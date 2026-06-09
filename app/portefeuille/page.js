@@ -25,11 +25,11 @@ export default function PortefeuillePage() {
       {/* 3. Segment 01 — Logistique & Industriel */}
       <SegmentLogistique />
 
-      {/* 4. Segment 02 — Bureaux & Centres d'Affaires */}
-      <SegmentBureaux />
-
       {/* 5. Segment 03 — Résidentiel de Prestige */}
       <SegmentResidentiel />
+
+      {/* 4. Segment 02 — Bureaux & Centres d'Affaires */}
+      <SegmentBureaux />
 
       {/* 6. Segment 04 — Retail & Commerce */}
       <SegmentRetail />

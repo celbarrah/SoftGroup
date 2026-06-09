@@ -158,13 +158,13 @@ export default function P8Finale() {
           </a>
 
           {/* Footer address */}
-          <div className="ad-r ad-d7 mt-[30px] font-sans text-[10px] tracking-[.4em] font-semibold text-[#6e5e48]">
+          {/* <div className="ad-r ad-d7 mt-[30px] font-sans text-[10px] tracking-[.4em] font-semibold text-[#6e5e48]">
             101, Boulevard de la Corniche
             <span className="mx-3 text-[#7d5215]">◆</span>
             Casablanca
             <span className="mx-3 text-[#7d5215]">◆</span>
             +212 522 399 400
-          </div>
+          </div> */}
         </div>
 
         {/* ══ RIGHT — Archive composition ══ */}

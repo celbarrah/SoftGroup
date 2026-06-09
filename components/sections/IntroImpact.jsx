@@ -49,7 +49,7 @@ export default function IntroImpact() {
           className="relative h-[360px] lg:h-[700px] xl:h-auto overflow-hidden"
         >
           <Image
-            src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778667663/Gemini_Generated_Image_tmluwxtmluwxtmlu_gwtymr.png"
+            src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781005890/ChatGPT_Image_9_juin_2026_13_51_11_lvdeql.png"
             alt="SOFTGROUP — Excellence immobilière au Maroc"
             fill
             className="object-cover object-center"
@@ -120,7 +120,7 @@ export default function IntroImpact() {
           >
             <a
               href="/le-groupe"
-              className="inline-flex items-center gap-3 font-sans text-[15px] tracking-[0.28em] uppercase font-bold text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
+              className="inline-flex items-center gap-3 font-sans text-[12px] md:text-[15px] tracking-[0.28em] uppercase font-bold text-gold border border-gold/30 px-8 py-3.5 hover:bg-gold hover:text-white transition-all duration-300 group"
             >
               Découvrir le Groupe
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

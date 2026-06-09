@@ -62,7 +62,7 @@ const CITIES = [
       "A1 · Casablanca 45 min · Tanger 1h30",
     ],
     zones:   "A1 · Casablanca 45 min · Tanger 1h30",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094011/kenitra_hp1mzp.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780999999/kenitra_fvqmd0.jpg",
   },
   {
     id:      "agadir",
@@ -76,7 +76,7 @@ const CITIES = [
       "Axe Agadir–Marrakech < 10 min",
     ],
     zones:   "Axe Agadir–Marrakech < 10 min",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781000007/Agadir_xujif7.png",
   },
   {
     id:      "Marrakech",
@@ -90,7 +90,7 @@ const CITIES = [
       "Autoroute A7 · Axe Casablanca–Agadir",
     ],
     zones:   "Autoroute A7 · Axe Casablanca–Agadir",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779094002/AGADIR_mflqg3.jpg",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781000001/marrakech_jslmqn.png",
   },
 ]
 

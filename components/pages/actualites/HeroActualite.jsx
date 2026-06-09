@@ -62,7 +62,7 @@ export default function ActualiteHero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative bottom-10"
+          className="font-serif text-5xl md:text-8xl lg:text-[5.5rem] text-white font-light leading-[1.05] tracking-[-0.01em] max-w-6xl relative -bottom-20"
         >
           <span className="text-gold">Actualités </span> <br /> <span className="font-extrabold">Ce qui se construit </span>
           

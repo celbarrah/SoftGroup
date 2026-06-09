@@ -13,7 +13,7 @@ const OUVRAGES = [
     num: "01",
     title: "Un Bouquet de Proverbes Marocains",
     author: "Par Mohamed Kabbaj",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115241/IMG_0986_s6ehpb.jpg",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781001214/livre_vw7kos.png",
     scale: 2, // Ajout du scale individuel
   },
   {

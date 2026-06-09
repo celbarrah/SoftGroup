@@ -36,7 +36,7 @@ export default function HeroPortefeuille() {
       {/* Glass card — content */}
       <motion.div
         style={{ opacity: opa }}
-        className="relative z-[3] ml-[clamp(25px,6vw,120px)] max-w-[470px]"
+        className="relative -left-4 md:left-0 z-[3] ml-[clamp(25px,6vw,120px)] max-w-[470px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}

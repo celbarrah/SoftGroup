@@ -37,7 +37,7 @@ function TimelineItem({ event, index }) {
           >
             <p className="font-serif text-3xl md:text-4xl text-gold font-light mb-2">{event.year}</p>
             <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
-            <p className="font-sans text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
+            <p className="font-sans text-[14px] md:text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
           </motion.div>
         )}
       </div>
@@ -65,7 +65,7 @@ function TimelineItem({ event, index }) {
           >
             <p className="font-serif text-3xl md:text-4xl text-gold font-light mb-2">{event.year}</p>
             <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-neutral-700 mb-2">{event.title}</p>
-            <p className="font-sans text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
+            <p className="font-sans text-[14px] md:text-[18px] text-neutral-500 leading-[1.8]">{event.desc}</p>
           </motion.div>
         )}
       </div>

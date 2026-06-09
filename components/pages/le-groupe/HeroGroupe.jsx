@@ -35,7 +35,7 @@ export default function HeroGroupe() {
       {/* Glass card — content */}
       <motion.div
         // style={{ opacity: opa }}
-        className="relative z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
+        className="relative -left-4 md:left-0 z-10 ml-[clamp(32px,8vw,130px)] max-w-[600px]"
       >
         <motion.div
           initial={{ opacity: 0, y: 26 }}

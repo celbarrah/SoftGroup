@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion"
 
 const SLIDES = [
   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115059/SOFTIMMO_zo6pgq.jpg",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115064/SOFTIMMO2_h9afgi.jpg",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781004942/ChatGPT_Image_9_juin_2026_13_35_26_obxpxu.png",
 ]
 const INTERVAL = 4800
 const DURATION = 1100

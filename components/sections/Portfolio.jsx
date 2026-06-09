@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 /**
  * Portfolio — Premium Grid
@@ -14,6 +15,7 @@ const SEGMENTS = [
     id: "logistique",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504256/terrain_et_developpement_buqi7d.png",
     anchorId: "logistique-industriel",
+    href:"/portefeuille#logistique",
     label: "01",
     title: "Logistique & Industriel",
     description: "Des parcs d'activités accueillant des plateformes logistiques et industrielles conformes aux normes internationales.",
@@ -22,8 +24,9 @@ const SEGMENTS = [
   },
   {
     id: "bureaux",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504245/bureaux_et_centre_d_affaires_yoldrb.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780999662/bureau_wlnk4j.png",
     anchorId: "bureaux-centres-d-affaires",
+    href:"/portefeuille#bureaux",
     label: "02",
     title: "Bureaux & Centres d'Affaires",
     description: "Espaces de bureaux aménagés, sièges sociaux et villas à usage professionnel au cœur des quartiers d'affaires.",
@@ -34,6 +37,7 @@ const SEGMENTS = [
     id: "residentiel",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855307/SEGMENT_RESIDEN_bniuqo.webp",
     anchorId: "residentiel-de-prestige",
+    href:"/portefeuille#residentiel",
     label: "03",
     title: "Résidentiel de Prestige",
     description: "Résidences de villas et condominiums d'appartements haut de gamme dans les quartiers les plus exclusifs.",
@@ -44,6 +48,7 @@ const SEGMENTS = [
     id: "retail",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504226/retail_et_commerce_fuezst.png",
     anchorId: "retail-commerce",
+    href:"/portefeuille#retail",
     label: "04",
     title: "Commercial",
     description: "Espaces commerciaux, showrooms et centres commerciaux stratégiquement implantés.",
@@ -54,6 +59,7 @@ const SEGMENTS = [
     id: "terrains",
     image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
     anchorId: "terrains-developpements",
+    href:"/portefeuille#terrains",
     label: "05",
     title: "Terrains & Développements",
     description: "Lots de terrains viabilisés à fort potentiel de développement.",
@@ -94,6 +100,8 @@ export default function Portfolio() {
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {SEGMENTS.map((seg, i) => (
+            <Link href={seg.href} className={`group relative overflow-hidden rounded-2xl cursor-pointer h-[340px] lg:h-[400px] ${seg.span}`}
+>
             <motion.div
               key={seg.id}
               id={seg.anchorId}
@@ -148,6 +156,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
 
