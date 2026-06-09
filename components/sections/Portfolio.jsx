@@ -57,7 +57,7 @@ const SEGMENTS = [
   },
   {
     id: "terrains",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781024281/TERRAIN_1_hoqd2c.png",
     anchorId: "terrains-developpements",
     href:"/portefeuille#terrains",
     label: "05",

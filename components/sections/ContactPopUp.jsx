@@ -16,7 +16,7 @@ function isValidEmail(email) {
 }
 
 function isValidPhone(phone) {
-  if (!phone?.trim()) return true // optional
+  if (!phone?.trim()) return false // required
   const cleaned = phone.replace(/[\s\-().+]/g, "")
   return /^(0[67]\d{8}|212[67]\d{8}|\+212[67]\d{8})$/.test(cleaned)
 }
@@ -36,12 +36,15 @@ export default function VisitModal({ onClose }) {
 
   function validate() {
     const errs = {}
-    if (!form.nom.trim())    errs.nom    = "Requis"
-    if (!form.prenom.trim()) errs.prenom = "Requis"
-    if (!form.email.trim())  errs.email  = "Requis"
+    if (!form.nom.trim())     errs.nom     = "Requis"
+    if (!form.prenom.trim())  errs.prenom  = "Requis"
+    if (!form.societe.trim()) errs.societe = "Requis"
+    if (!form.email.trim())   errs.email   = "Requis"
     else if (!isValidEmail(form.email)) errs.email = "Email invalide"
-    if (!form.type)          errs.type   = "Requis"
-    if (form.tel && !isValidPhone(form.tel)) errs.tel = "Format invalide (ex: 06 XX XX XX XX)"
+    if (!form.tel.trim())     errs.tel     = "Requis"
+    else if (!isValidPhone(form.tel)) errs.tel = "Format invalide (ex: 06 XX XX XX XX)"
+    if (!form.type)           errs.type    = "Requis"
+    if (!form.message.trim()) errs.message = "Requis"
     return errs
   }
 
@@ -176,7 +179,7 @@ export default function VisitModal({ onClose }) {
 
                 {/* Société */}
                 <div>
-                  <label className="font-sans text-[11px] tracking-[0.15em] uppercase text-neutral-400 block mb-1">Société</label>
+                  <label className="font-sans text-[11px] tracking-[0.15em] uppercase text-neutral-400 block mb-1">Société <span className="text-red-400">*</span></label>
                   <input name="societe" value={form.societe} onChange={handleChange} placeholder="Votre entreprise"
                     className={inputCls("societe")} />
                 </div>
@@ -193,7 +196,7 @@ export default function VisitModal({ onClose }) {
                   </div>
                   <div>
                     <label className="font-sans text-[11px] tracking-[0.15em] uppercase text-neutral-400 block mb-1">
-                      Téléphone
+                      Téléphone <span className="text-red-400">*</span>
                     </label>
                     <input name="tel" type="tel" value={form.tel} onChange={handleChange} placeholder="+212 6 XX XX XX XX"
                       className={inputCls("tel")} />
@@ -216,7 +219,7 @@ export default function VisitModal({ onClose }) {
 
                 {/* Message */}
                 <div>
-                  <label className="font-sans text-[11px] tracking-[0.15em] uppercase text-neutral-400 block mb-1">Votre projet</label>
+                  <label className="font-sans text-[11px] tracking-[0.15em] uppercase text-neutral-400 block mb-1">Votre projet <span className="text-red-400">*</span></label>
                   <textarea name="message" value={form.message} onChange={handleChange} rows={2}
                     placeholder="Décrivez brièvement vos besoins…"
                     className={`${inputCls("message")} resize-none`} />

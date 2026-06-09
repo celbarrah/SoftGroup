@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
+import Link from "next/link"
 
 const SLIDES = [
   // "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779115059/SOFTIMMO_zo6pgq.jpg",
@@ -129,18 +130,18 @@ export default function SoftgroupImmobilier() {
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4 mt-auto">
-              <a
+              <Link
                 href="/portefeuille"
                 className="inline-flex items-center gap-2 font-sans text-[15px] font-medium text-noir bg-gold px-6 py-3 rounded-full hover:bg-gold-light transition-colors duration-300"
               >
                 Découvrir nos projets <span className="text-[18px] leading-none">➔</span>
-              </a>
-              <a
-                href="#build-to-suit"
+              </Link>
+              <Link
+                href="/build-to-suit"
                 className="inline-flex items-center justify-center font-sans text-[15px] font-medium text-noir border border-gold px-6 py-3 rounded-full hover:bg-gold hover:text-noir transition-colors duration-300"
               >
                 Build-to-Suit
-              </a>
+              </Link>
             </div>
 
           </div>

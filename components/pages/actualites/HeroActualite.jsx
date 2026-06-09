@@ -39,14 +39,14 @@ export default function ActualiteHero() {
           className="absolute inset-0  transition-opacity duration-700"
           style={{ opacity: videoReady ? 0 : 1, zIndex: 1 }}
         />
-        <Image src={"https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780673386/ACTUALITES_HERO_BANNER_jxpvhw.png"} fill className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" alt="Actualite" />
+        <Image src={"https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781023223/hero_banner_actualite_ihhphj.jpg"} fill className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" alt="Actualite" />
      
       {/* ── Dark overlay — bottom-heavy gradient for text legibility ── */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: [
-            "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.60) 30%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.0) 100%)",
+            "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.0) 100%)",
             "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 28%)",
           ].join(", "),
           zIndex: 2,

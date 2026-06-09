@@ -7,14 +7,13 @@ import { Resend } from "resend"
    .env.local:
      RESEND_API_KEY=re_xxxxxxxxxxxx   ← your key from resend.com
 
-   Note: from address uses onboarding@resend.dev for testing.
-   Once softgroup.ma is verified on resend.com, change it to:
-     noreply@softgroup.ma
+   Requires: softgroup.ma domain verified in Resend dashboard
+   (Settings → Domains → Add Domain → add DNS TXT/MX records)
    ───────────────────────────────────────────────────────────── */
 
 const resend   = new Resend(process.env.RESEND_API_KEY)
 const EMAIL_TO = "immo.contact@softgroup.ma"
-const EMAIL_FROM = "onboarding@resend.dev" // → change to "noreply@softgroup.ma" after domain verification
+const EMAIL_FROM = "noreply@softgroup.ma"
 
 /* ── Validators ─────────────────────────────────────────────── */
 function isValidEmail(email) {
@@ -22,7 +21,7 @@ function isValidEmail(email) {
 }
 
 function isValidPhone(phone) {
-  if (!phone) return true
+  if (!phone) return false
   const cleaned = phone.replace(/[\s\-().+]/g, "")
   return /^(0[67]\d{8}|212[67]\d{8}|\+212[67]\d{8})$/.test(cleaned)
 }
@@ -157,12 +156,15 @@ export async function POST(request) {
 
     // Validation
     const errors = {}
-    if (!nom?.trim())    errors.nom    = "Le nom est requis"
-    if (!prenom?.trim()) errors.prenom = "Le prénom est requis"
-    if (!email?.trim())  errors.email  = "L'email est requis"
-    if (!type?.trim())   errors.type   = "Le type d'espace est requis"
-    if (email && !isValidEmail(email))  errors.email = "Format d'email invalide"
-    if (tel   && !isValidPhone(tel))    errors.tel   = "Format invalide (ex: 06 XX XX XX XX)"
+    if (!nom?.trim())     errors.nom     = "Le nom est requis"
+    if (!prenom?.trim())  errors.prenom  = "Le prénom est requis"
+    if (!societe?.trim()) errors.societe = "La société est requise"
+    if (!email?.trim())   errors.email   = "L'email est requis"
+    else if (!isValidEmail(email)) errors.email = "Format d'email invalide"
+    if (!tel?.trim())     errors.tel     = "Le téléphone est requis"
+    else if (!isValidPhone(tel))   errors.tel   = "Format invalide (ex: 06 XX XX XX XX)"
+    if (!type?.trim())    errors.type    = "Le type d'espace est requis"
+    if (!message?.trim()) errors.message = "Le message est requis"
 
     if (Object.keys(errors).length > 0) {
       return Response.json({ success: false, errors }, { status: 422 })
