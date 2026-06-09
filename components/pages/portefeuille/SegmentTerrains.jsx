@@ -5,9 +5,9 @@ import { motion, useInView } from "framer-motion"
 import SegmentSlider from "./SegmentSlider"
 
 const SLIDES = [
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781015877/Terrain_1_cesnco.png",
+  // "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
+  // "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599319/Gemini_Generated_Image_kk7w0vkk7w0vkk7w_xnlkdg.png",
 ]
 
 const SERVICES = [

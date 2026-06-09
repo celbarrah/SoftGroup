@@ -9,7 +9,7 @@ const POLES = [
     title:   "Immobilier Locatif",
     desc:    "Foncière locative de référence au Maroc depuis plus de 35 ans, SoftGroup Immobilier est un constructeur-développeur intégré maîtrisant l'intégralité du cycle de vie des projets : de la conception à la gestion locative.",
     anchor:  "#softgroup-immobilier",
-    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1779719152/IMMOBILIER_zdlobk.png",
+    image:   "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781013109/locatif_t9hj0c.png",
   },
   {
     num:     "02",

@@ -5,9 +5,10 @@ import { motion, useInView } from "framer-motion"
 import SegmentSlider from "./SegmentSlider"
 
 const SLIDES = [
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504226/retail_et_commerce_fuezst.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504226/retail_et_commerce_fuezst.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504226/retail_et_commerce_fuezst.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008822/commeciale_1_mlgl89.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008824/commercial_2_wzmjsk.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008785/commercial_3_j0pw0x.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008793/commerciale_ejz7oh.png",
 ]
 
 const TYPES = [

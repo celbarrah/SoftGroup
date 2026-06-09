@@ -6,9 +6,14 @@ import Link from "next/link"
 import SegmentSlider from "./SegmentSlider"
 
 const SLIDES = [
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504256/terrain_et_developpement_buqi7d.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504256/terrain_et_developpement_buqi7d.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778504256/terrain_et_developpement_buqi7d.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017785/logistique_1_g5kje8.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017785/logitique_2_ajpdxr.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017792/logistique_3_inlzp6.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017780/logistique_4_lvdkce.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017782/logistique_5_pww6lu.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017774/logistique_6_me7hwo.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017779/logistique_7_xozkea.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781017789/logistique_8_b7biet.png"
 ]
 
 const SPECS = [

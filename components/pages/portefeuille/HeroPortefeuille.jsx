@@ -16,7 +16,7 @@ export default function HeroPortefeuille() {
       {/* Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[115%] -top-[8%]">
         <Image
-          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504256/terrain_et_developpement_buqi7d.png"
+          src="https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781015873/hero_banner_segment_mbopqb.png"
           alt="Portefeuille Immobilier — Softgroup"
           fill
           priority

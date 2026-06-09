@@ -24,7 +24,7 @@ const SEGMENTS = [
   },
   {
     id: "bureaux",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1780999662/bureau_wlnk4j.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781020524/SEGMENT_BUREAU_1_ozshr5.png",
     anchorId: "bureaux-centres-d-affaires",
     href:"/portefeuille#bureaux",
     label: "02",
@@ -35,7 +35,7 @@ const SEGMENTS = [
   },
   {
     id: "residentiel",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778855307/SEGMENT_RESIDEN_bniuqo.webp",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781021003/SEGMENT_RESIDEN_1_ftjouu.webp",
     anchorId: "residentiel-de-prestige",
     href:"/portefeuille#residentiel",
     label: "03",
@@ -46,7 +46,7 @@ const SEGMENTS = [
   },
   {
     id: "retail",
-    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1778504226/retail_et_commerce_fuezst.png",
+    image: "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008977/SEGMENT_COMMERC_rnxi3e.jpg",
     anchorId: "retail-commerce",
     href:"/portefeuille#retail",
     label: "04",

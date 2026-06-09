@@ -5,9 +5,14 @@ import { motion, useInView } from "framer-motion"
 import SegmentSlider from "./SegmentSlider"
 
 const SLIDES = [
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto,f_auto/v1778599233/WhatsApp_Image_2026-05-12_at_09.04.58_3_moneep.jpg",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019243/residentiel_1_soc78r.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019243/residentiel_2_ft1y9j.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019225/residentiel_3_wqfhzg.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019225/residentiel_4_fg3fel.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019222/residentiel_5_fitzty.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019222/residentiel_6_pspsbi.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019221/residentiel_7_grrq2v.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781019226/residentiel_8_sfntog.png"
 ]
 
 const TYPES = [
