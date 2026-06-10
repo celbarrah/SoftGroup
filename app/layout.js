@@ -47,8 +47,70 @@ const GA4_ID  = "G-GTM2WQVX6J"
 const FB_PX   = "2375036423025939"
 
 export const metadata = {
-  title:       "SOFTGROUP Immobilier | L'Immobilier d'Excellence au Maroc",
-  description: "Foncière d'exception | logistique, bureaux, résidentiel, retail et terrains. Implantés dans les 4 pôles économiques stratégiques du Maroc.",
+  metadataBase: new URL("https://www.softgroup.ma"),
+
+  title: {
+    default:  "Softgroup Immobilier | L'Immobilier d'Excellence au Maroc",
+    template: "%s | Softgroup Immobilier",
+  },
+  description:
+    "Foncière d'exception au Maroc — entrepôts logistiques, bureaux haut de gamme, résidentiel de prestige, retail et terrains à Casablanca, Tanger, Kénitra et Agadir.",
+  keywords:
+    "immobilier maroc, entrepôt logistique casablanca, bureau prestige maroc, résidentiel luxe maroc, build-to-suit maroc, softgroup immobilier",
+
+  authors: [{ name: "Softgroup Immobilier", url: "https://www.softgroup.ma" }],
+  creator: "Softgroup Immobilier",
+  publisher: "Softgroup Immobilier",
+
+  openGraph: {
+    type:     "website",
+    locale:   "fr_MA",
+    url:      "https://www.softgroup.ma",
+    siteName: "Softgroup Immobilier",
+    title:    "Softgroup Immobilier | L'Immobilier d'Excellence au Maroc",
+    description:
+      "Foncière d'exception au Maroc — entrepôts logistiques, bureaux haut de gamme, résidentiel de prestige, retail et terrains à Casablanca, Tanger, Kénitra et Agadir.",
+  },
+
+  twitter: {
+    card:        "summary_large_image",
+    site:        "@softgroup_immo",
+    creator:     "@softgroup_immo",
+    title:       "Softgroup Immobilier | L'Immobilier d'Excellence au Maroc",
+    description: "Foncière d'exception au Maroc — entrepôts logistiques, bureaux haut de gamme, résidentiel de prestige, retail et terrains.",
+  },
+
+  robots: {
+    index:               true,
+    follow:              true,
+    "max-image-preview": "large",
+    "max-snippet":       -1,
+    "max-video-preview": -1,
+    googleBot: {
+      index:               true,
+      follow:              true,
+      "max-image-preview": "large",
+      "max-snippet":       -1,
+    },
+  },
+
+  icons: {
+    icon:        "/favicon.ico",
+    shortcut:    "/favicon.ico",
+    apple:       "/apple-touch-icon.png",
+  },
+
+  alternates: {
+    canonical: "https://www.softgroup.ma",
+    types: { "application/rss+xml": "https://www.softgroup.ma/feed.xml" },
+  },
+
+  other: {
+    "geo.region":    "MA-01",
+    "geo.placename": "Casablanca, Maroc",
+    "geo.position":  "33.5731;-7.5898",
+    ICBM:            "33.5731, -7.5898",
+  },
 }
 
 export default function RootLayout({ children }) {

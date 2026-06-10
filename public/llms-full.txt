@@ -1,0 +1,99 @@
+# Softgroup Immobilier — Documentation complète
+
+> Softgroup Immobilier est la filiale immobilière de Softgroup Holding, l'un des plus importants holdings familiaux du Maroc depuis 1918. Foncière d'exception spécialisée dans l'immobilier logistique, tertiaire, résidentiel de prestige, retail et foncier au Maroc.
+
+## Informations générales
+
+**Nom légal** : Softgroup Holding (filiale : Softgroup Immobilier)
+**Fondation** : 1918
+**Siège social** : 101 Boulevard de la Corniche, Casablanca, Maroc
+**Email** : immo.contact@softgroup.ma
+**Téléphone** : +212 661 978 104
+**Site web** : https://www.softgroup.ma
+**Secteur** : Immobilier (logistique, tertiaire, résidentiel, retail, foncier)
+**Implantations** : Casablanca, Tanger, Kénitra, Agadir
+
+## Le Groupe — Softgroup Holding
+
+Softgroup Holding est l'un des plus importants holdings familiaux marocains, fondé en 1918. Le groupe est structuré autour de trois pôles d'activité principaux :
+
+1. **Textile & Industrie** : Activité historique depuis la fondation du groupe
+2. **Immobilier** : Via Softgroup Immobilier, filiale foncière premium au Maroc
+3. **Fondation & Culture** : La Fondation Amine Kabbaj et SoftCulture — mécénat éditorial et social
+
+Le groupe possède plus d'un siècle d'ancrage dans l'économie marocaine et figure parmi les acteurs privés les plus influents du Royaume.
+
+## Portefeuille Immobilier — 5 Segments
+
+### 1. Logistique & Industriel
+Entrepôts modernes, plateformes logistiques et parcs industriels dans les zones économiques stratégiques du Maroc :
+- **Casablanca** : Zone Lissasfa, Ouled Saleh, Ain Sebaâ
+- **Tanger** : Proximité port Tanger Med
+- **Kénitra** : Zone franche atlantique
+- **Agadir** : Pôle agro-industriel
+Surfaces disponibles : de 1 000 m² à 100 000 m²+, hauteur sous poutre 8–12 m, quais de chargement, sprinkleurs, bureaux intégrés
+
+### 2. Bureaux & Centres d'Affaires
+Immeubles de bureaux haut de gamme et centres d'affaires premium à Casablanca et dans les principales métropoles marocaines. Standards internationaux, domiciliation, services mutualisés.
+
+### 3. Résidentiel de Prestige
+Villas et appartements de luxe, résidences sécurisées. Positionnement haut de gamme dans les quartiers premium de Casablanca (Anfa, CIL, Ain Diab) et autres villes économiques.
+
+### 4. Retail & Commerce
+Espaces commerciaux, showrooms, boutiques et petites surfaces commerciales dans des emplacements premium.
+
+### 5. Terrains & Développements Fonciers
+Terrains industriels, logistiques et résidentiels à vendre ou à louer. Développements fonciers à grande échelle pour promoteurs et industriels.
+
+## Services
+
+### Gestion & Valorisation (Property & Facility Management)
+Service après-location complet pour les locataires et propriétaires :
+- **Property Management** : Gestion des loyers, relations locataires, reporting financier, optimisation de la rentabilité
+- **Facility Management** : Maintenance technique préventive et corrective, sécurité 24h/24, nettoyage, gestion des énergies
+- **Interlocuteur dédié** : Un gestionnaire référent par actif
+- **Disponibilité** : 24h/24, 7j/7 pour les urgences
+
+### Build-to-Suit
+Solution immobilière clé en main pour les entreprises ayant des besoins spécifiques :
+- **Conception** : Bureau d'études intégré, adaptation totale aux process du client
+- **Financement** : Softgroup prend en charge le financement du projet
+- **Livraison** : En moins de 12 mois, au prix fixé à la signature
+- **Types de bâtiments** : Entrepôts logistiques, plateformes industrielles, centres de distribution, immeubles tertiaires
+- **Garanties** : Prix garanti, délai garanti, qualité certifiée
+
+## Patrimoine — L'Hôtel d'Anfa
+L'annexe de l'Hôtel d'Anfa est un bâtiment classé patrimoine historique de Casablanca. Ce bâtiment Art Déco a été le théâtre de la Conférence de Casablanca (14–24 janvier 1943), qui a réuni le Président américain Franklin D. Roosevelt et le Premier ministre britannique Winston Churchill. Restauré et préservé par Softgroup Immobilier dans le respect de son architecture Art Déco originelle.
+
+## Chiffres Clés
+
+- **Depuis** : 1918 (plus d'un siècle d'histoire)
+- **Implantations** : 4 pôles économiques (Casablanca, Tanger, Kénitra, Agadir)
+- **Segments** : 5 segments immobiliers
+- **Projet phare 2027** : Parc logistique 100 000 m² à Lissasfa, Casablanca — investissement 500 MDH
+- **Build-to-Suit** : Livraison < 12 mois
+
+## Actualités récentes
+
+- **Parc logistique Casablanca 2027** : Nouveau parc industriel et logistique de 100 000 m² au sud de Casablanca (Lissasfa). Investissement : 500 millions de dirhams. Mise en exploitation prévue début 2027. [Lire l'article](https://www.softgroup.ma/actualites/parc-logistique-casablanca-2027)
+
+## Réseaux sociaux
+
+- **Facebook** : https://www.facebook.com/profile.php?id=61590664766833
+- **Instagram** : https://www.instagram.com/softgroup_immobilier/
+- **LinkedIn** : https://www.linkedin.com/company/softgroup.ma
+
+## Flux RSS
+
+Toutes les actualités : https://www.softgroup.ma/feed.xml
+
+## Plan du site
+
+- https://www.softgroup.ma/ — Accueil
+- https://www.softgroup.ma/le-groupe — Le Groupe
+- https://www.softgroup.ma/portefeuille — Portefeuille d'actifs
+- https://www.softgroup.ma/gestion-valorisation — Gestion & Valorisation
+- https://www.softgroup.ma/build-to-suit — Build-to-Suit
+- https://www.softgroup.ma/patrimoine-art-deco — Patrimoine Art Déco
+- https://www.softgroup.ma/actualites — Actualités
+- https://www.softgroup.ma/sitemap.xml — Sitemap XML

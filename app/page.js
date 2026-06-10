@@ -1,62 +1,69 @@
+import Hero               from "@/components/sections/Hero"
+import IntroImpact        from "@/components/sections/IntroImpact"
+import ClientsBand        from "@/components/sections/ClientsBand"
+import Portfolio          from "@/components/sections/Portfolio"
+import PropertyManagementV3 from "@/components/sections/PropertyManagementV3"
+import BuildToSuitTeaser  from "@/components/sections/BuildToSuitTeaser"
+import TerritorialMapCards from "@/components/sections/TerritorialMapCards"
+import Testimonials       from "@/components/sections/Testimonials"
+import FooterCTA          from "@/components/sections/FooterCTA"
+import JsonLd             from "@/components/seo/JsonLd"
+import { buildMetadata, orgSchema, websiteSchema, localBusinessSchema, webPageSchema, faqSchema, SITE } from "@/lib/seo"
 
-import Hero                    from "@/components/sections/Hero"
-import PropertyShowcase        from "@/components/sections/PropertyShowcase"
-import IntroImpact             from "@/components/sections/IntroImpact"
-import ClientsBand             from "@/components/sections/ClientsBand"
-import Portfolio               from "@/components/sections/Portfolio"
-import ProcessSection          from "@/components/sections/ProcessSection"
-import PropertyManagement      from "@/components/sections/PropertyManagement"
-import PropertyManagementV2    from "@/components/sections/PropertyManagementV2"
-import PropertyManagementV3    from "@/components/sections/PropertyManagementV3"
-import BuildToSuitTeaser       from "@/components/sections/BuildToSuitTeaser"
-import TerritorialMap          from "@/components/sections/TerritorialMap"
-import TerritorialMapPremium   from "@/components/sections/TerritorialMapPremium"
-import TerritorialMapCards     from "@/components/sections/TerritorialMapCards"
-import Testimonials            from "@/components/sections/Testimonials"
-import FooterCTA               from "@/components/sections/FooterCTA"
-import Footer                  from "@/components/layout/Footer"
+export const metadata = buildMetadata({
+  title:       "Softgroup Immobilier | L'Immobilier d'Excellence au Maroc",
+  description: "Foncière d'exception au Maroc — entrepôts logistiques 100 000 m², bureaux haut de gamme, résidentiel de prestige, retail et terrains à Casablanca, Tanger, Kénitra et Agadir.",
+  path:        "/",
+  keywords: [
+    "immobilier maroc",
+    "entrepôt logistique maroc",
+    "location bureau casablanca",
+    "immobilier logistique casablanca",
+    "résidentiel prestige maroc",
+    "foncier maroc",
+    "parc industriel maroc",
+    "softgroup immobilier",
+    "immobilier tanger kénitra agadir",
+  ],
+})
+
+const FAQS = [
+  {
+    question: "Qu'est-ce que Softgroup Immobilier ?",
+    answer:   "Softgroup Immobilier est la filiale immobilière de Softgroup Holding, l'un des plus importants holdings familiaux du Maroc depuis 1918. La foncière gère un portefeuille diversifié : entrepôts logistiques, plateformes industrielles, bureaux haut de gamme, résidentiel de prestige, retail et terrains à Casablanca, Tanger, Kénitra et Agadir.",
+  },
+  {
+    question: "Quels types de biens Softgroup propose-t-il à la location ?",
+    answer:   "Softgroup propose 5 segments : entrepôts & plateformes logistiques, bureaux & centres d'affaires, résidentiel de prestige, espaces retail & commerciaux, et terrains & développements fonciers — disponibles dans les 4 pôles économiques du Maroc.",
+  },
+  {
+    question: "Qu'est-ce que le service Build-to-Suit de Softgroup ?",
+    answer:   "Le Build-to-Suit de Softgroup permet aux entreprises de faire concevoir, financer et livrer un bâtiment industriel, logistique ou tertiaire entièrement sur mesure, clé en main, avec un prix fixé à la signature et un délai de livraison en moins de 12 mois.",
+  },
+  {
+    question: "Dans quelles villes Softgroup Immobilier est-il présent ?",
+    answer:   "Softgroup Immobilier est implanté dans les 4 pôles économiques stratégiques du Maroc : Casablanca, Tanger, Kénitra et Agadir.",
+  },
+]
 
 export default function Page() {
   return (
     <main>
-      {/* 1. Hero plein écran — vidéo + parallaxe */}
+      <JsonLd data={[orgSchema(), websiteSchema(), localBusinessSchema(), webPageSchema({
+        title:       "Softgroup Immobilier | L'Immobilier d'Excellence au Maroc",
+        description: "Foncière d'exception au Maroc — entrepôts logistiques, bureaux haut de gamme, résidentiel de prestige, retail et terrains.",
+        path:        "/",
+      }), faqSchema(FAQS)]} />
+
       <Hero />
-
-      {/* 2. Bannière propriété résidentielle (héro secondaire) — masqué temporairement */}
-      {false && <PropertyShowcase />}
-
-      {/* 3. Chiffres clés — fond noir premium */}
       <IntroImpact />
-
-      {/* 4. Logos partenaires défilants */}
       <ClientsBand />
-
-      {/* 5. Portefeuille — 5 segments immobiliers */}
       <Portfolio />
-
-      {/* 6. Notre Processus — 4 étapes — masqué temporairement */}
-      {false && <ProcessSection />}
-
-      {/* 7. Property & Facility Management V3 — pure CSS sticky stacking */}
       <PropertyManagementV3 />
-      {false && <PropertyManagementV2 />}
-      {false && <PropertyManagement />}
-
-      {/* 7b. Build-to-Suit — teaser section après service après location */}
       <BuildToSuitTeaser />
-
-      {/* 8. Cartes villes — hover expand animation */}
       <TerritorialMapCards />
-      {false && <TerritorialMap />}
-      {false && <TerritorialMapPremium />}
-
-      {/* 9. Témoignages clients — carousel auto-advance */}
       <Testimonials />
-
-      {/* 10. Bannière CTA avant footer */}
       <FooterCTA />
-
-
     </main>
   )
 }

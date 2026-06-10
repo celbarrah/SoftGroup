@@ -3,6 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { getArticleBySlug, ARTICLES } from "@/lib/articles"
 import FooterCTA from "@/components/sections/FooterCTA"
+import JsonLd from "@/components/seo/JsonLd"
+import { buildMetadata, orgSchema, breadcrumbSchema, webPageSchema, articleSchema, SITE } from "@/lib/seo"
 
 /* ── Static params ──────────────────────────────── */
 export function generateStaticParams() {
@@ -11,12 +13,20 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  const article = getArticleBySlug(slug)
+  const article  = getArticleBySlug(slug)
   if (!article) return {}
-  return {
-    title: `${article.title} — Soft Group Actualités`,
+
+  return buildMetadata({
+    title:       article.title,
     description: article.excerpt,
-  }
+    path:        `/actualites/${slug}`,
+    type:        "article",
+    keywords:    [article.tag, "immobilier maroc", "softgroup immobilier", "actualités immobilier"],
+    article: {
+      publishedTime: article.date,
+      tags:          [article.tag],
+    },
+  })
 }
 
 /* ── Page ───────────────────────────────────────── */
@@ -25,8 +35,20 @@ export default async function ArticlePage({ params }) {
   const article = getArticleBySlug(slug)
   if (!article) notFound()
 
+  const path = `/actualites/${article.slug}`
+
   return (
     <main className="bg-gold min-h-screen">
+      <JsonLd data={[
+        orgSchema(),
+        webPageSchema({ title: article.title, description: article.excerpt, path }),
+        breadcrumbSchema([
+          { name: "Accueil",    path: "/" },
+          { name: "Actualités", path: "/actualites" },
+          { name: article.title, path },
+        ]),
+        articleSchema({ article, path }),
+      ]} />
 
       {/* ── Cinematic hero image ──────────────────── */}
       <section className="relative w-full overflow-hidden" style={{ height: "clamp(500px,70vh,800px)" }}>

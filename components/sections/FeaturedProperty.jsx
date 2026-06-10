@@ -1,1 +1,1 @@
-export default function FeaturedProperty() { return null }
+/* DEPRECATED — This component is no longer used and can be safely deleted. */

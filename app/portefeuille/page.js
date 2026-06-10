@@ -6,38 +6,58 @@ import SegmentResidentiel from "@/components/pages/portefeuille/SegmentResidenti
 import SegmentRetail      from "@/components/pages/portefeuille/SegmentRetail"
 import SegmentTerrains    from "@/components/pages/portefeuille/SegmentTerrains"
 import FooterCTA          from "@/components/sections/FooterCTA"
-import Footer             from "@/components/layout/Footer"
+import JsonLd             from "@/components/seo/JsonLd"
+import { buildMetadata, orgSchema, breadcrumbSchema, webPageSchema, serviceSchema, SITE } from "@/lib/seo"
 
-export const metadata = {
-  title: "Portefeuille Immobilier Maroc — Location Entrepôts, Bureaux, Résidentiel | Softgroup Immobilier",
-  description: "Découvrez le portefeuille premium de Softgroup Immobilier : entrepôts logistiques, bureaux haut de gamme, résidences de prestige, espaces commerciaux et terrains à Casablanca, Tanger, Kénitra, Agadir.",
-}
+export const metadata = buildMetadata({
+  title:       "Portefeuille Immobilier Maroc — Location Entrepôts, Bureaux, Résidentiel",
+  description: "Découvrez le portefeuille premium de Softgroup Immobilier : entrepôts logistiques & industriels, bureaux haut de gamme, résidences de prestige, espaces commerciaux et terrains à Casablanca, Tanger, Kénitra, Agadir.",
+  path:        "/portefeuille",
+  keywords: [
+    "entrepôt location casablanca",
+    "location bureau casablanca",
+    "bureau haut de gamme maroc",
+    "résidence prestige casablanca",
+    "terrain industriel maroc",
+    "parc logistique maroc",
+    "location entrepôt tanger kénitra agadir",
+    "immobilier tertiaire maroc",
+    "retail commercial maroc",
+  ],
+})
 
 export default function PortefeuillePage() {
   return (
     <main>
-      {/* 1. Hero */}
+      <JsonLd data={[
+        orgSchema(),
+        webPageSchema({
+          title:       "Portefeuille Immobilier Maroc — Location Entrepôts, Bureaux, Résidentiel",
+          description: "Portefeuille premium Softgroup : 5 segments immobiliers dans les 4 pôles économiques du Maroc.",
+          path:        "/portefeuille",
+        }),
+        breadcrumbSchema([
+          { name: "Accueil",              path: "/" },
+          { name: "Portefeuille d'actifs", path: "/portefeuille" },
+        ]),
+        {
+          "@context":   "https://schema.org",
+          "@type":      "CollectionPage",
+          "@id":        `${SITE.url}/portefeuille#collectionpage`,
+          url:          `${SITE.url}/portefeuille`,
+          name:         "Portefeuille d'actifs immobiliers — Softgroup Immobilier",
+          description:  "5 segments immobiliers — logistique, bureaux, résidentiel, retail, terrains — dans 4 villes du Maroc.",
+          provider:     { "@id": `${SITE.url}/#organization` },
+        },
+      ]} />
+
       <HeroPortefeuille />
-
-      {/* 2. Sticky segment navigation */}
       <SecNav />
-
-      {/* 3. Segment 01 — Logistique & Industriel */}
       <SegmentLogistique />
-
-      {/* 5. Segment 03 — Résidentiel de Prestige */}
       <SegmentResidentiel />
-
-      {/* 4. Segment 02 — Bureaux & Centres d'Affaires */}
       <SegmentBureaux />
-
-      {/* 6. Segment 04 — Retail & Commerce */}
       <SegmentRetail />
-
-      {/* 7. Segment 05 — Terrains & Développements */}
       <SegmentTerrains />
-
-      {/* 8. CTA + Footer */}
       <FooterCTA />
     </main>
   )

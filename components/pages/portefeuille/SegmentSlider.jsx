@@ -27,8 +27,8 @@ export default function SegmentSlider({ slides, badge }) {
 
   return (
     <div
-      className="relative overflow-hidden w-full"
-      style={{ height: "95vh", minHeight: 600 }}
+      className="relative overflow-hidden w-full h-[50vh] md:h-[95vh] min-h-100 md:min-h-150 "
+      // style={{ height: "95vh", minHeight: 600 }}
     >
       {/* Track */}
       <div

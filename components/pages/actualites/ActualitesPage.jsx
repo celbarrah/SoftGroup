@@ -42,7 +42,8 @@ function BlogCard({ article, isActive, hasActive, onEnter, onLeave }) {
   const excerpt = (article.excerpt || article.body?.[0] || "").slice(0, 120).trimEnd() + "…"
 
   return (
-    <div
+   <Link href={`/actualites/${article.slug}`}>
+     <div
       onPointerEnter={onEnter}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
@@ -215,6 +216,7 @@ function BlogCard({ article, isActive, hasActive, onEnter, onLeave }) {
         </div>{/* /blg-inner */}
       </div>
     </div>
+   </Link>
   )
 }
 

@@ -39,7 +39,7 @@ export default function ActualiteHero() {
           className="absolute inset-0  transition-opacity duration-700"
           style={{ opacity: videoReady ? 0 : 1, zIndex: 1 }}
         />
-        <Image src={"https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781023223/hero_banner_actualite_ihhphj.jpg"} fill className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" alt="Actualite" />
+        <Image src={"https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781086575/ACTUALITES_HERO_BANNER_1_g6qe58.png"} fill className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" alt="Actualite" />
      
       {/* ── Dark overlay — bottom-heavy gradient for text legibility ── */}
       <motion.div

@@ -5,14 +5,14 @@ import { motion, useInView } from "framer-motion"
 import SegmentSlider from "./SegmentSlider"
 
 const SLIDES = [
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008331/bureau_1_fw2ih8.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008325/bureau_2_mdnljk.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008324/bureau_3_a7ndhf.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008327/bureau_4_ieco1m.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008330/bureau_5_npzxzo.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008314/bureau_6_gqmngw.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008329/bureau_7_qd36q3.png",
-  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781008325/bureau_8_ym5wwv.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087493/1_1_rylmxs.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087491/2_3_rqpyqh.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087489/3_1_o93x6l.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087485/4_2_xmdrrb.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087481/5_2_tvzoqj.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087468/6_2_xqpgx8.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087461/7_1_ls5tnn.png",
+  "https://res.cloudinary.com/dofyrwzop/image/upload/q_auto/f_auto/v1781087458/8_2_ixopd9.png",
 ]
 
 const TYPES = [
