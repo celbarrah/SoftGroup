@@ -66,7 +66,7 @@ export default function BuildToSuitTeaser() {
   return (
     <section
       ref={ref}
-      className="bg-off-white py-10 px-[clamp(20px,5vw,80px)]"
+      className="bg-off-white py-10 px-[clamp(20px,1vw,80px)]"
     >
       <motion.div
         initial={{ opacity: 0, y: 32 }}
@@ -109,7 +109,7 @@ export default function BuildToSuitTeaser() {
 
             {/* Eyebrow */}
             <div className="flex items-center gap-2.5 mb-4">
-              <span className="font-sans text-[15px] font-semibold tracking-[0.18em] uppercase text-gold">
+              <span className="font-sans text-[15px] relative top-2 md:top-0 font-semibold tracking-[0.18em] uppercase text-gold">
                 Build-to-Suit
               </span>
             </div>

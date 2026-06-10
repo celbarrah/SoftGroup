@@ -124,7 +124,7 @@ export default function SegmentTerrains() {
   const inView = useInView(ref, { once: true, margin: "-8%" })
 
   return (
-    <section id="terrains" className="overflow-hidden bg-[#F7F9FB] pb-20"  style={{
+    <section id="terrains" className="overflow-hidden bg-[#F7F9FB] pb-25"  style={{
         WebkitClipPath: "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
         clipPath:       "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
       }} >

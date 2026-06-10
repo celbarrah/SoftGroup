@@ -124,7 +124,7 @@ export default function PropertyManagementV3() {
                     style={{ height: HEADER_H + "px" }}
                   >
                     <span className="w-2 h-2 rounded-full bg-gold flex-none" />
-                    <span className="font-sans text-[20px] font-bold text-neutral-700 tracking-[0.005em]">
+                    <span className="font-sans text-[13px] md:text-[20px] font-bold text-neutral-700 tracking-[0.005em]">
                       {svc.title}
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export default function PropertyManagementV3() {
                       <div className="w-14 h-14 bg-[#EAE5DC] flex items-center justify-center mb-6">
                         <Icon size={22} strokeWidth={1.4} className="text-neutral-600" />
                       </div>
-                      <p className="font-sans text-[20px] text-neutral-500 leading-[1.88]">
+                      <p className="font-sans text-[14px] md:text-[20px] text-neutral-500 leading-[1.88]">
                         {svc.desc}
                       </p>
                     </div>

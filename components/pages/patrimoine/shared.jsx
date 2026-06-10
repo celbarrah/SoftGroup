@@ -55,7 +55,7 @@ export function Arrow() {
 
 export function ScrollCue({ label = "Continuer" }) {
   return (
-    <div className="ad-cue">
+    <div className="ad-cue relative top-2">
       <span style={{ textTransform: "uppercase", letterSpacing: ".42em" }}>{label}</span>
       <div className="ad-cue-line" />
     </div>
