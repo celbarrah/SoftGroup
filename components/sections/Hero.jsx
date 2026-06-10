@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative w-full h-screen min-h-[620px] overflow-hidden flex flex-col"
+      className="relative w-full h-screen min-h-[620px] overflow-hidden flex flex-col bg-[#0A1018]"
     >
       {/* ── Background media ──────────────────────────── */}
       
@@ -70,7 +70,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
           style={{ opacity: videoReady ? 1 : 0 }}
         >
-          <source src="https://res.cloudinary.com/dofyrwzop/video/upload/q_auto/f_auto/v1778754925/amplifiles-video-20260514T103205_mf7gew.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dofyrwzop/video/upload/q_auto/v1778754925/amplifiles-video-20260514T103205_mf7gew.mp4" type="video/mp4" />
         </video>
      
       {/* ── Dark overlay — bottom-heavy gradient for text legibility ── */}

@@ -111,7 +111,7 @@ export default async function ArticlePage({ params }) {
           </div>
 
           <h1
-            className="font-serif font-light text-white leading-[1.08] tracking-[-0.02em] max-w-[22ch]"
+            className="font-serif font-light text-white leading-[1.08] tracking-[-0.02em] max-w-[40ch] md:max-w-[22ch]"
             style={{ fontSize: "clamp(26px,4vw,52px)" }}
           >
             {article.title}
@@ -124,11 +124,10 @@ export default async function ArticlePage({ params }) {
       {article.stats && article.stats.length > 0 && (
         <div className="bg-[#C4A55A] px-[clamp(20px,5vw,80px)]" >
           <div
-            className="max-w-[1400px] mx-auto grid divide-x divide-[rgba(0,0,0,0.12)]"
-            style={{ gridTemplateColumns: `repeat(${article.stats.length}, 1fr)` }}
+            className="max-w-[1400px] grid-cols-2 md:grid-cols-4 mx-auto grid divide-x divide-[rgba(0,0,0,0.12)]"
           >
             {article.stats.map((stat) => (
-              <div key={stat.label} className="px-6 py-7 flex flex-col gap-1.5">
+              <div key={stat.label} className="px-2 md:px-6 py-7 flex flex-col gap-1.5">
                 <span
                   className="font-serif font-extrabold text-white leading-none"
                   style={{ fontSize: "clamp(18px,2.2vw,28px)" }}

@@ -18,7 +18,7 @@ export default function P4Temoins() {
       <div className="ad-panel-inner">
         <div className="ad-p4-head">
           <div className="ad-pretitle ad-r">— Les témoins silencieux —</div>
-          <span className="ad-qmark ad-r ad-d1">"</span>
+          <span className="ad-qmark ad-r ad-d1 pb-4 pt-4">"</span>
           <div className="ad-big-quote ad-r ad-d2">
             Ces murs n'ont pas seulement abrité l'Histoire <em>— ils en furent les témoins silencieux.</em>
           </div>
