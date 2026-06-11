@@ -9,7 +9,7 @@ export default function P2Souffle() {
 
       <div className="ad-scene-num">II</div>
       <div className="ad-panel-inner">
-        <div className="ad-pretitle ad-r">— Le souffle des lieux —</div>
+        <div className="ad-pretitle ad-r text-center">— Le souffle des lieux —</div>
         <h2 className="ad-p2-h2 ad-r ad-d1">
           Il est des lieux<br />
           qui <em>respirent</em> encore.

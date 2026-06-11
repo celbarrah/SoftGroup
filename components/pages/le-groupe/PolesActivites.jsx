@@ -67,9 +67,8 @@ export default function PolesActivites() {
         {/* ── Three poles ─────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {POLES.map((pole, i) => (
-            <motion.a
+            <motion.div
               key={pole.num}
-              href={pole.anchor}
               initial={{ opacity: 0, y: 36 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.75, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
@@ -113,7 +112,7 @@ export default function PolesActivites() {
                   </p>
                 </motion.div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
 
