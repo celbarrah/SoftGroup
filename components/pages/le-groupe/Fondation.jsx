@@ -79,7 +79,7 @@ export default function Fondation() {
                   className="bg-white border border-gray-100 rounded-xl py-5 px-2 flex flex-col items-center justify-center shadow-sm"
                 >
                   <p className="font-serif text-[21px] text-gold mb-1">{s.val}</p>
-                  <p className="font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-neutral-800 text-center">
+                  <p className="font-sans text-[10px] md:text-[12px] tracking-[0.15em] uppercase text-neutral-800 text-center">
                     {s.lbl}
                   </p>
                 </motion.div>

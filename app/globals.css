@@ -872,6 +872,12 @@ body {
   .ad-panel-inner { max-width: 100%; }
   .ad-pillars { grid-template-columns: 1fr; }
 
+  /* Center p3/p5/p7 text blocks when stacked in single column */
+  .ad-p3-text, .ad-p5-text, .ad-p7-text { text-align: center; }
+  .ad-p3-text .ad-pretitle,
+  .ad-p5-text .ad-pretitle,
+  .ad-p7-text .ad-pretitle { justify-content: center; }
+
   /* Disable reveal animations on mobile — panel content can exceed 100vh when
      stacked in 1 column, so IntersectionObserver threshold:0.5 never fires.
      Make all content immediately visible instead. */
@@ -897,10 +903,13 @@ body {
   /* Image height on small screens */
   .ad-p3-photo, .ad-p5-image, .ad-p7-image { height: 260px; }
 
-  /* Witnesses grid — simpler 2-col on mobile */
-  .ad-witnesses { grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(100px, 22vw); gap: 6px; }
+  /* Witnesses grid — simpler 2-col on mobile, taller rows so faces are visible */
+  .ad-witnesses { grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(160px, 40vw); gap: 6px; }
   .ad-w1 { grid-column: span 2; grid-row: span 2; }
   .ad-w2, .ad-w3, .ad-w4, .ad-w5 { grid-column: span 1; grid-row: span 1; }
+
+  /* Pretitle — hide decorative lines so text centers cleanly */
+  .ad-pretitle::before, .ad-pretitle::after { display: none; }
 
   /* Decorative elements — smaller */
   .ad-hero-seal { bottom: 24px; left: 18px; }

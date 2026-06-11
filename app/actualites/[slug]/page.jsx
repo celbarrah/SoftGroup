@@ -146,8 +146,8 @@ export default async function ArticlePage({ params }) {
       {/* ── Article body — cream background ──────── */}
       <div className="bg-[#F5F0E8] px-[clamp(20px,5vw,80px)] pb-30 py-[clamp(48px,7vw,88px)]"
         style={{
-  WebkitClipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
-  clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)"
+  WebkitClipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)",
+  clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)"
 }}
         >
         <div className="max-w-[1200px] mx-auto">

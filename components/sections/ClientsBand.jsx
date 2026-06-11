@@ -100,7 +100,7 @@ export default function ClientsBand() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ duration: 3, delay: 2 }}
+        transition={{ duration: 3, delay: 0.5 }}
         className="relative overflow-hidden mb-5"
       >
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />

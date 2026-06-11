@@ -130,16 +130,16 @@ export default function PropertyManagementV3() {
                   </div>
 
                   {/* Card body */}
-                  <div className="grid grid-cols-1 min-h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
-                    <div className="p-8 md:p-10 flex flex-col justify-center">
-                      <div className="w-14 h-14 bg-[#EAE5DC] flex items-center justify-center mb-6">
-                        <Icon size={22} strokeWidth={1.4} className="text-neutral-600" />
+                  <div className="grid grid-cols-1 sm:min-h-[450px] sm:grid-cols-2 bg-[#FDFCFA] border border-neutral-200">
+                    <div className="p-6 md:p-10 flex flex-col justify-center">
+                      <div className="w-10 h-10 sm:w-14 sm:h-14 bg-[#EAE5DC] flex items-center justify-center mb-4 sm:mb-6">
+                        <Icon size={20} strokeWidth={1.4} className="text-neutral-600" />
                       </div>
                       <p className="font-sans text-[14px] md:text-[20px] text-neutral-500 leading-[1.88]">
                         {svc.desc}
                       </p>
                     </div>
-                    <div className="relative h-[300px] md:h-auto">
+                    <div className="relative h-[200px] sm:h-[300px] md:h-auto">
                       <Image
                         src={svc.image}
                         alt={svc.title}
