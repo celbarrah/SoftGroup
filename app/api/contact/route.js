@@ -12,8 +12,8 @@ import { Resend } from "resend"
    ───────────────────────────────────────────────────────────── */
 
 const resend   = new Resend(process.env.RESEND_API_KEY)
-const EMAIL_TO = "immo.contact@softgroup.ma"
-const EMAIL_FROM = "noreply@softgroup.ma"
+const EMAIL_TO = "immo.fcherkhani@softgroupimmobilier.com"
+const EMAIL_FROM = "noreply@softgroupimmobilier.com"
 
 /* ── Validators ─────────────────────────────────────────────── */
 function isValidEmail(email) {
